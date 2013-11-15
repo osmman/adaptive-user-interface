@@ -14,30 +14,28 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets">
-
 <h:head>
-    <title>Aui Demo</title>
+    <title>AUI demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </h:head>
-
 <h:body>
-    <h1>User</h1>
-
-    <h:form id="form">
-        <fieldset>
-            <legend>Add User</legend>
-
-                <h:outputLabel value="User name" />
-                <h:inputText id="userName" value="#{}" />
-
-
-            <h:commandButton value="Add user" action="#{userController.createUser}">
-            </h:commandButton>
-        </fieldset>
-    </h:form>
-        
+    <div id="container">
+        <div id="content">
+            <ui:insert name="content">
+                    [Template content will be inserted here]
+            </ui:insert>
+        </div>
+        <div id="footer">
+            <p>
+                This project was generated from a Maven archetype from
+                JBoss.<br />
+            </p>
+        </div>
+    </div>
 </h:body>
-
 </html>

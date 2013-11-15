@@ -1,11 +1,7 @@
 package cz.cvut.fel.aui.model;
 
-import com.sun.istack.internal.NotNull;
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,14 +15,9 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends EntityObject {
 
-    @NotNull
     private String username;
-
-    @NotNull
     private String password;
-
     private String email;
-
     private String firstname;
     private String surname;
 

@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.resources;
+package cz.cvut.fel.aui.utils;
 
 import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;

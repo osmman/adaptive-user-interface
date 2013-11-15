@@ -25,7 +25,7 @@
          production data. This is an unmanaged data source, backed by H2, an in memory 
          database. Production applications should use a managed datasource. -->
       <!-- The datasource is deployed as WEB-INF/test-ds.xml, 
-         you can find it in the source at src/test/resources/test-ds.xml -->
+         you can find it in the source at src/test/utils/test-ds.xml -->
       <jta-data-source>java:jboss/datasources/AuiBaseDS</jta-data-source>
       <properties>
          <!-- Properties for Hibernate -->

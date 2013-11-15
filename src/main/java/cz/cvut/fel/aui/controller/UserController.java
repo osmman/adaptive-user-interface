@@ -5,6 +5,7 @@ import cz.cvut.fel.aui.model.User;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Produces;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -21,31 +22,24 @@ import java.util.List;
 @ViewScoped
 public class UserController extends BaseController {
 
-    private User user;
+    @Produces
+    @Named
+    private User newUser;
 
     @Inject
     private UserDao userDao;
 
     @PostConstruct
-    private void init() {
-        user = new User();
+    public void initUser() {
+        newUser = new User();
     }
 
     public String createUser() {
-        userDao.create(user);
-        init();
-        return null;
+        userDao.create(newUser);
+        return "";
     }
 
     public List<User> getUsers(){
         return userDao.findAll();
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

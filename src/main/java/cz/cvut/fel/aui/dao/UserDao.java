@@ -3,7 +3,6 @@ package cz.cvut.fel.aui.dao;
 import cz.cvut.fel.aui.model.User;
 
 import javax.ejb.Local;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
