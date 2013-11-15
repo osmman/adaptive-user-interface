@@ -6,7 +6,9 @@ import cz.cvut.fel.aui.model.User;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
@@ -19,7 +21,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Named
-@ViewScoped
+@RequestScoped
 public class UserController extends BaseController {
 
     @Produces
@@ -29,14 +31,20 @@ public class UserController extends BaseController {
     @Inject
     private UserDao userDao;
 
+    @Inject
+    private FacesContext facesContext;
+
     @PostConstruct
     public void initUser() {
         newUser = new User();
+        newUser.setUsername("aaa");
     }
 
-    public String createUser() {
-        userDao.create(newUser);
-        return "";
+    public void createUser() {
+            userDao.create(newUser);
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Created", "Registration successful");
+            facesContext.addMessage(null, m);
+            initUser();
     }
 
     public List<User> getUsers(){

@@ -5,6 +5,8 @@ import cz.cvut.fel.aui.dao.UserDao;
 import cz.cvut.fel.aui.model.User;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 

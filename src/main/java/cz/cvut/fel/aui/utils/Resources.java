@@ -1,6 +1,7 @@
 package cz.cvut.fel.aui.utils;
 
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
@@ -18,7 +19,7 @@ import java.util.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 
-@Stateful
+@Stateless
 public class Resources {
     @PersistenceContext(type = PersistenceContextType.EXTENDED)
     private EntityManager em;

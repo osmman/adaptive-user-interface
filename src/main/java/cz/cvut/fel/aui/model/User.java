@@ -2,6 +2,8 @@ package cz.cvut.fel.aui.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,7 +17,10 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class User extends EntityObject {
 
+    @NotNull
+    @Size(min = 1, max = 60)
     private String username;
+
     private String password;
     private String email;
     private String firstname;
