@@ -13,14 +13,14 @@ import java.io.Serializable;
 @MappedSuperclass
 public class EntityObject implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "id", updatable = false, nullable = false)
     protected Long id;
 
     public EntityObject() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "id", updatable = false, nullable = false)
     public Long getId() {
         return id;
     }

@@ -1,0 +1,29 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: Tomáš
+  Date: 16.11.13
+  Time: 21:58
+  To change this template use File | Settings | File Templates.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>AUI demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</h:head>
+<h:body>
+    <h:form id="user-form">
+        <h:outputLabel value="Username" for="username"/>
+        <h:inputText id="username" value="#{newUser.username}" />
+        <h:message for="username" errorClass="invalid" />
+
+
+        <h:outputLabel value="Username" for="password"/>
+        <h:inputSecret id="password" value="#{newUser.password}" />
+        <h:message for="password" errorClass="invalid" />
+
+        <h:commandButton value="Submit" action="#{userController.createUser}" />
+    </h:form>
+</h:body>
+</html>
