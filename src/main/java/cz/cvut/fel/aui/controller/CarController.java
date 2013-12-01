@@ -1,7 +1,7 @@
 package cz.cvut.fel.aui.controller;
 
-import cz.cvut.fel.aui.service.UserService;
-import cz.cvut.fel.aui.model.User;
+import cz.cvut.fel.aui.service.CarService;
+import cz.cvut.fel.aui.model.Car;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -15,56 +15,40 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: Tomáš
- * Date: 15.11.13
- * Time: 20:41
+ * Date: 26.11.13
+ * Time: 16:58
  * To change this template use File | Settings | File Templates.
  */
+
 @Named
 @RequestScoped
-public class UserController extends BaseController
+public class CarController extends BaseController
 {
 
     @Produces
     @Named
-    private User newUser;
+    private Car newCar;
 
     @Inject
-    private UserService userDao;
+    private CarService carDao;
 
     @Inject
     private FacesContext facesContext;
 
     @PostConstruct
-    public void initUser()
-    {
-        newUser = new User();
+    public void initUser() {
+        newCar = new Car();
     }
 
-    public void createUser()
-    {
-        userDao.create(newUser);
+    public void createUser() {
+        carDao.create(newCar);
         FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Created", "Registration successful");
         facesContext.addMessage(null, m);
         initUser();
     }
 
-    public void edit()
-    {
-        userDao.edit(newUser);
-        FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Edited", "Registration successful");
-        facesContext.addMessage(null, m);
-        initUser();
+    public List<Car> getCars(){
+        return carDao.findAll();
     }
-
-    public void delete(){
-        userDao.remove(newUser);
-        initUser();
-    }
-
-    public List<User> getUsers()
-    {
-        return userDao.findAll();
-    }
-
 
 }

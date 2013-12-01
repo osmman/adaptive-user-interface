@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/default.xhtml">
+
+    <ui:define name="content">
+        <h1>Cars</h1>
+
+        <h:form id="form">
+            <fieldset>
+                <legend>Add car</legend>
+
+                <h:outputLabel value="Car"/>
+                <h:inputText id="name" value="#{newUser.username}"/>
+                <h:message for="name" errorClass="invalid" />
+
+
+                <h:commandButton value="Add user" action="#{userController.createUser}" />
+                <h:messages errorClass="invalid" infoClass="valid"
+                            warnClass="warning" globalOnly="true" />
+            </fieldset>
+        </h:form>
+
+        <h:dataTable var="_user" value="#{userController.users}" rendered="#{not empty userController.users}">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_user.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Username</f:facet>
+                #{_user.username}
+            </h:column>
+        </h:dataTable>
+
+
+    </ui:define>
+</ui:composition>

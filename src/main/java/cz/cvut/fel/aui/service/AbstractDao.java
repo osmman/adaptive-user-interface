@@ -1,12 +1,9 @@
-package cz.cvut.fel.aui.dao;
-
-import cz.cvut.fel.aui.model.EntityObject;
+package cz.cvut.fel.aui.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.Collections;
 import java.util.List;
 
 /**

@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.dao;
+package cz.cvut.fel.aui.service;
 
 import java.util.List;
 
