@@ -1,0 +1,12 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:aui="http://java.sun.com/jsf/composite/components">
+
+    <aui:menu context="#{context}">
+        <aui:navigation context="#{context}" value="#{text['navigation.people']}" outcome="people"/>
+        <aui:navigation context="#{context}" value="#{text['navigation.thing']}" outcome="thing"/>
+        <aui:navigation context="#{context}" value="#{text['navigation.context']}" outcome="context"/>
+    </aui:menu>
+</ui:composition>

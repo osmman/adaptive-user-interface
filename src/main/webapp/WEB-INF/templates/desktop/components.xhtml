@@ -1,10 +1,14 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
         >
-    <ui:fragment rendered="#{componentField}">
+   <ui:fragment rendered="#{componentField}">
         <ui:include src="/WEB-INF/templates/desktop/components/field.xhtml"/>
     </ui:fragment>
     <ui:fragment rendered="#{componentForm}">
         <ui:include src="/WEB-INF/templates/desktop/components/form.xhtml"/>
+    </ui:fragment>
+    <ui:fragment rendered="#{componentMenu}">
+        <ui:include src="/WEB-INF/templates/desktop/components/menu.xhtml"/>
     </ui:fragment>
 </ui:composition>

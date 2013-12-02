@@ -1,13 +1,13 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                template="/WEB-INF/templates/default.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:h="http://java.sun.com/jsf/html"
-                >
+                template="/WEB-INF/templates/default.xhtml">
 
     <ui:define name="title">
-        <h:outputText value="#{text['context']}" />
+        <h:outputText value="#{text['home']}" />
     </ui:define>
     <ui:define name="content">
-        <ui:include src="/WEB-INF/context/form.xhtml"/>
+        <ui:include src="/WEB-INF/parts/menu.xhtml" />
     </ui:define>
 </ui:composition>

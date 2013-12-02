@@ -20,6 +20,9 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/default.xhtml">
 
+    <ui:define name="title">
+        <h:outputText value="#{text['people']}" />
+    </ui:define>
     <ui:define name="content">
         <h1>User</h1>
 

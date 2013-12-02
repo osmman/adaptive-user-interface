@@ -8,17 +8,15 @@
         >
 
 <composite:interface>
-    <composite:attribute name="label" required="true"/>
-    <composite:attribute name="for" required="true"/>
+    <composite:attribute name="id" required="false" />
 </composite:interface>
 
 <composite:implementation>
     <ui:decorate template="/WEB-INF/templates/components.xhtml">
-        <ui:param name="componentField" value="true"/>
-        <ui:define name="field">
-            <h:outputLabel styleClass="#{viewHelper.labelClass}" value="#{cc.attrs.label}" for="#{cc.attrs.for}"/>
+        <ui:param name="componentForm" value="true"/>
+        <ui:param name="formId" value="#{cc.attrs.id}"/>
+        <ui:define name="form">
             <composite:insertChildren/>
-            <h:message for="#{cc.attrs.for}" errorClass="invalid"/>
         </ui:define>
     </ui:decorate>
 </composite:implementation>

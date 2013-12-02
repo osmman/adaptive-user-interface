@@ -4,48 +4,39 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:aui="http://java.sun.com/jsf/composite/components">
 
-    <h:form role="form" id="contextForm">
-        <fieldset>
-            <legend>Context</legend>
+    <aui:form id="contextForm">
             <aui:field label="#{text['context.age']}" for="age">
-                <h:selectOneMenu id="age" value="#{context.age}">
+                <h:selectOneMenu styleClass="#{viewHelper.inputClass}" id="age" value="#{context.age}">
                     <f:selectItems value="#{data.ages}" var="status"
                                    itemValue="#{status}" itemLabel="#{text[status.label]}"/>
                 </h:selectOneMenu>
             </aui:field>
 
-            <div class="form-group">
-                <h:outputLabel for="screenSize" value="#{text['context.screen.size']}"/>
-                <h:selectOneMenu styleClass="form-control" value="#{context.screenSize}">
+            <aui:field label="#{text['context.screen.size']}" for="screenSize">
+                <h:selectOneMenu styleClass="#{viewHelper.inputClass}" value="#{context.screenSize}">
                     <f:selectItems id="screenSize" value="#{data.screenSizes}" var="status"
                                    itemValue="#{status}" itemLabel="#{text[status.label]}"/>
                 </h:selectOneMenu>
-                <h:message for="screenSize" errorClass="invalid"/>
-            </div>
+            </aui:field>
 
-            <div class="form-group">
-                <h:outputLabel for="device" value="#{text['context.device']}"/>
-                <h:selectOneMenu styleClass="form-control" value="#{context.device}">
+            <aui:field label="#{text['context.device']}" for="device">
+                <h:selectOneMenu styleClass="#{viewHelper.inputClass}" value="#{context.device}">
                     <f:selectItems id="device" value="#{data.devices}" var="d"
                                    itemValue="#{d}" itemLabel="#{text[d.label]}"/>
                 </h:selectOneMenu>
-                <h:message for="device" errorClass="invalid"/>
-            </div>
+            </aui:field>
 
-            <div class="form-group">
-                <h:outputLabel for="country" value="#{text['context.country']}"/>
-                <h:selectOneMenu styleClass="form-control" value="#{context.country}">
+            <aui:field label="#{text['context.country']}" for="country">
+                <h:selectOneMenu styleClass="#{viewHelper.inputClass}" value="#{context.country}">
                     <f:selectItems id="country" value="#{data.countries.entrySet()}" var="entry"
                                    itemValue="#{entry.key}" itemLabel="#{entry.value}"/>
                 </h:selectOneMenu>
-                <h:message for="country" errorClass="invalid"/>
-            </div>
+            </aui:field>
 
             <aui:field label="#{text['context.language']}" for="language">
-                <h:inputText id="language" value="#{context.language}"/>
+                <h:inputText id="language" styleClass="#{viewHelper.inputClass}" value="#{context.language}"/>
             </aui:field>
 
             <h:commandButton styleClass="btn btn-default" value="#{text['form.save']}" action="#{contextController.save}"/>
-        </fieldset>
-    </h:form>
+    </aui:form>
 </ui:composition>

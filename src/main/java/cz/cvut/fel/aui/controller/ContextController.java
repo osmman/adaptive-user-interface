@@ -52,8 +52,9 @@ public class ContextController extends BaseController
         context = contextService.getContext();
     }
 
-    public void save(){
+    public String save(){
         contextService.save(context);
+        return redirect("context");
     }
 
     public void onContextChanged(@Observes(notifyObserver = Reception.ALWAYS) Context context){

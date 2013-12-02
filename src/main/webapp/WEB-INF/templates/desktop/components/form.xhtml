@@ -1,13 +1,11 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:cc="http://java.sun.com/jsf/composite"
                 xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                >
+        >
 
-    <p style="color: red">
-        <ui:insert name="form">
-            [form]
-        </ui:insert>
-    </p>
+        <h:form styleClass="form-horizontal" role="form">
+            <ui:insert name="form">
+                [form]
+            </ui:insert>
+        </h:form>
 </ui:composition>

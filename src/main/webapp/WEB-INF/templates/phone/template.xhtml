@@ -18,12 +18,13 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
     <title>AUI demo - mobile</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"/>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -32,14 +33,20 @@
 <h:body>
     <div data-role="page">
         <div data-role="header">
-            <h1>Page title</h1>
+            <a href="/base/home.jsf" data-icon="home">Home</a>
+            <h1><ui:insert name="title" /></h1>
+            <a href="/base/context.jsf" data-icon="gear" class="ui-btn-right">Context</a>
         </div>
         <div data-role="content">
             <ui:insert name="content">
                 [Template content will be inserted here]
             </ui:insert>
         </div>
-        <div data-role="footer">...</div>
+        <div data-role="footer">
+            <h:outputText value="#{session.lastAccessedTime}">
+                <f:convertDateTime dateStyle="short" timeZone="EST" type="date"/>
+            </h:outputText>
+        </div>
     </div>
 </h:body>
 </html>
