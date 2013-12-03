@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: cz.cvut.fel.aui.uiml.UimlToJsfTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
+testConvert(cz.cvut.fel.aui.uiml.UimlToJsfTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: null
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNotNull(Assert.java:256)
+	at junit.framework.Assert.assertNotNull(Assert.java:248)
+	at junit.framework.TestCase.assertNotNull(TestCase.java:417)
+	at cz.cvut.fel.aui.uiml.UimlToJsfTest.testConvert(UimlToJsfTest.java:31)
+
