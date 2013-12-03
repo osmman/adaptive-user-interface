@@ -60,6 +60,6 @@ public class ContextService implements Serializable
     {
         validator.validate(context);
         this.context = context.clone();
-        contextChanged.fire(this.context.clone());
+        contextChanged.fire(getContext());
     }
 }

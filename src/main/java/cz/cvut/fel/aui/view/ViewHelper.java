@@ -22,6 +22,10 @@ public class ViewHelper
 
     private String labelClass = "";
 
+    private boolean help = false;
+
+    private boolean images = false;
+
     public String getMenuClass()
     {
         return menuClass;
@@ -50,5 +54,23 @@ public class ViewHelper
     public void setLabelClass(String labelClass)
     {
         this.labelClass = labelClass;
+    }
+
+    public boolean getHelp()
+    {
+        return help;
+    }
+
+    public void setHelp(boolean help)
+    {
+        this.help = help;
+    }
+
+    public boolean getImages(){
+        return images;
+    }
+
+    public void setImages(boolean images){
+        this.images = images;
     }
 }

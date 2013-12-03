@@ -14,7 +14,7 @@
 </composite:interface>
 
 <composite:implementation>
-<li class="">    #{view.viewId == '/'.concat(cc.attrs.outcome).concat('.xhtml') ? 'active' : ''}
+<li class="">
     <h:link value="#{cc.attrs.value}" outcome="#{cc.attrs.outcome}" />
 </li>
 </composite:implementation>

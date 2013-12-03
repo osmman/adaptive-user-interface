@@ -9,6 +9,8 @@
 
 <composite:interface>
     <composite:attribute name="label" required="true"/>
+    <composite:attribute name="help" required="false"/>
+    <composite:attribute name="img" required="false"/>
     <composite:attribute name="for" required="true"/>
 </composite:interface>
 
@@ -19,6 +21,13 @@
             <h:outputLabel styleClass="#{viewHelper.labelClass}" value="#{cc.attrs.label}" for="#{cc.attrs.for}"/>
             <composite:insertChildren/>
             <h:message for="#{cc.attrs.for}" errorClass="invalid"/>
+
+            <h:outputText value="#{cc.attrs.help}" rendered="#{viewHelper.help and not empty cc.attrs.help}"/>
+
+
+            <h:graphicImage value="#{cc.attrs.img}" alt="#{cc.attrs.label}"
+                            rendered="#{viewHelper.images and not empty cc.attrs.img}"/>
+
         </ui:define>
     </ui:decorate>
 </composite:implementation>

@@ -21,6 +21,13 @@
         xmlns:ui="http://java.sun.com/jsf/facelets"
         locale="#{context.language.concat('_').concat(context.country)}">
 
+
+    <c:if test="#{context.age eq 'ELDER'}">
+        <c:set target="#{viewHelper}" property="help" value="#{true}" />
+    </c:if>
+    <c:if test="#{context.age eq 'CHILD'}">
+        <c:set target="#{viewHelper}" property="images" value="#{true}" />
+    </c:if>
     <c:choose>
         <c:when test="#{context.device == 'PHONE'}">
             <ui:include src="phone/template.xhtml">
