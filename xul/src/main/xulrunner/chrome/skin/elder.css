@@ -1,0 +1,7 @@
+vbox.field {
+    -moz-binding: url('chrome://aui/skin/elder.xml#field');
+}
+
+menuitem {
+    -moz-binding: url('chrome://aui/skin/elder.xml#menu');
+}

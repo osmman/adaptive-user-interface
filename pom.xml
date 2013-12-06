@@ -7,6 +7,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>uiml-interpreter</module>
+        <module>xul</module>
     </modules>
 
     <name>Adaptive UI</name>

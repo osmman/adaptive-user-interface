@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <binding id="field">
+        <content>
+            <children includes ="label" />
+            <children includes ="input" />
+            <children includes ="tooltip" />
+        </content>
+    </binding>
+    <binding id="menu">
+        <content>
+            <xul:menuitem class="elder"/>
+        </content>
+    </binding>
+</bindings>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?DOCTYPE window SYSTEM "chrome://aui/locale/context.dtd"?>
+<overlay id="phone"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <menubar id="menu" html:data-role="header">
+        <menuitem id="people-menu" label="&navigation.people;"/>
+        <menuitem id="thing-menu" label="&navigation.thing;"/>
+        <menuitem id="context-menu" label="&navigation.context;"/>
+    </menubar>
+</overlay>

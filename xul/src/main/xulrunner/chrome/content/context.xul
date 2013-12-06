@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="context">
+    <commandset>
+        <command id="save-context" oncommand="#{contextService.save}"/>
+    </commandset>
+
+    <vbox id="content">
+        <hbox class="field">
+            <label control="age" value="&context.age;"/>
+            <menulist id="age" tooltip="tooltipAge">
+                <menupopup datasources="el://data.ages" querytype="cdi">
+                    <template>
+                        <menuitem value="?value" label="?name"/>
+                    </template>
+                </menupopup>
+            </menulist>
+            <image id="imageAge" src="path" />
+            <tooltip id="tooltipAge" value="&context.age.tooltip;"/>
+        </hbox>
+        <hbox class="field">
+            <label control="language" value="&context.language;"/>
+            <textbox id="language" value="#{context.language}"/>
+            <image id="imageLanguage" src="path" />
+            <tooltip id="tooltipLanguage" value="&context.language.tooltip;"/>
+        </hbox>
+        <hbox>
+            <button label="&form.save;}" command="save-context"/>
+        </hbox>
+    </vbox>
+
+</overlay>
+
+

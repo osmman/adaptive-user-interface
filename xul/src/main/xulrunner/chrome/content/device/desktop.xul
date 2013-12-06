@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<overlay id="desktop"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <vbox id="header" datasource="context.rdf" ref="urn:root">
+        <template>
+            <rule>
+                <condition>
+                    <content uri="?cotext" />
+                    <triple subject="?context" predicate="context.rdf#screen" object="?screen" />
+                    <triple subject="?screen" predicate="context.rdf#screen" object="?wide" />
+                </condition>
+                <action>
+                </action>
+            </rule>
+            <rule>
+                <action>
+                    <menubar id="menu" />
+                </action>
+            </rule>
+        </template>
+    </vbox>
+
+    <vbox id="row" datasource="context.rdf" ref="urn:root">
+        <template>
+            <rule>
+                <condition>
+                    <content uri="?cotext" />
+                    <triple subject="?context" predicate="context.rdf#screen" object="?screen" />
+                    <triple subject="?screen" predicate="context.rdf#screen" object="?wide" />
+                </condition>
+                <action>
+                    <hbox><menubar id="menu" /><vbox id="content"/></hbox>
+                </action>
+            </rule>
+            <rule>
+                <action>
+                    <hbox id="content"/>
+                </action>
+            </rule>
+        </template>
+    </vbox>
+
+    <vbox id="footer">
+
+    </vbox>
+</overlay>
