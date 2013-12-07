@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+        >
+
+    <h:form>
+        <h:dataTable styleClass="table table-hover" var="_person" value="#{personController.all}" rendered="#{not empty personController.all}">
+            <h:column>
+                <f:facet name="header">#{text['person.id']}</f:facet>
+                #{_person.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{text['person.email']}</f:facet>
+                #{_person.email}
+            </h:column>
+            <h:column>
+                <h:commandLink value="#{text['delete']}" action="#{personController.delete(_person)}" />
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</ui:composition>

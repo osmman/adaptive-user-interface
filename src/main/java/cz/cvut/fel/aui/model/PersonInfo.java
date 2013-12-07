@@ -11,8 +11,8 @@ import javax.validation.constraints.Pattern;
 /**
  * Created by Tomáš on 7.12.13.
  */
-//@Entity
-public class PersonInfo //extends EntityObject
+@Entity
+public class PersonInfo extends EntityObject
 {
 
     @NotNull

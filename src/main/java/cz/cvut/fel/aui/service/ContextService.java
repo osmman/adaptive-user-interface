@@ -7,6 +7,7 @@ import cz.cvut.fel.aui.model.context.ScreenSize;
 import cz.cvut.fel.aui.utils.validator.Validator;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Produces;
@@ -24,6 +25,7 @@ import java.util.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 
+@Stateful
 @SessionScoped
 public class ContextService implements Serializable
 {
@@ -51,9 +53,8 @@ public class ContextService implements Serializable
         context.setAge(Age.STUDENT);
         context.setCountry("CZ");
         context.setLanguage("cs");
-        context.setDevice(Device.DESKTOP);
+        context.setDevice(Device.PHONE);
         context.setScreenSize(ScreenSize.wide);
-        save(context);
     }
 
     public void save(Context context)

@@ -29,7 +29,7 @@ public class PersonController extends BaseController
     private Person newPerson;
 
     @Inject
-    private PersonService personDao;
+    private PersonService personService;
 
     @Inject
     private FacesContext facesContext;
@@ -40,30 +40,25 @@ public class PersonController extends BaseController
         newPerson = new Person();
     }
 
-    public void createUser()
+    public String create()
     {
-        personDao.create(newPerson);
-        FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Created", "Registration successful");
-        facesContext.addMessage(null, m);
+        personService.create(newPerson);
         initUser();
+        return redirect("people");
     }
 
     public void edit()
     {
-        personDao.edit(newPerson);
-        FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Edited", "Registration successful");
-        facesContext.addMessage(null, m);
-        initUser();
+        personService.edit(newPerson);
     }
 
-    public void delete(){
-        personDao.remove(newPerson);
-        initUser();
+    public void delete(Person person){
+        personService.remove(person);
     }
 
-    public List<Person> getUsers()
+    public List<Person> getAll()
     {
-        return personDao.findAll();
+        return personService.findAll();
     }
 
 

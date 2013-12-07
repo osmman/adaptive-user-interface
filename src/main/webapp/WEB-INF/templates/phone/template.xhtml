@@ -32,20 +32,23 @@
 </h:head>
 <h:body>
     <div data-role="page">
-        <div data-role="header">
-            <a href="/base/home.jsf" data-icon="home">Home</a>
-            <h1><ui:insert name="title" /></h1>
-            <a href="/base/context.jsf" data-icon="gear" class="ui-btn-right">Context</a>
+        <div data-role="panel" data-theme="a" id="menu-panel">
+            <ui:include src="/WEB-INF/parts/menu.xhtml" />
+        </div>
+
+        <div data-position="fixed" data-role="header">
+            <a href="#menu-panel" data-icon="bars" data-role="button" data-iconpos="notext">#{text['menu']}</a>
+
+            <h1><ui:insert name="title"/></h1>
+            <ui:insert name="action">
+                <a href="/base/context.jsf" data-icon="gear" class="ui-btn-right">Context</a>
+            </ui:insert>
+
         </div>
         <div data-role="content">
             <ui:insert name="content">
                 [Template content will be inserted here]
             </ui:insert>
-        </div>
-        <div data-role="footer">
-            <h:outputText value="#{session.lastAccessedTime}">
-                <f:convertDateTime dateStyle="short" type="date"/>
-            </h:outputText>
         </div>
     </div>
 </h:body>

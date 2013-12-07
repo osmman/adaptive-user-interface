@@ -1,11 +1,16 @@
 package cz.cvut.fel.aui.controller;
 
+import cz.cvut.fel.aui.model.Person;
 import cz.cvut.fel.aui.model.PersonInfo;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
+import cz.cvut.fel.aui.service.PersonService;
 import cz.cvut.fel.aui.utils.comparator.ValueComparator;
 
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,7 +25,8 @@ import java.util.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 @Named
-@ApplicationScoped
+@Startup
+@Singleton
 public class Data
 {
     public Age[] getAges(){
@@ -50,5 +56,12 @@ public class Data
 
     public PersonInfo.Gender[] getGender(){
         return PersonInfo.Gender.values();
+    }
+
+    @Inject
+    @PostConstruct
+    protected void init(PersonService personService){
+        personService.create(new Person("osmman@gmail.com","heslo"));
+        personService.create(new Person("asdas@gmail.com","heslo"));
     }
 }

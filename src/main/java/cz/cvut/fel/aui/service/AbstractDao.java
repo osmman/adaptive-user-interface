@@ -35,7 +35,7 @@ public abstract class AbstractDao<T> implements DataAccessObject<T> {
 
     public void remove(T entity){
         EntityManager em = getEntityManager();
-        em.remove(entity);
+        em.remove(em.contains(entity) ? entity : em.merge(entity));
     }
 
     public T find(Object id){

@@ -25,7 +25,7 @@
             </fieldset>
         </h:form>
 
-        <h:dataTable var="_user" value="#{personController.users}" rendered="#{not empty personController.users}">
+        <h:dataTable var="_user" value="#{personController.all}" rendered="#{not empty personController.all}">
             <h:column>
                 <f:facet name="header">Id</f:facet>
                 #{_user.id}

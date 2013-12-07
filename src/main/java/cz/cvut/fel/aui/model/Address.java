@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * Created by Tomáš on 7.12.13.
  */
-//@Embeddable
+@Embeddable
 public class Address implements Cloneable,Serializable
 {
 

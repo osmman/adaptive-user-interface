@@ -4,9 +4,15 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 >
-    <div class="form-group">
-        <ui:insert name="field">
-            no component given...
-        </ui:insert>
-    </div>
+    <!--<div data-role="content">-->
+        <ul data-role="listview" data-inset="false">
+            <li data-role="list-divider">
+                #{text['menu']}
+            </li>
+                <ui:insert name="menu">
+                    [content]
+                </ui:insert>
+
+        </ul>
+    <!--</div>-->
 </ui:composition>
