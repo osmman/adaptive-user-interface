@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 15.11.13
  * Time: 19:55
  * To change this template use File | Settings | File Templates.
@@ -18,7 +18,7 @@ import java.util.Set;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class User extends EntityObject
+public class Person extends EntityObject
 {
 
     @NotNull
@@ -33,10 +33,6 @@ public class User extends EntityObject
     @NotEmpty
     @Email
     private String email;
-
-    private String firstname;
-
-    private String surname;
 
     @OneToMany(mappedBy = "owner")
     private Set<Car> cars;
@@ -69,26 +65,6 @@ public class User extends EntityObject
     public void setEmail(String email)
     {
         this.email = email;
-    }
-
-    public String getFirstname()
-    {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname)
-    {
-        this.firstname = firstname;
-    }
-
-    public String getSurname()
-    {
-        return surname;
-    }
-
-    public void setSurname(String surname)
-    {
-        this.surname = surname;
     }
 
     public Set<Car> getCars()

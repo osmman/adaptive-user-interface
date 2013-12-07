@@ -8,7 +8,7 @@ import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 30.11.13
  * Time: 14:02
  * To change this template use File | Settings | File Templates.

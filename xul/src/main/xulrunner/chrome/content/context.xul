@@ -2,9 +2,6 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         id="context">
-    <commandset>
-        <command id="save-context" oncommand="#{contextService.save}"/>
-    </commandset>
 
     <vbox id="content">
         <hbox class="field">
@@ -26,7 +23,7 @@
             <tooltip id="tooltipLanguage" value="&context.language.tooltip;"/>
         </hbox>
         <hbox>
-            <button label="&form.save;}" command="save-context"/>
+            <button label="&form.save;" command="#{contextService.save}"/>
         </hbox>
     </vbox>
 

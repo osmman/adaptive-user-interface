@@ -1,30 +1,29 @@
 package cz.cvut.fel.aui.service;
 
-import cz.cvut.fel.aui.model.User;
+import cz.cvut.fel.aui.model.Person;
 
-import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 15.11.13
  * Time: 20:19
  * To change this template use File | Settings | File Templates.
  */
 
 @Stateless
-public class UserService extends AbstractDao<User>
+public class PersonService extends AbstractDao<Person>
 {
 
     @Inject
     EntityManager em;
 
-    public UserService()
+    public PersonService()
     {
-        super(User.class);
+        super(Person.class);
     }
 
     @Override

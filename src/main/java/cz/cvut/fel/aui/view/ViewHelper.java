@@ -6,7 +6,7 @@ import javax.inject.Named;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 2.12.13
  * Time: 15:02
  * To change this template use File | Settings | File Templates.
