@@ -23,10 +23,6 @@ public class Person extends EntityObject
 
     @NotNull
     @NotEmpty
-    private String username;
-
-    @NotNull
-    @NotEmpty
     private String password;
 
     @NotNull
@@ -36,16 +32,6 @@ public class Person extends EntityObject
 
     @OneToMany(mappedBy = "owner")
     private Set<Car> cars;
-
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
 
     public String getPassword()
     {
