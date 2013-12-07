@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 19.11.13
  * Time: 12:28
  * To change this template use File | Settings | File Templates.
@@ -25,7 +25,7 @@ public class Car extends EntityObject
     private String spz;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private User owner;
+    private Person owner;
 
     public String getName()
     {
@@ -47,12 +47,12 @@ public class Car extends EntityObject
         this.spz = spz;
     }
 
-    public User getOwner()
+    public Person getOwner()
     {
         return owner;
     }
 
-    public void setOwner(User owner)
+    public void setOwner(Person owner)
     {
         this.owner = owner;
     }

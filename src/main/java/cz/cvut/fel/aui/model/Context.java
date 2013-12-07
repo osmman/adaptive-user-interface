@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 15.11.13
  * Time: 19:50
  * To change this template use File | Settings | File Templates.

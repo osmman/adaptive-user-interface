@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 26.11.13
  * Time: 16:59
  * To change this template use File | Settings | File Templates.

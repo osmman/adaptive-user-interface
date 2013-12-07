@@ -5,7 +5,7 @@ import javax.faces.context.FacesContext;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 15.11.13
  * Time: 21:17
  * To change this template use File | Settings | File Templates.

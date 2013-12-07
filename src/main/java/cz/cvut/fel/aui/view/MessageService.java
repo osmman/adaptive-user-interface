@@ -12,7 +12,7 @@ import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 1.12.13
  * Time: 13:08
  * To change this template use File | Settings | File Templates.

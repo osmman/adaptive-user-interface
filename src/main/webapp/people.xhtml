@@ -31,17 +31,17 @@
                 <legend>Add User</legend>
 
                 <h:outputLabel value="User name"/>
-                <h:inputText id="username" value="#{newUser.username}"/>
+                <h:inputText id="username" value="#{newPerson.username}"/>
                 <h:message for="username" errorClass="invalid" />
 
 
-                <h:commandButton value="Add user" action="#{userController.createUser}" />
+                <h:commandButton value="Add user" action="#{personController.createUser}" />
                 <h:messages errorClass="invalid" infoClass="valid"
                             warnClass="warning" globalOnly="true" />
             </fieldset>
         </h:form>
 
-        <h:dataTable var="_user" value="#{userController.users}" rendered="#{not empty userController.users}">
+        <h:dataTable var="_user" value="#{personController.users}" rendered="#{not empty personController.users}">
             <h:column>
                 <f:facet name="header">Id</f:facet>
                 #{_user.id}

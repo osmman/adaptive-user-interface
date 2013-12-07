@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 15.11.13
  * Time: 19:51
  * To change this template use File | Settings | File Templates.

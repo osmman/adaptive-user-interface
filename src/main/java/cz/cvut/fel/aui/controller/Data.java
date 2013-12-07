@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.controller;
 
+import cz.cvut.fel.aui.model.PersonInfo;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 30.11.13
  * Time: 14:50
  * To change this template use File | Settings | File Templates.
@@ -45,5 +46,9 @@ public class Data
 
     public Device[] getDevices(){
         return Device.values();
+    }
+
+    public PersonInfo.Gender[] getGender(){
+        return PersonInfo.Gender.values();
     }
 }

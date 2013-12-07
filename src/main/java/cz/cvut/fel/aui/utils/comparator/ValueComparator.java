@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 30.11.13
  * Time: 15:53
  * To change this template use File | Settings | File Templates.

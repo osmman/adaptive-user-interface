@@ -1,7 +1,7 @@
 package cz.cvut.fel.aui.controller;
 
-import cz.cvut.fel.aui.service.UserService;
-import cz.cvut.fel.aui.model.User;
+import cz.cvut.fel.aui.model.Person;
+import cz.cvut.fel.aui.service.PersonService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -14,22 +14,22 @@ import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Tomáš
+ * Person: Tomáš
  * Date: 15.11.13
  * Time: 20:41
  * To change this template use File | Settings | File Templates.
  */
 @Named
 @RequestScoped
-public class UserController extends BaseController
+public class PersonController extends BaseController
 {
 
     @Produces
     @Named
-    private User newUser;
+    private Person newPerson;
 
     @Inject
-    private UserService userDao;
+    private PersonService personDao;
 
     @Inject
     private FacesContext facesContext;
@@ -37,12 +37,12 @@ public class UserController extends BaseController
     @PostConstruct
     public void initUser()
     {
-        newUser = new User();
+        newPerson = new Person();
     }
 
     public void createUser()
     {
-        userDao.create(newUser);
+        personDao.create(newPerson);
         FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Created", "Registration successful");
         facesContext.addMessage(null, m);
         initUser();
@@ -50,20 +50,20 @@ public class UserController extends BaseController
 
     public void edit()
     {
-        userDao.edit(newUser);
+        personDao.edit(newPerson);
         FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Edited", "Registration successful");
         facesContext.addMessage(null, m);
         initUser();
     }
 
     public void delete(){
-        userDao.remove(newUser);
+        personDao.remove(newPerson);
         initUser();
     }
 
-    public List<User> getUsers()
+    public List<Person> getUsers()
     {
-        return userDao.findAll();
+        return personDao.findAll();
     }
 
 

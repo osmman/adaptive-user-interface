@@ -43,14 +43,12 @@
                         [Template content will be inserted here]
                     </ui:insert>
                 </div>
-
-
             </div>
             <div class="footer" role="contentinfo">
                 <p>
 
                     <h:outputText value="#{session.lastAccessedTime}">
-                        <f:convertDateTime dateStyle="short" timeZone="EST" type="date"/>
+                        <f:convertDateTime dateStyle="short" type="date"/>
                     </h:outputText>
                 </p>
             </div>
