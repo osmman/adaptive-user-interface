@@ -53,7 +53,7 @@ public class ContextService implements Serializable
         context.setAge(Age.STUDENT);
         context.setCountry("CZ");
         context.setLanguage("cs");
-        context.setDevice(Device.PHONE);
+        context.setDevice(Device.DESKTOP);
         context.setScreenSize(ScreenSize.wide);
     }
 

@@ -4,8 +4,7 @@
         id="context">
 
     <vbox id="content">
-        <hbox class="field">
-            <label control="age" value="&context.age;"/>
+        <hbox class="field" label="&context.age;" for="age" image="path/img.jpg" tooltip="&context.age.tooltip;">
             <menulist id="age" tooltip="tooltipAge">
                 <menupopup datasources="el://data.ages" querytype="cdi">
                     <template>
@@ -13,14 +12,9 @@
                     </template>
                 </menupopup>
             </menulist>
-            <image id="imageAge" src="path" />
-            <tooltip id="tooltipAge" value="&context.age.tooltip;"/>
         </hbox>
-        <hbox class="field">
-            <label control="language" value="&context.language;"/>
+        <hbox class="field" label="&context.language;" image="path/img.jpg" tooltip="&context.language.tooltip;" for="language">
             <textbox id="language" value="#{context.language}"/>
-            <image id="imageLanguage" src="path" />
-            <tooltip id="tooltipLanguage" value="&context.language.tooltip;"/>
         </hbox>
         <hbox>
             <button label="&form.save;" command="#{contextService.save}"/>

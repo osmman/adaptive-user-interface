@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+        "http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+
+    <template id="template">
+        <restructure at-part="page" how="cascade" where="first">
+            <template id="phoneTemplate">
+                <part>
+                    <part id="panel" class="panel">
+                        <part class="menu" source="components/menu.uiml#menu"/>
+                    </part>
+                    <part class="header" id="header">
+                        <part class="Button" id="open-panel">
+                            <style>
+                                <property name="label">
+                                    <reference constant-name="text.panel.open"/>
+                                </property>
+                                <property name="image">
+                                    <constant source="/images/panel.png" />
+                                </property>
+                            </style>
+                            <behavior>
+                                <rule>
+                                    <condition>
+                                        <event class="onClick" part-name="open-panel"/>
+                                    </condition>
+                                    <action>
+                                        <when-true>
+                                            <call component-id="panel" method-id="open"/>
+                                        </when-true>
+                                    </action>
+                                </rule>
+                            </behavior>
+                        </part>
+                        <part class="h1" id="title" />
+                        <part class="Button" id="action" />
+                    </part>
+                    <part id="container" class="container"/>
+                </part>
+            </template>
+        </restructure>
+
+    </template>
+</uiml>

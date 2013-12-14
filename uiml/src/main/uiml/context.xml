@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+        "http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+    <head>
+        <meta name="title" content="Context"/>
+    </head>
+    <peers>
+        <presentation source="presentation/jsf.uiml#vocab" base="JSF"/>
+    </peers>
+    <interface>
+        <structure>
+            <part id="page">
+                <part id="container">
+                    <part class="Form" id="ContextForm">
+                        <part class="Field">
+                            <part class="Label" id="ageLabel"/>
+                            <part class="InputImage" id="ageImage"/>
+                            <part class="List" id="age"/>
+                            <part class="InputHelp" id="ageHelp"/>
+                        </part>
+                        <part class="Field">
+                            <part class="Label" id="languageLabel"/>
+                            <part class="InputImage" id="languageImage"/>
+                            <part class="TextBox" id="language"/>
+                            <part class="InputHelp" id="languageHelp"/>
+                        </part>
+                        <part class="Button" id="SubmitButton"/>
+                    </part>
+                </part>
+            </part>
+        </structure>
+        <behavior source="template/default.uiml#beahvior" how="union"/>
+        <style>
+            <property part-class="InputImage" name="rendered">
+                <reference constant-name="renderImage"/>
+            </property>
+            <property part-name="ageImage" name="src">
+                <constant source="images/child/age.jpg"/>
+            </property>
+            <property part-name="languageImage" name="src">
+                <constant source="images/child/language.jpg"/>
+            </property>
+
+            <property part-name="InputHelp" name="rendered">
+                <reference constant-name="renderHelp"/>
+            </property>
+
+            <property part-name="ageLabel" name="value">
+                <reference constant-name="label"/>
+            </property>
+
+            <property part-name="languageLabel" name="value">
+                <reference constant-name="label"/>
+            </property>
+
+            <property part-name="age" name="value">
+                <call component-id="data" method-id="ages"/>
+            </property>
+
+            <property part-name="SubmitButton" name="action">
+                <call component-id="contextController" method-id="save"/>
+            </property>
+        </style>
+        <content>
+            <constant id="renderHelp" value="NO"/>
+            <constant id="renderImage" value="NO"/>
+        </content>
+        <content id="EN">
+            <constant id="label" value="Label"/>
+        </content>
+        <content id="CS">
+            <constant id="label" value="Popisek"/>
+        </content>
+        <content id="Age.Elder">
+            <constant id="renderHelp" value="YES"/>
+        </content>
+        <content id="Age.Child">
+            <constant id="renderImage" value="YES"/>
+        </content>
+    </interface>
+</uiml>

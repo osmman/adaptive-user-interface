@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<bindings xmlns="http://www.mozilla.org/xbl"
+<bindings xmlns:xbl="http://www.mozilla.org/xbl"
           xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-    <binding id="field">
-        <content>
-            <children includes ="label" />
-            <children includes ="input" />
-            <children includes ="tooltip" />
-        </content>
-    </binding>
-    <binding id="menu">
-        <content>
+    <xbl:binding id="field">
+        <xbl:content>
+            <xul:label xbl:inherits="control=for,value=label"/>
+            <xbl:children includes ="textbox|button|checkbox|datepicker|description|listbox|menulist|radiogroup" />
+            <xul:tooltip xbl:inherits="value=tooltip"/>
+        </xbl:content>
+    </xbl:binding>
+    <xbl:binding id="menu">
+        <xbl:content>
             <xul:menuitem class="elder"/>
-        </content>
-    </binding>
+        </xbl:content>
+    </xbl:binding>
 </bindings>

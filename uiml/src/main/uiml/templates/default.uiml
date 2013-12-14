@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+        "http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+
+    <template id="template">
+        <restructure at-part="page" how="cascade" where="first">
+            <template id="defaultTemplate">
+                <part>
+                    <part id="Navigation" class="nav" source="components/menu.uiml#menu"/>
+                    <part id="container" class="container" />
+                    <part id="Footer" class="footer" />
+                </part>
+            </template>
+        </restructure>
+
+    </template>
+    <template id="behavior">
+        <behavior>
+            <rule>
+                <condition>
+                    <op name="equal">
+                        <call component-id="context" method-id="device"/>
+                        <constant value="phone"/>
+                    </op>
+                </condition>
+                <action>
+                    <when-true>
+                        <restructure source="templates/phone.uiml#template"/>
+                    </when-true>
+                    <when-false>
+                        <restructure source="templates/default.uiml#template"/>
+                    </when-false>
+                </action>
+            </rule>
+            <rule>
+                <condition>
+                    <op name="equal">
+                        <call component-id="context" method-id="screenSize"/>
+                        <constant value="wide"/>
+                    </op>
+                </condition>
+                <action>
+                    <when-true>
+                        <restructure source="template/wide.uiml#wide"/>
+                    </when-true>
+                </action>
+            </rule>
+        </behavior>
+    </template>
+</uiml>

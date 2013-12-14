@@ -8,7 +8,7 @@
         <h:outputText value="#{text['people']}" />
     </ui:define>
     <ui:define name="content">
-        <h:link outcome="people" value="#{person.add}"/>
+        <h:link outcome="registration" value="#{text['person.add']}"/>
         <ui:include src="/WEB-INF/person/list.xhtml"/>
     </ui:define>
 </ui:composition>
