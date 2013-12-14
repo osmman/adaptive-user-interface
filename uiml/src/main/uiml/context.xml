@@ -30,7 +30,8 @@
                 </part>
             </part>
         </structure>
-        <behavior source="template/default.uiml#beahvior" how="union"/>
+        <behavior source="template/default.uiml#beahvior" how="union">
+        </behavior>
         <style>
             <property part-class="InputImage" name="rendered">
                 <reference constant-name="renderImage"/>
@@ -66,12 +67,10 @@
             <constant id="renderHelp" value="NO"/>
             <constant id="renderImage" value="NO"/>
         </content>
-        <content id="EN">
-            <constant id="label" value="Label"/>
-        </content>
-        <content id="CS">
-            <constant id="label" value="Popisek"/>
-        </content>
+
+        <content id="EN" source="lang/en.uiml#en" />
+        <content id="CS" source="lang/cs.uiml#cs" />
+
         <content id="Age.Elder">
             <constant id="renderHelp" value="YES"/>
         </content>

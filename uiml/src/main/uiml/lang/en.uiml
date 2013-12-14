@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+        "http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+    <template id="en">
+        <content>
+            <constant id="label" value="Label"/>
+        </content>
+    </template>
+</uiml>
