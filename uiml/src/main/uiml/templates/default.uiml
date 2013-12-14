@@ -7,7 +7,7 @@
         <restructure at-part="page" how="cascade" where="first">
             <template id="defaultTemplate">
                 <part>
-                    <part id="Navigation" class="nav" source="components/menu.uiml#menu"/>
+                    <part id="Navigation" class="Menu" source="components/menu.uiml#menu"/>
                     <part id="container" class="container" />
                     <part id="Footer" class="footer" />
                 </part>

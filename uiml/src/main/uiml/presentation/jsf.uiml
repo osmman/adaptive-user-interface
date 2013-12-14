@@ -2,8 +2,38 @@
 <!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
         "http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
 <uiml>
-    <template id="vocab">
+    <template id="bootstrap">
         <presentation base="JSF" how="cascade">
+            <d-class id="Button" maps-to="h:commandButton" maps-type="tag" used-in-tag="part"/>
+            <d-class id="Field" maps-to="div" maps-type="tag" used-in-tag="part">
+                <d-property id="styleClass" maps-type="attribute" maps-to="styleClass"/>
+            </d-class>
+            <d-class id="Form" maps-to="h:form" maps-type="" used-in-tag="part">
+                <d-property id="styleClass" maps-type="attribute" maps-to="styleClass"/>
+            </d-class>
+            <d-class id="Label" maps-to="h:outputLabel" maps-type="tag" used-in-tag="part" >
+                <d-property id="styleClass" maps-type="attribute" maps-to="styleClass" />
+                <d-property id="value" maps-type="attribute" maps-to="value" />
+            </d-class>
+            <d-class id="InputImage" maps-to="h:graphicImage" maps-type="tag" used-in-tag="part" />
+            <d-class id="List" maps-to="h:selectOneMenu" maps-type="tag" used-in-tag="part" />
+            <d-class id="InputHelp" maps-to="h:outputText" maps-type="tag" used-in-tag="part" />
+            <d-class id="MenuItem" maps-to="li" maps-type="tag" used-in-tag="part" />
+            <d-class id="Menu" maps-to="ul" maps-type="tag" used-in-tag="part" />
+        </presentation>
+    </template>
+
+    <template id="navigation">
+        <logic id="navigation-JSF">
+            <d-component id="Navigation">
+                <d-method id="GoToContext" maps-to="context" />
+                <d-method id="GoToPeople" maps-to="people" />
+            </d-component>
+        </logic>
+    </template>
+
+    <template id="jquery-mobile">
+        <presentation base="JSF-MOBILE" how="cascade">
         </presentation>
     </template>
 </uiml>

@@ -4,7 +4,7 @@
 <uiml>
     <template id="menu">
         <part>
-            <part class="menuitem">
+            <part class="MenuItem">
                 <style>
                     <property name="label">
                         <reference constant-name="text.navigation.people"/>
@@ -12,7 +12,7 @@
                     <property name="url">people</property>
                 </style>
             </part>
-            <part id="menuitem">
+            <part id="MenuItem">
                 <style>
                     <property name="label">
                         <reference constant-name="text.navigation.thing"/>
@@ -20,7 +20,7 @@
                     <property name="url">thing</property>
                 </style>
             </part>
-            <part id="menuitem">
+            <part id="MenuItem">
                 <style>
                     <property name="label">
                         <reference constant-name="text.navigation.context"/>

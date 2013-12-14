@@ -6,7 +6,9 @@
         <meta name="title" content="Context"/>
     </head>
     <peers>
-        <presentation source="presentation/jsf.uiml#vocab" base="JSF"/>
+        <presentation source="presentation/jsf.uiml#bootstrap" base="JSF"/>
+        <presentation source="presentation/jsf.uiml#jquery-mobile" base="JSF-MOBILE"/>
+        <logic source="presentation/jsf.uiml#navigation" />
     </peers>
     <interface>
         <structure>
@@ -55,8 +57,15 @@
                 <reference constant-name="label"/>
             </property>
 
-            <property part-name="age" name="value">
+            <property part-name="age" name="list">
                 <call component-id="data" method-id="ages"/>
+            </property>
+            <property part-name="age" name="value">
+                <call component-id="context" method-id="age"/>
+            </property>
+
+            <property part-name="language" name="value">
+                <call component-id="context" method-id="language" />
             </property>
 
             <property part-name="SubmitButton" name="action">
