@@ -1,12 +1,14 @@
 package cz.cvut.fel.aui.controller;
 
 import cz.cvut.fel.aui.model.Person;
+import cz.cvut.fel.aui.model.PersonInfo;
 import cz.cvut.fel.aui.service.PersonService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -28,6 +30,10 @@ public class PersonController extends BaseController
     @Named
     private Person newPerson;
 
+    private Long id;
+
+    private Person person;
+
     @Inject
     private PersonService personService;
 
@@ -40,6 +46,15 @@ public class PersonController extends BaseController
         newPerson = new Person();
     }
 
+    public void loadPerson(){
+        if (id != null) {
+            person = personService.find(id);
+            if (person.getPersonInfo() == null) {
+                person.setPersonInfo(new PersonInfo());
+            }
+        }
+    }
+
     public String create()
     {
         personService.create(newPerson);
@@ -47,19 +62,40 @@ public class PersonController extends BaseController
         return redirect("people");
     }
 
-    public void edit()
+    public String edit(Person person)
     {
-        personService.edit(newPerson);
+        personService.edit(person);
+        return redirect("person");
     }
 
-    public void delete(Person person){
+    public void delete(Person person)
+    {
         personService.remove(person);
+    }
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
+
+    public void setPerson(Person person)
+    {
+        this.person = person;
+    }
+
+    public Person getPerson()
+    {
+         return person;
     }
 
     public List<Person> getAll()
     {
         return personService.findAll();
     }
-
 
 }

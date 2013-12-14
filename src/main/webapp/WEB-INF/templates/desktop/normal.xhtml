@@ -2,11 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
         >
-<ui:composition xmlns:aui="http://java.sun.com/jsf/composite/components">
+<ui:composition xmlns:aui="http://xmlns.jcp.org/jsf/composite/components">
     <h:head>
         <title>AUI demo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -42,6 +42,7 @@
                         <f:param name="templateBasePath" value="/WEB-INF/templates/desktop"/>
                         [Template content will be inserted here]
                     </ui:insert>
+                    <ui:insert name="action" />
                 </div>
             </div>
             <div class="footer" role="contentinfo">

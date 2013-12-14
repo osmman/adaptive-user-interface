@@ -3,10 +3,7 @@ package cz.cvut.fel.aui.model;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -41,6 +38,7 @@ public class Person extends EntityObject
     @Email
     private String email;
 
+    @OneToOne
     private PersonInfo personInfo;
 
     @OneToMany(mappedBy = "owner")
@@ -66,6 +64,16 @@ public class Person extends EntityObject
         this.email = email;
     }
 
+    public PersonInfo getPersonInfo()
+    {
+        return personInfo;
+    }
+
+    public void setPersonInfo(PersonInfo personInfo)
+    {
+        this.personInfo = personInfo;
+    }
+
     public Set<Car> getCars()
     {
         return cars;
@@ -77,5 +85,4 @@ public class Person extends EntityObject
 
         this.cars = cars;
     }
-
 }

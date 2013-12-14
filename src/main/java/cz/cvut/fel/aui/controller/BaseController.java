@@ -10,21 +10,31 @@ import javax.faces.context.FacesContext;
  * Time: 21:17
  * To change this template use File | Settings | File Templates.
  */
-public abstract class BaseController {
+public abstract class BaseController
+{
 
-    protected String redirect(String view){
-        return view + "?faces-redirect=true";
+    protected String redirect(String view, Boolean viewPart)
+    {
+        return view + "?faces-redirect=true" + (viewPart ? "&includeViewParams=true" : "");
     }
 
-    protected FacesMessage facesMessage(String text){
+    protected String redirect(String view)
+    {
+         return redirect(view,false);
+    }
+
+    protected FacesMessage facesMessage(String text)
+    {
         return facesMessage("", text, FacesMessage.SEVERITY_INFO);
     }
 
-    protected FacesMessage facesMessage(String title, String text, FacesMessage.Severity severity) {
+    protected FacesMessage facesMessage(String title, String text, FacesMessage.Severity severity)
+    {
         return facesMessage("growl", title, text, severity);
     }
 
-    protected FacesMessage facesMessage(String id, String title, String text, FacesMessage.Severity severity) {
+    protected FacesMessage facesMessage(String id, String title, String text, FacesMessage.Severity severity)
+    {
         /**
          * @todo překlady
          */

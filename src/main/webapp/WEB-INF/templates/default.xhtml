@@ -16,12 +16,12 @@
 -->
 <f:view
         xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:c="http://java.sun.com/jsp/jstl/core"
-        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
         locale="#{context.language.concat('_').concat(context.country)}">
 
-
+    <ui:insert name="metadata" />
     <c:if test="#{context.age eq 'ELDER'}">
         <c:set target="#{viewHelper}" property="help" value="#{true}" />
     </c:if>

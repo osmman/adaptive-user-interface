@@ -1,12 +1,11 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
         >
-<ui:composition xmlns:aui="http://java.sun.com/jsf/composite/components">
+<ui:composition>
     <h:head>
         <title>AUI demo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -19,7 +18,7 @@
         <div class="navbar navbar-fixed-top navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
-                    <h:link styleClass="navbar-brand" outcome="index" value="Adaptive user interface" />
+                    <h:link styleClass="navbar-brand" outcome="index" value="Adaptive user interface"/>
                 </div>
                 <div class="collapse navbar-collapse">
 
@@ -29,7 +28,7 @@
         <div class="container">
             <div class="row row-offcanvas row-offcanvas-left">
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" role="navigation">
-                    <ui:include src="/WEB-INF/parts/menu.xhtml" />
+                    <ui:include src="/WEB-INF/parts/menu.xhtml"/>
                 </div>
 
                 <div class="col-xs-12 col-sm-9" role="main">
@@ -39,6 +38,7 @@
                         <f:param name="templateBasePath" value="/WEB-INF/templates/desktop"/>
                         [Template content will be inserted here]
                     </ui:insert>
+                    <ui:insert name="action"/>
                 </div>
 
 

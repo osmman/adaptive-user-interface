@@ -2,9 +2,7 @@ package cz.cvut.fel.aui.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -25,9 +23,11 @@ public class PersonInfo extends EntityObject
     @Pattern(regexp = "^[^\\s]].*", message = "Cannot start with space")
     private String lastName;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @OneToOne(mappedBy="personInfo")
+    private Person person;
 
     private Address address = new Address();
 

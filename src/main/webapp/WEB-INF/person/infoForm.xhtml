@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:aui="http://xmlns.jcp.org/jsf/composite/components">
+
+        <aui:field label="#{text['person.firstName']}" for="firstName" help="#{text['person.help.firstName']}" img="#{resource['img/kids/bird.jpg']}">
+            <h:inputText styleClass="#{viewHelper.inputClass}" id="firstName" value="#{_personInfo.firstName}" required="true" />
+        </aui:field>
+
+        <aui:field label="#{text['person.lastName']}" for="lastName" help="#{text['person.help.lastName']}" img="#{resource['img/kids/bird.jpg']}">
+            <h:inputText styleClass="#{viewHelper.inputClass}" id="lastName" value="#{_personInfo.lastName}" required="true" />
+        </aui:field>
+
+        <aui:field label="#{text['context.age']}" for="gender" help="#{text['context.help.age']}"
+                   img="#{resource['img/kids/bird.jpg']}">
+            <h:selectOneMenu styleClass="#{viewHelper.inputClass}" id="gender" value="#{_personInfo.gender}" >
+                <f:selectItems value="#{data.gender}" var="status"
+                               itemValue="#{status}" itemLabel="#{text[status.label]}"/>
+            </h:selectOneMenu>
+        </aui:field>
+
+</ui:composition>
