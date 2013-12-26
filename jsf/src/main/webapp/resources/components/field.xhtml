@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+        >
+
+<composite:interface>
+    <composite:attribute name="label" required="true"/>
+    <composite:attribute name="help" required="false"/>
+    <composite:attribute name="img" required="false"/>
+    <composite:attribute name="for" required="true"/>
+</composite:interface>
+
+<composite:implementation>
+    <ui:decorate template="/WEB-INF/templates/components.xhtml">
+        <ui:param name="componentField" value="true"/>
+        <ui:define name="field">
+            <h:outputLabel styleClass="#{viewHelper.labelClass}" value="#{cc.attrs.label}" for="#{cc.attrs.for}"/>
+            <composite:insertChildren/>
+            <h:message for="#{cc.attrs.for}" errorClass="invalid"/>
+
+            <h:outputText value="#{cc.attrs.help}" rendered="#{viewHelper.help and not empty cc.attrs.help}"/>
+
+
+            <h:graphicImage value="#{cc.attrs.img}" alt="#{cc.attrs.label}"
+                            rendered="#{viewHelper.images and not empty cc.attrs.img}"/>
+
+        </ui:define>
+    </ui:decorate>
+</composite:implementation>
+
+</html>

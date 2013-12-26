@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/templates/default.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+        >
+
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam id="person_id" name="id" value="#{personController.id}" required="true"/>
+            <f:viewAction action="#{personController.loadPerson}" />
+        </f:metadata>
+    </ui:define>
+
+
+    <ui:define name="title">
+        <h:outputText value="#{text['person']}"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:message for="person_id"/>
+        <ui:include src="/WEB-INF/person/detail.xhtml">
+            <ui:param name="_person" value="#{personController.person}"/>
+        </ui:include>
+    </ui:define>
+</ui:composition>
+
+

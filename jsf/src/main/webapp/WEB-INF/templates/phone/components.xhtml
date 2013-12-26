@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        >
+    <ui:fragment rendered="#{componentField}">
+        <ui:include src="/WEB-INF/templates/phone/components/field.xhtml"/>
+    </ui:fragment>
+    <ui:fragment rendered="#{componentForm}">
+        <ui:include src="/WEB-INF/templates/phone/components/form.xhtml"/>
+    </ui:fragment>
+    <ui:fragment rendered="#{componentMenu}">
+        <ui:include src="/WEB-INF/templates/phone/components/menu.xhtml"/>
+    </ui:fragment>
+    <ui:fragment rendered="#{componentTable}">
+        <ui:include src="/WEB-INF/templates/desktop/components/table.xhtml"/>
+    </ui:fragment>
+    <ui:fragment rendered="#{componentButton}">
+        <ui:include src="/WEB-INF/templates/phone/components/button.xhtml"/>
+    </ui:fragment>
+</ui:composition>

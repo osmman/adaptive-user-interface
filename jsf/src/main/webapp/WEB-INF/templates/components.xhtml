@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        >
+    <c:choose>
+        <c:when test="#{context.device == 'PHONE'}">
+            <ui:include src="phone/components.xhtml">
+                [phone]
+            </ui:include>
+        </c:when>
+        <c:when test="#{userAgent.tablet == 'TABLET'}">
+            <ui:include src="phone/components.xhtml">
+                [tablet]
+            </ui:include>
+        </c:when>
+        <c:otherwise>
+            <ui:include src="desktop/components.xhtml">
+                [desktop]
+            </ui:include>
+        </c:otherwise>
+
+    </c:choose>
+</ui:composition>

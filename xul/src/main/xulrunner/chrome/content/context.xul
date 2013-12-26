@@ -6,6 +6,7 @@
     <vbox id="content">
         <hbox class="field" label="&context.age;" for="age" image="path/img.jpg" tooltip="&context.age.tooltip;">
             <menulist id="age" tooltip="tooltipAge">
+                <!-- @todo ziskani dat -->
                 <menupopup datasources="el://data.ages" querytype="cdi">
                     <template>
                         <menuitem value="?value" label="?name"/>

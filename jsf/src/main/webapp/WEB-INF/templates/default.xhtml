@@ -1,0 +1,49 @@
+<!--
+    JBoss, Home of Professional Open Source
+    Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
+    contributors by the @authors tag. See the copyright.txt in the
+    distribution for a full listing of individual contributors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<f:view
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        locale="#{context.language.concat('_').concat(context.country)}">
+
+    <ui:insert name="metadata" />
+    <c:if test="#{context.age eq 'ELDER'}">
+        <c:set target="#{viewHelper}" property="help" value="#{true}" />
+    </c:if>
+    <c:if test="#{context.age eq 'CHILD'}">
+        <c:set target="#{viewHelper}" property="images" value="#{true}" />
+    </c:if>
+    <c:choose>
+        <c:when test="#{context.device == 'PHONE'}">
+            <ui:include src="phone/template.xhtml">
+                [phone]
+            </ui:include>
+        </c:when>
+        <c:when test="#{userAgent.tablet == 'TABLET'}">
+            <ui:include src="phone/template.xhtml">
+                [tablet]
+            </ui:include>
+        </c:when>
+        <c:otherwise>
+            <ui:include src="desktop/template.xhtml">
+                [desktop]
+            </ui:include>
+        </c:otherwise>
+
+    </c:choose>
+</f:view>
