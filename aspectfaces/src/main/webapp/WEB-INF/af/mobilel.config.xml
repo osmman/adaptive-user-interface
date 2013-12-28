@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/aspectfaces"
+		xsi:schemaLocation="http://aspectfaces.com/schema/aspectfaces http://www.aspectfaces.com/schema/af-configuration-1.4.0-SNAPSHOT.xsd">
+
+	<mapping>
+		<type>String</type>
+		<default tag="html/text.xhtml" maxLength="255" size="30"/>
+		<condition expression="${not empty email and email == true}" tag="email.xhtml"/>
+		<condition expression="${not empty password and password == true}" tag="password.xhtml"/>
+        <condition expression="${not empty type and type == 'state'}" tag="html/state.xhtml" />
+	</mapping>
+
+	<mapping>
+		<type>Integer</type>
+		<type>int</type>
+		<default tag="html/number.xhtml" maxLength="50" size="10"/>
+	</mapping>
+
+    <mapping>
+        <type>Enum</type>
+        <default tag="html/enum.xhtml" />
+    </mapping>
+
+	<mapping>
+		<type>Boolean</type>
+		<type>boolean</type>
+		<default tag="html/boolean.xhtml" />
+	</mapping>
+
+	<!-- Globally ignored fields -->
+	<ignore-fields/>
+
+</configuration>

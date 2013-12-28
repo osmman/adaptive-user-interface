@@ -1,0 +1,32 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+			 xmlns:ui="http://java.sun.com/jsf/facelets"
+			 xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:fragment rendered="#{empty edit ? false : edit}">
+		<h:panelGroup>
+			<div class="property" id="#{id}Property">
+				<h:outputLabel id="#{id}Label" value="#{label}:" for="#{id}">
+					<ui:fragment rendered="#{required or forceRequired}">
+						<span class="required">*</span>
+					</ui:fragment>
+				</h:outputLabel>
+					<span id="#{prefix}#{id}Value" class="value">
+						<ui:insert name="input"/>
+					</span>
+				<h:panelGroup layout="block" styleClass="errorElement">
+					<h:message for="#{id}" id="#{id}Message" errorClass="text-danger"/>
+				</h:panelGroup>
+			</div>
+		</h:panelGroup>
+	</ui:fragment>
+
+	<ui:fragment rendered="#{empty edit ? true : not edit}">
+		<div class="property">
+			<h:outputLabel value="#{label}:" for="#{prefix}#{id}Output"/>
+			<h:panelGroup styleClass="value" id="#{prefix}#{id}Output">
+				<ui:insert name="output"/>
+			</h:panelGroup>
+		</div>
+	</ui:fragment>
+
+</ui:fragment>
