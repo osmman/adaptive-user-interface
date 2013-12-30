@@ -22,6 +22,7 @@
         locale="#{context.language.concat('_').concat(context.country)}">
 
     <ui:insert name="metadata" />
+    <ui:debug hotkey="x" />
     <c:choose>
         <c:when test="#{context.device == 'PHONE'}">
             <ui:include src="/WEB-INF/layouts/mobile.xhtml">

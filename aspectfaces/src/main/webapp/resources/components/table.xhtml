@@ -13,7 +13,7 @@
 <composite:implementation>
     <ui:decorate template="/WEB-INF/components/components.xhtml">
         <ui:param name="componentTable" value="true"/>
-        <ui:param name="value" value="#{cc.attrs.value}" />
+        <ui:param name="items" value="#{cc.attrs.value}" />
         <ui:define name="table">
             <composite:insertChildren/>
         </ui:define>

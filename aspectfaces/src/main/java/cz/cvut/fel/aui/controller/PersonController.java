@@ -44,7 +44,7 @@ public class PersonController extends BaseController
     {
         newPerson = new Person();
         Map map = facesContext.getExternalContext().getRequestParameterMap();
-        //id = Long.getLong(facesContext.getExternalContext().getRequestParameterMap().get("id"));
+        id = Long.getLong(facesContext.getExternalContext().getRequestParameterMap().get("id"));
     }
 
     public void loadPerson(){
@@ -96,7 +96,16 @@ public class PersonController extends BaseController
 
     public List<Person> getAll()
     {
-        return personService.findAll();
+        List<Person> list = personService.findAll();
+
+        for(Person p : list){
+            PersonInfo info = new PersonInfo();
+            info.setFirstName("Tomas");
+            info.setLastName("Turek");
+            p.setPersonInfo(info);
+        }
+
+        return list;
     }
 
 }

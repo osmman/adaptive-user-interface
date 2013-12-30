@@ -1,5 +1,7 @@
 package cz.cvut.fel.aui.model;
 
+import com.codingcrayons.aspectfaces.annotations.UiPassword;
+import com.codingcrayons.aspectfaces.annotations.UiType;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -29,13 +31,8 @@ public class Person extends EntityObject
         this.email = email;
     }
 
-    @NotNull
-    @NotEmpty
     private String password;
 
-    @NotNull
-    @NotEmpty
-    @Email
     private String email;
 
     @OneToOne
@@ -44,6 +41,9 @@ public class Person extends EntityObject
     @OneToMany(mappedBy = "owner")
     private Set<Car> cars;
 
+    @NotNull
+    @NotEmpty
+    @UiPassword
     public String getPassword()
     {
         return password;
@@ -54,6 +54,10 @@ public class Person extends EntityObject
         this.password = password;
     }
 
+    @NotNull
+    @NotEmpty
+    @Email
+    @UiType(value = "main")
     public String getEmail()
     {
         return email;

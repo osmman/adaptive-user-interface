@@ -10,23 +10,22 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:af="http://codingcrayons.com/aspectfaces"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:aui="http://java.sun.com/jsf/composite/components"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
         >
 
 <ui:composition template="/WEB-INF/layouts/base.xhtml">,
     <ui:define name="content">
         <h:form>
             <aui:table value="#{personController.all}">
-                <af:ui instance="#{item.personInfo},#{item}" edit="false" config="table" layout="table.xhtml"
-                       entity="cz.cvut.fel.aui.model.PersonInfo,cz.cvut.fel.aui.model.Person"/>
-
-
+                <af:ui instance="#{item},#{item.personInfo}" edit="false" config="table" layout="table.xhtml"
+                       entity="cz.cvut.fel.aui.model.Person,cz.cvut.fel.aui.model.PersonInfo" ignore="firstName,lastName"/>
             </aui:table>
         </h:form>
     </ui:define>
+
+
 
 
 </ui:composition>

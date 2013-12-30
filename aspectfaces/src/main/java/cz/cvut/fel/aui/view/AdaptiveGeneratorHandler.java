@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.view;
 
+import com.codingcrayons.aspectfaces.cache.ResourceCache;
 import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;
 import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.context.Age;
@@ -47,6 +48,14 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     protected InputStream createInputStream(String s)
     {
         try {
+
+            if (true) {
+                ResourceCache.getInstance().clear();
+            }
+            if (true) {
+                System.out.println(s);
+            }
+
             return new ByteArrayInputStream(s.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {
             return viewFragmentExceptionIS(e);

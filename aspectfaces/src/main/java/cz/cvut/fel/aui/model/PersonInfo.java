@@ -74,6 +74,10 @@ public class PersonInfo extends EntityObject
         this.address = address;
     }
 
+    public String getFullName(){
+        return firstName + " " + lastName;
+    }
+
     public enum Gender {
         FEMALE("gender.female"),
 

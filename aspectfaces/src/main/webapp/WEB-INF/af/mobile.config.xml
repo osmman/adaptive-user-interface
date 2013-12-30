@@ -6,8 +6,6 @@
 	<mapping>
 		<type>String</type>
 		<default tag="mobile/text.xhtml" maxLength="255" size="30"/>
-		<condition expression="${not empty email and email == true}" tag="html/email.xhtml"/>
-		<condition expression="${not empty password and password == true}" tag="html/password.xhtml"/>
         <condition expression="${not empty type and type == 'state'}" tag="mobile/state.xhtml" />
 	</mapping>
 

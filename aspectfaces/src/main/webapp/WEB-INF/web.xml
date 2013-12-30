@@ -33,6 +33,10 @@
         <param-value>Development</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>javax.faces.FACELETS_DEVELOPMENT</param-name>
+        <param-value>true</param-value>
+    </context-param>
 
     <!-- AspectFaces -->
     <context-param>
