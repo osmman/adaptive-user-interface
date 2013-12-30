@@ -10,7 +10,7 @@
 		<component>
 			<component-type>ui</component-type>
 			<renderer-type>uigen.renderer</renderer-type>
-			<handler-class>com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler</handler-class>
+			<handler-class>cz.cvut.fel.aui.view.AdaptiveGeneratorHandler</handler-class>
 		</component>
 	</tag>
 

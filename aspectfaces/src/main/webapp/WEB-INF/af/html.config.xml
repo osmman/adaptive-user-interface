@@ -3,12 +3,17 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/aspectfaces"
 		xsi:schemaLocation="http://aspectfaces.com/schema/aspectfaces http://www.aspectfaces.com/schema/af-configuration-1.4.0-SNAPSHOT.xsd">
 
+    <mapping>
+        <type>Insert</type>
+        <default tag="emptyTag.xhtml" />
+        <!--<condition expression="#{not empty after and after.type.equals('image') and applyImage}" tag="html/afterImage.xhtml"/>-->
+        <!--<condition expression="#{applyHelp}" tag="html/afterHelp.xhtml" />-->
+    </mapping>
+
 	<mapping>
 		<type>String</type>
-		<default tag="html/text.xhtml" maxLength="255" size="30"/>
-		<condition expression="${not empty email and email == true}" tag="email.xhtml"/>
-		<condition expression="${not empty password and password == true}" tag="password.xhtml"/>
-        <condition expression="${not empty type and type == 'state'}" tag="html/state.xhtml" />
+		<default tag="html/text.xhtml" maxLength="255" size="30" />
+        <condition expression="${type == 'state'}" tag="html/state.xhtml" />
 	</mapping>
 
 	<mapping>

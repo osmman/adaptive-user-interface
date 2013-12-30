@@ -1,9 +1,6 @@
 package cz.cvut.fel.aui.model;
 
-import com.codingcrayons.aspectfaces.annotations.UiAfter;
-import com.codingcrayons.aspectfaces.annotations.UiBefore;
-import com.codingcrayons.aspectfaces.annotations.UiOrder;
-import com.codingcrayons.aspectfaces.annotations.UiType;
+import com.codingcrayons.aspectfaces.annotations.*;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
@@ -61,7 +58,6 @@ public class Context implements Cloneable
     @UiOrder(4)
     @NotNull
     @UiType(value = "state")
-    @UiAfter(type = "image", value="1")
     public String getCountry()
     {
         return country;

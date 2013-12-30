@@ -58,6 +58,7 @@ public class ContextController extends BaseController
 
     public void onContextChanged(@Observes(notifyObserver = Reception.ALWAYS) Context context){
         this.context = context;
+        facesMessage("context changed");
         logger.info("Context changed "+context.toString());
     }
 }

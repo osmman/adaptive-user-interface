@@ -30,4 +30,19 @@
         </resource-bundle>
         <message-bundle>bundle.validation</message-bundle>
     </application>
+
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.html</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>context</from-outcome>
+            <to-view-id>/context.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>people</from-outcome>
+            <to-view-id>/people.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

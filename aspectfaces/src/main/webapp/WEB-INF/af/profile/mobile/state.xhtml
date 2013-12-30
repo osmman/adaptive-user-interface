@@ -2,7 +2,7 @@
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:f="http://java.sun.com/jsf/core"
              xmlns:h="http://java.sun.com/jsf/html"
-             template="#{empty template ? '/WEB-INF/af/profile/html/switcher.xhtml' : template}">
+             template="#{empty template ? '/WEB-INF/af/profile/mobile/switcher.xhtml' : template}">
 
     <ui:param name="id" value="#{prefix}$field$"/>
     <ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
@@ -22,18 +22,19 @@
                 id="#{id}"
                 title="#{empty title ? label : title}"
                 required="#{empty required ? false : required}"
-                value="#{value}"
-                styleClass="form-control" >
+                value="#{value}">
             <f:selectItems
-                    value="#{collection}"
+                    value="#{collection.entrySet()}"
                     var="item"
-                    itemValue="#{item}"
-                    itemLabel="#{text[item.label]}"/>
+                    itemValue="#{item.key}"
+                    itemLabel="#{item.value}"/>
         </h:selectOneMenu>
     </ui:define>
 
     <ui:define name="output">
-        <p  class="form-control-static">#{text[value.label]}</p>
+        <h:outputText
+                rendered="#{not empty value}"
+                value="#{not empty itemCustomLabel and entityType != 'String' ? value.itemCustomLabel : value}"/>
     </ui:define>
 
 </ui:decorate>

@@ -35,9 +35,6 @@ public abstract class BaseController
 
     protected FacesMessage facesMessage(String id, String title, String text, FacesMessage.Severity severity)
     {
-        /**
-         * @todo překlady
-         */
         FacesMessage message = new FacesMessage(severity, title, text);
         FacesContext.getCurrentInstance().addMessage(id, message);
         return message;

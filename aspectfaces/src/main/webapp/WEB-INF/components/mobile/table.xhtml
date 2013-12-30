@@ -1,0 +1,15 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+        >
+    <ul>
+
+        <c:forEach var="item" items="#{value}" varStatus="index">
+            #{value}
+            <!--<ui:insert name="table">-->
+                <!--[content]-->
+            <!--</ui:insert>-->
+        </c:forEach>
+    </ul>
+</ui:composition>

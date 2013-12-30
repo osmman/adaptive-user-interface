@@ -5,21 +5,21 @@
 
 	<mapping>
 		<type>String</type>
-		<default tag="html/text.xhtml" maxLength="255" size="30"/>
-		<condition expression="${not empty email and email == true}" tag="email.xhtml"/>
-		<condition expression="${not empty password and password == true}" tag="password.xhtml"/>
-        <condition expression="${not empty type and type == 'state'}" tag="html/state.xhtml" />
+		<default tag="mobile/text.xhtml" maxLength="255" size="30"/>
+		<condition expression="${not empty email and email == true}" tag="html/email.xhtml"/>
+		<condition expression="${not empty password and password == true}" tag="html/password.xhtml"/>
+        <condition expression="${not empty type and type == 'state'}" tag="mobile/state.xhtml" />
 	</mapping>
 
 	<mapping>
 		<type>Integer</type>
 		<type>int</type>
-		<default tag="html/number.xhtml" maxLength="50" size="10"/>
+		<default tag="mobile/number.xhtml" maxLength="50" size="10"/>
 	</mapping>
 
     <mapping>
         <type>Enum</type>
-        <default tag="html/enum.xhtml" />
+        <default tag="mobile/enum.xhtml" />
     </mapping>
 
 	<mapping>

@@ -3,25 +3,15 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/aspectfaces"
 		xsi:schemaLocation="http://aspectfaces.com/schema/aspectfaces http://www.aspectfaces.com/schema/af-configuration-1.4.0-SNAPSHOT.xsd">
 
-	<mapping>
-		<type>Task</type>
-		<default tag="table/entity.xhtml" required="false"/>
-	</mapping>
-
 	<!-- generic mapping -->
 	<mapping>
-		<type>Boolean</type>
-		<type>boolean</type>
-		<type>Integer</type>
-		<type>int</type>
 		<type>String</type>
-		<default tag="table/generic.xhtml"/>
-        <!--<condition expression="${not empty table and table == 'list'}" tag="table/generic.xhtml" />-->
+		<default tag="navigation/test.xhtml"/>
 	</mapping>
 
 	<!-- Globally ignored fields -->
 	<ignore-fields>
-        <name>password</name>
+        <name>label</name>
 	</ignore-fields>
 
 </configuration>

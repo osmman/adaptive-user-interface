@@ -12,16 +12,22 @@
       xmlns:af="http://codingcrayons.com/aspectfaces" xmlns:h="http://java.sun.com/jsf/html"
         >
 
-<ui:composition template="/WEB-INF/af/profile/layouts/wide.xhtml">,
+<ui:composition template="/WEB-INF/layouts/base.xhtml">,
     <ui:define name="content">
-
         <h:form>
-            <af:ui
-                    instance="#{context}"
-                    edit="true"
-                    />
 
-            <h:commandButton action="#{contextController.save}" value="#{text['action.save']}" styleClass="btn btn-sm btn-primary margin-top"/>
+                <af:ui
+                        instance="#{context}"
+                        edit="true"
+                        layout="form.xhtml"
+                />
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <h:commandButton action="#{contextController.save}" value="#{text['action.save']}"
+                                     styleClass="btn btn-sm btn-primary margin-top"/>
+                </div>
+            </div>
         </h:form>
 
     </ui:define>
