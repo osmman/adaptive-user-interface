@@ -48,5 +48,9 @@
             <from-outcome>person</from-outcome>
             <to-view-id>/person.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>registration</from-outcome>
+            <to-view-id>/registration.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>

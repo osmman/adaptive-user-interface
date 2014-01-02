@@ -24,6 +24,8 @@
                 required="#{empty required ? false : required}"
                 value="#{value}"
                 styleClass="form-control" >
+
+            <f:selectItem itemValue="" itemLabel="#{text['select']}" />
             <f:selectItems
                     value="#{collection}"
                     var="item"

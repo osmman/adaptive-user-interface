@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by Tomáš on 28.12.13.
@@ -73,7 +74,12 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
         }else {
             context.setLayout(applySettings("desktop",null));
         }
-        context.setProfiles(new String[]{config.getAge().name().toLowerCase()});
+
+        context.setProfiles(new String[]{
+                config.getAge().name().toLowerCase(),
+                "COUNTRY_"+config.getCountry()
+        });
+        context.getVariables().put("country", config.getCountry());
         context.getVariables().put("applyImage", config.getAge() == Age.CHILD);
         context.getVariables().put("applyHelp", config.getAge() == Age.ELDER);
     }

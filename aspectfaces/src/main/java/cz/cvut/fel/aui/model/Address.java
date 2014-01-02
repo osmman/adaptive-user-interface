@@ -1,5 +1,8 @@
 package cz.cvut.fel.aui.model;
 
+import com.codingcrayons.aspectfaces.annotations.UiOrder;
+import com.codingcrayons.aspectfaces.annotations.UiProfiles;
+import com.codingcrayons.aspectfaces.annotations.UiType;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Embeddable;
@@ -10,37 +13,35 @@ import java.io.Serializable;
  * Created by Tomáš on 7.12.13.
  */
 @Embeddable
-public class Address implements Cloneable,Serializable
+public class Address implements Cloneable, Serializable
 {
 
-    @NotNull
-    @NotEmpty
-    private String address;
+    private String street;
 
-    @NotNull
-    @NotEmpty
     private String city;
 
-    @NotNull
-    @NotEmpty
     private String country;
 
+    private String postCode;
+
+    private String state = "";
+
     @NotNull
     @NotEmpty
-    private String postCoe;
-
-    private String state ="";
-
-    public String getAddress()
+    @UiOrder(1)
+    public String getStreet()
     {
-        return address;
+        return street;
     }
 
-    public void setAddress(String address)
+    public void setStreet(String street)
     {
-        this.address = address;
+        this.street = street;
     }
 
+    @NotNull
+    @NotEmpty
+    @UiOrder(2)
     public String getCity()
     {
         return city;
@@ -51,6 +52,10 @@ public class Address implements Cloneable,Serializable
         this.city = city;
     }
 
+    @NotNull
+    @NotEmpty
+    @UiOrder(3)
+    @UiType(value = "state")
     public String getCountry()
     {
         return country;
@@ -61,16 +66,21 @@ public class Address implements Cloneable,Serializable
         this.country = country;
     }
 
-    public String getPostCoe()
+    @NotNull
+    @NotEmpty
+    @UiOrder(5)
+    public String getPostCode()
     {
-        return postCoe;
+        return postCode;
     }
 
-    public void setPostCoe(String postCoe)
+    public void setPostCode(String postCode)
     {
-        this.postCoe = postCoe;
+        this.postCode = postCode;
     }
 
+    @UiProfiles({"COUNTRY_US"})
+    @UiOrder(4)
     public String getState()
     {
         return state;

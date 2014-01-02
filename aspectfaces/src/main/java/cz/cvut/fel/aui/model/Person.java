@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.model;
 
+import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import com.codingcrayons.aspectfaces.annotations.UiPassword;
 import com.codingcrayons.aspectfaces.annotations.UiType;
 import org.hibernate.validator.constraints.Email;
@@ -35,15 +36,13 @@ public class Person extends EntityObject
 
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     private PersonInfo personInfo;
-
-    @OneToMany(mappedBy = "owner")
-    private Set<Car> cars;
 
     @NotNull
     @NotEmpty
     @UiPassword
+    @UiOrder(2)
     public String getPassword()
     {
         return password;
@@ -58,6 +57,7 @@ public class Person extends EntityObject
     @NotEmpty
     @Email
     @UiType(value = "main")
+    @UiOrder(1)
     public String getEmail()
     {
         return email;
@@ -78,15 +78,13 @@ public class Person extends EntityObject
         this.personInfo = personInfo;
     }
 
-    public Set<Car> getCars()
+    @Override
+    public String toString()
     {
-        return cars;
-    }
-
-    public void setCars(Set<Car> cars)
-    {
-
-
-        this.cars = cars;
+        return "Person{" +
+                "password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", personInfo=" + personInfo +
+                '}';
     }
 }

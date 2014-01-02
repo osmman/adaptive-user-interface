@@ -1,13 +1,17 @@
 package cz.cvut.fel.aui.controller;
 
+import cz.cvut.fel.aui.model.Address;
+import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.Person;
 import cz.cvut.fel.aui.model.PersonInfo;
+import cz.cvut.fel.aui.service.ContextService;
 import cz.cvut.fel.aui.service.PersonService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -31,6 +35,8 @@ public class PersonController extends BaseController
 
     private Long id;
 
+    @Produces
+    @Named
     private Person person;
 
     @Inject
@@ -39,12 +45,17 @@ public class PersonController extends BaseController
     @Inject
     private FacesContext facesContext;
 
+    @Inject
+    private ContextService contextService;
+
     @PostConstruct
     public void initUser()
     {
+        Context context = contextService.getContext();
+
         newPerson = new Person();
-        Map map = facesContext.getExternalContext().getRequestParameterMap();
-        id = Long.getLong(facesContext.getExternalContext().getRequestParameterMap().get("id"));
+        newPerson.setPersonInfo(new PersonInfo());
+        newPerson.getPersonInfo().getAddress().setCountry(context.getCountry());
     }
 
     public void loadPerson(){
@@ -69,9 +80,16 @@ public class PersonController extends BaseController
         return redirect("person",true);
     }
 
-    public void delete(Person person)
+    public String delete(Person person)
     {
         personService.remove(person);
+        return redirect("people");
+    }
+
+    public String delete(){
+        loadPerson();
+        personService.remove(person);
+        return redirect("people");
     }
 
     public Long getId()
@@ -82,16 +100,6 @@ public class PersonController extends BaseController
     public void setId(Long id)
     {
         this.id = id;
-    }
-
-    public void setPerson(Person person)
-    {
-        this.person = person;
-    }
-
-    public Person getPerson()
-    {
-         return person;
     }
 
     public List<Person> getAll()

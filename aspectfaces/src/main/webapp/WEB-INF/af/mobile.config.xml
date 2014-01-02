@@ -20,6 +20,16 @@
         <default tag="mobile/enum.xhtml" />
     </mapping>
 
+    <mapping>
+        <type>PersonInfo</type>
+        <default tag="mobile/entity.xhtml" />
+    </mapping>
+
+    <mapping>
+        <type>Address</type>
+        <default tag="mobile/entity.xhtml" />
+    </mapping>
+
 	<mapping>
 		<type>Boolean</type>
 		<type>boolean</type>

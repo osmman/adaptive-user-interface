@@ -13,7 +13,7 @@
 	<mapping>
 		<type>String</type>
 		<default tag="html/text.xhtml" maxLength="255" size="30" />
-        <condition expression="${type == 'state'}" tag="html/state.xhtml" />
+        <condition expression="${type == 'state'}" tag="html/state.xhtml"/>
 	</mapping>
 
 	<mapping>
@@ -27,13 +27,26 @@
         <default tag="html/enum.xhtml" />
     </mapping>
 
-	<mapping>
+    <mapping>
+        <type>PersonInfo</type>
+        <default tag="html/entity.xhtml" />
+    </mapping>
+
+    <mapping>
+        <type>Address</type>
+        <default tag="html/entity.xhtml" />
+    </mapping>
+
+
+    <mapping>
 		<type>Boolean</type>
 		<type>boolean</type>
 		<default tag="html/boolean.xhtml" />
 	</mapping>
 
 	<!-- Globally ignored fields -->
-	<ignore-fields/>
+	<ignore-fields>
+        <name>fullName</name>
+	</ignore-fields>
 
 </configuration>

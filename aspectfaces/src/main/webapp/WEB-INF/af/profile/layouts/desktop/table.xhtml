@@ -1,3 +1,15 @@
 <af:iteration-part maxOccurs="100">
     $af:next$
 </af:iteration-part>
+<h:column xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:ui="http://java.sun.com/jsf/facelets"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core">
+
+<f:facet name="header">#{text['actions']}</f:facet>
+<h:link outcome="#{item.getClass().getSimpleName().toLowerCase()}" value="#{text['action.detail']}">
+    <f:param name="id" value="#{item.id}" />
+</h:link> |
+<h:commandLink onclick="if(! confirm('#{text['confirm.delete']}')) return false" value="#{text['action.delete']}"  action="#{personController.delete(item)}" />
+
+</h:column>

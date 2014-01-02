@@ -15,11 +15,15 @@
 		<type>Integer</type>
 		<type>int</type>
 		<type>String</type>
-        <type>Enum</type>
 		<default tag="table/generic.xhtml"/>
         <condition expression="${table == 'list' and type == 'main'}" tag="table/listH2.xhtml" />
         <condition expression="${table == 'list'}" tag="table/list.xhtml" />
 	</mapping>
+
+    <mapping>
+        <type>Enum</type>
+        <default tag="table/enum.xhtml" />
+    </mapping>
 
 	<!-- Globally ignored fields -->
 	<ignore-fields>

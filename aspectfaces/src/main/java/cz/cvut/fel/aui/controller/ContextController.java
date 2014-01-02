@@ -29,9 +29,6 @@ public class ContextController extends BaseController
     private Logger logger;
 
     @Inject
-    private FacesContext facesContext;
-
-    @Inject
     private ContextService contextService;
 
     private Context context;

@@ -11,11 +11,11 @@
     <ui:param name="required" value="$required$"/>
     <ui:param name="collection" value="#{enum.$field$}"/>
     <ui:param name="entityType" value="$dataType$"/>
-    <ui:param name="help" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$.help']}" />
-    <ui:param name="applyHelp" value="$applyHelp$" />
-    <ui:param name="imageUrl" value="$after.value.value$" />
-    <ui:param name="imageAlt" value="$after.value.title$" />
-    <ui:param name="applyImage" value="$applyImage$" />
+    <ui:param name="help" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$.help']}"/>
+    <ui:param name="applyHelp" value="$applyHelp$"/>
+    <ui:param name="imageUrl" value="$after.value.value$"/>
+    <ui:param name="imageAlt" value="$after.value.title$"/>
+    <ui:param name="applyImage" value="$applyImage$"/>
 
     <ui:define name="input">
         <h:selectOneMenu
@@ -33,7 +33,7 @@
     </ui:define>
 
     <ui:define name="output">
-        <p  class="form-control-static">#{not empty itemCustomLabel and entityType != 'String' ? value.itemCustomLabel : value}</p>
+        <p class="form-control-static">#{not empty itemCustomLabel and entityType != 'String' ? value.itemCustomLabel : value}</p>
     </ui:define>
 
 </ui:decorate>

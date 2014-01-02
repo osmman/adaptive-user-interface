@@ -11,25 +11,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:af="http://codingcrayons.com/aspectfaces"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:aui="http://java.sun.com/jsf/composite/components"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
         >
 
 <ui:composition template="/WEB-INF/layouts/base.xhtml">
-    <ui:define name="action">
-        <h:link outcome="registration" value="#{text['action.registration']}" data-icon="plus" styleClass="ui-btn-right"/>
+    <ui:define name="title">
+        <h:outputText value="#{text['person']}"/>
     </ui:define>
     <ui:define name="content">
         <h:form>
-            <aui:table value="#{personController.all}">
-                <af:ui instance="#{item},#{item.personInfo}" edit="false" config="table" layout="table.xhtml"
-                       entity="cz.cvut.fel.aui.model.Person,cz.cvut.fel.aui.model.PersonInfo" ignore="password,firstName,lastName"/>
-            </aui:table>
+            <af:ui instance="#{newPerson}" edit="true"
+                   layout="form.xhtml" ignore="fullName"
+                   />
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <h:commandButton action="#{personController.create}" value="#{text['action.save']}"
+                                     styleClass="btn btn-sm btn-primary margin-top"/>
+                </div>
+            </div>
         </h:form>
     </ui:define>
 
 
-
-
 </ui:composition>
 </html>
+

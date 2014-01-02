@@ -22,12 +22,21 @@ public class FacUtil
         BeanManager bm = getBeanManager();
         Set<Bean<?>> beansFound = bm.getBeans(name);
         if (!beansFound.isEmpty()) {
-            Bean<?> bean = bm.getBeans(name).iterator().next();
+            Bean<?> bean = beansFound.iterator().next();
             CreationalContext<?> ctx = bm.createCreationalContext(bean);
-            // could be inlined below
-            Object o = bm.getReference(bean, bean.getClass(), ctx); // could be
-            // inlined with return
-            return o;
+            return bm.getReference(bean, bean.getClass(), ctx);
+        } else {
+            return null;
+        }
+    }
+
+    public static <T> Object getBeanByClass(Class<T> c){
+        BeanManager bm = getBeanManager();
+        Set<Bean<?>> beansFound = bm.getBeans(c);
+        if (!beansFound.isEmpty()) {
+            Bean<?> bean = beansFound.iterator().next();
+            CreationalContext<?> ctx = bm.createCreationalContext(bean);
+            return bm.getReference(bean, bean.getClass(), ctx);
         } else {
             return null;
         }

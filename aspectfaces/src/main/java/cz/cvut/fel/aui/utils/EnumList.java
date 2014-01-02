@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.utils;
 
+import cz.cvut.fel.aui.model.PersonInfo;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
@@ -50,6 +51,10 @@ public class EnumList
     public Device[] getDevice()
     {
         return Device.values();
+    }
+
+    public PersonInfo.Gender[] getGender(){
+        return PersonInfo.Gender.values();
     }
 
 }

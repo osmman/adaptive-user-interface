@@ -2,6 +2,7 @@ package cz.cvut.fel.aui.controller;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +13,9 @@ import javax.faces.context.FacesContext;
  */
 public abstract class BaseController
 {
+
+    @Inject
+    private FacesContext facesContext;
 
     protected String redirect(String view, Boolean viewPart)
     {
@@ -25,18 +29,18 @@ public abstract class BaseController
 
     protected FacesMessage facesMessage(String text)
     {
-        return facesMessage("", text, FacesMessage.SEVERITY_INFO);
+        return facesMessage(text, text, FacesMessage.SEVERITY_INFO);
     }
 
     protected FacesMessage facesMessage(String title, String text, FacesMessage.Severity severity)
     {
-        return facesMessage("growl", title, text, severity);
+        return facesMessage(null, title, text, severity);
     }
 
     protected FacesMessage facesMessage(String id, String title, String text, FacesMessage.Severity severity)
     {
         FacesMessage message = new FacesMessage(severity, title, text);
-        FacesContext.getCurrentInstance().addMessage(id, message);
+        facesContext.addMessage(id, message);
         return message;
     }
 }

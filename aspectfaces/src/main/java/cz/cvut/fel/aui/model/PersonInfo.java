@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.model;
 
+import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
@@ -7,7 +8,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 /**
  * Created by Tomáš on 7.12.13.
@@ -16,24 +16,21 @@ import javax.validation.constraints.Pattern;
 public class PersonInfo extends EntityObject
 {
 
-    @NotNull
-    @NotEmpty
-    @Pattern(regexp = "^[^\\s]].*", message = "Cannot start with space")
     private String firstName;
 
-    @NotNull
-    @NotEmpty
-    @Pattern(regexp = "^[^\\s]].*", message = "Cannot start with space")
     private String lastName;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToOne(mappedBy="personInfo")
+    @OneToOne(mappedBy = "personInfo")
     private Person person;
 
     private Address address = new Address();
 
+    @NotNull
+    @NotEmpty
+    @UiOrder(1)
     public String getFirstName()
     {
         return firstName;
@@ -44,6 +41,9 @@ public class PersonInfo extends EntityObject
         this.firstName = firstName;
     }
 
+    @NotNull
+    @NotEmpty
+    @UiOrder(2)
     public String getLastName()
     {
         return lastName;
@@ -54,6 +54,7 @@ public class PersonInfo extends EntityObject
         this.lastName = lastName;
     }
 
+    @UiOrder(3)
     public Gender getGender()
     {
         return gender;
@@ -64,6 +65,7 @@ public class PersonInfo extends EntityObject
         this.gender = gender;
     }
 
+    @UiOrder(4)
     public Address getAddress()
     {
         return address;
@@ -74,22 +76,26 @@ public class PersonInfo extends EntityObject
         this.address = address;
     }
 
-    public String getFullName(){
+    public String getFullName()
+    {
         return firstName + " " + lastName;
     }
 
-    public enum Gender {
+    public enum Gender
+    {
         FEMALE("gender.female"),
 
         MALE("gender.male");
 
         private final String label;
 
-        private Gender(String label) {
+        private Gender(String label)
+        {
             this.label = label;
         }
 
-        public String getLabel() {
+        public String getLabel()
+        {
             return label;
         }
     }
