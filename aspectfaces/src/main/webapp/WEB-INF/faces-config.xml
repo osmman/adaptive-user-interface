@@ -29,7 +29,9 @@
             <var>text</var>
         </resource-bundle>
         <message-bundle>bundle.validation</message-bundle>
+
     </application>
+
 
     <navigation-rule>
         <navigation-case>
