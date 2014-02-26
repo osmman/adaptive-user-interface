@@ -35,7 +35,7 @@ public class Person extends EntityObject
 
     private String email;
 
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private PersonInfo personInfo;
 
     @NotNull

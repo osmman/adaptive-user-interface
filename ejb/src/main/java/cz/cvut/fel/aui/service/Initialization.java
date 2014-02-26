@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.service;
 
+import cz.cvut.fel.aui.model.Address;
 import cz.cvut.fel.aui.model.Person;
 import cz.cvut.fel.aui.model.PersonInfo;
 
@@ -37,6 +38,13 @@ public class Initialization
         info2.setLastName("Test");
         info2.setGender(PersonInfo.Gender.FEMALE);
         p2.setPersonInfo(info2);
+
+        Address address = info2.getAddress();
+        address.setCountry("CS");
+        address.setCity("Prague");
+        address.setPostCode("1234");
+        address.setStreet("Adddd");
+
         personService.create(p2);
     }
 }
