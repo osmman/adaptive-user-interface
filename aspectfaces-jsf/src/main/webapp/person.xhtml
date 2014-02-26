@@ -34,16 +34,16 @@
     <ui:define name="content">
         <af:ui instance="#{person}" edit="false"
                layout="form.xhtml"
-               entity="cz.cvut.fel.aui.cz.cvut.fel.aui.controller.cz.cvut.fel.aui.model.Person"
+               entity="cz.cvut.fel.aui.model.Person"
                ignore="password"
                 />
         <af:ui instance="#{person.personInfo}" edit="false"
                layout="form.xhtml"
-               entity="cz.cvut.fel.aui.cz.cvut.fel.aui.controller.cz.cvut.fel.aui.model.PersonInfo"
+               entity="cz.cvut.fel.aui.model.PersonInfo"
                ignore="fullName"/>
         <af:ui instance="#{person.personInfo.address}" edit="false"
                layout="form.xhtml"
-               entity="cz.cvut.fel.aui.cz.cvut.fel.aui.controller.model.Address"
+               entity="cz.cvut.fel.aui.model.Address"
                 />
     </ui:define>
 
