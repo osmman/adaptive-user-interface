@@ -6,8 +6,6 @@ import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
 import cz.cvut.fel.aui.utils.comparator.ValueComparator;
 
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
 import javax.inject.Named;
 import java.util.HashMap;
 import java.util.Locale;

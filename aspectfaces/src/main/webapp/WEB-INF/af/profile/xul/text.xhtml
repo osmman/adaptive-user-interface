@@ -1,6 +1,7 @@
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:h="http://java.sun.com/jsf/html" xmlns:xul="http://xulfaces.sourceforge.net/xulfaces/jsf/xul"
+             xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
              template="#{empty template ? '/WEB-INF/af/profile/xul/switcher.xhtml' : template}">
 
 	<ui:param name="id" value="#{prefix}$field$"/>
@@ -18,7 +19,7 @@
 
 
 	<ui:define name="input">
-        <textbox id="#{id}" value="#{value}" />
+        <xf:textbox id="#{id}" value="#{value}"/>
 	</ui:define>
 
 	<ui:define name="output">

@@ -1,8 +1,7 @@
-package cz.cvut.fel.aui.controller;
+package cz.cvut.fel.aui.service;
 
 import cz.cvut.fel.aui.model.Person;
 import cz.cvut.fel.aui.model.PersonInfo;
-import cz.cvut.fel.aui.service.PersonService;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;

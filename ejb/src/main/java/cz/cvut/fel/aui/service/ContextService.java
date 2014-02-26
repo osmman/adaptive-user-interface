@@ -27,10 +27,10 @@ import java.util.logging.Logger;
 public class ContextService implements Serializable
 {
     @Inject
-    private transient Logger logger;
+    private Logger logger;
 
     @Inject
-    private transient Validator validator;
+    private Validator validator;
 
     private Context context;
 

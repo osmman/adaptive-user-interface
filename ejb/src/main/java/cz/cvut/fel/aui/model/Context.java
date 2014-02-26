@@ -1,14 +1,11 @@
 package cz.cvut.fel.aui.model;
 
-import com.codingcrayons.aspectfaces.annotations.*;
+import com.codingcrayons.aspectfaces.annotations.UiOrder;
+import com.codingcrayons.aspectfaces.annotations.UiType;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 /**

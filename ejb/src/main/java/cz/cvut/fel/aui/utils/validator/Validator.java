@@ -3,6 +3,7 @@ package cz.cvut.fel.aui.utils.validator;
 import javax.inject.Inject;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Set;
  * Time: 14:02
  * To change this template use File | Settings | File Templates.
  */
-public class Validator
+public class Validator implements Serializable
 {
     @Inject
     private javax.validation.Validator validator;

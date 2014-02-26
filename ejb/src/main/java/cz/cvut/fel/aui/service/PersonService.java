@@ -1,7 +1,6 @@
 package cz.cvut.fel.aui.service;
 
 import cz.cvut.fel.aui.model.Person;
-import cz.cvut.fel.aui.service.AbstractDao;
 
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
@@ -21,7 +20,7 @@ public class PersonService extends AbstractDao<Person>
 {
 
     @Inject
-    EntityManager em;
+    private EntityManager em;
 
     public PersonService()
     {

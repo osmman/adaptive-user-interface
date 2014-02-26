@@ -1,7 +1,6 @@
 package cz.cvut.fel.aui.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiIgnore;
-import com.codingcrayons.aspectfaces.annotations.UiLabel;
 import com.codingcrayons.aspectfaces.annotations.UiLink;
 
 /**

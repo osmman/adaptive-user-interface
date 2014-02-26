@@ -17,8 +17,11 @@ public abstract class AbstractDao<T> implements DataAccessObject<T> {
 
     private Class<T> entityClass;
 
-    public AbstractDao(Class<T> entityClass){
+    protected AbstractDao(Class<T> entityClass){
         this.entityClass = entityClass;
+    }
+
+    public AbstractDao(){
     }
 
     protected abstract EntityManager getEntityManager();

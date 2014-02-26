@@ -8,7 +8,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.

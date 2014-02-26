@@ -90,6 +90,14 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <dependency>
+            <groupId>cz.cvut.fel.aui</groupId>
+            <artifactId>ejb</artifactId>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.codingcrayons.aspectfaces</groupId>
             <artifactId>javaee-jsf2</artifactId>
@@ -214,17 +222,8 @@
 
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
-            <!-- Force Java 6 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -232,13 +231,6 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-            </plugin>
-            <!-- Deployent on AS from console -->
-            <plugin>
-                <groupId>org.jboss.as.plugins</groupId>
-                <artifactId>jboss-as-maven-plugin</artifactId>
-                <version>${version.jboss.maven.plugin}</version>
-
             </plugin>
             <!-- Surefire plugin before 2.9 version is buggy -->
             <plugin>
