@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>cz.cvut.fel.aui</groupId>
-            <artifactId>aspectfaces</artifactId>
+            <artifactId>aspectfaces-jsf</artifactId>
             <type>war</type>
         </dependency>
     </dependencies>
