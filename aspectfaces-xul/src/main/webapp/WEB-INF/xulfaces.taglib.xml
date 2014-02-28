@@ -1,0 +1,489 @@
+<!DOCTYPE facelet-taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+  "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+  
+<facelet-taglib>
+
+	<namespace>http://xulfaces.sourceforge.net/xulfaces/jsf/facelet</namespace>
+	
+	<tag>
+	  <tag-name>button</tag-name>
+	  <component>
+	    <component-type>xul.component.Button</component-type>
+	    <renderer-type>xul.renderer.Button</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>bridge</tag-name>
+	  <component>
+	    <component-type>xul.component.Bridge</component-type>
+	    <renderer-type>xul.renderer.Bridge</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>checkbox</tag-name>
+	  <component>
+	    <component-type>xul.component.Checkbox</component-type>
+	    <renderer-type>xul.renderer.Checkbox</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>column</tag-name>
+	  <component>
+	    <component-type>xul.component.Column</component-type>
+	    <renderer-type>xul.renderer.Column</renderer-type>
+	  </component>
+	</tag>
+		
+	<tag>
+	  <tag-name>command</tag-name>
+	  <component>
+	    <component-type>xul.component.Command</component-type>
+	    <renderer-type>xul.renderer.Command</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>commandset</tag-name>
+	  <component>
+	    <component-type>xul.component.CommandSet</component-type>
+	    <renderer-type>xul.renderer.CommandSet</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>image</tag-name>
+	  <component>
+	    <component-type>xul.component.Image</component-type>
+	    <renderer-type>xul.renderer.Image</renderer-type>
+	  </component>
+	</tag>
+		
+	<tag>
+	  <tag-name>separator</tag-name>
+	  <component>
+	    <component-type>xul.component.Separator</component-type>
+	    <renderer-type>xul.renderer.Separator</renderer-type>
+	  </component>
+	</tag>
+			
+	<tag>
+	  <tag-name>splitter</tag-name>
+	  <component>
+	    <component-type>xul.component.Splitter</component-type>
+	    <renderer-type>xul.renderer.Splitter</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>spacer</tag-name>
+	  <component>
+	    <component-type>xul.component.Spacer</component-type>
+	    <renderer-type>xul.renderer.Spacer</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>description</tag-name>
+	  <component>
+	    <component-type>xul.component.Description</component-type>
+	    <renderer-type>xul.renderer.Description</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>menulist</tag-name>
+	  <component>
+	    <component-type>xul.component.MenuList</component-type>
+	    <renderer-type>xul.renderer.MenuList</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>iframe</tag-name>
+	  <component>
+	    <component-type>xul.component.Frame</component-type>
+	    <renderer-type>xul.renderer.Frame</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>label</tag-name>
+	  <component>
+	    <component-type>xul.component.Label</component-type>
+	    <renderer-type>xul.renderer.Label</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>caption</tag-name>
+	  <component>
+	    <component-type>xul.component.Caption</component-type>
+	    <renderer-type>xul.renderer.Caption</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>message</tag-name>
+	  <component>
+	    <component-type>xul.component.Message</component-type>
+	    <renderer-type>xul.renderer.Message</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>messages</tag-name>
+	  <component>
+	    <component-type>xul.component.Messages</component-type>
+	    <renderer-type>xul.renderer.Messages</renderer-type>
+	  </component>
+	</tag>
+			
+	<tag>
+	  <tag-name>selectOneListbox</tag-name>
+	  <component>
+	    <component-type>xul.component.SelectOneListBox</component-type>
+	    <renderer-type>xul.renderer.ListBox</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>radiogroup</tag-name>
+	  <component>
+	    <component-type>xul.component.SelectOneRadio</component-type>
+	    <renderer-type>xul.renderer.SelectOneRadio</renderer-type>
+	  </component>
+	</tag>	
+		
+	<tag>
+	  <tag-name>textbox</tag-name>
+	  <component>
+	    <component-type>xul.component.Textbox</component-type>
+	    <renderer-type>xul.renderer.Textbox</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>tree</tag-name>
+	  <component>
+	    <component-type>xul.component.Tree</component-type>
+	    <renderer-type>xul.renderer.Tree</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>treerow</tag-name>
+	  <component>
+	    <component-type>xul.component.TreeRow</component-type>
+	    <renderer-type>xul.renderer.TreeRow</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>treechildren</tag-name>
+	  <component>
+	    <component-type>xul.component.TreeChildren</component-type>
+	    <renderer-type>xul.renderer.TreeChildren</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>treeitem</tag-name>
+	  <component>
+	    <component-type>xul.component.TreeItem</component-type>
+	    <renderer-type>xul.renderer.TreeItem</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>treecell</tag-name>
+	  <component>
+	    <component-type>xul.component.TreeCell</component-type>
+	    <renderer-type>xul.renderer.TreeCell</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>treecol</tag-name>
+	  <component>
+	    <component-type>xul.component.TreeColumn</component-type>
+	    <renderer-type>xul.renderer.TreeColumn</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>treecols</tag-name>
+	  <component>
+	    <component-type>xul.component.TreeCols</component-type>
+	    <renderer-type>xul.renderer.TreeCols</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>grid</tag-name>
+	  <component>
+	    <component-type>xul.component.Grid</component-type>
+	    <renderer-type>xul.renderer.Grid</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>box</tag-name>
+	  <component>
+	    <component-type>xul.component.Box</component-type>
+	    <renderer-type>xul.renderer.Box</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>groupbox</tag-name>
+	  <component>
+	    <component-type>xul.component.GroupBox</component-type>
+	    <renderer-type>xul.renderer.Box</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>vbox</tag-name>
+	  <component>
+	    <component-type>xul.component.VerticalBox</component-type>
+	    <renderer-type>xul.renderer.Box</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>hbox</tag-name>
+	  <component>
+	    <component-type>xul.component.HorizontalBox</component-type>
+	    <renderer-type>xul.renderer.Box</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>tabbox</tag-name>
+	  <component>
+	    <component-type>xul.component.TabBox</component-type>
+	    <renderer-type>xul.renderer.TabBox</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>tab</tag-name>
+	  <component>
+	    <component-type>xul.component.Tab</component-type>
+	    <renderer-type>xul.renderer.Tab</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>tabs</tag-name>
+	  <component>
+	    <component-type>xul.component.Tabs</component-type>
+	    <renderer-type>xul.renderer.Tabs</renderer-type>
+	  </component>
+	</tag>	
+	
+	<tag>
+	  <tag-name>tabpanel</tag-name>
+	  <component>
+	    <component-type>xul.component.TabPanel</component-type>
+	    <renderer-type>xul.renderer.TabPanel</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>tabpanels</tag-name>
+	  <component>
+	    <component-type>xul.component.TabPanels</component-type>
+	    <renderer-type>xul.renderer.TabPanels</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>dataListbox</tag-name>
+	  <component>
+	    <component-type>xul.component.DataListBox</component-type>
+	    <renderer-type>xul.renderer.DataListBox</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>listcol</tag-name>
+	  <component>
+	    <component-type>xul.component.ListCol</component-type>
+	    <renderer-type>xul.renderer.ListCol</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>listcols</tag-name>
+	  <component>
+	    <component-type>xul.component.ListCols</component-type>
+	    <renderer-type>xul.renderer.ListCols</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>listitem</tag-name>
+	  <component>
+	    <component-type>xul.component.ListItem</component-type>
+	    <renderer-type>xul.renderer.ListItem</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>listcell</tag-name>
+	  <component>
+	    <component-type>xul.component.ListCell</component-type>
+	    <renderer-type>xul.renderer.ListCell</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>listhead</tag-name>
+	  <component>
+	    <component-type>xul.component.ListHead</component-type>
+	    <renderer-type>xul.renderer.ListHead</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>listheader</tag-name>
+	  <component>
+	    <component-type>xul.component.ListHeader</component-type>
+	    <renderer-type>xul.renderer.ListHeader</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>toolbox</tag-name>
+	  <component>
+	    <component-type>xul.component.Toolbox</component-type>
+	    <renderer-type>xul.renderer.Toolbox</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>toolbar</tag-name>
+	  <component>
+	    <component-type>xul.component.Toolbar</component-type>
+	    <renderer-type>xul.renderer.Toolbar</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>toolbarbutton</tag-name>
+	  <component>
+	    <component-type>xul.component.ToolbarButton</component-type>
+	    <renderer-type>xul.renderer.ToolbarButton</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>toolbarseparator</tag-name>
+	  <component>
+	    <component-type>xul.component.ToolbarSeparator</component-type>
+	    <renderer-type>xul.renderer.ToolbarSeparator</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>menubar</tag-name>
+	  <component>
+	    <component-type>xul.component.MenuBar</component-type>
+	    <renderer-type>xul.renderer.MenuBar</renderer-type>
+	  </component>
+	</tag>	
+	
+	<tag>
+	  <tag-name>menuseparator</tag-name>
+	  <component>
+	    <component-type>xul.component.MenuSeparator</component-type>
+	    <renderer-type>xul.renderer.MenuSeparator</renderer-type>
+	  </component>
+	</tag>		
+	
+	<tag>
+	  <tag-name>menu</tag-name>
+	  <component>
+	    <component-type>xul.component.Menu</component-type>
+	    <renderer-type>xul.renderer.Menu</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>menupopup</tag-name>
+	  <component>
+	    <component-type>xul.component.MenuPopup</component-type>
+	    <renderer-type>xul.renderer.MenuPopup</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>menuitem</tag-name>
+	  <component>
+	    <component-type>xul.component.MenuItem</component-type>
+	    <renderer-type>xul.renderer.MenuItem</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>popupset</tag-name>
+	  <component>
+	    <component-type>xul.component.PopupSet</component-type>
+	    <renderer-type>xul.renderer.PopupSet</renderer-type>
+	  </component>
+	</tag>
+	
+	<tag>
+	  <tag-name>popup</tag-name>
+	  <component>
+	    <component-type>xul.component.Popup</component-type>
+	    <renderer-type>xul.renderer.Popup</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>tooltip</tag-name>
+	  <component>
+	    <component-type>xul.component.Tooltip</component-type>
+	    <renderer-type>xul.renderer.Tooltip</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>script</tag-name>
+	  <component>
+	    <component-type>xul.component.Script</component-type>
+	    <renderer-type>xul.renderer.Script</renderer-type>
+	  </component>
+	</tag>
+
+	<tag>
+	  <tag-name>progressmeter</tag-name>
+	  <component>
+	    <component-type>xul.component.ProgressMeter</component-type>
+	    <renderer-type>xul.renderer.ProgressMeter</renderer-type>
+	  </component>
+	</tag>	
+	
+	<tag>
+	  <tag-name>wizard</tag-name>
+	  <component>
+	    <component-type>xul.component.Wizard</component-type>
+	    <renderer-type>xul.renderer.Wizard</renderer-type>
+	  </component>
+	</tag>	
+
+	<tag>
+	  <tag-name>wizardpage</tag-name>
+	  <component>
+	    <component-type>xul.component.WizardPage</component-type>
+	    <renderer-type>xul.renderer.WizardPage</renderer-type>
+	  </component>
+	</tag>	
+		
+</facelet-taglib>

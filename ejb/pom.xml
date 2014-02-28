@@ -10,8 +10,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>ejb</packaging>
+    <name>EJB</name>
 
     <dependencies>
+
+        <dependency>
+            <groupId>cz.cvut.fel.aui</groupId>
+            <artifactId>bundle</artifactId>
+            <type>jar</type>
+        </dependency>
 
         <dependency>
             <groupId>org.jboss.spec</groupId>

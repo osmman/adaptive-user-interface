@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aspectfaces-xul</artifactId>
     <packaging>war</packaging>
-    <name>Adaptive UI by AspectFaces and JSF</name>
-    <artifactId>aspectfaces-jsf</artifactId>
 
     <dependencies>
 
@@ -81,6 +81,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <!-- Needed for running tests (you may also use TestNG) -->
         <dependency>
             <groupId>junit</groupId>
@@ -110,5 +116,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

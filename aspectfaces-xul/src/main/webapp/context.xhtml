@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="/aspectfaces-xul/javax.faces.resource/css/binding.css.jsf" type="text/css"?>
+<?xul-overlay href="/aspectfaces-xul/xul/overlay.xul" ?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/xul">
+
+    <window id="example-window" title="Example 2.2.1"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul">
+        <box id="singlebox">
+            <xf:button id="gobutton" label="Go"/>
+            <xf:button id="stopbutton" label="Stop"/>
+        </box>
+        <xf:button label="Disabled" disabled="true"/>
+
+        <!--<af:ui instance="#{context}" edit="true"/>-->
+        <box class="okcancelbuttons"/>
+        <xf:bridge debug="true"/>
+    </window>
+
+</f:view>

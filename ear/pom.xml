@@ -11,17 +11,13 @@
 
     <artifactId>ear</artifactId>
     <packaging>ear</packaging>
+    <name>EAR application</name>
 
     <dependencies>
         <dependency>
             <groupId>cz.cvut.fel.aui</groupId>
             <artifactId>ejb</artifactId>
             <type>ejb</type>
-        </dependency>
-        <dependency>
-            <groupId>cz.cvut.fel.aui</groupId>
-            <artifactId>aspectfaces-jsf</artifactId>
-            <type>war</type>
         </dependency>
     </dependencies>
 
@@ -53,5 +49,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>jsf</id>
+            <properties/>
+            <dependencies>
+                <dependency>
+                    <groupId>cz.cvut.fel.aui</groupId>
+                    <artifactId>aspectfaces-jsf</artifactId>
+                    <type>war</type>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>xul</id>
+            <properties/>
+            <dependencies>
+                <dependency>
+                    <groupId>cz.cvut.fel.aui</groupId>
+                    <artifactId>aspectfaces-xul</artifactId>
+                    <type>war</type>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 
 </project>
