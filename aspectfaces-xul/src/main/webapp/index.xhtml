@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xul-overlay href="/aspectfaces-xul/layouts/context.xul"?>
+<?xul-overlay href="/aspectfaces-xul/layouts/people.xul"?>
+<?xml-stylesheet href="chrome://browser/content/browser.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        locale="#{context.language.concat('_').concat(context.country)}">
+<window
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul"
+        orient="horizontal"
+        >
+
+
+
+    <xf:commandset id="commandset">
+    </xf:commandset>
+    <vbox flex="1">
+        <tabbox>
+            <tabs>
+                <tab label="#{text['navigation.people']}" />
+                <tab label="#{text['navigation.context']}" />
+            </tabs>
+
+            <tabpanels>
+                <tabpanel id="people-content" orient="vertical"/>
+                <tabpanel id="context-content" orient="vertical"/>
+            </tabpanels>
+        </tabbox>
+
+        <script type="application/x-javascript" src="/aspectfaces-xul/js/main.js"/>
+        <script type="application/x-javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
+
+    </vbox>
+    <box><xf:bridge/></box>
+</window>
+</f:view>

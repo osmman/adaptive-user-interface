@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <overlay id="layout"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+        <xf:commandset id="commandset">
+        </xf:commandset>
+
+        <tabpanel id="people-content" >
+                <xf:dataListbox
+                        id="my-listbox"
+                        value="#{personController.all}"
+                        var="bean"
+                        rows="10"
+                        seltype="multiple"
+                        updateSmoothly="true"
+                        >
+
+                    <xf:listhead>
+                        <xf:listheader label="Email" flex="1"/>
+                        <xf:listheader label="Jmeno" flex="1"/>
+                        <xf:listheader label="Prijmeni" flex="1"/>
+                        <xf:listheader label="Gender" flex="1"/>
+                    </xf:listhead>
+
+                    <xf:listcols>
+                        <xf:listcol flex="1"/>
+                        <xf:listcol flex="1"/>
+                        <xf:listcol flex="1"/>
+                        <xf:listcol flex="1"/>
+                    </xf:listcols>
+
+                    <xf:listitem>
+                        <xf:listcell value="#{bean.email}" />
+                        <xf:listcell value="#{bean.personInfo}" />
+                        <xf:listcell value="#{bean.personInfo}" />
+                        <xf:listcell value="#{bean.personInfo}" />
+                    </xf:listitem>
+
+                </xf:dataListbox>
+                <xf:button label="#{text['action.registration']}" onclick="openRegistrationWizard()" />
+        </tabpanel>
+
+    </overlay>
+</f:view>

@@ -6,8 +6,8 @@
         xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
         locale="#{context.language.concat('_').concat(context.country)}">
     <xf:wizard
-            id="context-wizard"
-            title="Change context"
+            id="registration-wizard"
+            title="#{text['action.registration']}"
             onwizardfinish="save()"
             >
 
@@ -28,12 +28,20 @@
         </script>
 
         <xf:commandset id="commandset">
-            <xf:command id="cmd-save" action="#{contextController.save()}"/>
+            <xf:command id="cmd-save" action="#{personController.create()}"/>
         </xf:commandset>
 
 
-        <xf:wizardpage label="Change context">
-            <af:ui instance="#{context}" edit="true"/>
+        <xf:wizardpage label="#{text['person']}">
+            <af:ui instance="#{newPerson}" edit="true"/>
+        </xf:wizardpage>
+
+        <xf:wizardpage label="#{text['personInfo']}">
+            <af:ui instance="#{newPerson.personInfo}" edit="true" ignore="fullName"/>
+        </xf:wizardpage>
+
+        <xf:wizardpage label="#{text['address']}">
+            <af:ui instance="#{newPerson.personInfo.address}" edit="true"/>
         </xf:wizardpage>
 
         <script type="application/x-javascript" src="/aspectfaces-xul/js/xul-logger.js"/>

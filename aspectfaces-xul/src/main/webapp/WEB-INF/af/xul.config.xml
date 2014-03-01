@@ -14,6 +14,7 @@
 		<type>String</type>
 		<default tag="xul/text.xhtml" maxLength="255" size="30" />
         <condition expression="${type == 'state'}" tag="xul/state.xhtml"/>
+        <condition expression="${password == true}" tag="xul/password.xhtml"/>
 	</mapping>
 
 	<mapping>
@@ -27,15 +28,15 @@
         <default tag="xul/enum.xhtml" />
     </mapping>
 
-    <mapping>
-        <type>PersonInfo</type>
-        <default tag="xul/entity.xhtml" />
-    </mapping>
+    <!--<mapping>-->
+        <!--<type>PersonInfo</type>-->
+        <!--<default tag="xul/entity.xhtml" />-->
+    <!--</mapping>-->
 
-    <mapping>
-        <type>Address</type>
-        <default tag="xul/entity.xhtml" />
-    </mapping>
+    <!--<mapping>-->
+        <!--<type>Address</type>-->
+        <!--<default tag="xul/entity.xhtml" />-->
+    <!--</mapping>-->
 
 
     <mapping>

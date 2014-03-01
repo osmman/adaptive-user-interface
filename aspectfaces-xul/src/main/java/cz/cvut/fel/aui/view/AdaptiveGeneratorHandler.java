@@ -86,7 +86,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
         if(configName == null || configName.getValue().isEmpty()){
             Context config = getContext();
             if(config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET){
-                return "mobile";
+                return "default";
             }else {
                 return "default";
             }

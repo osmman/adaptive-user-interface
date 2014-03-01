@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <overlay id="layout"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+        <xf:commandset id="commandset">
+            <xf:command id="new-registration-page" uri="registration"/>
+        </xf:commandset>
+
+        <tabpanel id="context-content" >
+            <groupbox orient="vertical">
+                <af:ui instance="#{context}" edit="true"/>
+                <xf:button label="Open wizard" onclick="openContextWizard()" />
+            </groupbox>
+        </tabpanel>
+
+    </overlay>
+</f:view>

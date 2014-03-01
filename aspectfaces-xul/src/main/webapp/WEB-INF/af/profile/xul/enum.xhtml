@@ -3,6 +3,7 @@
              xmlns:f="http://java.sun.com/jsf/core"
              xmlns:h="http://java.sun.com/jsf/html"
              xmlns:c="http://java.sun.com/jsp/jstl/core"
+             xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
              template="#{empty template ? '/WEB-INF/af/profile/xul/switcher.xhtml' : template}">
 
     <ui:param name="id" value="#{prefix}$field$"/>
@@ -19,13 +20,11 @@
     <ui:param name="applyImage" value="$applyImage$" />
 
     <ui:define name="input">
-        <menulist>
-            <menupopup>
-                <c:forEach items="#{collection}" var="item">
-                    <menuitem label="#{text[item.label]}" value="#{item}" />
-                </c:forEach>
-            </menupopup>
-        </menulist>
+        <xf:menulist id="#{id}" value="#{value}">
+            <c:forEach items="#{collection}" var="item">
+                <f:selectItem itemLabel="#{text[item.label]}" itemValue="#{item}" />
+            </c:forEach>
+        </xf:menulist>
     </ui:define>
 
     <ui:define name="output">

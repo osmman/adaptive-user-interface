@@ -1,7 +1,8 @@
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:f="http://java.sun.com/jsf/core"
-             xmlns:h="http://java.sun.com/jsf/html" xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
              xmlns:xul="http://xulfaces.sourceforge.net/xulfaces/jsf/xul"
              xmlns:c="http://java.sun.com/jsp/jstl/core"
              template="#{empty template ? '/WEB-INF/af/profile/xul/switcher.xhtml' : template}">
@@ -20,13 +21,11 @@
     <ui:param name="applyImage" value="$applyImage$" />
 
     <ui:define name="input">
-        <menulist>
-            <menupopup>
-                <c:forEach items="#{collection.entrySet()}" var="item">
-                    <menuitem label="#{item.value}" value="#{item.key}" />
-                </c:forEach>
-            </menupopup>
-        </menulist>
+        <xf:menulist id="#{id}" value="#{value}">
+            <c:forEach items="#{collection.entrySet()}" var="item">
+                <f:selectItem itemLabel="#{item.value}" itemValue="#{item.key}" />
+            </c:forEach>
+        </xf:menulist>
     </ui:define>
 
     <ui:define name="output">

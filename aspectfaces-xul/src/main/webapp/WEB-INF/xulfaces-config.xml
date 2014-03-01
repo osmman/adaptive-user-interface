@@ -2670,9 +2670,7 @@
 			<renderer-type>xul.renderer.MenuList</renderer-type>
 			<renderer-class>org.xulfaces.renderer.input.MenuListRenderer</renderer-class>
 		</renderer>
-		
-				
-		
+
 		<renderer>
 			<component-family>xul.component.family</component-family>
 			<renderer-type>xul.renderer.SelectOneOrMany</renderer-type>
