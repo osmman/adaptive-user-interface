@@ -20,24 +20,22 @@ import java.util.TreeMap;
  * To change this template use File | Settings | File Templates.
  */
 @Named("enum")
-public class EnumList
-{
-    public Age[] getAge()
-    {
+public class EnumList {
+    public Age[] getAge() {
         return Age.values();
     }
 
-    public ScreenSize[] getScreenSize()
-    {
+    public ScreenSize[] getScreenSize() {
         return ScreenSize.values();
     }
 
-    public Map<String, String> getCountry()
-    {
+    public Map<String, String> getCountry() {
         Map<String, String> countries = new HashMap<String, String>();
         for (String countryCode : Locale.getISOCountries()) {
-            Locale obj = new Locale("", countryCode);
-            countries.put(countryCode, obj.getDisplayCountry());
+            if (countryCode.equals("CZ") || countryCode.equals("US")) {
+                Locale obj = new Locale("", countryCode);
+                countries.put(countryCode, obj.getDisplayCountry());
+            }
         }
 
         ValueComparator comparator = new ValueComparator(countries);
@@ -46,12 +44,11 @@ public class EnumList
         return sorted;
     }
 
-    public Device[] getDevice()
-    {
+    public Device[] getDevice() {
         return Device.values();
     }
 
-    public PersonInfo.Gender[] getGender(){
+    public PersonInfo.Gender[] getGender() {
         return PersonInfo.Gender.values();
     }
 

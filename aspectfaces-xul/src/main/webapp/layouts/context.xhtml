@@ -4,17 +4,22 @@
         xmlns:af="http://codingcrayons.com/aspectfaces"
         locale="#{context.language.concat('_').concat(context.country)}">
     <overlay id="layout"
-             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+             xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul">
         <xf:commandset id="commandset">
-            <xf:command id="new-registration-page" uri="registration"/>
+            <xf:command id="cmd-context-save" action="#{contextController.save}" oncommand="saveContext()"/>
         </xf:commandset>
 
         <tabpanel id="context-content" >
             <groupbox orient="vertical">
                 <af:ui instance="#{context}" edit="true"/>
-                <xf:button label="Open wizard" onclick="openContextWizard()" />
+                <xf:button label="#{text['action.save']}" command="cmd-context-save" />
             </groupbox>
         </tabpanel>
 
+        <box>
+
+        <xf:bridge />
+        </box>
     </overlay>
 </f:view>

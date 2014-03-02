@@ -49,9 +49,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
             if (true) {
                 ResourceCache.getInstance().clear();
             }
-            if (true) {
-                System.out.println(s);
-            }
 
             return new ByteArrayInputStream(s.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {
@@ -84,12 +81,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     protected String getConfig()
     {
         if(configName == null || configName.getValue().isEmpty()){
-            Context config = getContext();
-            if(config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET){
-                return "default";
-            }else {
-                return "default";
-            }
+            return "default";
         }
         return configName.getValue();
     }

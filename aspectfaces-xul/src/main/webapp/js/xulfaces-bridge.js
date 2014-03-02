@@ -376,8 +376,8 @@ function XULFacesBridge(serverUrl) {
   	this.updateDOM = function (xml){
 	
 		if(xml){
-			var viewStateElement =  xml.getElementsByTagName('viewState');		
-			var zoneElements = xml.getElementsByTagName('updateZone');
+			var viewStateElement =  xml.getElementsByTagName('xfc:viewState');
+			var zoneElements = xml.getElementsByTagName('xfc:updateZone');
 			for(var i=0; i < zoneElements.length;i++){
 	  			var zoneElement = zoneElements[i];
 	  			var zoneAttribute = zoneElement.attributes.getNamedItem('nodeID');
@@ -796,12 +796,14 @@ function XULFacesBridge(serverUrl) {
 
 var XUL_FACES_BRIDGE = new XULFacesBridge(document.location.href);
 
-document.addEventListener('RadioStateChange', XUL_FACES_BRIDGE.onRadioChange,false);
-document.addEventListener('select', XUL_FACES_BRIDGE.onListboxSelect,false);
-document.addEventListener('select', XUL_FACES_BRIDGE.onTreeSelect,false);
-document.addEventListener('change', XUL_FACES_BRIDGE.onTextboxChange,false);
-document.addEventListener('command', XUL_FACES_BRIDGE.onCheckboxChange,false);
-document.addEventListener('command', XUL_FACES_BRIDGE.onDropDownChange,false);
+window.onload = function(){
+    document.addEventListener('RadioStateChange', XUL_FACES_BRIDGE.onRadioChange,false);
+    document.addEventListener('select', XUL_FACES_BRIDGE.onListboxSelect,false);
+    document.addEventListener('select', XUL_FACES_BRIDGE.onTreeSelect,false);
+    document.addEventListener('change', XUL_FACES_BRIDGE.onTextboxChange,false);
+    document.addEventListener('command', XUL_FACES_BRIDGE.onCheckboxChange,false);
+    document.addEventListener('command', XUL_FACES_BRIDGE.onDropDownChange,false);
+}
 
 /**
 * <p>Trigger an action associated with a command.</p>

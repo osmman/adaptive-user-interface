@@ -7,6 +7,7 @@ import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created with IntelliJ IDEA.
@@ -42,6 +43,7 @@ public class Context implements Cloneable
 
     @UiOrder(5)
     @NotNull
+    @Size(min = 2)
     public String getLanguage()
     {
         return language;

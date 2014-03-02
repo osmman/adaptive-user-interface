@@ -6,6 +6,7 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core"
         xmlns:af="http://codingcrayons.com/aspectfaces"
         xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
         locale="#{context.language.concat('_').concat(context.country)}">
 <window
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -35,6 +36,6 @@
         <script type="application/x-javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
 
     </vbox>
-    <box><xf:bridge/></box>
+    <box><xf:bridge id="bridge" /></box>
 </window>
 </f:view>

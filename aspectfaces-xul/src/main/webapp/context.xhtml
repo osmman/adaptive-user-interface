@@ -5,39 +5,32 @@
         xmlns:af="http://codingcrayons.com/aspectfaces"
         xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
         locale="#{context.language.concat('_').concat(context.country)}">
-    <xf:wizard
-            id="context-wizard"
-            title="Change context"
-            onwizardfinish="save()"
+    <window
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul"
+            orient="horizontal"
             >
 
-        <script>
-            function save() {
-                try {
-                    triggerAction('cmd-save');
-                    var theOpener = window.opener;
-                    theOpener.location.reload()
-
-                    return true;
-                }
-                catch (e) {
-                    alert(e);
-                    return false;
-                }
+        <script type="application/javascript">
+            function save(){
+                triggerAction('cmd-save');
+                XUL_FACES_BRIDGE.updateDOM(XUL_FACES_BRIDGE.responseXml);
+                return true;
             }
         </script>
 
         <xf:commandset id="commandset">
-            <xf:command id="cmd-save" action="#{contextController.save()}"/>
+            <xf:command id="cmd-save" action="#{contextController.save()}" oncommand="save()" />
         </xf:commandset>
 
 
-        <xf:wizardpage label="Change context">
-            <af:ui instance="#{context}" edit="true"/>
-        </xf:wizardpage>
 
-        <script type="application/x-javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
+        <af:ui instance="#{context}" edit="true"/>
+        <xf:button label="save" command="cmd-save" />
+
+        <script type="application/javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
         <xf:bridge/>
-    </xf:wizard>
+    </window>
 
 </f:view>

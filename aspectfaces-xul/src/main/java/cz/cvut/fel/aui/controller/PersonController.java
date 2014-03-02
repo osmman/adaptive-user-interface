@@ -5,8 +5,10 @@ import cz.cvut.fel.aui.model.Person;
 import cz.cvut.fel.aui.model.PersonInfo;
 import cz.cvut.fel.aui.service.ContextService;
 import cz.cvut.fel.aui.service.PersonService;
+import cz.cvut.fel.aui.utils.validator.Validator;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateful;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.faces.context.FacesContext;
@@ -44,6 +46,9 @@ public class PersonController extends BaseController
     @Inject
     private ContextService contextService;
 
+    @Inject
+    private Validator validator;
+
     @PostConstruct
     public void initUser()
     {
@@ -68,6 +73,10 @@ public class PersonController extends BaseController
         personService.create(newPerson);
         initUser();
         return redirect("people");
+    }
+
+    public void validate(){
+        validator.validate(newPerson);
     }
 
     public String edit(Person person)
