@@ -324,7 +324,7 @@ function XULFacesBridge(serverUrl) {
 	*/				
 	this.hasErrors = function(xml){
 		if(xml){
-			var exceptionElements = xml.getElementsByTagName('exception');		
+			var exceptionElements = xml.getElementsByTagName('xfc:exception');
 			if(exceptionElements.length > 0){
 				return true;
 		  	}
@@ -340,7 +340,7 @@ function XULFacesBridge(serverUrl) {
 	*/				
 	this.hasNotValid = function(xml){
 		if(xml){
-			var notValidElements = xml.getElementsByTagName('notValid');		
+			var notValidElements = xml.getElementsByTagName('xfc:notValid');
 			if(notValidElements.length > 0){
 				return true;
 		  	}
@@ -411,7 +411,7 @@ function XULFacesBridge(serverUrl) {
 	*/
   	this.watchDOM = function (){	
 
-		var zoneElements = document.getElementsByTagName('watchZoneProperty');
+		var zoneElements = document.getElementsByTagName('xfc:watchZoneProperty');
 		for(var i=0; i < zoneElements.length;i++){
   			var zoneElement = zoneElements[i];
   			var zoneAttribute = zoneElement.attributes.getNamedItem('nodeID');
@@ -775,7 +775,7 @@ function XULFacesBridge(serverUrl) {
 	this.extractErrors = function(errorXML){
 		var message = "";
 		if(errorXML){
-			var exceptionElements = errorXML.getElementsByTagName('exception');		
+			var exceptionElements = errorXML.getElementsByTagName('xfc:exception');
 			if(exceptionElements.length > 0){
 				var exceptionElement = exceptionElements[0];
 				var childNodes = exceptionElement.childNodes;

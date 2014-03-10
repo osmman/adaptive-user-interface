@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <binding id="help">
+        <content>
+            <xul:label xbl:inherits="value=text" />
+        </content>
+    </binding>
+
+    <binding id="required">
+        <content>
+            <xul:label value="*" />
+        </content>
+    </binding>
+
+    <binding id="helpRequired">
+        <content>
+            <xul:hbox>
+                <xul:box class="required" />
+                <!-- @todo lokalizace pres XML konstanty -->
+                <xul:label value="- required" />
+            </xul:hbox>
+        </content>
+    </binding>
+
+</bindings>

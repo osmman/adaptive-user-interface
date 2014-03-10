@@ -6,16 +6,26 @@
     <overlay id="layout"
              xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
         <xf:commandset id="commandset">
+            <xf:command id="cmd-show-person" oncommand="detailPerson()"/>
+            <xf:command id="cmd-delete-person"  action="#{listboxPersonController.removeSelected()}" oncommand="deletePerson()"/>
         </xf:commandset>
 
         <tabpanel id="people-content" >
+
+                <xf:popupset>
+                    <xf:menupopup id="actions">
+                        <menuitem label="Open" command="cmd-show-person" />
+                        <menuitem label="Delete" command="cmd-delete-person" />
+                    </xf:menupopup>
+                </xf:popupset>
+
                 <xf:dataListbox
                         id="my-listbox"
-                        value="#{personController.all}"
+                        value="#{listboxPersonController.model}"
+                        binding="#{listboxPersonController.listBoxComponent}"
                         var="bean"
-                        rows="10"
-                        seltype="multiple"
                         updateSmoothly="true"
+                        context="actions"
                         >
 
                     <xf:listhead>
@@ -32,11 +42,11 @@
                         <xf:listcol flex="1"/>
                     </xf:listcols>
 
-                    <xf:listitem>
+                    <xf:listitem context="actions"  value="#{bean.id}">
                         <xf:listcell value="#{bean.email}" />
-                        <xf:listcell value="#{bean.personInfo}" />
-                        <xf:listcell value="#{bean.personInfo}" />
-                        <xf:listcell value="#{bean.personInfo}" />
+                        <xf:listcell value="#{bean.personInfo.firstName}" />
+                        <xf:listcell value="#{bean.personInfo.lastName}" />
+                        <xf:listcell value="#{text[bean.personInfo.gender.label]}" />
                     </xf:listitem>
 
                 </xf:dataListbox>

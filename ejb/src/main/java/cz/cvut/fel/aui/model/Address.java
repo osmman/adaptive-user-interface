@@ -26,8 +26,6 @@ public class Address implements Cloneable, Serializable
 
     private String state = "";
 
-    @NotNull
-    @NotEmpty
     @UiOrder(1)
     public String getStreet()
     {
@@ -39,8 +37,6 @@ public class Address implements Cloneable, Serializable
         this.street = street;
     }
 
-    @NotNull
-    @NotEmpty
     @UiOrder(2)
     public String getCity()
     {
@@ -52,8 +48,6 @@ public class Address implements Cloneable, Serializable
         this.city = city;
     }
 
-    @NotNull
-    @NotEmpty
     @UiOrder(3)
     @UiType(value = "state")
     public String getCountry()
@@ -66,8 +60,6 @@ public class Address implements Cloneable, Serializable
         this.country = country;
     }
 
-    @NotNull
-    @NotEmpty
     @UiOrder(5)
     public String getPostCode()
     {

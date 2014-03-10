@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.controller;
+package cz.cvut.fel.aui.controller.xul;
 
 import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.Person;
@@ -8,7 +8,6 @@ import cz.cvut.fel.aui.service.PersonService;
 import cz.cvut.fel.aui.utils.validator.Validator;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Stateful;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.faces.context.FacesContext;
@@ -57,6 +56,7 @@ public class PersonController extends BaseController
         newPerson = new Person();
         newPerson.setPersonInfo(new PersonInfo());
         newPerson.getPersonInfo().getAddress().setCountry(context.getCountry());
+        person = newPerson;
     }
 
     public void loadPerson(){
@@ -76,7 +76,7 @@ public class PersonController extends BaseController
     }
 
     public void validate(){
-        validator.validate(newPerson);
+        //validator.validate(newPerson);
     }
 
     public String edit(Person person)
@@ -110,14 +110,6 @@ public class PersonController extends BaseController
     public List<Person> getAll()
     {
         List<Person> list = personService.findAll();
-
-        for(Person p : list){
-            PersonInfo info = new PersonInfo();
-            info.setFirstName("Tomas");
-            info.setLastName("Turek");
-            p.setPersonInfo(info);
-        }
-
         return list;
     }
 

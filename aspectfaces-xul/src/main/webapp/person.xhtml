@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="/aspectfaces-xul/css/#{context.age.toString().toLowerCase()}.css" type="text/css"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <window
+            id="person-detail"
+            title="#{text['person']}"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul"
+            >
+        <f:metadata>
+            <f:viewParam name="person" value="#{personController.id}" required="true"/>
+            <f:event type="preRenderView" listener="#{personController.loadPerson}"/>
+        </f:metadata>
+        <xf:vbox>
+            <af:ui instance="#{person}" edit="false"
+                   ignore="password"
+                    />
+            <af:ui instance="#{person.personInfo}" edit="false" ignore="fullName"/>
+            <af:ui instance="#{person.personInfo.address}" edit="false"/>
+        </xf:vbox>
+    </window>
+
+</f:view>

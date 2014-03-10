@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.service;
 
+import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.Person;
 
 import javax.ejb.Stateless;
@@ -40,6 +41,18 @@ public class PersonService extends AbstractDao<Person>
     public void create(Person entity)
     {
         super.create(entity);
+        personEvent.fire(entity);
+    }
+
+    @Override
+    public void edit(Person entity) {
+        super.edit(entity);
+        personEvent.fire(entity);
+    }
+
+    @Override
+    public void remove(Person entity) {
+        super.remove(entity);
         personEvent.fire(entity);
     }
 }

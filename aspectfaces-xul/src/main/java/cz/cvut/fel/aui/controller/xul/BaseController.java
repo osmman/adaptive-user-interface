@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.controller;
+package cz.cvut.fel.aui.controller.xul;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

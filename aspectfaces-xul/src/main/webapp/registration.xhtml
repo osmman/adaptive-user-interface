@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://browser/content/browser.css" type="text/css"?>
-<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="/aspectfaces-xul/css/#{context.age.toString().toLowerCase()}.css" type="text/css"?>
 <f:view xmlns:f="http://java.sun.com/jsf/core"
         xmlns:af="http://codingcrayons.com/aspectfaces"
         xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
@@ -8,10 +8,10 @@
     <xf:wizard
             id="registration-wizard"
             title="#{text['action.registration']}"
-            onwizardfinish="save()"
+            onwizardfinish="return save()"
             >
 
-        <script>
+        <script type="application/javascript">
             function save() {
                 try {
                     triggerAction('cmd-save');
@@ -44,8 +44,9 @@
             <xf:command id="cmd-valid-person" action="#{personController.validate()}" />
         </xf:commandset>
 
+        <xf:messages />
 
-        <xf:wizardpage label="#{text['person']}" onpageadvanced="return isValid()">
+        <xf:wizardpage label="#{text['person']}">
             <af:ui instance="#{newPerson}" edit="true"/>
         </xf:wizardpage>
 
@@ -57,7 +58,7 @@
             <af:ui instance="#{newPerson.personInfo.address}" edit="true"/>
         </xf:wizardpage>
 
-        <script type="application/x-javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
+        <script type="application/javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
         <xf:bridge id="bridge" />
     </xf:wizard>
 

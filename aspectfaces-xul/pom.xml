@@ -95,6 +95,14 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.xulfaces</groupId>
+            <artifactId>xulfaces-renderkit</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/xulfaces-renderkit-1.0.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
 

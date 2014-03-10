@@ -21,7 +21,7 @@
     <ui:param name="applyImage" value="$applyImage$" />
 
     <ui:define name="input">
-        <xf:menulist id="#{id}" value="#{value}">
+        <xf:menulist id="#{id}" value="#{value}" flex="1">
             <c:forEach items="#{collection.entrySet()}" var="item">
                 <f:selectItem itemLabel="#{item.value}" itemValue="#{item.key}" />
             </c:forEach>
@@ -29,9 +29,7 @@
     </ui:define>
 
     <ui:define name="output">
-        <h:outputText
-                rendered="#{not empty value}"
-                value="#{not empty itemCustomLabel and entityType != 'String' ? value.itemCustomLabel : value}"/>
+        <xf:label rendered="#{not empty value}" value="#{not empty itemCustomLabel and entityType != 'String' ? value.itemCustomLabel : value}"/>
     </ui:define>
 
 </ui:decorate>

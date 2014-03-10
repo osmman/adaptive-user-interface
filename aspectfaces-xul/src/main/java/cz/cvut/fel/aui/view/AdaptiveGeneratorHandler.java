@@ -49,6 +49,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
             if (true) {
                 ResourceCache.getInstance().clear();
             }
+            System.out.print(s);
 
             return new ByteArrayInputStream(s.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {

@@ -20,7 +20,7 @@
     <ui:param name="applyImage" value="$applyImage$" />
 
     <ui:define name="input">
-        <xf:menulist id="#{id}" value="#{value}">
+        <xf:menulist id="#{id}" value="#{value}" flex="1">
             <c:forEach items="#{collection}" var="item">
                 <f:selectItem itemLabel="#{text[item.label]}" itemValue="#{item}" />
             </c:forEach>
@@ -28,7 +28,7 @@
     </ui:define>
 
     <ui:define name="output">
-        <h:outputText
+        <xf:label
                 rendered="#{not empty value}"
                 value="#{value.label}"/>
     </ui:define>

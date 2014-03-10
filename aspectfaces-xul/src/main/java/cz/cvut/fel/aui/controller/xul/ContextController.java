@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.controller;
+package cz.cvut.fel.aui.controller.xul;
 
 import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.service.ContextService;

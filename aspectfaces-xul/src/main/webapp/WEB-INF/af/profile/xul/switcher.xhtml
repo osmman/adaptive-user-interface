@@ -1,17 +1,26 @@
 <ui:fragment xmlns="http://www.w3.org/1999/xhtml"
              xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
-			 xmlns:ui="http://java.sun.com/jsf/facelets"
-			 xmlns:h="http://java.sun.com/jsf/html">
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+        >
 
-	<ui:fragment rendered="#{empty edit ? false : edit}">
-            <xf:label value="#{label}" control="#{id}"/>
-			<ui:insert name="input"/>
+    <ui:fragment rendered="#{empty edit ? false : edit}">
+        <hbox class="field" image="#{not empty imageResources.getImage(id) ? request.contextPath.concat('/images/').concat(imageResources.getImage(id)): ''}">
+            <xf:label value="#{label}" control="#{id}" style="min-width:5em"/>
+
+            <ui:insert name="input"/>
+            <ui:fragment rendered="#{required or forceRequired}">
+                <box class="required" />
+            </ui:fragment>
             <xf:message for="#{id}"/>
-	</ui:fragment>
+        </hbox>
+        <box class="help" text="#{help}"/>
+    </ui:fragment>
 
-	<ui:fragment rendered="#{empty edit ? true : not edit}">
-            <xf:label value="#{label}" control="#{id}"/>
+    <ui:fragment rendered="#{empty edit ? true : not edit}">
+        <hbox class="field">
+            <xf:label value="#{label}" control="#{id}" style="min-width:5em"/>
             <ui:insert name="output"/>
-	</ui:fragment>
+        </hbox>
+    </ui:fragment>
 
 </ui:fragment>

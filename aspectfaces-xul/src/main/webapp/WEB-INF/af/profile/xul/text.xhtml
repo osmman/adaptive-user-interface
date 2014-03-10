@@ -19,11 +19,11 @@
 
 
 	<ui:define name="input">
-        <xf:textbox id="#{id}" value="#{value}"/>
+        <xf:textbox id="#{id}" value="#{value}" flex="1"/>
 	</ui:define>
 
 	<ui:define name="output">
-		<h:outputText value="#{value}"/>
+		<xf:label value="#{value}"/>
 	</ui:define>
 
 </ui:decorate>

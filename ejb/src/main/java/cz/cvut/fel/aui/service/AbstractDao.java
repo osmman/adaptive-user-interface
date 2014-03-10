@@ -1,9 +1,17 @@
 package cz.cvut.fel.aui.service;
 
+import cz.cvut.fel.aui.model.Context;
+
+import javax.decorator.Decorator;
+import javax.decorator.Delegate;
+import javax.enterprise.event.Event;
+import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,7 +21,7 @@ import java.util.List;
  * Time: 20:21
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractDao<T> implements DataAccessObject<T> {
+public abstract class AbstractDao<T> implements DataAccessObject<T>, Serializable {
 
     private Class<T> entityClass;
 
