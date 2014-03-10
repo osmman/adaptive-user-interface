@@ -1,0 +1,15 @@
+.field[image] {
+    -moz-binding: url('/aspectfaces-xul/layouts/images.xml#field');
+}
+
+.help {
+    -moz-binding: url('/aspectfaces-xul/layouts/help.xml#help');
+}
+
+.required {
+    -moz-binding: url('/aspectfaces-xul/layouts/help.xml#required');
+}
+
+.helpRequired {
+    -moz-binding: url('/aspectfaces-xul/layouts/help.xml#helpRequired');
+}

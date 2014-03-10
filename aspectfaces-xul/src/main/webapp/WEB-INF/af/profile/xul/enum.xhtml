@@ -1,0 +1,36 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:c="http://java.sun.com/jsp/jstl/core"
+             xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+             template="#{empty template ? '/WEB-INF/af/profile/xul/switcher.xhtml' : template}">
+
+    <ui:param name="id" value="#{prefix}$field$"/>
+    <ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
+    <ui:param name="value" value="#{$entityBean.shortClassName()$.$field$}"/>
+    <ui:param name="rendered" value="#{empty render$field.firstToUpper()$ ? 'true' : render$field.firstToUpper()$}"/>
+    <ui:param name="required" value="$required$"/>
+    <ui:param name="collection" value="#{enum.$field$}"/>
+    <ui:param name="entityType" value="$dataType$"/>
+    <ui:param name="help" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$.help']}" />
+    <ui:param name="applyHelp" value="$applyHelp$" />
+    <ui:param name="imageUrl" value="$after.value.value$" />
+    <ui:param name="imageAlt" value="$after.value.title$" />
+    <ui:param name="applyImage" value="$applyImage$" />
+
+    <ui:define name="input">
+        <xf:menulist id="#{id}" value="#{value}" flex="1">
+            <c:forEach items="#{collection}" var="item">
+                <f:selectItem itemLabel="#{text[item.label]}" itemValue="#{item}" />
+            </c:forEach>
+        </xf:menulist>
+    </ui:define>
+
+    <ui:define name="output">
+        <xf:label
+                rendered="#{not empty value}"
+                value="#{value.label}"/>
+    </ui:define>
+
+</ui:decorate>
