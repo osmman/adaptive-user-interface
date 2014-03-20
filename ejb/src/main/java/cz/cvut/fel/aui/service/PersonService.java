@@ -1,6 +1,5 @@
 package cz.cvut.fel.aui.service;
 
-import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.Person;
 
 import javax.ejb.Stateless;
@@ -17,8 +16,7 @@ import javax.persistence.EntityManager;
  */
 
 @Stateless
-public class PersonService extends AbstractDao<Person>
-{
+public class PersonService extends AbstractDao<Person> {
 
     @Inject
     private EntityManager em;
@@ -32,14 +30,12 @@ public class PersonService extends AbstractDao<Person>
     private Event<Person> personEvent;
 
     @Override
-    protected EntityManager getEntityManager()
-    {
+    protected EntityManager getEntityManager() {
         return em;
     }
 
     @Override
-    public void create(Person entity)
-    {
+    public void create(Person entity) {
         super.create(entity);
         personEvent.fire(entity);
     }

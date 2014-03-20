@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UIProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://uiprotocol.eu/resources/xsd/UIPA/1.0"
+	version="1.0">
+	<interfaces>
+
+		<interface class="root">
+			<container>
+				<container>
+					<label>
+						<property name="title" value="Electronic Forms Catalog" />
+						<property name="description" value="" />
+					</label>
+
+					<container>
+						<label>
+							<property name="title" value="User registration" />
+							<property name="description" value="" />
+						</label>
+						
+						<element class="public.trigger" id="person.register">
+		                    <label>
+		                        <property name="title" value="Register new user" />
+		                        <property name="description" value="New users registration" />
+		                    </label>
+		
+		                    <behavior implicit="true" action="root.person.register" trigger="action" />
+		                </element>
+		                
+		                <element class="public.trigger" id="person.list">
+                            <label>
+                                <property name="title" value="List of registered users" />
+                                <property name="description" value="List of registered users" />
+                            </label>
+        
+                            <behavior implicit="true" action="root.person.list" trigger="action" />
+                        </element>
+						
+					</container>
+
+				</container>
+
+
+
+
+			</container>
+		</interface>
+	</interfaces>
+</UIProtocol>

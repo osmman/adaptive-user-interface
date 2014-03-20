@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIProtocol version="1.0">
+    <models>
+        <model update="partial" id="public.application">
+            <property value="9876" name="integration.jee.server.port"/>
+            <property value="localhost" name="integration.jee.server.address"/>
+        </model>
+    </models>
+</UIProtocol>

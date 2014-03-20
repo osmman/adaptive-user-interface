@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIProtocol version="1.0">
+    <models>
+        <model update="partial" id="clientinfo.default">
+            <property value="" name="PreferencesInterfaceClass"/>
+            <property value="" name="AvatarInterfaceClass"/>
+            <property value="root" name="RootInterfaceClass"/>
+            <property value="" name="MenuInterfaceClass"/>
+            <property value="" name="TrayMenuInterfaceClass"/>
+            <property value="en" name="Language"/>
+            <property value="" name="TrayIcon"/>
+            <property value="" name="ApplicationIcon"/>
+            <property value="false" name="Attention"/>
+            <property value="" name="GlobalInterfaceClass"/>
+            <property value="" name="AboutInterfaceClass"/>
+        </model>
+    </models>
+</UIProtocol>

@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.view;
+package cz.cvut.fel.aui.view.jsf;
 
 import com.codingcrayons.aspectfaces.cache.ResourceCache;
 import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;

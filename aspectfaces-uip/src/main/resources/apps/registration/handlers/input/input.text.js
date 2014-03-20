@@ -1,0 +1,71 @@
+var actualState = event.getProperties()['text'];
+var actualStateSet = !(actualState == null || actualState == "");
+
+var mandatory = false;
+try {
+	mandatory = event.getProperties()['mandatory'];
+	server.logMessage('mandatory ' + mandatory);
+} catch (err) {
+	// nothing to do
+}
+mandatory = (mandatory == 'true');
+
+var minLength = null;
+try {
+	minLength = event.getProperties()['length.min'];
+	server.logMessage('minLength ' + minLength);
+} catch (err) {
+	// nothing to do
+}
+var minLengthSet = !(minLength == null || minLength == "");
+if (minLengthSet) {
+	minLength = parseInt(minLength);
+}
+
+var maxLength = null;
+try {
+	maxLength = event.getProperties()['length.max'];
+	server.logMessage('maxLength ' + maxLength);
+} catch (err) {
+	// nothing to do
+}
+var maxLengthSet = !(maxLength == null || maxLength == "");
+if (maxLengthSet) {
+	maxLength = parseInt(maxLength);
+}
+
+var regualExpression = null;
+try {
+	regualExpression = event.getProperties()['regularExpression'];
+	server.logMessage('regualExpression ' + regualExpression);
+} catch (err) {
+	// nothing to do
+}
+var regualExpressionSet = !(regualExpression == null || regualExpression == "");
+
+var modelName = event.getProperties()['model.name'];
+var modelSupportName = event.getProperties()['model.support.name'];
+var propertyName = event.getProperties()['model.property'];
+
+client.updateModel(modelName, null, propertyName, actualState);
+
+var error = false;
+var errorOld = client.getModelValue(modelSupportName, null, propertyName + ".validation.notify");
+errorOld = (errorOld == 'true');
+
+error = error || (mandatory && !actualStateSet);
+
+if (actualStateSet) {
+	error = error || (minLengthSet && (actualState.length < minLength));
+	error = error || (maxLengthSet && (actualState.length > maxLength));
+	
+	if (regualExpressionSet) {
+		var re = new RegExp(regualExpression);
+		error = error || !re.test(actualState);
+	}
+}
+
+if (error != errorOld) {
+	client.updateModel(modelSupportName, null, propertyName + ".validation.notify", "" + error);
+}
+
