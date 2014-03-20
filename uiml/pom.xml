@@ -7,9 +7,19 @@
         <groupId>cz.cvut.fel.aui</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>uiml</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>aaa</groupId>
+            <artifactId>aaa</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:/Dokumenty/Skola/CVUT/Magisterský/Diplomka/tools/uiml/uiml2html.jar</systemPath>
+        </dependency>
+    </dependencies>
 
 </project>

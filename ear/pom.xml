@@ -22,7 +22,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>AdaptiveUI</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -35,7 +35,7 @@
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
                     </modules>
-                    <fileNameMapping>no-version</fileNameMapping>
+
                 </configuration>
             </plugin>
 
@@ -43,14 +43,23 @@
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
                 <configuration>
-                    <filename>${project.artifactId}.ear</filename>
+                    <filename>AdaptiveUI.ear</filename>
                     <skip>false</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <profiles>
+        <!-- JSF and AspectFaces profile -->
         <profile>
             <id>jsf</id>
             <properties/>
@@ -62,6 +71,8 @@
                 </dependency>
             </dependencies>
         </profile>
+
+        <!-- XUL profile -->
         <profile>
             <id>xul</id>
             <properties/>
@@ -70,6 +81,53 @@
                     <groupId>cz.cvut.fel.aui</groupId>
                     <artifactId>aspectfaces-xul</artifactId>
                     <type>war</type>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <!-- UIProtocol profile -->
+        <profile>
+            <id>uip</id>
+            <properties/>
+            <dependencies>
+                <dependency>
+                    <groupId>cz.cvut.fel.aui</groupId>
+                    <artifactId>aspectfaces-uip</artifactId>
+                    <type>ejb</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>uips.integrated.jee</groupId>
+                    <version>1.0.0</version>
+                    <artifactId>UipServerJavaEeIntergated-lib</artifactId>
+                    <type>jar</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>uips.integrated.jee</groupId>
+                    <version>1.0.0</version>
+                    <artifactId>UipServerJavaEeIntergated-ejb</artifactId>
+                    <type>ejb</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>uip.uipaf.jeeuipsconnector</groupId>
+                    <version>1.0.0</version>
+                    <artifactId>UipsJavaEeSocketConnector-api</artifactId>
+                    <type>jar</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>uip.uipaf.jeeuipsconnector</groupId>
+                    <version>1.0.0</version>
+                    <artifactId>UipsJavaEeSocketConnector-rar</artifactId>
+                    <type>rar</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.jasypt</groupId>
+                    <artifactId>jasypt</artifactId>
+                    <version>1.9.0</version>
                 </dependency>
             </dependencies>
         </profile>

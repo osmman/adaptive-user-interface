@@ -7,30 +7,10 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ejb</module>
-        <module>aspectfaces-jsf</module>
-        <module>aspectfaces-xul</module>
         <module>ear</module>
         <module>bundle</module>
         <!--<module>jsf</module>-->
     </modules>
-
-
-    <!--<properties>-->
-
-
-
-        <!--&lt;!&ndash; Third Party Spring dependencies &ndash;&gt;-->
-        <!--<version.standard.taglibs>1.1.2</version.standard.taglibs>-->
-        <!--<version.commons.logging>1.1.1</version.commons.logging>-->
-        <!--<version.cglib>2.2</version.cglib>-->
-        <!--<version.h2db>1.3.165</version.h2db>-->
-        <!--<version.jackson>1.9.3</version.jackson>-->
-        <!--<version.slf4j>1.7.5</version.slf4j>-->
-
-        <!--&lt;!&ndash; Aspect Faces framework &ndash;&gt;-->
-        <!--<aspectfaces.version>1.4.0-SNAPSHOT</aspectfaces.version>-->
-    <!--</properties>-->
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,6 +27,8 @@
         <version.maven.compiler>3.1</version.maven.compiler>
         <version.ear.plugin>2.8</version.ear.plugin>
         <version.ejb.plugin>2.3</version.ejb.plugin>
+
+        <version.commons.logging>1.1.1</version.commons.logging>
 
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
@@ -73,6 +55,13 @@
                 <artifactId>aspectfaces-xul</artifactId>
                 <version>${project.version}</version>
                 <type>war</type>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.cvut.fel.aui</groupId>
+                <artifactId>aspectfaces-uip</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
             </dependency>
 
             <dependency>
@@ -121,6 +110,27 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>uip</id>
+            <modules>
+                <module>aspectfaces-uip</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>xul</id>
+            <modules>
+                <module>aspectfaces-xul</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>jsf</id>
+            <modules>
+                <module>aspectfaces-jsf</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <repositories>
 
