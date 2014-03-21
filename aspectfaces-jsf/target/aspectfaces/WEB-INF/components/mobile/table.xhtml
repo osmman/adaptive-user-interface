@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+        >
+    <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true">
+        <ui:repeat value="#{items}" var="item">
+            <ui:insert name="table">
+                [content]
+            </ui:insert>
+        </ui:repeat>
+    </ul>
+</ui:composition>

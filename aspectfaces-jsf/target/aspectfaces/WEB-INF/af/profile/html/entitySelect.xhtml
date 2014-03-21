@@ -1,0 +1,40 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+			 xmlns:ui="http://java.sun.com/jsf/facelets"
+			 xmlns:f="http://java.sun.com/jsf/core"
+			 xmlns:h="http://java.sun.com/jsf/html"
+			 template="#{empty template ? '/WEB-INF/af/profile/html/switcher.xhtml' : template}">
+
+	<ui:param name="id" value="#{prefix}$field$"/>
+	<ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
+	<ui:param name="value" value="#{$entityBean.shortClassName()$.$field$}"/>
+	<ui:param name="rendered" value="#{empty render$field.firstToUpper()$ ? 'true' : render$field.firstToUpper()$}"/>
+	<ui:param name="required" value="#{empty required$field.firstToUpper()$ ? $required$ : required$field.firstToUpper()$}"/>
+	<ui:param name="collection" value="#{$entityBean.shortClassName().firstToLower()$sBean.get$entityBean.shortClassName()$s()}"/>
+	<ui:param name="entityType" value="$dataType$"/>
+
+	<ui:define name="input">
+		<h:selectOneMenu
+				id="#{id}"
+				title="#{empty title ? label : title}"
+				required="#{empty required ? false : required}"
+				value="#{value}">
+			<f:selectItem
+					value="#{null}"
+					itemLabel="-- no selection --"
+					itemValue="#{null}"/>
+			<f:selectItems
+					value="#{collection}"
+					var="item"
+					itemValue="#{entityType}-#{item.identifier}"
+					itemLabel="#{not empty item.name ? item.name : item}"/>
+			<f:converter converterId="entityConverter"/>
+		</h:selectOneMenu>
+	</ui:define>
+
+	<ui:define name="output">
+		<h:outputText
+				rendered="#{not empty value}"
+				value="#{not empty itemCustomLabel and entityType != 'String' ? value.itemCustomLabel : value}"/>
+	</ui:define>
+
+</ui:decorate>

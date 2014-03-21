@@ -1,0 +1,14 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+			 xmlns:ui="http://java.sun.com/jsf/facelets"
+			 xmlns:h="http://java.sun.com/jsf/html"
+			 template="#{empty template ? '/WEB-INF/af/profile/table/column.xhtml' : template}">
+
+	<ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
+	<ui:param name="value" value="#{$entityBean.shortClassName()$.$field$.name}"/>
+	<ui:param name="rendered" value="#{empty render$field.firstToUpper()$ ? 'true' : render$field.firstToUpper()$}"/>
+
+	<ui:define name="value">
+		<h:outputText value="#{value}"/>
+	</ui:define>
+
+</ui:decorate>

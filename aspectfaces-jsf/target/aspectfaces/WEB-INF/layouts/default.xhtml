@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+        >
+<h:head>
+    <title>AUI demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css"/>
+    <h:outputStylesheet name="css/custom.css"/>
+</h:head>
+<h:body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h:link styleClass="navbar-brand" outcome="index" value="Adaptive user interface"/>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ui:include src="/WEB-INF/parts/menu.xhtml"/>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <div class="col-xs-12" role="main">
+                <h:messages globalOnly="true" styleClass="alert" id="message" errorClass="alert-danger"
+                            infoClass="alert-info" warnClass="alert-warning"/>
+                <ui:insert name="content">
+                    <!--<f:param name="templateBasePath" value="/WEB-INF/templates/desktop"/>-->
+                    [Template content will be inserted here]
+                </ui:insert>
+                <h:form>
+                    <ui:insert name="action"/>
+                </h:form>
+            </div>
+        </div>
+        <div class="footer" role="contentinfo">
+            <p>
+
+                <h:outputText value="#{session.lastAccessedTime}">
+                    <f:convertDateTime dateStyle="short" type="date"/>
+                </h:outputText>
+            </p>
+        </div>
+    </div>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</h:body>
+</html>
+
+
+
