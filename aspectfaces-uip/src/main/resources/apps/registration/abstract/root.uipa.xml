@@ -33,7 +33,6 @@
                                 <property name="title" value="List of registered users" />
                                 <property name="description" value="List of registered users" />
                             </label>
-        
                             <behavior implicit="true" action="root.person.list" trigger="action" />
                         </element>
 						

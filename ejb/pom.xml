@@ -78,6 +78,12 @@
             <artifactId>annotation-descriptors</artifactId>
             <version>${aspectfaces.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>uip.uipaf.auiGenerator</groupId>
+            <artifactId>AfUipAuiGenerator</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

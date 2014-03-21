@@ -2,7 +2,7 @@
 <UIProtocol version="1.0">
     <models>
         <model update="partial" id="public.application">
-            <property value="9876" name="integration.jee.server.port"/>
+            <property value="5678" name="integration.jee.server.port"/>
             <property value="localhost" name="integration.jee.server.address"/>
         </model>
     </models>

@@ -5,6 +5,7 @@ import com.codingcrayons.aspectfaces.annotations.UiPassword;
 import com.codingcrayons.aspectfaces.annotations.UiType;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import uip.uipaf.auiGenerator.model.Storeable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -19,7 +20,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class Person extends EntityObject
+public class Person extends EntityObject implements Storeable
 {
     public Person()
     {

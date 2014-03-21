@@ -3,6 +3,8 @@ package cz.cvut.fel.aui.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import uip.uipaf.auiGenerator.model.Identifiable;
+
 /**
  * Created with IntelliJ IDEA.
  * Person: Tomáš
@@ -11,7 +13,7 @@ import java.io.Serializable;
  * To change this template use File | Settings | File Templates.
  */
 @MappedSuperclass
-public class EntityObject implements Serializable {
+public class EntityObject implements Serializable, Identifiable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -11,8 +11,8 @@ params["handler.cancel"] = "cancel";
 params["model.rewrite"] = "true";
 params["form.readonly"] = "false";
 params["client.notify.uiUpdate"] = "false";
+
 event.callHandler("integration.aui.generate", params);
 
-
-//client.updateModel("public.interfaces", null, "person.register", null, null);
+client.updateModel("public.interfaces", null, "person.register", null, null);
 client.updateModel("public.interfaces", null, "root", "public.interfaces:person.register", null);

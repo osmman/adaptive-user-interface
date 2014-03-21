@@ -2,6 +2,7 @@ package cz.cvut.fel.aui.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import org.hibernate.validator.constraints.NotEmpty;
+import uip.uipaf.auiGenerator.model.Storeable;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,7 +14,7 @@ import javax.validation.constraints.NotNull;
  * Created by Tomáš on 7.12.13.
  */
 @Entity
-public class PersonInfo extends EntityObject
+public class PersonInfo extends EntityObject implements Storeable
 {
 
     private String firstName;
