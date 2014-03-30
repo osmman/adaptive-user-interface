@@ -11,9 +11,13 @@
 	<mapping>
 		<type>String</type>
         <type>Integer</type>
-        <type>Enum</type>
 		<default tag="style/entry.xml" basePath="..."/>
 	</mapping>
+
+    <mapping>
+        <type>Enum</type>
+        <default tag="style/enum.xml" />
+    </mapping>
 
 	<!-- Globally ignored fields -->
 	<ignore-fields>

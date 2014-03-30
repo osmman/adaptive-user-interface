@@ -10,6 +10,7 @@
         </style>
         <structure source="uiml://af-output/structure_context.uiml#structure_context" how="replace">
         </structure>
+
     </interface>
     <peers>
         <presentation base="swf-1.1.uiml"/>

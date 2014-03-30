@@ -29,6 +29,7 @@ public class AFGenerator {
     public static void main(String[] args) throws Exception{
         new AFGenerator().make("structure");
         new AFGenerator().make("style");
+        new AFGenerator().make("layout");
     }
 
     /**
