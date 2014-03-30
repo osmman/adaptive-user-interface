@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aspectfaces-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/j2ee"
+					xsi:schemaLocation="http://aspectfaces.com/schema/j2ee http://aspectfaces.com/schema/j2ee/aspectfaces-config-1.4.0-SNAPSHOT.xsd">
+
+	<configurations-registration>
+		<configuration name="default" path="/af/default.config.xml" check-modification="true" lazy-load="true"/>
+        <configuration name="layout" path="/af/layout.config.xml" check-modification="true" lazy-load="true"/>
+	</configurations-registration>
+
+	<annotations-registration>
+
+		<!-- AspectFaces annotations -->
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiCollectionAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiFormOrderAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiFormProfilesAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiFormUserRolesAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiHtmlAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiLabelAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiLinkAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiOrderAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiParamAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiPasswordAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiPatternAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiProfilesAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiRequiredAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiRestrictAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiSizeAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiTableOrderAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiTableProfilesAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiTableUserRolesAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiTextAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiTypeAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiUserRolesAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiBeforeAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.UiAfterAnnotationDescriptor</name>
+
+		<!-- javax.validation annotations -->
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.DecimalMaxAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.DecimalMinAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.DigitsAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.FutureAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.MaxAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.MinAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.NotNullAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.PastAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.PatternAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.javax.validation.SizeAnnotationDescriptor</name>
+
+		<!-- JPA annotations -->
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.jpa.ColumnAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.jpa.JoinColumnAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.jpa.TemporalAnnotationDescriptor</name>
+
+		<!-- Hibernate validator annotations -->
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.ConstraintCompositionAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.CreditCardNumberAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.EmailAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.LengthAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.NotBlankAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.NotEmptyAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.RangeAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.SafeHtmlAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.ScriptAssertAnnotationDescriptor</name>
+		<name>com.codingcrayons.aspectfaces.annotation.descriptors.hibernate.validator.v42.URLAnnotationDescriptor</name>
+
+	</annotations-registration>
+
+</aspectfaces-config>

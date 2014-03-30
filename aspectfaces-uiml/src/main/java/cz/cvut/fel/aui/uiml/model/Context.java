@@ -1,10 +1,11 @@
-package cz.cvut.fel.aui.model;
+package cz.cvut.fel.aui.uiml.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import com.codingcrayons.aspectfaces.annotations.UiType;
-import cz.cvut.fel.aui.model.context.Age;
-import cz.cvut.fel.aui.model.context.Device;
-import cz.cvut.fel.aui.model.context.ScreenSize;
+
+import cz.cvut.fel.aui.uiml.model.context.Age;
+import cz.cvut.fel.aui.uiml.model.context.Device;
+import cz.cvut.fel.aui.uiml.model.context.ScreenSize;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

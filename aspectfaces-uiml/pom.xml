@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>base</artifactId>
+        <groupId>cz.cvut.fel.aui</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aspectfaces-uiml</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.codingcrayons.aspectfaces</groupId>
+            <artifactId>javaee-jsf2</artifactId>
+            <version>${aspectfaces.version}</version>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+
+         <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
+             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.0.3.Final</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.maven.compiler}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>exec-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>cz.cvut.fel.aui.uiml.AFGenerator</mainClass>
+                        </configuration>
+                    </execution>
+                    <!--<execution>&lt;!&ndash; Run our version calculation script &ndash;&gt;-->
+                    <!--<id>Run uiml.net</id>-->
+                    <!--<phase>compile</phase>-->
+                    <!--<goals>-->
+                    <!--<goal>exec</goal>-->
+                    <!--</goals>-->
+                    <!--<configuration>-->
+                    <!--<executable>${project.build.outputDirectory}/scripts/run.bat</executable>-->
+                    <!--<workingDirectory>${project.build.outputDirectory}</workingDirectory>-->
+                    <!--<arguments>-->
+                    <!--<argument>-uiml</argument>-->
+                    <!--<argument>context.uiml</argument>-->
+                    <!--</arguments>-->
+                    <!--</configuration>-->
+                    <!--</execution>-->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

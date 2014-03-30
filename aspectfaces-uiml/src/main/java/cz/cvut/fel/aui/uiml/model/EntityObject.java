@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.model;
+package cz.cvut.fel.aui.uiml.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

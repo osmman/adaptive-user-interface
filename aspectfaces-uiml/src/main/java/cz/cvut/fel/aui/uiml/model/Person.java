@@ -1,4 +1,4 @@
-package cz.cvut.fel.aui.model;
+package cz.cvut.fel.aui.uiml.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import com.codingcrayons.aspectfaces.annotations.UiPassword;

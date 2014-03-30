@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <UIProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="http://solari.cz/resources/xsd/uiprotocol/1.0"
-            version="1.0">
-    <models>
-        <model id="igs.client.cz.ctu.uip.client.wpf.desktop" update="complete">
-            <property name="id" value="cz.ctu.uip.client.wpf.desktop" />
-            <property name="maximum_contrast" value="0.8" />
-            <property name="maximum_brightness" value="233" />
-            <property name="line_width" value="1.1" />
-            <property name="target_size" value="23,23" />
-            <property name="font_height" value="12" />
-            <property name="sound_volume" value="60" />
-            <property name="speech_volume" value="70" />
-            <property name="key_size" value="8" />
-            <property name="minimal_user_height" value="100" />
-            <property name="screen_width" value="1024" />
-            <property name="screen_height" value="768" />
-            <property name="screen_dpi" value="" />
-            <property name="supported_elements" value="" />
-            <property name="is_touchscreen" value="true" />
-            <property name="is_multitouch" value="true" />
-            <property name="has_keyboard" value="false" />
-            <property name="has_mouse" value="false" />s
-        </model>
-    </models>
+	xsi:noNamespaceSchemaLocation="http://solari.cz/resources/xsd/uiprotocol/1.0"
+	version="1.0">
+	<models>
+		<model id="igs.client.cz.ctu.uip.client.wpf.desktop" update="complete">
+		<property name="id" value="cz.ctu.uip.client.wpf.desktop" />
+      <property name="maximum_contrast" value="0.8" />
+      <property name="maximum_brightness" value="233" />
+      <property name="line_width" value="1.1" />
+      <property name="target_size" value="23,23" />
+      <property name="font_height" value="12" />
+      <property name="sound_volume" value="60" />
+      <property name="speech_volume" value="70" />
+      <property name="key_size" value="8" />
+      <property name="minimal_user_height" value="100" />
+      <property name="screen_width" value="1024" />
+      <property name="screen_height" value="768" />
+      <property name="screen_dpi" value="" />
+      <property name="supported_elements" value="" />
+      <property name="is_touchscreen" value="true" />
+      <property name="is_multitouch" value="true" />
+      <property name="has_keyboard" value="false" />
+      <property name="has_mouse" value="false" />s
+		</model>
+	</models>
 </UIProtocol>

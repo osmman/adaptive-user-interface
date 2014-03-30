@@ -12,7 +12,7 @@
 			<property name="sound_volume" value="1.0" />
 			<property name="speech_volume" value="1.0" />
 			<property name="key_size" value="1.0" />
-      <property name="target_size" value="1.0" />
+            <property name="target_size" value="1.0" />
 			<property name="key_press_time" value="1.0" />
 			<property name="hand_tremble" value="1.0" />
 			<property name="one_hand" value="false" />
@@ -32,6 +32,7 @@
 			<property name="language.en" value="0.40" />
 			<property name="language.de" value="0.25" />
 			<property name="language.ru" value="0.20" />
+            <property name="language" value="cs" />
 		</model>
 	</models>
 </UIProtocol>

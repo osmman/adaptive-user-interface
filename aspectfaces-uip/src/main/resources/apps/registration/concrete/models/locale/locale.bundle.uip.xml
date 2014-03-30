@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIProtocol version="1.0">
+    <models>
+        <model id="locale.bundle">
+            <variant>
+                <property name="language" value="cs" />
+            </variant>
+            <property name="state" value="Stát" />
+        </model>
+
+        <model id="locale.bundle">
+            <variant>
+                <property name="language" value="en" />
+            </variant>
+            <property name="state" value="State" />
+        </model>
+    </models>
+</UIProtocol>

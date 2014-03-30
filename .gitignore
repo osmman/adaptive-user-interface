@@ -4,4 +4,4 @@
 .project
 .settings
 .classpath
-base.iml
+**/*.iml

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIProtocol version="1.0">
+    <models>
+        <model id="locale.cs">
+            <property name="state" key="locale.bundle:state"/>
+        </model>
+    </models>
+</UIProtocol>

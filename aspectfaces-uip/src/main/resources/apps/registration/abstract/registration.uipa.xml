@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UIProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://uiprotocol.eu/resources/xsd/UIPA/1.0"
+            version="1.0">
+    <interfaces>
+
+        <interface class="registration">
+                <container>
+                    <label>
+                        <property name="title" value="Electronic Forms Catalog"/>
+                        <property name="description" value=""/>
+                    </label>
+                    <element class="public.trigger" id="person.register">
+                        <label>
+                            <property name="title" value="Register new user"/>
+                            <property name="description" value="New users registration"/>
+                            <property name="icon" value="glyphicons_000_glass.png" />
+
+                        </label>
+                        <property name="enabled" value="false" />
+                        <property name="visible" value="false" />
+                        <behavior implicit="true" action="public.request.interface" trigger="action">
+                            <property name="class" value="root" />
+                        </behavior>
+                    </element>
+
+                </container>
+
+        </interface>
+    </interfaces>
+</UIProtocol>

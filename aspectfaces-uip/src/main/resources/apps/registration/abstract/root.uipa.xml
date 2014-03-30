@@ -1,49 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <UIProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://uiprotocol.eu/resources/xsd/UIPA/1.0"
-	version="1.0">
-	<interfaces>
+            xsi:noNamespaceSchemaLocation="http://uiprotocol.eu/resources/xsd/UIPA/1.0"
+            version="1.0">
+    <interfaces>
 
-		<interface class="root">
-			<container>
-				<container>
-					<label>
-						<property name="title" value="Electronic Forms Catalog" />
-						<property name="description" value="" />
-					</label>
+        <interface class="root">
+            <container>
+                <container>
+                    <label>
+                        <property name="title" value="Electronic Forms Catalog"/>
+                        <property name="description" value=""/>
+                    </label>
 
-					<container>
-						<label>
-							<property name="title" value="User registration" />
-							<property name="description" value="" />
-						</label>
-						
-						<element class="public.trigger" id="person.register">
-		                    <label>
-		                        <property name="title" value="Register new user" />
-		                        <property name="description" value="New users registration" />
-		                    </label>
-		
-		                    <behavior implicit="true" action="root.person.register" trigger="action" />
-		                </element>
-		                
-		                <element class="public.trigger" id="person.list">
+                    <container>
+                        <label>
+                            <property name="title" value="User registration"/>
+                            <property name="description" value=""/>
+                        </label>
+
+                        <element class="public.trigger" id="person.register">
                             <label>
-                                <property name="title" value="List of registered users" />
-                                <property name="description" value="List of registered users" />
+                                <property name="title" value="Register new user"/>
+                                <property name="description" value="New users registration"/>
                             </label>
-                            <behavior implicit="true" action="root.person.list" trigger="action" />
+
+                            <behavior implicit="true" action="root.person.register" trigger="action"/>
                         </element>
-						
-					</container>
 
-				</container>
+                        <element class="public.trigger" id="person.list">
+                            <label>
+                                <property name="title" value="List of registered users"/>
+                                <property name="description" value="List of registered users"/>
+                            </label>
+                            <behavior implicit="true" action="root.person.list" trigger="action"/>
+                        </element>
+
+                    </container>
+
+                    <container>
+
+                        <label>
+                            <property name="title" key="locale.bundle:state"/>
+                            <property name="description" value=""/>
+                        </label>
+                        <element class="public.trigger" id="context.form">
+                            <label>
+                                <property name="title" value="Change context"/>
+                                <property name="description" value="Change application context"/>
+                            </label>
+
+                            <behavior implicit="true" action="root.context.form" trigger="action"/>
+                        </element>
+
+                        <element class="public.trigger" id="aaa">
+                            <label>
+                                <property name="title" key="public.context:language"/>
+                                <property name="description" value="Change application context"/>
+                            </label>
+
+                            <behavior implicit="true" action="root.context.form" trigger="action"/>
+                        </element>
+
+                    </container>
+
+                </container>
 
 
-
-
-			</container>
-		</interface>
-	</interfaces>
+            </container>
+        </interface>
+    </interfaces>
 </UIProtocol>

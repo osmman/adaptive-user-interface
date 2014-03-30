@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <UIProtocol version="1.0">
     <models>
-        <model update="partial" id="clientinfo.default">
+        <model update="partial" id="clientinfo.cz.ctu.uip.client.wpf.desktop">
             <property value="" name="PreferencesInterfaceClass"/>
             <property value="" name="AvatarInterfaceClass"/>
             <property value="registration" name="RootInterfaceClass"/>
             <property value="" name="MenuInterfaceClass"/>
             <property value="" name="TrayMenuInterfaceClass"/>
             <property value="cs" name="Language"/>
-            <property value="" name="TrayIcon"/>
-            <property value="glyphicons_000_glass.png" name="ApplicationIcon"/>
+            <property value="registration/glyphicons_000_glass.png" name="TrayIcon"/>
+            <property value="registration/glyphicons_000_glass.png" name="ApplicationIcon"/>
             <property value="false" name="Attention"/>
             <property value="" name="GlobalInterfaceClass"/>
             <property value="" name="AboutInterfaceClass"/>

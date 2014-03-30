@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIProtocol version="1.0">
+    <models>
+        <model update="partial" id="public.user">
+            <property name="locale.language" key="public.context:language"/>
+            <property name="locale.country" key="public.context:country"/>
+        </model>
+    </models>
+</UIProtocol>

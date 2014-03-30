@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Aspect Faces framework -->
-        <aspectfaces.version>1.4.0-SNAPSHOT</aspectfaces.version>
+        <aspectfaces.version>1.4.0</aspectfaces.version>
 
         <!-- Jboss as plugin -->
         <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
@@ -62,6 +62,13 @@
                 <artifactId>aspectfaces-uip</artifactId>
                 <version>${project.version}</version>
                 <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>uip.uipaf.auiGenerator</groupId>
+                <artifactId>AfUipAuiGenerator</artifactId>
+                <version>1.0.0</version>
+                <type>jar</type>
             </dependency>
 
             <dependency>
@@ -130,6 +137,12 @@
                 <module>aspectfaces-jsf</module>
             </modules>
         </profile>
+        <profile>
+            <id>uiml</id>
+            <modules>
+                <module>aspectfaces-uiml</module>
+            </modules>
+        </profile>
     </profiles>
 
     <repositories>
@@ -138,6 +151,9 @@
             <id>codingcrayons-repository</id>
             <name>CodingCrayons Maven Repository</name>
             <url>http://maven.codingcrayons.com/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
 
         <repository>

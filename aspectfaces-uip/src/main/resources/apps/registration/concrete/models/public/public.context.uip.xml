@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UIProtocol version="1.0">
+    <models>
+        <model update="partial" id="public.context">
+            <property value="STUDENT" name="age"/>
+            <property value="cs" name="language"/>
+            <property value="CZ" name="country"/>
+            <property value="WIDE" name="screenSize"/>
+            <property value="DESKTOP" name="device"/>
+        </model>
+    </models>
+</UIProtocol>
