@@ -71,7 +71,7 @@
 
 <!--
     The 'interface' element describes a user interface in terms of
-    presentation widgets, component structure and behavior specifications.
+    presentation widgets, component profile.structure and behavior specifications.
 -->
 
 <!ELEMENT interface (structure|style|content|behavior)*>
@@ -203,7 +203,7 @@
 <!-- Interface related elements -->
 
 <!--
-    The 'structure' element describes the initial organization of the
+    The 'profile.structure' element describes the initial organization of the
     parts that comprise the user interface.
 -->
 

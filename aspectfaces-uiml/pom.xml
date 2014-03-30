@@ -21,6 +21,18 @@
         </dependency>
 
         <dependency>
+            <groupId>com.codingcrayons.aspectfaces</groupId>
+            <artifactId>core</artifactId>
+            <version>${aspectfaces.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codingcrayons.aspectfaces</groupId>
+            <artifactId>saving-plugin</artifactId>
+            <version>${aspectfaces.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.5</version>
@@ -45,7 +57,16 @@
             <artifactId>hibernate-validator</artifactId>
             <version>5.0.3.Final</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper-el</artifactId>
+            <version>7.0.47</version>
+            <!--<scope>test</scope>-->
+        </dependency>
     </dependencies>
+
+
 
     <build>
         <plugins>
@@ -64,7 +85,7 @@
                 <executions>
                     <execution>
                         <id>generate</id>
-                        <phase>compile</phase>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
@@ -72,21 +93,20 @@
                             <mainClass>cz.cvut.fel.aui.uiml.AFGenerator</mainClass>
                         </configuration>
                     </execution>
-                    <!--<execution>&lt;!&ndash; Run our version calculation script &ndash;&gt;-->
-                    <!--<id>Run uiml.net</id>-->
-                    <!--<phase>compile</phase>-->
-                    <!--<goals>-->
-                    <!--<goal>exec</goal>-->
-                    <!--</goals>-->
-                    <!--<configuration>-->
-                    <!--<executable>${project.build.outputDirectory}/scripts/run.bat</executable>-->
-                    <!--<workingDirectory>${project.build.outputDirectory}</workingDirectory>-->
-                    <!--<arguments>-->
-                    <!--<argument>-uiml</argument>-->
-                    <!--<argument>context.uiml</argument>-->
-                    <!--</arguments>-->
-                    <!--</configuration>-->
-                    <!--</execution>-->
+                    <execution><!-- Run our version calculation script -->
+                        <id>Run uiml.net</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${project.build.outputDirectory}/scripts/run.bat</executable>
+                            <workingDirectory>${project.build.outputDirectory}/uiml</workingDirectory>
+                            <arguments>
+                                <argument>${project.build.outputDirectory}/uiml</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

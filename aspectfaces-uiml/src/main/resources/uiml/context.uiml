@@ -49,8 +49,8 @@
             <constant id="label" value="Label"/>
         </content>
 
-        <!--<content id="EN" source="lang/en.uiml#en" />-->
-        <!--<content id="CS" source="lang/cs.uiml#cs" />-->
+        <content id="EN" source="file://../lang/en.uiml#en" />
+        <content id="CS" source="file://../lang/cs.uiml#cs" />
     </interface>
     <peers>
         <presentation base="swf-1.1.uiml"/>

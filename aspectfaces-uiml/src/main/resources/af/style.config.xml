@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/aspectfaces"
+		xsi:schemaLocation="http://aspectfaces.com/schema/aspectfaces http://www.aspectfaces.com/schema/af-configuration-1.4.0-SNAPSHOT.xsd">
+
+    <mapping>
+        <type>Insert</type>
+        <default tag="emptyTag.xhtml" />
+    </mapping>
+
+	<mapping>
+		<type>String</type>
+        <type>Integer</type>
+        <type>Enum</type>
+		<default tag="style/entry.xml" basePath="..."/>
+	</mapping>
+
+	<!-- Globally ignored fields -->
+	<ignore-fields>
+        <name>fullName</name>
+	</ignore-fields>
+
+</configuration>

@@ -1,0 +1,21 @@
+<property part-name="$field$Label" name="text">
+    text
+    <!--<reference constant-name="locale.$entityBean.shortClassName().firstToLower()$.$field$" />-->
+</property>
+<property part-name="$field$Entry" name="readonly">$edit$</property>
+<property part-name="$field$Entry" name="required">$required$</property>
+
+<property part-name="$field$Help" name="text">
+help
+    <!--<reference constant-name="locale.$entityBean.shortClassName().firstToLower()$.$field$.help" />-->
+</property>
+<property part-name="$field$Help" name="visible">
+false
+    <!--<reference constant-name="config.user.help" />-->
+</property>
+
+<property part-name="$field$Image" name="visible">
+false
+    <!--<reference constant-name="config.user.image" />-->
+</property>
+<!--<property part-name="$field$Image" name="file">$basePath$/$field$.png</property>-->
