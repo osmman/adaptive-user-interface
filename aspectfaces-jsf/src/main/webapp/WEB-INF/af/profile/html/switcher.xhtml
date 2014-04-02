@@ -3,33 +3,35 @@
              xmlns:h="http://java.sun.com/jsf/html">
 
     <ui:fragment rendered="#{empty edit ? false : edit}">
-        <h:panelGroup>
-
+        <div class="form-group #{required or forceRequired ? 'required' : ''}">
             <h:outputLabel id="#{id}Label" value="#{label}:" for="#{id}" styleClass="control-label col-sm-2">
                 <ui:fragment rendered="#{required or forceRequired}">
                     <span class="required">*</span>
                 </ui:fragment>
-                <ui:fragment rendered="#{applyImage}">
-                    <h:graphicImage xmlns:h="http://java.sun.com/jsf/html" value="#{imageUrl}" alt="#{imageAlt}"/>
-                </ui:fragment>
+
             </h:outputLabel>
 
-            <div class="col-xs-4">
+            <div class="col-sm-8">
                 <ui:insert name="input"/>
                 <ui:fragment rendered="#{applyHelp}">
-                    <p>#{help}</p>
+                    <p class="help">#{help}</p>
                 </ui:fragment>
             </div>
-            <h:panelGroup layout="block" styleClass="errorElement">
+
+            <ui:fragment rendered="#{applyImage}">
+                <h:graphicImage xmlns:h="http://java.sun.com/jsf/html" name="#{imageResources.getImage(id)}" alt="#{imageAlt}"/>
+            </ui:fragment>
+
+            <div class="col-xs-12">
                 <h:message for="#{id}" id="#{id}Message" errorClass="text-danger"/>
-            </h:panelGroup>
-        </h:panelGroup>
+            </div>
+        </div>
     </ui:fragment>
 
     <ui:fragment rendered="#{empty edit ? true : not edit}">
         <h:outputLabel value="#{label}:" for="#{prefix}#{id}Output" styleClass="control-label col-sm-2"/>
         <h:panelGroup styleClass="value col-sm-10" id="#{prefix}#{id}Output">
-            <div class="col-xs-4">
+            <div class="col-sm-8">
                 <ui:insert name="output"/>
             </div>
         </h:panelGroup>

@@ -78,6 +78,11 @@
             <artifactId>annotation-descriptors</artifactId>
             <version>${aspectfaces.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>dk.persvasive</groupId>
+            <artifactId>jcaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

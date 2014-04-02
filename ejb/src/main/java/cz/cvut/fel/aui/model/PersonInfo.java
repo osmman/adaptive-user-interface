@@ -1,13 +1,13 @@
 package cz.cvut.fel.aui.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
+import com.codingcrayons.aspectfaces.annotations.UiProfiles;
+import cz.cvut.fel.aui.model.context.Age;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * Created by Tomáš on 7.12.13.
@@ -20,16 +20,21 @@ public class PersonInfo extends EntityObject {
     private String lastName;
 
     @Enumerated(EnumType.STRING)
+    private Title title;
+
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    private Degree degree = new Degree();
+
+    private Address address = new Address();
 
     @OneToOne(mappedBy = "personInfo")
     private Person person;
 
-    private Address address = new Address();
-
     @NotNull
     @NotEmpty
-    @UiOrder(1)
+    @UiOrder(2)
     public String getFirstName() {
         return firstName;
     }
@@ -40,7 +45,7 @@ public class PersonInfo extends EntityObject {
 
     @NotNull
     @NotEmpty
-    @UiOrder(2)
+    @UiOrder(3)
     public String getLastName() {
         return lastName;
     }
@@ -49,7 +54,7 @@ public class PersonInfo extends EntityObject {
         this.lastName = lastName;
     }
 
-    @UiOrder(3)
+    @UiOrder(4)
     public Gender getGender() {
         return gender;
     }
@@ -58,13 +63,34 @@ public class PersonInfo extends EntityObject {
         this.gender = gender;
     }
 
-    @UiOrder(4)
+    @UiOrder(6)
+    @UiProfiles({"student","adult","elder"})
     public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @UiOrder(5)
+    @UiProfiles({"student"})
+    public Degree getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Degree degree) {
+        this.degree = degree;
+    }
+
+    @UiOrder(1)
+    @UiProfiles({"student","adult","elder"})
+    public Title getTitle() {
+        return title;
+    }
+
+    public void setTitle(Title title) {
+        this.title = title;
     }
 
     public String getFullName() {
@@ -84,6 +110,20 @@ public class PersonInfo extends EntityObject {
 
         public String getLabel() {
             return label;
+        }
+    }
+
+    public enum Title {
+        None,
+        Master,
+        Doctor,
+        Engineer,
+        Bachelor,
+        Professor,
+        Ninja;
+
+        public String getLabel() {
+            return this.name();
         }
     }
 

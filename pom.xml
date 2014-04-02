@@ -32,6 +32,8 @@
 
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
+
+        <libdir>${project.basedir}/../libs</libdir>
     </properties>
 
     <dependencyManagement>
@@ -90,6 +92,14 @@
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>${version.commons.logging}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>dk.persvasive</groupId>
+                <artifactId>jcaf</artifactId>
+                <version>1.0</version>
+                <scope>system</scope>
+                <systemPath>${libdir}/jcaf.v15.jar</systemPath>
             </dependency>
 
         </dependencies>

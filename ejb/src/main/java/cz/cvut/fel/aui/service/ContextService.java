@@ -47,9 +47,9 @@ public class ContextService implements Serializable
     {
         logger.info("created context");
         context = new Context();
-        context.setAge(Age.STUDENT);
-        context.setCountry("CZ");
-        context.setLanguage("cs");
+        context.setAge(Age.ELDER);
+        context.setCountry("US");
+        context.setLanguage("en");
         context.setDevice(Device.DESKTOP);
         context.setScreenSize(ScreenSize.wide);
     }

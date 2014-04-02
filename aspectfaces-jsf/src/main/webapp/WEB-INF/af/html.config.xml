@@ -16,6 +16,11 @@
         <condition expression="${type == 'state'}" tag="html/state.xhtml"/>
 	</mapping>
 
+    <mapping>
+        <type>Date</type>
+        <default tag="html/date.xhtml" />
+    </mapping>
+
 	<mapping>
 		<type>Integer</type>
 		<type>int</type>
@@ -29,14 +34,10 @@
 
     <mapping>
         <type>PersonInfo</type>
-        <default tag="html/entity.xhtml" />
-    </mapping>
-
-    <mapping>
         <type>Address</type>
+        <type>Degree</type>
         <default tag="html/entity.xhtml" />
     </mapping>
-
 
     <mapping>
 		<type>Boolean</type>

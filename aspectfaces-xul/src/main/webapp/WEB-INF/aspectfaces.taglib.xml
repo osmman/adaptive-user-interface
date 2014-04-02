@@ -10,7 +10,7 @@
 		<component>
 			<component-type>ui</component-type>
 			<renderer-type>uigen.renderer</renderer-type>
-			<handler-class>cz.cvut.fel.aui.view.jsf.AdaptiveGeneratorHandler</handler-class>
+			<handler-class>cz.cvut.fel.aui.view.xul.AdaptiveGeneratorHandler</handler-class>
 		</component>
 	</tag>
 

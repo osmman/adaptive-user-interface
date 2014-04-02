@@ -1,13 +1,20 @@
 <div class="form-horizontal" xmlns="http://www.w3.org/1999/xhtml">
+    <fieldset class="col-lg-6 col-md-12">
+        <ui:fragment xmlns:ui="http://java.sun.com/jsf/facelets" rendered="#{not empty entity}">
+            <legend>#{text[entity.getClass().getSimpleName().toLowerCase().concat(".legend")]}</legend>
+        </ui:fragment>
     <af:iteration-part maxOccurs="100">
-        <div class="form-group">
+
             $af:next$
-        </div>
     </af:iteration-part>
+    </fieldset>
 </div>
 <af:cover-personInfo>
     $af:personInfo$
 </af:cover-personInfo>
+<af:cover-degree>
+    $af:degree$
+</af:cover-degree>
 <af:cover-address>
     $af:address$
 </af:cover-address>

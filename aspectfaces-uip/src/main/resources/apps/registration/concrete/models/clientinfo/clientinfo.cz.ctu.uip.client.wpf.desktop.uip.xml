@@ -4,7 +4,7 @@
         <model update="partial" id="clientinfo.cz.ctu.uip.client.wpf.desktop">
             <property value="" name="PreferencesInterfaceClass"/>
             <property value="" name="AvatarInterfaceClass"/>
-            <property value="registration" name="RootInterfaceClass"/>
+            <property value="root" name="RootInterfaceClass"/>
             <property value="" name="MenuInterfaceClass"/>
             <property value="" name="TrayMenuInterfaceClass"/>
             <property value="cs" name="Language"/>

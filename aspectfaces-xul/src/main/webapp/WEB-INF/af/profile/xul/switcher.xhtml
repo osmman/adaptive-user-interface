@@ -4,7 +4,7 @@
         >
 
     <ui:fragment rendered="#{empty edit ? false : edit}">
-        <hbox class="field" image="#{not empty imageResources.getImage(id) ? request.contextPath.concat('/images/').concat(imageResources.getImage(id)): ''}">
+        <hbox class="field" image="#{not empty imageResources.getImage(id) ? request.contextPath.concat(imageResources.getImage(id)): ''}">
             <xf:label value="#{label}" control="#{id}" style="min-width:5em"/>
 
             <ui:insert name="input"/>
