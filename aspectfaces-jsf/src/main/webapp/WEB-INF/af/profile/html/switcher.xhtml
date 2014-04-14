@@ -29,12 +29,12 @@
     </ui:fragment>
 
     <ui:fragment rendered="#{empty edit ? true : not edit}">
+        <div class="row">
         <h:outputLabel value="#{label}:" for="#{prefix}#{id}Output" styleClass="control-label col-sm-2"/>
-        <h:panelGroup styleClass="value col-sm-10" id="#{prefix}#{id}Output">
             <div class="col-sm-8">
                 <ui:insert name="output"/>
             </div>
-        </h:panelGroup>
+        </div>
     </ui:fragment>
 
 </ui:fragment>

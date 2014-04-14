@@ -12,6 +12,7 @@
       xmlns:af="http://codingcrayons.com/aspectfaces"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
         >
 
 <ui:composition template="/WEB-INF/layouts/base.xhtml">
@@ -41,6 +42,10 @@
                layout="form.xhtml"
                entity="cz.cvut.fel.aui.model.PersonInfo"
                ignore="fullName"/>
+        <af:ui instance="#{person.personInfo.degree}" edit="false"
+               layout="form.xhtml"
+               entity="cz.cvut.fel.aui.model.Degree"
+               />
         <af:ui instance="#{person.personInfo.address}" edit="false"
                layout="form.xhtml"
                entity="cz.cvut.fel.aui.model.Address"

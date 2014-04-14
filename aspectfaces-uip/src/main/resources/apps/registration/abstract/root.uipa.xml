@@ -19,13 +19,13 @@
                             <property name="description" value=""/>
                         </label>
 
-                        <element class="public.trigger" id="person.register">
+                        <element class="public.trigger" id="person.registration">
                             <label>
                                 <property name="title" value="Register new user"/>
                                 <property name="description" value="New users registration"/>
                             </label>
 
-                            <behavior implicit="true" action="root.person.register" trigger="action"/>
+                            <behavior implicit="true" action="root.person.registration" trigger="action"/>
                         </element>
 
                         <element class="public.trigger" id="person.list">
@@ -41,7 +41,7 @@
                     <container>
 
                         <label>
-                            <property name="title" key="locale.bundle:state"/>
+                            <property name="title" key="locale.bundle:person.password" />
                             <property name="description" value=""/>
                         </label>
                         <element class="public.trigger" id="context.form">
@@ -53,15 +53,25 @@
                             <behavior implicit="true" action="root.context.form" trigger="action"/>
                         </element>
 
-                        <element class="public.trigger" id="aaa">
+                        <element class="public.trigger" id="en.lang">
                             <label>
-                                <property name="title" key="public.context:language"/>
+                                <property name="title" value="EN"/>
                                 <property name="description" value="Change application context"/>
                             </label>
 
-                            <behavior implicit="true" action="root.context.form" trigger="action"/>
+                            <behavior implicit="true" action="locale.language" trigger="action"/>
                         </element>
 
+                        <element class="public.trigger" id="cs.lang">
+                            <label>
+                                <property name="title" value="CS"/>
+                                <property name="description" value="Change application context"/>
+                            </label>
+
+                            <behavior implicit="true" action="locale.language" trigger="action">
+                                <property name="language" value="cs" />
+                            </behavior>
+                        </element>
                     </container>
 
                 </container>

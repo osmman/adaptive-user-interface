@@ -32,7 +32,6 @@
 			<property name="language.en" value="0.40" />
 			<property name="language.de" value="0.25" />
 			<property name="language.ru" value="0.20" />
-            <property name="language" value="cs" />
 		</model>
 	</models>
 </UIProtocol>

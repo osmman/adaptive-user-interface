@@ -27,6 +27,7 @@ public class Initialization
         info.setFirstName("Tomas");
         info.setLastName("Turek");
         info.setGender(PersonInfo.Gender.MALE);
+        info.setTitle(PersonInfo.Title.Bachelor);
         p1.setPersonInfo(info);
 
         personService.create(p1);

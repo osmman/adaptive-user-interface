@@ -2,8 +2,8 @@
 <UIProtocol version="1.0">
     <models>
         <model update="partial" id="public.user">
-            <property name="locale.language" key="public.context:language"/>
-            <property name="locale.country" key="public.context:country"/>
+            <property name="locale.language" key="cz.cvut.fel.aui.model.Context:language" value="en"/>
+            <property name="locale.country" key="cz.cvut.fel.aui.model.Context:country" value="us"/>
         </model>
     </models>
 </UIProtocol>

@@ -53,7 +53,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
             if (true) {
                 ResourceCache.getInstance().clear();
             }
-            if (true) {
+            if (false) {
                 System.out.println(s);
             }
 
@@ -76,8 +76,10 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
         }
 
         context.setProfiles(new String[]{
-                config.getAge().name().toLowerCase(),
                 "COUNTRY_"+config.getCountry()
+        });
+        context.setRoles(new String[]{
+                config.getAge().name().toLowerCase()
         });
         context.getVariables().put("country", config.getCountry());
         context.getVariables().put("applyImage", config.getAge() == Age.CHILD);
@@ -100,6 +102,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
 
     private Context getContext()
     {
-        return (Context) FacUtil.getBeanByName("context");
+        return (Context) FacUtil.getBeanByClass(Context.class);
     }
 }

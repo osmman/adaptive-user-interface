@@ -20,17 +20,14 @@
     </ui:define>
     <ui:define name="content">
         <h:form>
-            <c:set var="entity" value="#{newPerson}" />
             <af:ui instance="#{newPerson}" edit="true"
                    layout="form.xhtml" ignore="fullName"
                    />
 
-            <!--<div class="form-group">-->
                 <div class="col-sm-offset-2 col-sm-10">
                     <h:commandButton action="#{personController.create}" value="#{text['action.save']}"
                                      styleClass="btn btn-primary margin-top"/>
                 </div>
-            <!--</div>-->
         </h:form>
     </ui:define>
 

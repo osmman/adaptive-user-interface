@@ -21,8 +21,7 @@ public class PersonService extends AbstractDao<Person> {
     @Inject
     private EntityManager em;
 
-    public PersonService()
-    {
+    public PersonService() {
         super(Person.class);
     }
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <UIProtocol version="1.0">
     <models>
-        <model update="partial" id="public.context">
+        <model update="partial" id="cz.cvut.fel.aui.model.Context">
+            <property name="class" value="cz.cvut.fel.aui.model.Context"/>
             <property value="STUDENT" name="age"/>
             <property value="cs" name="language"/>
             <property value="CZ" name="country"/>

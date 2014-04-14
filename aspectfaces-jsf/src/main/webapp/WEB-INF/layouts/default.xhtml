@@ -20,6 +20,9 @@
     <c:if test="#{context.age == 'ELDER'}">
         <h:outputStylesheet name="css/elder.css"/>
     </c:if>
+    <c:if test="#{viewHelper.isRightToLeft()}">
+        <h:outputStylesheet name="css/rtl.css"/>
+    </c:if>
 </h:head>
 <h:body>
     <div class="navbar navbar-fixed-top navbar-inverse" role="banner">

@@ -2,6 +2,7 @@ package cz.cvut.fel.aui.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import com.codingcrayons.aspectfaces.annotations.UiProfiles;
+import com.codingcrayons.aspectfaces.annotations.UiUserRoles;
 import cz.cvut.fel.aui.model.context.Age;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -64,7 +65,7 @@ public class PersonInfo extends EntityObject {
     }
 
     @UiOrder(6)
-    @UiProfiles({"student","adult","elder"})
+    @UiUserRoles({"student","adult","elder"})
     public Address getAddress() {
         return address;
     }
@@ -74,7 +75,7 @@ public class PersonInfo extends EntityObject {
     }
 
     @UiOrder(5)
-    @UiProfiles({"student"})
+    @UiUserRoles({"student"})
     public Degree getDegree() {
         return degree;
     }
@@ -84,7 +85,7 @@ public class PersonInfo extends EntityObject {
     }
 
     @UiOrder(1)
-    @UiProfiles({"student","adult","elder"})
+    @UiUserRoles({"student","adult","elder"})
     public Title getTitle() {
         return title;
     }

@@ -1,9 +1,7 @@
 package cz.cvut.fel.aui.utils;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
-import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.logging.Logger;
@@ -15,20 +13,17 @@ import java.util.logging.Logger;
  * Time: 20:38
  * To change this template use File | Settings | File Templates.
  */
-public class Resources
-{
+public class Resources {
     @PersistenceContext
     private EntityManager em;
 
     @Produces
-    public EntityManager getEm()
-    {
+    public EntityManager getEm() {
         return em;
     }
 
     @Produces
-    public Logger getLogger(InjectionPoint ip)
-    {
+    public Logger getLogger(InjectionPoint ip) {
         String category = ip.getMember().getDeclaringClass().getName();
         return Logger.getLogger(category);
     }

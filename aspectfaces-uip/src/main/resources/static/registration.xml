@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UIProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://uiprotocol.eu/resources/xsd/UIPA/1.0"
+            version="1.0">
+    <interfaces>
+
+        <interface class="person.registration">
+            <container>
+                <container>
+                    <label>
+                        <property name="title" key="locale.bundle:person.registration.title"/>
+                        <property name="description" key="locale.bundle:person.registration.desc"/>
+                    </label>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Person.person.registration:email" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Person.person.registration:email.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Person.person.registration:email.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+                            <property name="regularExpression" value="^[a-z0-9_+-]+(.[a-z0-9_+-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*.([a-z]{2,4})$"/>
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+                            <property name="regularExpression" value="^[a-z0-9_+-]+(.[a-z0-9_+-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*.([a-z]{2,4})$"/>
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Person.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Person.person.registration" />
+                            <property name="model.property" value="email" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Person.person.registration:email" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Person.person.registration:email.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.date">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Degree.person.registration:expectedGraduation" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Degree.person.registration:expectedGraduation.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Degree.person.registration:expectedGraduation.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.date" trigger="input" >
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Degree.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Degree.person.registration" />
+                            <property name="model.property" value="expectedGraduation" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Degree.person.registration:expectedGraduation" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Degree.person.registration:expectedGraduation.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Address.person.registration:street" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Address.person.registration:street.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Address.person.registration:street.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.property" value="street" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Address.person.registration:street" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Address.person.registration:street.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input">
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:title" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:title.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:title.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+                            <property name="option.0" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:None" />
+                            <property name="option.1" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:Master" />
+                            <property name="option.2" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:Doctor" />
+                            <property name="option.3" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:Engineer" />
+                            <property name="option.4" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:Bachelor" />
+                            <property name="option.5" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:Professor" />
+                            <property name="option.6" key="locale.cz.cvut.fel.aui.model.PersonInfo.Title:Ninja" />
+                            <property name="selected" value="" />
+
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.enum" trigger="input" >
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.property" value="title" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.PersonInfo.person.registration:title" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.PersonInfo.person.registration:title.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.date">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Degree.person.registration:beganDegree" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Degree.person.registration:beganDegree.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Degree.person.registration:beganDegree.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.date" trigger="input" >
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Degree.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Degree.person.registration" />
+                            <property name="model.property" value="beganDegree" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Degree.person.registration:beganDegree" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Degree.person.registration:beganDegree.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Address.person.registration:city" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Address.person.registration:city.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Address.person.registration:city.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.property" value="city" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Address.person.registration:city" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Address.person.registration:city.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:firstName" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:firstName.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:firstName.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.property" value="firstName" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.PersonInfo.person.registration:firstName" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.PersonInfo.person.registration:firstName.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Person.person.registration:password" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Person.person.registration:password.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Person.person.registration:password.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+                            <property name="length.prefered" value="30"/>
+                            <property name="isPassword" value="true"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.password.main" trigger="input" >
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Person.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Person.person.registration" />
+                            <property name="model.property" value="password" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Person.person.registration:password" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Person.person.registration:password.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Address.person.registration:country" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Address.person.registration:country.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Address.person.registration:country.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.property" value="country" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Address.person.registration:country" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Address.person.registration:country.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:lastName" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:lastName.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:lastName.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+                            <property name="mandatory" value="true"/>
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.property" value="lastName" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.PersonInfo.person.registration:lastName" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.PersonInfo.person.registration:lastName.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input">
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:gender" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:gender.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:gender.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+                            <property name="option.0" key="locale.cz.cvut.fel.aui.model.PersonInfo.Gender:FEMALE" />
+                            <property name="option.1" key="locale.cz.cvut.fel.aui.model.PersonInfo.Gender:MALE" />
+                            <property name="selected" value="" />
+
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.enum" trigger="input" >
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.property" value="gender" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.PersonInfo.person.registration:gender" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.PersonInfo.person.registration:gender.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input">
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:degree" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:degree.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:degree.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+                            options for cz.cvut.fel.aui.model.PersonInfo:degree
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.enum" trigger="input" >
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.property" value="degree" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.PersonInfo.person.registration:degree" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.PersonInfo.person.registration:degree.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input.text">
+
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.Address.person.registration:postCode" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.Address.person.registration:postCode.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.Address.person.registration:postCode.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="length.prefered" value="30"/>
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.text" trigger="input" >
+
+
+                            <property name="length.max" value="100"/>
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.Address.person.registration" />
+                            <property name="model.property" value="postCode" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.Address.person.registration:postCode" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.Address.person.registration:postCode.validation.notify" value="false" />
+
+                    </element>
+
+
+                    <element class="public.input">
+                        <label>
+                            <property name="title" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:address" />
+                            <property name="description" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:address.tooltip"/>
+                            <property name="validation" key="locale.cz.cvut.fel.aui.model.PersonInfo.person.registration:address.validation"/>
+                            <property name="icon" value="" />
+                        </label>
+                        <restrictions>
+                            <property name="uige.importance" value="0.1"/>
+                            <property name="uige.ic" value="0.1"/>
+
+                            options for cz.cvut.fel.aui.model.PersonInfo:address
+                        </restrictions>
+
+                        <behavior implicit="true" action="input.enum" trigger="input" >
+
+                            <property name="model.name" value="cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.support.name" value="support.cz.cvut.fel.aui.model.PersonInfo.person.registration" />
+                            <property name="model.property" value="address" />
+                        </behavior>
+
+                        <property name="value" key="cz.cvut.fel.aui.model.PersonInfo.person.registration:address" />
+
+                        <property name="validation.notify" key="support.cz.cvut.fel.aui.model.PersonInfo.person.registration:address.validation.notify" value="false" />
+
+                    </element>
+
+
+
+                    <element class="public.trigger" id="send.person.registration">
+                        <label>
+                            <property name="title" key="locale.bundle:action.save" />
+                            <property name="description" key="locale.bundle:action.save.tooltip"/>
+                        </label>
+
+                        <behavior implicit="true" action="send.person.registration" trigger="action"/>
+                    </element>
+
+                    <element class="public.trigger" id="cancel.person.registration">
+                        <label>
+                            <property name="title" key="locale.bundle:cancel" />
+                            <property name="description" key="locale.bundle:cancel.tooltip"/>
+                        </label>
+
+                        <behavior implicit="true" action="cancel" trigger="action"/>
+                    </element>
+
+                </container>
+
+
+            </container>
+        </interface>
+    </interfaces>
+</UIProtocol>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uipsProperties>
+
+    <uipsId>server1</uipsId>
+    <sendWelcomeObjects>false</sendWelcomeObjects>
+
+    <logging>
+        <!--
+        Logging levels:
+        1000 - Severe
+        900 - Warning
+        800 - Information
+        500 - Debug
+        -->
+        <!--Severity level for log messages written to file-->
+        <fileSeverity>500</fileSeverity>
+        <!--Severity level for log messages written to console-->
+        <consoleSeverity>500</consoleSeverity>
+        <!--Severity level for log messages written to database-->
+        <databaseSeverity>900</databaseSeverity>
+        <!--Enables console logging output-->
+        <logConsole>true</logConsole>
+        <!--Enables database logging output-->
+        <logDatabase>false</logDatabase>
+        <!--Enables file logging output-->
+        <logFile>false</logFile>
+    </logging>
+
+    <!--	<portalCommunication>-->
+    <!--	    <class>uips.communication.portal.impl.db.DbPortalClient</class>-->
+    <!--	    <properties>-->
+    <!--			<entry key="UserName">root</entry>-->
+    <!--			<entry key="Password"></entry>-->
+    <!--			<entry key="getHasUserPermissionQuery">SELECT USERNAME FROM UIPDatabase.USERS WHERE USERNAME = ? AND PASSWORDSERVER = ?</entry>-->
+    <!--			<entry key="getUsersSelectedInstanceIdQuery">SELECT INSTANCEID FROM UIPDatabase.USERS WHERE USERNAME = ?</entry>-->
+    <!--			<entry key="getInstanceDirQuery">SELECT APPDIR FROM UIPDatabase.INSTANCES WHERE INSTANCEID = ?</entry>-->
+    <!--            <entry key="getInstanceNameQuery">SELECT NAME FROM UIPDatabase.INSTANCES WHERE INSTANCEID = ?</entry>-->
+    <!--            <entry key="getAppNameQuery">SELECT NAME FROM UIPDatabase.APPS WHERE APPDIR = ?</entry>-->
+    <!--            <entry key="getAppPropertyQuery">SELECT * FROM UIPDatabase.APPS WHERE APPDIR = ?</entry>-->
+    <!--            <entry key="writeLogQuery">INSERT INTO UIPDatabase.UIPSLOG (TIMEC, SEVERITY, MESSAGE, USERNAME, INSTANCEID, APPDIR, UIPSERVER) values (?, ?, ?, ?, ?, ?, ?)</entry>-->
+    <!--            <entry key="DriverClass">com.mysql.jdbc.Driver</entry>-->
+    <!--            <entry key="ConnectionString">jdbc:mysql://127.0.0.1:3306/UIPDatabase</entry>-->
+    <!--	    </properties>-->
+    <!--	</portalCommunication>-->
+
+    <portalCommunication>
+        <class>uips.communication.portal.impl.file.FilePortalClient</class>
+        <properties>
+            <entry key="user.0.passwordserver">i2home</entry>
+            <entry key="user.0.instanceid">registration</entry>
+            <entry key="user.Blanka.passwordserver">b123</entry>
+            <entry key="user.Blanka.instanceid">uitv1</entry>
+            <entry key="app.default.name">Default App</entry>
+            <entry key="app.error.name">Error App</entry>
+            <entry key="app.form.name">Test form</entry>
+            <entry key="app.uitv.name">UiTV</entry>
+            <entry key="app.registration.name">registration</entry>
+            <entry key="instance.default.name">Default App</entry>
+            <entry key="instance.default.appdir">default</entry>
+            <entry key="instance.error.name">Error App</entry>
+            <entry key="instance.error.appdir">error</entry>
+            <entry key="instance.form.name">Test form</entry>
+            <entry key="instance.form.appdir">form</entry>
+            <entry key="instance.uitv1.name">UiTV</entry>
+            <entry key="instance.uitv1.appdir">uitv</entry>
+            <entry key="instance.registration.name">registration</entry>
+            <entry key="instance.registration.appdir">registration</entry>
+        </properties>
+    </portalCommunication>
+
+    <!--     <portalCommunication> -->
+    <!--         <class>uips.communication.portal.impl.ejb.EjbPortalClient</class> -->
+    <!--         <properties> -->
+    <!--             <entry key="Password">uipportal</entry> -->
+    <!--             <entry key="ConnectionString">jnp://127.0.0.1:1099</entry> -->
+    <!--             <entry key="java.naming.factory.initial">org.jnp.interfaces.NamingContextFactory</entry> -->
+    <!--             <entry key="java.naming.factory.url.pkgs">org.jboss.naming:org.jnp.interfaces</entry> -->
+    <!--         </properties> -->
+    <!--     </portalCommunication> -->
+
+    <uipCommunication>
+        <!--Maximum count of simultaneously connected XML UIP clients per one instance (0 - without limitation)-->
+        <maxClientsPerInstance>40</maxClientsPerInstance>
+        <commInterface>
+            <serverListenerClass>uip.uipaf.jeeuipssocketconnector.communication.TcpNioJeeServerListener</serverListenerClass>
+            <serverConnectorClass>uips.communication.uip.impl.tcp.TcpServerConnector</serverConnectorClass>
+            <uipTypeClass>uips.tree.factories.impl.xml.UipXmlTreeFactory</uipTypeClass>
+            <properties>
+                <entry key="connectorName">TcpXmlUipConnector1</entry>
+            </properties>
+        </commInterface>
+    </uipCommunication>
+
+    <httpServer>
+        <class>uips.communication.http.impl.jettyServer.JettyHttpServerListener</class>
+        <!--Maximum count of simultaneously connected HTTP clients per one HTTP server (0 - without limitation)-->
+        <maxHttpClients>80</maxHttpClients>
+        <properties>
+            <entry key="connectorName">HttpConnector</entry>
+        </properties>
+    </httpServer>
+
+    <appInstance>
+        <!--Maximum count of simultaneously launched instances of UIP applications (0 - without limitation)-->
+        <maxInstances>20</maxInstances>
+        <!--Delay before instance with no connected client will be removed from memory-->
+        <instanceDisposeDelay>1800</instanceDisposeDelay>
+    </appInstance>
+
+    <serverCommunication>
+        <!--Maximum count of simultaneously connected signal clients (0 - without limitation)-->
+        <maxClients>5</maxClients>
+        <commInterface>
+            <serverListenerClass>uip.uipaf.jeeuipssocketconnector.communication.TcpNioJeeServerListener</serverListenerClass>
+            <serverConnectorClass>uips.communication.uip.impl.tcp.TcpServerConnector</serverConnectorClass>
+            <uipTypeClass>uips.tree.factories.impl.xml.UipXmlTreeFactory</uipTypeClass>
+            <properties>
+                <entry key="connectorName">TcpXmlServerConnector1</entry>
+            </properties>
+        </commInterface>
+    </serverCommunication>
+
+    <uipHandlers>
+        <!--Load UIP event handlers dynamicaly every time they are called-->
+        <loadHandlersDynamically>false</loadHandlersDynamically>
+        <runInSeparateThread>false</runInSeparateThread>
+        <handlersLoader>
+            <class>uips.integrated.jee.events.javaClass.JavaClassHandlersLoader</class>
+            <properties>
+            </properties>
+        </handlersLoader>
+        <handlersLoader>
+            <class>uips.events.impl.javaScript.JavaScriptHandlersLoader</class>
+            <properties>
+            </properties>
+        </handlersLoader>
+
+        <!-- If there is more handlers for the same event class it depends on their order.
+             Handlers that are prior to others are executed earlier. Thanks to
+             this behavior it is possible to make chain of handlers for the same event
+             Handlers for the same event that are not listed inside uipHandlers
+             are inserted to the end of the chain in random order   -->
+        <autonomousHandler>
+            <class>uips.interfacesManagement.handlers.StartingInterafceRequestEventHandler</class>
+            <disabled>false</disabled>
+            <properties>
+            </properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.interfacesManagement.handlers.InterafceRequestEventHandler</class>
+            <disabled>false</disabled>
+            <properties>
+            </properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.abstractInterfacesManagement.handlers.AbstractInterafceRequestEventHandler</class>
+            <disabled>false</disabled>
+            <properties>
+            </properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.interfacesManagement.handlers.TerminatorInterafceRequestEventHandler</class>
+            <disabled>false</disabled>
+            <properties>
+            </properties>
+        </autonomousHandler>
+
+
+        <autonomousHandler>
+            <class>uips.integrated.jee.events.eventHandlers.jeetouips.AuiGenerateMessageLocalEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.uipaf.jeeuipsconnector.eventHandlers.AuiGenerateMessageRemoteEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+
+        <autonomousHandler>
+            <class>uips.integrated.jee.events.eventHandlers.jeetouips.EjbMethodExecuteMessageLocalEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.uipaf.jeeuipsconnector.eventHandlers.EjbMethodExecuteMessageRemoteEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+
+        <autonomousHandler>
+            <class>uips.integrated.jee.events.eventHandlers.jeetouips.EntityUpdateCreateMessageLocalEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.uipaf.jeeuipsconnector.eventHandlers.EntityUpdateCreateMessageRemoteEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+
+        <autonomousHandler>
+            <class>uips.integrated.jee.events.eventHandlers.jeetouips.NamedQueryFindExecuteMessageLocalEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.uipaf.jeeuipsconnector.eventHandlers.NamedQueryFindExecuteMessageRemoteEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+
+        <autonomousHandler>
+            <class>uips.integrated.jee.events.eventHandlers.jeetouips.NamedQueryUpdateExecuteLocalEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.uipaf.jeeuipsconnector.eventHandlers.NamedQueryUpdateExecuteRemoteEventHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+        <autonomousHandler>
+            <class>uips.handlers.LocaleExecuteMessageHandler</class>
+            <disabled>false</disabled>
+            <properties></properties>
+        </autonomousHandler>
+    </uipHandlers>
+
+    <fileStorage>
+        <class>uips.integrated.jee.fileAccess.classStorage.ClassFileStorageAccess</class>
+        <!-- 	    <class>uips.support.storage.impl.ftp.FtpStorageAccess</class> -->
+        <!--Folder inside UIP application folder where are UIP XML files stored-->
+        <loadingThreads>0</loadingThreads>
+        <applicationsRoot></applicationsRoot>
+        <!--Absolute path without separator in the end (/ or \) to directory where is located cache for files
+        from storage with UIP applications. Have no sense for storage located on local disks.
+        If null or not present, folder ApplicationsCache in folder where is UIPServer launched from
+        will be used.-->
+        <storageCacheFolder></storageCacheFolder>
+        <properties>
+            <!--Count of simultaneous connections to UIP applications storage.
+			Have no sense for storage located on local disks.-->
+            <entry key="StorageSimultaneousConnections">20</entry>
+            <!--
+            ftp file storage for UIP Applications - URI starts with ftp:
+            ftp URI example: ftp://username:password@example.com:21/
+            -->
+            <entry key="ConnectionString">ftp://uipserver:uipserver@127.0.0.1:2121/</entry>
+        </properties>
+    </fileStorage>
+
+    <applicationFormat>
+        <!--Folder inside UIP application folder where are event handlers files stored-->
+        <handlersRoot>handlers</handlersRoot>
+        <!--Folder inside UIP application folder where are media files provided throw HTTP server stored-->
+        <mediaRoot>media</mediaRoot>
+        <uipTypeClass>uips.tree.factories.impl.xml.UipXmlTreeFactory</uipTypeClass>
+
+        <documentManager>
+            <class>uips.actionsManagement.ActionManager</class>
+            <documentRoot>concrete/actions</documentRoot>
+            <extension>uip.xml</extension>
+        </documentManager>
+        <documentManager>
+            <class>uips.interfacesManagement.InterfaceManager</class>
+            <documentRoot>concrete/interfaces</documentRoot>
+            <extension>uip.xml</extension>
+        </documentManager>
+        <documentManager>
+            <class>uips.modelsManagement.ModelManager</class>
+            <documentRoot>concrete/models</documentRoot>
+            <extension>uip.xml</extension>
+        </documentManager>
+        <documentManager>
+            <class>uips.abstractInterfacesManagement.AbstractInterfaceManager</class>
+            <documentRoot>abstract</documentRoot>
+            <extension>uipa.xml</extension>
+        </documentManager>
+    </applicationFormat>
+
+</uipsProperties>

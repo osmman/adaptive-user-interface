@@ -106,12 +106,12 @@ public class PersonController extends BaseController
     {
         List<Person> list = personService.findAll();
 
-        for(Person p : list){
-            PersonInfo info = new PersonInfo();
-            info.setFirstName("Tomas");
-            info.setLastName("Turek");
-            p.setPersonInfo(info);
-        }
+//        for(Person p : list){
+//            PersonInfo info = new PersonInfo();
+//            info.setFirstName("Tomas");
+//            info.setLastName("Turek");
+//            p.setPersonInfo(info);
+//        }
 
         return list;
     }

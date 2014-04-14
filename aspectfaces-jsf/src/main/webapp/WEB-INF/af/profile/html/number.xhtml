@@ -1,31 +1,40 @@
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
-			 xmlns:ui="http://java.sun.com/jsf/facelets"
-			 xmlns:h="http://java.sun.com/jsf/html"
-			 xmlns:f="http://java.sun.com/jsf/core"
-			 template="#{empty template ? '/WEB-INF/af/profile/html/switcher.xhtml' : template}">
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             template="#{empty template ? '/WEB-INF/af/profile/html/switcher.xhtml' : template}">
 
-	<ui:param name="id" value="#{prefix}$field$"/>
-	<ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
-	<ui:param name="value" value="#{$entityBean.shortClassName()$.$field$}"/>
-	<ui:param name="rendered" value="#{empty render$field.firstToUpper()$ ? 'true' : render$field.firstToUpper()$}"/>
-	<ui:param name="required" value="#{empty required$field.firstToUpper()$ ? $required$ : required$field.firstToUpper()$}"/>
-	<ui:param name="minValue" value="$min$"/>
-	<ui:param name="maxValue" value="$max$"/>
+<ui:param name="id" value="#{prefix}$field$"/>
+<ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
+<ui:param name="value" value="#{$entityBean.shortClassName()$.$field$}"/>
+<ui:param name="rendered" value="#{empty render$field.firstToUpper()$ ? 'true' : render$field.firstToUpper()$}"/>
+<ui:param name="required" value="$required$"/>
+<ui:param name="minValue" value="$min$"/>
+<ui:param name="maxValue" value="$max$"/>
+<ui:param name="help" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$.help']}"/>
+<ui:param name="applyHelp" value="$applyHelp$"/>
+<ui:param name="imageUrl" value="$after.value.value$"/>
+<ui:param name="imageAlt" value="$after.value.title$"/>
+<ui:param name="applyImage" value="$applyImage$"/>
 
-	<ui:define name="input">
-		<h:inputText
-				rendered="#{rendered}"
-				required="#{required}"
-				id="#{id}"
-				title="#{label}"
-				value="#{value}">
-			<f:convertNumber/>
-			<f:validateLongRange minimum="#{empty minValue ? '0' : minValue}" maximum="#{empty maxValue ? '10000000000' : maxValue}"/>
-		</h:inputText>
-	</ui:define>
 
-	<ui:define name="output">
-		<h:outputText value="#{value}"/>
-	</ui:define>
+<ui:define name="input">
+
+    <h:inputText
+            rendered="#{rendered}"
+            required="#{required}"
+            id="#{id}"
+            title="#{label}"
+            value="#{value}"
+            styleClass="form-control">
+        <f:convertNumber/>
+        <f:validateLongRange minimum="#{empty minValue ? '0' : minValue}" maximum="#{empty maxValue ? '10000000000' : maxValue}"/>
+    </h:inputText>
+</ui:define>
+
+<ui:define name="output">
+    <p class="form-control-static">#{value}</p>
+</ui:define>
 
 </ui:decorate>
+

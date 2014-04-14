@@ -33,7 +33,7 @@ public class EnumList {
     public Map<String, String> getCountry() {
         Map<String, String> countries = new HashMap<String, String>();
         for (String countryCode : Locale.getISOCountries()) {
-            if (countryCode.equals("CZ") || countryCode.equals("US")) {
+            if (countryCode.equals("CZ") || countryCode.equals("US") || countryCode.equals("SA")) {
                 Locale obj = new Locale("", countryCode);
                 countries.put(countryCode, obj.getDisplayCountry());
             }

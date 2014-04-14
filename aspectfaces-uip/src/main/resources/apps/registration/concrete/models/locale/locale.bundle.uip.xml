@@ -1,18 +1,69 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <UIProtocol version="1.0">
     <models>
-        <model id="locale.bundle">
-            <variant>
-                <property name="language" value="cs" />
-            </variant>
-            <property name="state" value="Stát" />
-        </model>
-
-        <model id="locale.bundle">
-            <variant>
-                <property name="language" value="en" />
-            </variant>
-            <property name="state" value="State" />
+        <model id="locale.bundle" update="complete">
+            <property name="data.screen.size.wide" value="Wide"/>
+            <property name="person.password.help" value="Fill in your password"/>
+            <property name="navigation.people" value="People"/>
+            <property name="address.street.help" value="Fill in your address"/>
+            <property name="degree.expectedGraduation.help" value="Fill in date of expected graduation"/>
+            <property name="person.email.help" value="Fill in your email"/>
+            <property name="context.device" value="Device"/>
+            <property name="address.country" value="Country"/>
+            <property name="address.postCode.help" value="Fill in your address Zip code"/>
+            <property name="address.street" value="Street"/>
+            <property name="personInfo.firstName.help" value="Fill in your first name"/>
+            <property name="data.device.phone" value="Phone"/>
+            <property name="context.screenSize" value="Screen size"/>
+            <property name="personInfo.lastName.help" value="Fill in your last name"/>
+            <property name="navigation.context" value="Context"/>
+            <property name="data.age.adult" value="Adult"/>
+            <property name="data.screen.size.small" value="Small"/>
+            <property name="address.state" value="State"/>
+            <property name="degree.beganDegree.help" value="Fill in date of the start of study"/>
+            <property name="person.email" value="Email"/>
+            <property name="data.device.desktop" value="Desktop"/>
+            <property name="address.legend" value="Address"/>
+            <property name="personInfo.title.help" value="Fill in your academic degree"/>
+            <property name="person.legend" value="Login"/>
+            <property name="gender.male" value="Muž"/>
+            <property name="action.registration" value="Registration"/>
+            <property name="person.id" value="#"/>
+            <property name="personInfo.firstName" value="First name"/>
+            <property name="degree.beganDegree" value="Began study"/>
+            <property name="action.save" value="Save"/>
+            <property name="personInfo.lastName" value="Last name"/>
+            <property name="context.language" value="Language"/>
+            <property name="action.delete" value="Delete"/>
+            <property name="address.city.help" value="Fill in your address City"/>
+            <property name="data.device.tablet" value="Tablet"/>
+            <property name="data.age.student" value="Student"/>
+            <property name="address.city" value="City"/>
+            <property name="personInfo.fullName" value="Name"/>
+            <property name="person.password" value="Password"/>
+            <property name="context.age" value="Age"/>
+            <property name="personInfo.title" value="Degree"/>
+            <property name="gender.female" value="Žena"/>
+            <property name="data.age.elder" value="Elder"/>
+            <property name="delete" value="Delete"/>
+            <property name="personinfo.legend" value="Name"/>
+            <property name="actions" value="Actions"/>
+            <property name="data.screen.size.normal" value="Normal"/>
+            <property name="address.state.help" value="Fill in your address State"/>
+            <property name="action.detail" value="Detail"/>
+            <property name="select" value="--- Select ---"/>
+            <property name="degree.expectedGraduation" value="Expected graduation"/>
+            <property name="data.screen.none" value="None"/>
+            <property name="address.country.help" value="Fill in your address Country"/>
+            <property name="data.age.child" value="Child"/>
+            <property name="navigation.thing" value="Thing"/>
+            <property name="context.country" value="Country"/>
+            <property name="address.postCode" value="ZIP code"/>
+            <property name="personInfo.gender" value="Gender"/>
+            <property name="detail" value="Detail"/>
+            <property name="degree.legend" value="Study"/>
+            <property name="context.legend" value="Context"/>
+            <property name="personInfo.gender.help" value="Select your gender"/>
         </model>
     </models>
 </UIProtocol>
