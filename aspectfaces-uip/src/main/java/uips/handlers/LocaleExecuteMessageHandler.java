@@ -1,10 +1,15 @@
 package uips.handlers;
 
+import org.jboss.logging.Logger;
 import uips.builders.ModelBuilderImp;
+import uips.events.Client;
+import uips.events.HandlerMethods;
+import uips.events.api.IClient;
 import uips.events.api.exceptions.UIPException;
 import uips.events.interfaces.IUipAutonomousEventHandler;
 import uips.instances.IAppClient;
 import uips.instances.IInstance;
+import uips.support.logging.ILog;
 import uips.support.settings.tree.IHandlerSettings;
 import uips.support.tools.ResultHolder;
 import uips.tree.interfaces.IEvent;
@@ -24,6 +29,8 @@ public class LocaleExecuteMessageHandler implements IUipAutonomousEventHandler {
 
     public static final String BUNDLE_MODEL_NAME = "locale.bundle";
 
+    private ILog log;
+
     private Map<String, Properties> languages = new HashMap<String, Properties>();
 
     @Override
@@ -34,7 +41,8 @@ public class LocaleExecuteMessageHandler implements IUipAutonomousEventHandler {
     @Override
     public boolean handleEvent(IEvent eventInn, IAppClient appClient, IInstance instanceReference, ResultHolder resultHolder) {
         IModel user = instanceReference.getModelManager().getModel(appClient, "public.user", true).get(null);
-        String language = user.getProperty("locale.language").getValueAttribute();
+        String language = HandlerMethods.getModelValue("cz.cvut.fel.aui.model.Context", null, "language",
+                instanceReference, appClient, true, this.log);
         ModelBuilderImp builder = new ModelBuilderImp();
         try {
             if (!languages.containsKey(language)) {
@@ -64,7 +72,7 @@ public class LocaleExecuteMessageHandler implements IUipAutonomousEventHandler {
 
     @Override
     public void initHandler(IUipServer uipServer, IHandlerSettings settings) {
-        // nothing to do
+        this.log = uipServer.getLog();
     }
 
     @Override
