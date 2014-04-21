@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<uiml>
+    <template id="layout_context">
+<interface>
+
+    <layout part-name="ageContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="deviceContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="screenSizeContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="countryContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="languageContainer">
+    <hbox/>
+</layout>
+
+
+</interface>
+    </template>
+</uiml>

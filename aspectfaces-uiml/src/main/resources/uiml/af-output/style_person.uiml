@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<uiml>
+    <template id="style_person">
+        <style>
+            
+                    <property part-name="emailLabel" name="text">text</property>
+<property part-name="emailEntry" name="readonly">false</property>
+<!--<property part-name="emailEntry" name="required">true</property>-->
+
+<property part-name="emailHelp" name="text">help</property>
+<property part-name="emailHelp" name="visible">false</property>
+
+<property part-name="emailImage" name="visible">false</property>
+<!--<property part-name="emailImage" name="file">.../email.png</property>-->
+
+            
+                    <property part-name="passwordLabel" name="text">text</property>
+<property part-name="passwordEntry" name="readonly">false</property>
+<!--<property part-name="passwordEntry" name="required">true</property>-->
+
+<property part-name="passwordHelp" name="text">help</property>
+<property part-name="passwordHelp" name="visible">false</property>
+
+<property part-name="passwordImage" name="visible">false</property>
+<!--<property part-name="passwordImage" name="file">.../password.png</property>-->
+
+            
+                    <property part-name="firstNameLabel" name="text">text</property>
+<property part-name="firstNameEntry" name="readonly">false</property>
+<!--<property part-name="firstNameEntry" name="required">true</property>-->
+
+<property part-name="firstNameHelp" name="text">help</property>
+<property part-name="firstNameHelp" name="visible">false</property>
+
+<property part-name="firstNameImage" name="visible">false</property>
+<!--<property part-name="firstNameImage" name="file">.../firstName.png</property>-->
+
+            
+                    <property part-name="lastNameLabel" name="text">text</property>
+<property part-name="lastNameEntry" name="readonly">false</property>
+<!--<property part-name="lastNameEntry" name="required">true</property>-->
+
+<property part-name="lastNameHelp" name="text">help</property>
+<property part-name="lastNameHelp" name="visible">false</property>
+
+<property part-name="lastNameImage" name="visible">false</property>
+<!--<property part-name="lastNameImage" name="file">.../lastName.png</property>-->
+
+            
+                    <property part-name="genderLabel" name="text">text</property>
+        <!--<property part-name="genderEntry" name="required"></property>-->
+
+<property part-name="genderHelp" name="text">help</property>
+<property part-name="genderHelp" name="visible">false</property>
+
+<property part-name="genderImage" name="visible">false</property>
+
+<property part-name="genderEntry" name="content">
+    <constant model="list">
+        <constant value="dEUS"/>
+        <constant value="Nemo"/>
+        <constant value="The Evil Superstars"/>
+        <constant value="Channel Zero"/>
+        <constant value="Star Industry"/>
+    </constant>
+</property>
+        <!--<property part-name="genderEntry" name="selectedIndex">1</property>-->
+        <!--<property part-name="genderImage" name="file">/gender.png</property>-->
+
+            
+        </style>
+    </template>
+</uiml>

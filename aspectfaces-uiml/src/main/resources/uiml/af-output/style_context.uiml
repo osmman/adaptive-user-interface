@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<uiml>
+    <template id="style_context">
+        <style>
+            
+                    <property part-name="ageLabel" name="text">text</property>
+        <!--<property part-name="ageEntry" name="required">true</property>-->
+
+<property part-name="ageHelp" name="text">help</property>
+<property part-name="ageHelp" name="visible">false</property>
+
+<property part-name="ageImage" name="visible">false</property>
+
+<property part-name="ageEntry" name="content">
+    <constant model="list">
+        <constant value="dEUS"/>
+        <constant value="Nemo"/>
+        <constant value="The Evil Superstars"/>
+        <constant value="Channel Zero"/>
+        <constant value="Star Industry"/>
+    </constant>
+</property>
+        <!--<property part-name="ageEntry" name="selectedIndex">1</property>-->
+        <!--<property part-name="ageImage" name="file">/age.png</property>-->
+
+            
+                    <property part-name="deviceLabel" name="text">text</property>
+        <!--<property part-name="deviceEntry" name="required">true</property>-->
+
+<property part-name="deviceHelp" name="text">help</property>
+<property part-name="deviceHelp" name="visible">false</property>
+
+<property part-name="deviceImage" name="visible">false</property>
+
+<property part-name="deviceEntry" name="content">
+    <constant model="list">
+        <constant value="dEUS"/>
+        <constant value="Nemo"/>
+        <constant value="The Evil Superstars"/>
+        <constant value="Channel Zero"/>
+        <constant value="Star Industry"/>
+    </constant>
+</property>
+        <!--<property part-name="deviceEntry" name="selectedIndex">1</property>-->
+        <!--<property part-name="deviceImage" name="file">/device.png</property>-->
+
+            
+                    <property part-name="screenSizeLabel" name="text">text</property>
+        <!--<property part-name="screenSizeEntry" name="required">true</property>-->
+
+<property part-name="screenSizeHelp" name="text">help</property>
+<property part-name="screenSizeHelp" name="visible">false</property>
+
+<property part-name="screenSizeImage" name="visible">false</property>
+
+<property part-name="screenSizeEntry" name="content">
+    <constant model="list">
+        <constant value="dEUS"/>
+        <constant value="Nemo"/>
+        <constant value="The Evil Superstars"/>
+        <constant value="Channel Zero"/>
+        <constant value="Star Industry"/>
+    </constant>
+</property>
+        <!--<property part-name="screenSizeEntry" name="selectedIndex">1</property>-->
+        <!--<property part-name="screenSizeImage" name="file">/screenSize.png</property>-->
+
+            
+                    <property part-name="countryLabel" name="text">text</property>
+<property part-name="countryEntry" name="readonly">false</property>
+<!--<property part-name="countryEntry" name="required">true</property>-->
+
+<property part-name="countryHelp" name="text">help</property>
+<property part-name="countryHelp" name="visible">false</property>
+
+<property part-name="countryImage" name="visible">false</property>
+<!--<property part-name="countryImage" name="file">.../country.png</property>-->
+
+            
+                    <property part-name="languageLabel" name="text">text</property>
+<property part-name="languageEntry" name="readonly">false</property>
+<!--<property part-name="languageEntry" name="required">true</property>-->
+
+<property part-name="languageHelp" name="text">help</property>
+<property part-name="languageHelp" name="visible">false</property>
+
+<property part-name="languageImage" name="visible">false</property>
+<!--<property part-name="languageImage" name="file">.../language.png</property>-->
+
+            
+        </style>
+    </template>
+</uiml>

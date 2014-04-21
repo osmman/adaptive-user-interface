@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<uiml>
+    <template id="layout_person">
+<interface>
+
+    <layout part-name="emailContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="passwordContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="firstNameContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="lastNameContainer">
+    <hbox/>
+</layout>
+
+
+    <layout part-name="genderContainer">
+    <hbox/>
+</layout>
+
+
+</interface>
+    </template>
+</uiml>

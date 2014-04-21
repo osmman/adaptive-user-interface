@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<uiml>
+    <template id="structure_person">
+        <structure>
+            <part id="formContent" class="Container">
+                
+                        <part class="Container" id="emailContainer">
+    <part class="Label" id="emailLabel"/>
+    <part class="Image" id="emailImage"/>
+    <part class="Entry" id="emailEntry"/>
+    <part class="Label" id="emailHelp"/>
+    <!--<layout>-->
+        <!--<hbox/>-->
+    <!--</layout>-->
+</part>
+
+
+
+                
+                        <part class="Container" id="passwordContainer">
+    <part class="Label" id="passwordLabel"/>
+    <part class="Image" id="passwordImage"/>
+    <part class="Entry" id="passwordEntry"/>
+    <part class="Label" id="passwordHelp"/>
+    <!--<layout>-->
+        <!--<hbox/>-->
+    <!--</layout>-->
+</part>
+
+
+
+                
+                        <part class="Container" id="firstNameContainer">
+    <part class="Label" id="firstNameLabel"/>
+    <part class="Image" id="firstNameImage"/>
+    <part class="Entry" id="firstNameEntry"/>
+    <part class="Label" id="firstNameHelp"/>
+    <!--<layout>-->
+        <!--<hbox/>-->
+    <!--</layout>-->
+</part>
+
+
+
+                
+                        <part class="Container" id="lastNameContainer">
+    <part class="Label" id="lastNameLabel"/>
+    <part class="Image" id="lastNameImage"/>
+    <part class="Entry" id="lastNameEntry"/>
+    <part class="Label" id="lastNameHelp"/>
+    <!--<layout>-->
+        <!--<hbox/>-->
+    <!--</layout>-->
+</part>
+
+
+
+                
+                        <part class="Container" id="genderContainer">
+    <part class="Label" id="genderLabel"/>
+    <part class="Image" id="genderImage"/>
+    <part class="Combo" id="genderEntry"/>
+    <part class="Label" id="genderHelp"/>
+    <!--<layout>-->
+        <!--<hbox/>-->
+    <!--</layout>-->
+</part>
+
+
+                
+                <!--<layout>-->
+                    <!--<vbox/>-->
+                <!--</layout>-->
+            </part>
+
+        </structure>
+    </template>
+</uiml>
