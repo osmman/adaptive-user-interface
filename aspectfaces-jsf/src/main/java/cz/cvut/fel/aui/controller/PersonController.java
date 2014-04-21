@@ -9,6 +9,8 @@ import cz.cvut.fel.aui.service.PersonService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.event.Observes;
+import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
@@ -52,9 +54,12 @@ public class PersonController extends BaseController
     public void initUser()
     {
         Context context = contextService.getContext();
-
         newPerson = new Person();
         newPerson.setPersonInfo(new PersonInfo());
+        onContextChanged(context);
+    }
+
+    public void onContextChanged(@Observes Context context){
         newPerson.getPersonInfo().getAddress().setCountry(context.getCountry());
     }
 
@@ -105,14 +110,6 @@ public class PersonController extends BaseController
     public List<Person> getAll()
     {
         List<Person> list = personService.findAll();
-
-//        for(Person p : list){
-//            PersonInfo info = new PersonInfo();
-//            info.setFirstName("Tomas");
-//            info.setLastName("Turek");
-//            p.setPersonInfo(info);
-//        }
-
         return list;
     }
 

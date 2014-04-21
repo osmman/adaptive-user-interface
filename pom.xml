@@ -9,6 +9,7 @@
         <module>ejb</module>
         <module>ear</module>
         <module>bundle</module>
+        <module>context-aware</module>
         <!--<module>jsf</module>-->
     </modules>
 
@@ -92,6 +93,14 @@
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>${version.commons.logging}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>1.0.3.Final</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

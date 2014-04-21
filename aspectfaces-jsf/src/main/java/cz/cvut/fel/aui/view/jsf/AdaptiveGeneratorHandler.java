@@ -24,8 +24,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
 {
     private static final String DEFAULT_CONFIG = "default";
 
-    private static final String DEFAULT_LAYOUT = "form.xhtml";
-
     public AdaptiveGeneratorHandler(ComponentConfig config)
     {
         super(config);
@@ -94,7 +92,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
             if(config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET){
                 return "mobile";
             }else {
-                return "default";
+                return DEFAULT_CONFIG;
             }
         }
         return configName.getValue();

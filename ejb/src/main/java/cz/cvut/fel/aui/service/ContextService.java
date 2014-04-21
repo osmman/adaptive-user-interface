@@ -51,14 +51,13 @@ public class ContextService implements Serializable {
         context.setAge(Age.STUDENT);
         context.setCountry("US");
         context.setLanguage("en");
-        context.setDevice(Device.DESKTOP);
+        context.setDevice(Device.PHONE);
         context.setScreenSize(ScreenSize.wide);
     }
 
     public void save(Context context) {
         validator.validate(context);
         this.context = context.clone();
-        logger.info("CONTEXT SAVED");
         contextChanged.fire(getContext());
     }
 }
