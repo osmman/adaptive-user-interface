@@ -1,4 +1,12 @@
 
+var params = {};
+params["return.model.name"] = "test.context";
+params["ejb.name"] = "java:global/AdaptiveUI/ejb-1.0-SNAPSHOT/ContextService";
+params["ejb.method.name"] = "getContext";
+event.callHandler("integration.java.ejbMethodExecute", params);
+
+server.logMessage(client.getModelValues("test.context",null,null));
+
 var lang = client.getModelValue("public.user",null,"locale.language");
 var context = client.getModelValues("cz.cvut.fel.aui.model.Context",null,null);
 

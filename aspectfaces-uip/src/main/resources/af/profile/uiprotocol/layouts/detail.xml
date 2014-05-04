@@ -1,0 +1,20 @@
+<container>
+    <label>
+        <property name="title" key="locale.bundle:#{formName}.title"/>
+        <property name="description" key="locale.bundle:#{formName}.desc"/>
+    </label>
+
+    <af:iteration-part maxOccurs="100">
+        $af:next$
+    </af:iteration-part>
+
+    <element class="public.trigger" id="cancel.#{formName}">
+        <label>
+            <property name="title" key="locale.bundle:cancel" />
+            <property name="description" key="locale.bundle:cancel.tooltip"/>
+        </label>
+
+        <behavior implicit="true" action="#{cancelHandler}" trigger="action"/>
+    </element>
+
+</container>

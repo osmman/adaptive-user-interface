@@ -1,5 +1,7 @@
 package cz.cvut.fel.aui.model;
 
+import uip.uipaf.auiGenerator.model.Identifiable;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,7 +13,7 @@ import java.io.Serializable;
  * To change this template use File | Settings | File Templates.
  */
 @MappedSuperclass
-public class EntityObject implements Serializable {
+abstract class EntityObject implements Serializable, Identifiable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

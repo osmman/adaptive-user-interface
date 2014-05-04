@@ -22,11 +22,8 @@
 
     <mapping>
         <type>PersonInfo</type>
-        <default tag="mobile/entity.xhtml" />
-    </mapping>
-
-    <mapping>
         <type>Address</type>
+        <type>Degree</type>
         <default tag="mobile/entity.xhtml" />
     </mapping>
 

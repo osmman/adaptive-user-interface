@@ -3,8 +3,8 @@
              xmlns:af="http://codingcrayons.com/aspectfaces">
     <ui:param name="value" value="#{$entityBean.shortClassName()$.$field$}"/>
     <ui:param name="prefix" value="#{prefix}$field$"/>
-
-    <af:ui instance="#{value}" edit="#{edit}" prefix="#{prefix}" ignore="#{ignore}"
+    <ui:param name="valueEntity" value="#{value.class.name}" />
+    <af:ui instance="#{value}" edit="#{edit}" prefix="#{prefix}" ignore="#{ignore}" entity="#{valueEntity}"
            layout="form.xhtml"/>
 
 </ui:fragment>

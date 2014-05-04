@@ -10,6 +10,7 @@ import cz.cvut.fel.aui.model.context.ScreenSize;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +19,7 @@ import javax.validation.constraints.Size;
  * Time: 19:50
  * To change this template use File | Settings | File Templates.
  */
+@XmlRootElement
 public class Context implements Cloneable {
     private Age age;
 

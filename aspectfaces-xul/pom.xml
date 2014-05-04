@@ -68,8 +68,21 @@
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/xulfaces-renderkit-1.0.jar</systemPath>
         </dependency>
 
-    </dependencies>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>apache-jena-libs</artifactId>
+            <version>2.10.1</version>
+            <type>pom</type>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.xerces</groupId>
+            <artifactId>org.apache.xerces</artifactId>
+            <version>2.8.0.v200705301630</version>
+        </dependency>
+
+
+    </dependencies>
 
     <build>
         <finalName>${project.artifactId}</finalName>

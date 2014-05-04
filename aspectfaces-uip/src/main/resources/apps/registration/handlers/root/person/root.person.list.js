@@ -1,12 +1,11 @@
 
 var modelNumber = event.getProperties()['model.number'];
 
-var params = {};
-params["return.model.name"] = "person.list";
-params["ejb.name"] = "java:global/AdaptiveUI/ejb-1.0-SNAPSHOT/PersonService";
-params["ejb.method.name"] = "findAll";
-event.callHandler("integration.java.ejbMethodExecute", params);
-
+event.callHandler("integration.java.ejbMethodExecute", {
+    "return.model.name": "person.list",
+    "ejb.name": "java:global/AdaptiveUI/ejb-1.0-SNAPSHOT/PersonService",
+    "ejb.method.name": "findAll"
+});
 
 var interfaceBuilder = buildersFactory.createBuilder("uips.builders.AbstractInterfaceBuilder");
 interfaceBuilder.initializeInterface("person.list");
@@ -18,6 +17,7 @@ interfaceBuilder.introduceLabel();
 interfaceBuilder.createProperty("Registered users", "title", null, null);
 interfaceBuilder.finalizeLabel();
 
+var model = client.getModelValues("person.list", null, null);
 var modelsCount = client.getModelValue("person.list", null, "models.count");
 modelsCount = parseInt(modelsCount);
 
@@ -52,6 +52,14 @@ for(i = 0; i < modelsCount; i++) {
     interfaceBuilder.finalizeLabel();
     interfaceBuilder.finalizeElement();
 
+    interfaceBuilder.introduceElement(null, "public.trigger", null);
+    interfaceBuilder.introduceLabel();
+    interfaceBuilder.createProperty("Detail", "title", null, null);
+    interfaceBuilder.finalizeLabel();
+    interfaceBuilder.introduceBehaviour("action", "root.person.detail", true);
+    interfaceBuilder.createProperty("" + i, "model.number", null, null);
+    interfaceBuilder.finalizeBehaviour();
+    interfaceBuilder.finalizeElement();
 
     interfaceBuilder.finalizeContainer();
 }

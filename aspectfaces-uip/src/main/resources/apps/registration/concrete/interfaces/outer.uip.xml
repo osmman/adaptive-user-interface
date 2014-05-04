@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UIProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://uiprotocol.eu/resources/xsd/UIPA/1.0"
+            version="1.0">
+    <interfaces>
+        <interface class="outer">
+            <container class="public.container">
+                <style />
+                <element class="public.text">
+                    <property name="text" value="No Instance selected" />
+                    <style>
+                        <property name="font.color" value="000ff" />
+                    </style>
+                    <position>
+                        <property name="height" value="65" />
+                        <property name="width" value="211" />
+                        <property name="x" value="27" />
+                        <property name="y" value="15" />
+                    </position>
+                </element>
+                <element class="nested">
+                    <property name="aaa" value="First" />
+                </element>
+            </container>
+        </interface>
+    </interfaces>
+</UIProtocol>

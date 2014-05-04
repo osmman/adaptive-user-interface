@@ -158,6 +158,14 @@
     <repositories>
 
         <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+
+
+        <repository>
             <id>codingcrayons-repository</id>
             <name>CodingCrayons Maven Repository</name>
             <url>http://maven.codingcrayons.com/content/groups/public/</url>

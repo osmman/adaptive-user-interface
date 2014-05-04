@@ -5,7 +5,6 @@
 	<configurations-registration>
 		<configuration name="default" path="/WEB-INF/af/html.config.xml" check-modification="true" lazy-load="true"/>
         <configuration name="mobile" path="/WEB-INF/af/mobile.config.xml" check-modification="true" lazy-load="true"/>
-        <configuration name="navigation" path="/WEB-INF/af/navigation.config.xml" check-modification="true" lazy-load="true" />
 		<configuration name="table" path="/WEB-INF/af/table.config.xml" check-modification="true" lazy-load="true"/>
 	</configurations-registration>
 

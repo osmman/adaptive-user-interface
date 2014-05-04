@@ -1,7 +1,9 @@
 <ui:decorate xmlns="http://www.w3.org/1999/xhtml"
 			 xmlns:ui="http://java.sun.com/jsf/facelets"
 			 xmlns:h="http://java.sun.com/jsf/html"
-			 template="#{empty template ? '/WEB-INF/af/profile/mobile/switcher.xhtml' : template}">
+             xmlns:pm="http://primefaces.org/mobile"
+             xmlns:p="http://primefaces.org/ui"
+             template="#{empty template ? '/WEB-INF/af/profile/mobile/switcher.xhtml' : template}">
 
 	<ui:param name="id" value="#{prefix}$field$"/>
 	<ui:param name="label" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$']}"/>
@@ -18,7 +20,7 @@
 
 
 	<ui:define name="input">
-		<h:inputText
+		<p:inputText
 				rendered="#{rendered}"
 				required="#{required}"
 				id="#{id}"
@@ -29,7 +31,7 @@
 	</ui:define>
 
 	<ui:define name="output">
-		<h:outputText value="#{value}"/>
+		<p:outputLabel value="#{value}"/>
 	</ui:define>
 
 </ui:decorate>

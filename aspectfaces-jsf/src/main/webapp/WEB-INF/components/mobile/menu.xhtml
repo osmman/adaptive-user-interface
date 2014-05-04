@@ -1,0 +1,11 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                >
+        <p:menu>
+            <c:forEach items="#{items}" var="item">
+                <p:menuitem outcome="#{item.outcome}" value="#{text[item.label]}"/>
+            </c:forEach>
+        </p:menu>
+</ui:composition>

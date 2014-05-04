@@ -2,6 +2,8 @@
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:f="http://java.sun.com/jsf/core"
              xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+             xmlns:fn="http://java.sun.com/jsp/jstl/functions"
              template="#{empty template ? '/WEB-INF/af/profile/mobile/switcher.xhtml' : template}">
 
     <ui:param name="id" value="#{prefix}$field$"/>
@@ -18,17 +20,34 @@
     <ui:param name="applyImage" value="$applyImage$" />
 
     <ui:define name="input">
-        <h:selectOneMenu
-                id="#{id}"
-                title="#{empty title ? label : title}"
-                required="#{empty required ? false : required}"
-                value="#{value}" >
-            <f:selectItems
-                    value="#{collection}"
-                    var="item"
-                    itemValue="#{item}"
-                    itemLabel="#{text[item.label]}"/>
-        </h:selectOneMenu>
+        <c:choose>
+            <c:when test="#{fn:length(collection) > 3}">
+                <p:selectOneMenu
+                        id="#{id}"
+                        title="#{empty title ? label : title}"
+                        required="#{empty required ? false : required}"
+                        value="#{value}" >
+                    <f:selectItems
+                            value="#{collection}"
+                            var="item"
+                            itemValue="#{item}"
+                            itemLabel="#{text[item.label]}"/>
+                </p:selectOneMenu>
+            </c:when>
+            <c:otherwise>
+                <p:selectOneButton
+                        id="#{id}"
+                        title="#{empty title ? label : title}"
+                        required="#{empty required ? false : required}"
+                        value="#{value}" >
+                    <f:selectItems
+                            value="#{collection}"
+                            var="item"
+                            itemValue="#{item}"
+                            itemLabel="#{text[item.label]}"/>
+                </p:selectOneButton>
+            </c:otherwise>
+        </c:choose>
     </ui:define>
 
     <ui:define name="output">

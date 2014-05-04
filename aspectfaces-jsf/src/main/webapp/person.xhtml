@@ -25,7 +25,7 @@
     <ui:define name="action">
         <h:commandLink action="#{personController.delete}"
                        onclick="if(! confirm('#{text['confirm.delete']}')) return false"
-                       value="#{text['action.delete']}" styleClass="ui-btn-right">
+                       value="#{text['action.delete']}" styleClass="btn btn-primary ui-btn-right">
             <f:param name="id" value="#{person.id}"/>
         </h:commandLink>
     </ui:define>
@@ -33,11 +33,12 @@
         <h:outputText value="#{text['person']}"/>
     </ui:define>
     <ui:define name="content">
-        <af:ui instance="#{person}" edit="false"
-               layout="form.xhtml"
-               entity="cz.cvut.fel.aui.model.Person"
-               ignore="password"
-                />
+        <h:form>
+            <af:ui instance="#{person}" edit="false"
+                   layout="form.xhtml"
+                   entity="cz.cvut.fel.aui.model.Person"
+                   ignore="password"
+                    />
         <af:ui instance="#{person.personInfo}" edit="false"
                layout="form.xhtml"
                entity="cz.cvut.fel.aui.model.PersonInfo"
@@ -50,6 +51,7 @@
                layout="form.xhtml"
                entity="cz.cvut.fel.aui.model.Address"
                 />
+        </h:form>
     </ui:define>
 
 

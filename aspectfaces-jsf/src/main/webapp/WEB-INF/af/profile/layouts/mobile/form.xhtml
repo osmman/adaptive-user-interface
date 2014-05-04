@@ -1,7 +1,9 @@
-<ul data-role="listview" data-inset="true" xmlns="http://www.w3.org/1999/xhtml">
+<ul data-role="listview" data-inset="true"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:pm="http://primefaces.org/mobile">
     <li data-role="list-divider">#{text[instance.getClass().getSimpleName().toLowerCase().concat(".legend")]}</li>
     <af:iteration-part maxOccurs="100">
-        <li data-role="fieldcontain">
+        <li class="ui-field-contain">
             $af:next$
         </li>
     </af:iteration-part>
@@ -9,6 +11,9 @@
 <af:cover-personInfo>
 $af:personInfo$
 </af:cover-personInfo>
+<af:cover-degree>
+$af:degree$
+</af:cover-degree>
 <af:cover-address>
 $af:address$
 </af:cover-address>

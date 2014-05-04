@@ -46,6 +46,18 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>5.0.RC1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces-mobile</artifactId>
+            <version>0.9.4</version>
+        </dependency>
+
         <!-- Needed for running tests (you may also use TestNG) -->
         <dependency>
             <groupId>junit</groupId>
