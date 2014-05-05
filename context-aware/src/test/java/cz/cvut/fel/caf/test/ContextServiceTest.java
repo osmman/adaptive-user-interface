@@ -76,7 +76,7 @@ public class ContextServiceTest {
     public void observers() {
         service.addObserver(observer1);
         service.addContextItem(context);
-        verify(observer1, times(1)).onChange(eq(context), eq(ContextState.ADDED), any(ContextService.class));
+        verify(observer1, times(1)).contextChanged(eq(context), eq(ContextState.ADDED), any(ContextService.class));
     }
 
     @Test
@@ -87,8 +87,8 @@ public class ContextServiceTest {
         service.addContextItem(context);
         service.removeContextItem(context);
 
-        verify(observer1, times(1)).onChange(eq(context), eq(ContextState.REMOVED), any(ContextService.class));
-        verify(observer1, times(1)).onChange(eq(context), eq(ContextState.ADDED), any(ContextService.class));
+        verify(observer1, times(1)).contextChanged(eq(context), eq(ContextState.REMOVED), any(ContextService.class));
+        verify(observer1, times(1)).contextChanged(eq(context), eq(ContextState.ADDED), any(ContextService.class));
     }
 
 }

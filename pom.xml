@@ -48,6 +48,13 @@
 
             <dependency>
                 <groupId>cz.cvut.fel.aui</groupId>
+                <artifactId>context-aware</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.cvut.fel.aui</groupId>
                 <artifactId>aspectfaces-jsf</artifactId>
                 <version>${project.version}</version>
                 <type>war</type>

@@ -2,7 +2,6 @@ package cz.cvut.fel.caf.interceptors;
 
 import cz.cvut.fel.caf.annotations.Logged;
 
-import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;

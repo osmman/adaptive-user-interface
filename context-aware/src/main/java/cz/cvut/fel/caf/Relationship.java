@@ -2,5 +2,5 @@ package cz.cvut.fel.caf;
 
 import java.io.Serializable;
 
-public interface ContextItem extends Serializable {
+public interface Relationship extends Serializable {
 }

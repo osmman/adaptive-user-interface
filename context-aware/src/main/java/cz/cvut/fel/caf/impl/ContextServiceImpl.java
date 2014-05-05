@@ -1,13 +1,7 @@
 package cz.cvut.fel.caf.impl;
 
-import com.google.common.collect.ImmutableCollection;
-import com.google.common.collect.ImmutableSet;
-import cz.cvut.fel.caf.ContextItem;
-import cz.cvut.fel.caf.ContextObserver;
-import cz.cvut.fel.caf.ContextService;
-import cz.cvut.fel.caf.ContextState;
-import cz.cvut.fel.caf.annotations.Added;
-import cz.cvut.fel.caf.annotations.Removed;
+import cz.cvut.fel.caf.*;
+import cz.cvut.fel.caf.annotations.Logged;
 import cz.cvut.fel.caf.interceptors.LoggedInterceptor;
 
 import javax.ejb.Stateful;
@@ -24,33 +18,39 @@ import java.util.Set;
  */
 @Stateful
 @SessionScoped
-@Interceptors({LoggedInterceptor.class})
+@Logged
 public class ContextServiceImpl implements ContextService, Serializable {
 
-    private Set<ContextItem> context = new HashSet<ContextItem>();
+    private Context context = new Context();
 
     private Set<ContextObserver> observers = new HashSet<ContextObserver>();
 
     @Inject
-    @Added
-    public Event<ContextItem> contextItemEventAdded;
+    private Event<ContextEvent> contextItemEvent;
 
-    @Inject
-    @Removed
-    public Event<ContextItem> contextItemEventRemoved;
 
     @Override
-    public void addContextItem(ContextItem contextItem) {
-        context.add(contextItem);
-        contextItemEventAdded.fire(contextItem);
-        fireObservers(contextItem, ContextState.ADDED);
+    public void addContextItem(Relationship relation, ContextItem contextItem) {
+        context.setContextItem(relation, contextItem);
+        ContextEvent event = new ContextEvent(
+                this,
+                ContextEvent.Type.RELATIONSHIP_ADDED,
+                relation,
+                contextItem);
+        contextItemEvent.fire(event);
+        fireObservers(event);
     }
 
     @Override
-    public void removeContextItem(ContextItem contextItem) {
-        context.remove(contextItem);
-        contextItemEventRemoved.fire(contextItem);
-        fireObservers(contextItem, ContextState.REMOVED);
+    public void removeContextItem(Relationship relation) {
+        context.removeContextItem(relation);
+        ContextEvent event = new ContextEvent(
+                this,
+                ContextEvent.Type.RELATIONSHIP_REMOVED,
+                relation,
+                null);
+        contextItemEvent.fire(event);
+        fireObservers(event);
     }
 
     @Override
@@ -64,13 +64,13 @@ public class ContextServiceImpl implements ContextService, Serializable {
     }
 
     @Override
-    public Set<ContextItem> getContext() {
-        return ImmutableSet.<ContextItem>builder().addAll(context.iterator()).build();
+    public Context getContext() {
+        return context;
     }
 
-    private void fireObservers(ContextItem contextItem, ContextState state) {
+    private void fireObservers(ContextEvent event) {
         for (ContextObserver observer : observers) {
-            observer.onChange(contextItem, state, this);
+            observer.contextChanged(event);
         }
     }
 }
