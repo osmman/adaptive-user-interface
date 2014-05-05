@@ -10,6 +10,8 @@ import cz.cvut.fel.aui.utils.FacUtil;
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.ComponentConfig;
 import javax.faces.view.facelets.TagAttribute;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -24,9 +26,30 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
 {
     private static final String DEFAULT_CONFIG = "default";
 
+    private Boolean _development = true;
+    private Boolean _debug = false;
+    private Integer _af_cache = -1;
+
     public AdaptiveGeneratorHandler(ComponentConfig config)
     {
         super(config);
+
+        FacesContext ctx = FacesContext.getCurrentInstance();
+
+        Integer _af_cache = Integer.parseInt(ctx.getExternalContext().getInitParameter("AF.CACHE"));
+        if (_af_cache == null) {
+            _af_cache = -1;
+        }
+        this.afCacheTime = _af_cache;
+
+        _development = Boolean.parseBoolean(ctx.getExternalContext().getInitParameter("AF.DEVELOPMENT"));
+        if (_development == null) {
+            _development = false;
+        }
+        _debug = Boolean.parseBoolean(ctx.getExternalContext().getInitParameter("AF.DEBUG"));
+        if (_debug == null) {
+            _debug = false;
+        }
     }
 
     /*
@@ -48,11 +71,12 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     {
         try {
 
-            if (true) {
+            if (_development) {
                 ResourceCache.getInstance().clear();
             }
-            if (false) {
-                System.out.println(s);
+            if (_debug) {
+                Logger logger = Logger.getLogger("AF.DEBUG");
+                logger.info(s);
             }
 
             return new ByteArrayInputStream(s.getBytes("UTF-8"));
@@ -81,7 +105,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
         });
         context.getVariables().put("country", config.getCountry());
         context.getVariables().put("applyImage", config.getAge() == Age.CHILD);
-        context.getVariables().put("applyHelp", config.getAge() == Age.ELDER);
+        context.getVariables().put("applyHelp", config.getAge() == Age.ELDER || config.getInvalid() > 2);
     }
 
     @Override

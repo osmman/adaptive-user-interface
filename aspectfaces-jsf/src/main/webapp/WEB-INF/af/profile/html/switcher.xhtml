@@ -2,8 +2,9 @@
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:h="http://java.sun.com/jsf/html">
 
+    <ui:param name="valid" value="#{view.findComponent('j_idt26:'.concat(id)).valid}"/>
     <ui:fragment rendered="#{empty edit ? false : edit}">
-        <div class="form-group #{required or forceRequired ? 'required' : ''}">
+        <div class="form-group #{required or forceRequired ? 'required' : ''} #{ !valid ? 'has-error' : ''}">
             <h:outputLabel id="#{id}Label" value="#{label}:" for="#{id}" styleClass="control-label col-sm-2">
                 <ui:fragment rendered="#{required or forceRequired}">
                     <span class="required">*</span>
@@ -16,6 +17,7 @@
                 <ui:fragment rendered="#{applyHelp}">
                     <p class="help">#{help}</p>
                 </ui:fragment>
+
             </div>
 
             <ui:fragment rendered="#{applyImage}">

@@ -29,6 +29,13 @@
             <var>text</var>
         </resource-bundle>
         <message-bundle>bundle.validation</message-bundle>
+
+
+        <system-event-listener>
+            <source-class>javax.faces.component.html.HtmlForm</source-class>
+            <system-event-class>javax.faces.event.PostValidateEvent</system-event-class>
+            <system-event-listener-class>cz.cvut.fel.aui.view.jsf.listener.ValidationEventListener</system-event-listener-class>
+        </system-event-listener>
     </application>
 
 
@@ -54,4 +61,6 @@
             <to-view-id>/registration.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+
+
 </faces-config>

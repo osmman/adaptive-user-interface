@@ -2,9 +2,7 @@ package cz.cvut.fel.aui.view.jsf;
 
 import cz.cvut.fel.aui.annotations.Current;
 import cz.cvut.fel.aui.model.Context;
-import sun.util.locale.BaseLocale;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,7 +23,7 @@ public class ViewHelper {
     private Boolean rightToLeft = false;
 
     @Inject
-    public void ViewHelper(@Current final Context context){
+    public void ViewHelper(@Current final Context context) {
         onContextChanged(context);
     }
 
@@ -45,15 +43,17 @@ public class ViewHelper {
         this.rightToLeft = rightToLeft;
     }
 
-    public void onContextChanged(@Observes final Context context){
-        switch(context.getDevice()){
+    public void onContextChanged(@Observes final Context context) {
+        switch (context.getDevice()) {
             case TABLET:
-            case PHONE: layout ="mobile";
+            case PHONE:
+                layout = "mobile";
                 break;
-            default: layout = DEFAULT_LAYOUT;
+            default:
+                layout = DEFAULT_LAYOUT;
         }
 
-        locale = new Locale(context.getLanguage(),context.getCountry());
+        locale = new Locale(context.getLanguage(), context.getCountry());
         rightToLeft = "ar".equals(context.getLanguage()) ? true : false;
     }
 }

@@ -1,6 +1,7 @@
 package cz.cvut.fel.aui.service;
 
 import cz.cvut.fel.aui.annotations.Current;
+import cz.cvut.fel.aui.interceptor.ValidationInterceptor;
 import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
@@ -13,6 +14,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import java.io.Serializable;
 import java.util.logging.Logger;
 
@@ -51,10 +53,11 @@ public class ContextService implements Serializable {
         context.setAge(Age.STUDENT);
         context.setCountry("US");
         context.setLanguage("en");
-        context.setDevice(Device.PHONE);
+        context.setDevice(Device.DESKTOP);
         context.setScreenSize(ScreenSize.wide);
     }
 
+    @Interceptors({ValidationInterceptor.class})
     public void save(Context context) {
         validator.validate(context);
         this.context = context.clone();

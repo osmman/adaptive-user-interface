@@ -31,6 +31,8 @@ public class Context implements Cloneable {
 
     private Device device;
 
+    private Integer invalid = 0;
+
     @UiOrder(1)
     @NotNull
     public Age getAge() {
@@ -83,6 +85,16 @@ public class Context implements Cloneable {
         this.device = device;
     }
 
+    @UiIgnore
+    @Min(0)
+    public Integer getInvalid() {
+        return invalid;
+    }
+
+    public void setInvalid(Integer invalid) {
+        this.invalid = invalid;
+    }
+
     public Context clone() {
         try {
             return (Context) super.clone();
@@ -99,6 +111,7 @@ public class Context implements Cloneable {
                 ", country='" + country + '\'' +
                 ", screenSize=" + screenSize +
                 ", device=" + device +
+                ", invalid=" + invalid +
                 '}';
     }
 }
