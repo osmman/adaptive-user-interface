@@ -30,7 +30,6 @@
         </resource-bundle>
         <message-bundle>bundle.validation</message-bundle>
 
-
         <system-event-listener>
             <source-class>javax.faces.component.html.HtmlForm</source-class>
             <system-event-class>javax.faces.event.PostValidateEvent</system-event-class>

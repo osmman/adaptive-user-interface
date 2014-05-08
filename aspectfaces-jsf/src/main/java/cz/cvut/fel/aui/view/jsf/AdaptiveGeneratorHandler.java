@@ -5,33 +5,33 @@ import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;
 import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
+import cz.cvut.fel.aui.service.ContextService;
 import cz.cvut.fel.aui.utils.FacUtil;
 
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.ComponentConfig;
-import javax.faces.view.facelets.TagAttribute;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 /**
  * Created by Tomáš on 28.12.13.
  */
-public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
-{
+public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     private static final String DEFAULT_CONFIG = "default";
 
     private Boolean _development = true;
+
     private Boolean _debug = false;
+
     private Integer _af_cache = -1;
 
-    public AdaptiveGeneratorHandler(ComponentConfig config)
-    {
+    @Inject
+    private Logger logger;
+
+    public AdaptiveGeneratorHandler(ComponentConfig config) {
         super(config);
 
         FacesContext ctx = FacesContext.getCurrentInstance();
@@ -55,8 +55,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     /*
      * Applies Adaptive settings
      */
-    private String applySettings(String base, String calcLayout)
-    {
+    private String applySettings(String base, String calcLayout) {
         if (layout != null) {
             calcLayout = layout.getValue();
             calcLayout = (String) executeExpressionInElContext(FacesContext.getCurrentInstance()
@@ -67,8 +66,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     }
 
     @Override
-    protected InputStream createInputStream(String s)
-    {
+    protected InputStream createInputStream(String s) {
         try {
 
             if (_development) {
@@ -86,19 +84,18 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     }
 
     @Override
-    protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context)
-    {
+    protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
         Context config = getContext();
 
-        if(config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET){
+        if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
             context.setLayout(applySettings("mobile", null));
             context.getVariables().put("table", "list");
-        }else {
-            context.setLayout(applySettings("desktop",null));
+        } else {
+            context.setLayout(applySettings("desktop", null));
         }
 
         context.setProfiles(new String[]{
-                "COUNTRY_"+config.getCountry()
+                "COUNTRY_" + config.getCountry()
         });
         context.setRoles(new String[]{
                 config.getAge().name().toLowerCase()
@@ -109,21 +106,21 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     }
 
     @Override
-    protected String getConfig()
-    {
-        if(configName == null || configName.getValue().isEmpty()){
+    protected String getConfig() {
+        if (configName == null || configName.getValue().isEmpty()) {
             Context config = getContext();
-            if(config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET){
+            if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
                 return "mobile";
-            }else {
+            } else {
                 return DEFAULT_CONFIG;
             }
         }
         return configName.getValue();
     }
 
-    private Context getContext()
-    {
-        return (Context) FacUtil.getBeanByClass(Context.class);
+    private Context getContext() {
+//        AnnotationLiteral<Current> current = new AnnotationLiteral<Current>() {
+//        };
+        return ((ContextService) FacUtil.getBeanByClass(ContextService.class)).getContext();
     }
 }

@@ -1,4 +1,14 @@
 /target
+/aspectfaces-jsf/target
+/aspectfaces-uiml/target
+/aspectfaces-uip/target
+/aspectfaces-xul/target
+/context-aware/target
+/ear/target
+/ejb/target
+/jsf/target
+/uiml/target
+/bundle/target
 .idea/*
 
 .project
