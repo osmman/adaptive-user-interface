@@ -1,8 +1,9 @@
 package cz.cvut.fel.aui.view.jsf.listener;
 
-import cz.cvut.fel.aui.model.Context;
-import cz.cvut.fel.aui.service.ContextService;
+import cz.cvut.fel.aui.utils.ContextResources;
 import cz.cvut.fel.aui.utils.FacUtil;
+import cz.cvut.fel.aui.utils.context.User;
+import cz.cvut.fel.caf.ContextService;
 
 import javax.faces.context.FacesContext;
 import javax.faces.event.AbortProcessingException;
@@ -19,13 +20,13 @@ public class ValidationEventListener implements SystemEventListener {
         Boolean failed = FacesContext.getCurrentInstance().isValidationFailed();
         logger.info(failed.toString());
         ContextService service = (ContextService) FacUtil.getBeanByClass(ContextService.class);
-        Context context = service.getContext();
-        if(failed){
-            context.setInvalid(context.getInvalid()+1);
-            service.save(context);
-        }else if(context.getInvalid() > 0) {
-            context.setInvalid(context.getInvalid()-1);
-            service.save(context);
+        User user = (User) service.getContext().getContextItem(ContextResources.USER);
+        if (failed) {
+            user.invalidForm();
+            service.addContextItem(ContextResources.USER, user);
+        } else {
+            user.rightForm();
+            service.addContextItem(ContextResources.USER, user);
         }
 
     }

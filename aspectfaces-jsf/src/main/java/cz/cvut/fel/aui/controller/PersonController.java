@@ -1,24 +1,22 @@
 package cz.cvut.fel.aui.controller;
 
-import cz.cvut.fel.aui.model.Address;
-import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.Person;
 import cz.cvut.fel.aui.model.PersonInfo;
-import cz.cvut.fel.aui.service.ContextService;
 import cz.cvut.fel.aui.service.PersonService;
+import cz.cvut.fel.aui.utils.ContextResources;
+import cz.cvut.fel.aui.utils.context.Locale;
+import cz.cvut.fel.caf.ContextEvent;
+import cz.cvut.fel.caf.ContextService;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,8 +26,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 @Model
-public class PersonController extends BaseController
-{
+public class PersonController extends BaseController {
 
     @Produces
     @Named
@@ -51,19 +48,19 @@ public class PersonController extends BaseController
     private ContextService contextService;
 
     @PostConstruct
-    public void initUser()
-    {
-        Context context = contextService.getContext();
+    public void initUser() {
         newPerson = new Person();
         newPerson.setPersonInfo(new PersonInfo());
-        onContextChanged(context);
     }
 
-    public void onContextChanged(@Observes Context context){
-        newPerson.getPersonInfo().getAddress().setCountry(context.getCountry());
+    public void onContextChanged(@Observes(notifyObserver = Reception.IF_EXISTS) ContextEvent event) {
+        if (event.getRelationship() == ContextResources.LOCALE) {
+            Locale locale = (Locale) event.getContextItem();
+            newPerson.getPersonInfo().getAddress().setCountry(locale.getCountry());
+        }
     }
 
-    public void loadPerson(){
+    public void loadPerson() {
         if (id != null) {
             person = personService.find(id);
             if (person.getPersonInfo() == null) {
@@ -72,43 +69,37 @@ public class PersonController extends BaseController
         }
     }
 
-    public String create()
-    {
+    public String create() {
         personService.create(newPerson);
         initUser();
         return redirect("people");
     }
 
-    public String edit(Person person)
-    {
+    public String edit(Person person) {
         personService.edit(person);
-        return redirect("person",true);
+        return redirect("person", true);
     }
 
-    public String delete(Person person)
-    {
+    public String delete(Person person) {
         personService.remove(person);
         return redirect("people");
     }
 
-    public String delete(){
+    public String delete() {
         loadPerson();
         personService.remove(person);
         return redirect("people");
     }
 
-    public Long getId()
-    {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Long id)
-    {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public List<Person> getAll()
-    {
+    public List<Person> getAll() {
         List<Person> list = personService.findAll();
         return list;
     }

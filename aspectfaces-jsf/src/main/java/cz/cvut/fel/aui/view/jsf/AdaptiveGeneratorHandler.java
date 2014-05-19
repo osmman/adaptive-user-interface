@@ -2,11 +2,15 @@ package cz.cvut.fel.aui.view.jsf;
 
 import com.codingcrayons.aspectfaces.cache.ResourceCache;
 import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;
-import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
-import cz.cvut.fel.aui.service.ContextService;
+import cz.cvut.fel.aui.utils.ContextResources;
 import cz.cvut.fel.aui.utils.FacUtil;
+import cz.cvut.fel.aui.utils.context.DeviceInfo;
+import cz.cvut.fel.aui.utils.context.Locale;
+import cz.cvut.fel.aui.utils.context.User;
+import cz.cvut.fel.caf.ContextService;
+import cz.cvut.fel.caf.impl.contexts.ContextItemImpl;
 
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.ComponentConfig;
@@ -27,9 +31,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     private Boolean _debug = false;
 
     private Integer _af_cache = -1;
-
-    @Inject
-    private Logger logger;
 
     public AdaptiveGeneratorHandler(ComponentConfig config) {
         super(config);
@@ -85,31 +86,38 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
 
     @Override
     protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
-        Context config = getContext();
-
-        if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
+        cz.cvut.fel.caf.Context config = getContext();
+        DeviceInfo device = (DeviceInfo) config.getContextItem(ContextResources.DEVICE);
+        if (device == null && (device.getDevice() == Device.PHONE || device.getDevice() == Device.TABLET)) {
             context.setLayout(applySettings("mobile", null));
             context.getVariables().put("table", "list");
         } else {
             context.setLayout(applySettings("desktop", null));
         }
 
+        Locale locale = (Locale) config.getContextItem(ContextResources.LOCALE);
         context.setProfiles(new String[]{
-                "COUNTRY_" + config.getCountry()
+                "COUNTRY_" + locale.getCountry()
         });
+
+        User user = (User) config.getContextItem(ContextResources.USER);
         context.setRoles(new String[]{
-                config.getAge().name().toLowerCase()
+                user.getAge().name().toLowerCase()
         });
-        context.getVariables().put("country", config.getCountry());
-        context.getVariables().put("applyImage", config.getAge() == Age.CHILD);
-        context.getVariables().put("applyHelp", config.getAge() == Age.ELDER || config.getInvalid() > 2);
+
+        context.getVariables().put("country", locale.getLanguage());
+        context.getVariables().put("applyImage", user.getAge() == Age.CHILD);
+        context.getVariables().put("applyHelp", user.getAge() == Age.ELDER || user.isConfused());
     }
 
     @Override
     protected String getConfig() {
         if (configName == null || configName.getValue().isEmpty()) {
-            Context config = getContext();
-            if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
+            cz.cvut.fel.caf.Context context = getContext();
+            DeviceInfo item = (DeviceInfo) context.getContextItem(ContextResources.DEVICE);
+            if (item == null)
+                return DEFAULT_CONFIG;
+            if (item.getDevice() == Device.PHONE || item.getDevice() == Device.TABLET) {
                 return "mobile";
             } else {
                 return DEFAULT_CONFIG;
@@ -118,9 +126,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
         return configName.getValue();
     }
 
-    private Context getContext() {
-//        AnnotationLiteral<Current> current = new AnnotationLiteral<Current>() {
-//        };
+    private cz.cvut.fel.caf.Context getContext() {
         return ((ContextService) FacUtil.getBeanByClass(ContextService.class)).getContext();
     }
 }

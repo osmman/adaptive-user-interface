@@ -22,15 +22,15 @@ public class ContextEvent extends EventObject {
         RELATIONSHIP_REMOVED
     }
 
-    Type getEventType() {
+    public Type getEventType() {
         return eventType;
     }
 
-    ContextItem getContextItem() {
+    public ContextItem getContextItem() {
         return contextItem;
     }
 
-    Relationship getRelationship() {
+    public Relationship getRelationship() {
         return relationship;
     }
 }
