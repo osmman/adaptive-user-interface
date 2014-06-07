@@ -91,4 +91,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
     {
         return (Context) FacUtil.getBeanByName("context");
     }
+
+
 }

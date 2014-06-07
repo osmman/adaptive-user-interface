@@ -31,6 +31,13 @@
         <message-bundle>bundle.validation</message-bundle>
 
         <system-event-listener>
+            <system-event-listener-class>
+                cz.cvut.fel.aui.view.jsf.listener.FacesAppListener
+            </system-event-listener-class>
+            <system-event-class>javax.faces.event.PreRenderViewEvent</system-event-class>
+        </system-event-listener>
+
+        <system-event-listener>
             <source-class>javax.faces.component.html.HtmlForm</source-class>
             <system-event-class>javax.faces.event.PostValidateEvent</system-event-class>
             <system-event-listener-class>cz.cvut.fel.aui.view.jsf.listener.ValidationEventListener</system-event-listener-class>

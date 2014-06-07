@@ -5,6 +5,7 @@ import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;
 import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
+import cz.cvut.fel.aui.rules.AuiRuleEngine;
 import cz.cvut.fel.aui.service.ContextService;
 import cz.cvut.fel.aui.utils.FacUtil;
 
@@ -14,6 +15,8 @@ import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -27,9 +30,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     private Boolean _debug = false;
 
     private Integer _af_cache = -1;
-
-    @Inject
-    private Logger logger;
 
     public AdaptiveGeneratorHandler(ComponentConfig config) {
         super(config);
@@ -87,22 +87,19 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
         Context config = getContext();
 
+        try {
+            getRuleEngine().process(context.getVariables(),config,context);
+        } catch (Exception e) {
+            Logger logger = Logger.getLogger(this.getClass().getName());
+            logger.log(Level.SEVERE,e.getMessage(),e);
+        }
+
         if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
             context.setLayout(applySettings("mobile", null));
-            context.getVariables().put("table", "list");
         } else {
             context.setLayout(applySettings("desktop", null));
         }
 
-        context.setProfiles(new String[]{
-                "COUNTRY_" + config.getCountry()
-        });
-        context.setRoles(new String[]{
-                config.getAge().name().toLowerCase()
-        });
-        context.getVariables().put("country", config.getCountry());
-        context.getVariables().put("applyImage", config.getAge() == Age.CHILD);
-        context.getVariables().put("applyHelp", config.getAge() == Age.ELDER || config.getInvalid() > 2);
     }
 
     @Override
@@ -122,5 +119,9 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
 //        AnnotationLiteral<Current> current = new AnnotationLiteral<Current>() {
 //        };
         return ((ContextService) FacUtil.getBeanByClass(ContextService.class)).getContext();
+    }
+
+    private AuiRuleEngine getRuleEngine() {
+        return (AuiRuleEngine) FacUtil.getBeanByClass(AuiRuleEngine.class);
     }
 }

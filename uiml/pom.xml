@@ -12,14 +12,14 @@
 
     <artifactId>uiml</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>aaa</groupId>
-            <artifactId>aaa</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>D:/Dokumenty/Skola/CVUT/Magisterský/Diplomka/tools/uiml/uiml2html.jar</systemPath>
-        </dependency>
-    </dependencies>
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>aaa</groupId>-->
+            <!--<artifactId>aaa</artifactId>-->
+            <!--<version>1.0</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>D:/Dokumenty/Skola/CVUT/Magisterský/Diplomka/tools/uiml/uiml2html.jar</systemPath>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
 
 </project>

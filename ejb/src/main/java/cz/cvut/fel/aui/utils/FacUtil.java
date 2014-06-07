@@ -1,5 +1,6 @@
 package cz.cvut.fel.aui.utils;
 
+import javax.enterprise.context.ContextNotActiveException;
 import javax.enterprise.context.spi.CreationalContext;
 import javax.enterprise.inject.spi.Bean;
 import javax.enterprise.inject.spi.BeanManager;
@@ -13,12 +14,10 @@ import java.util.Set;
  * Utilities for Facelets
  */
 @Named("FacUtil")
-public class FacUtil
-{
+public class FacUtil {
 
     @SuppressWarnings("unused")
-    public static Object getBeanByName(String name)
-    {
+    public static Object getBeanByName(String name) {
 
         BeanManager bm = getBeanManager();
         Set<Bean<?>> beansFound = bm.getBeans(name);
@@ -31,7 +30,7 @@ public class FacUtil
         }
     }
 
-    public static <T> Object getBeanByClass(Class<T> c, Annotation... anotations){
+    public static <T> Object getBeanByClass(Class<T> c, Annotation... anotations) {
         BeanManager bm = getBeanManager();
         Set<Bean<?>> beansFound = bm.getBeans(c, anotations);
         if (!beansFound.isEmpty()) {
@@ -43,8 +42,7 @@ public class FacUtil
         }
     }
 
-    public static BeanManager getBeanManager()
-    {
+    public static BeanManager getBeanManager() {
         try {
             InitialContext initialContext = new InitialContext();
             return (BeanManager) initialContext.lookup("java:comp/BeanManager");
@@ -52,6 +50,15 @@ public class FacUtil
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static boolean isContextActivate(Class<? extends Annotation> scope) {
+        try {
+            getBeanManager().getContext(scope);
+        } catch (ContextNotActiveException e) {
+            return false;
+        }
+        return true;
     }
 
 }

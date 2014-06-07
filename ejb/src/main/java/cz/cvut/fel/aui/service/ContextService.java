@@ -6,9 +6,11 @@ import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
 import cz.cvut.fel.aui.model.context.ScreenSize;
+import cz.cvut.fel.aui.service.remote.ContextServiceRemote;
 import cz.cvut.fel.aui.utils.validator.Validator;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Remote;
 import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.event.Event;

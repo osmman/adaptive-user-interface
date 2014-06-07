@@ -17,7 +17,6 @@ public class ValidationEventListener implements SystemEventListener {
     @Override
     public void processEvent(SystemEvent event) throws AbortProcessingException {
         Boolean failed = FacesContext.getCurrentInstance().isValidationFailed();
-        logger.info(failed.toString());
         ContextService service = (ContextService) FacUtil.getBeanByClass(ContextService.class);
         Context context = service.getContext();
         if(failed){
