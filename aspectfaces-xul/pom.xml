@@ -28,6 +28,12 @@
         </dependency>
 
         <dependency>
+            <groupId>cz.cvut.fel.aui</groupId>
+            <artifactId>aui-rules</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
             <groupId>com.codingcrayons.aspectfaces</groupId>
             <artifactId>javaee-jsf2</artifactId>
             <version>${aspectfaces.version}</version>
