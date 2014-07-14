@@ -17,6 +17,41 @@ end
 
 
 
+rule "Show data as list" when
+    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
+then
+    env.put("table","list");
+end
+
+
+
+rule "Locale" when
+    cz.cvut.fel.aui.model.Context($language:language, $country:country)
+then
+    Locale locale = new Locale($language, $country);
+    env.put("locale", new Locale($language, $country));
+    insert(locale);
+end
+
+
+
+rule "Right to left" when
+    $locale: Locale()
+then
+    env.put("RTL",!ComponentOrientation.getOrientation($locale).isLeftToRight());
+end
+
+
+
+rule "Mobile interface" when
+    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
+then
+    env.put("layout","mobile");
+end
+
+
+
+
 rule "Graphic ui" when
     cz.cvut.fel.aui.model.Context(age == Age.CHILD)
 then
@@ -56,38 +91,4 @@ rule "AspectFaces mobile layout" when
     ctx: com.codingcrayons.aspectfaces.configuration.Context()
 then
     ctx.setLayout("mobile");
-end
-
-
-
-rule "Show data as list" when
-    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
-then
-    env.put("table","list");
-end
-
-
-
-rule "Locale" when
-    cz.cvut.fel.aui.model.Context($language:language, $country:country)
-then
-    Locale locale = new Locale($language, $country);
-    env.put("locale", new Locale($language, $country));
-    insert(locale);
-end
-
-
-
-rule "Right to left" when
-    $locale: Locale()
-then
-    env.put("RTL",!ComponentOrientation.getOrientation($locale).isLeftToRight());
-end
-
-
-
-rule "Mobile interface" when
-    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
-then
-    env.put("layout","mobile");
 end

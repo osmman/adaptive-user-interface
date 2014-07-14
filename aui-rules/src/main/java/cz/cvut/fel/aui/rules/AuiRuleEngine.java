@@ -26,9 +26,6 @@ import java.util.logging.Logger;
 @Singleton
 public class AuiRuleEngine {
 
-    @Inject
-    private Logger logger;
-
     private RuleServiceProvider ruleServiceProvider;
 
     private RuleAdministrator ruleAdministrator;

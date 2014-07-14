@@ -4,6 +4,8 @@ import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.enterprise.context.SessionScoped;
+
 import org.jboss.ejb3.annotation.ResourceAdapter;
 import uips.integrated.jee.UipServerMessageDrivenBean;
 

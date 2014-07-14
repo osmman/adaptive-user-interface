@@ -72,6 +72,17 @@
                                 <property name="language" value="cs" />
                             </behavior>
                         </element>
+
+                        <element class="public.trigger">
+                            <label>
+                                <property name="title" value="CS"/>
+                                <property name="description" value="Change application context"/>
+                            </label>
+
+                            <behavior implicit="true" action="integration.java.cdi" trigger="action">
+                                <property name="model" value="aaaaa" />
+                            </behavior>
+                        </element>
                     </container>
 
                 </container>
