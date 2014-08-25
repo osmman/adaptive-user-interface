@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?DOCTYPE window SYSTEM "chrome://aui/locale/context.dtd"?>
+<!DOCTYPE overlay SYSTEM "http://localhost:8080/aspectfaces-xul/rdf/locale/en/locale.dtd">
 <overlay id="phone"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">

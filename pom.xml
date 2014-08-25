@@ -9,7 +9,6 @@
         <module>ejb</module>
         <module>ear</module>
         <module>bundle</module>
-        <module>context-aware</module>
         <module>aui-rules</module>
         <!--<module>jsf</module>-->
     </modules>
@@ -45,13 +44,6 @@
                 <artifactId>ejb</artifactId>
                 <version>${project.version}</version>
                 <type>ejb</type>
-            </dependency>
-
-            <dependency>
-                <groupId>cz.cvut.fel.aui</groupId>
-                <artifactId>context-aware</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
             </dependency>
 
             <dependency>

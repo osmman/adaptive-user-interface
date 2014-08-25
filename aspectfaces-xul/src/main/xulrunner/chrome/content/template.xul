@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://aui/skin/" type="text/css"?>
-<?xul-overlay href="chrome://aui/content/part/menu.xul" ?>
-<?xul-overlay href="chrome://aui/content/device" ?>
-<?DOCTYPE window SYSTEM "chrome://aui/locale/aui.dtd"?>
-<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<!--<?xml-stylesheet href="chrome://aui/skin/" type="text/css"?>-->
+<!--<?xul-overlay href="chrome://aui/content/part/menu.xul" ?>-->
+<!--<?xul-overlay href="chrome://aui/content/device" ?>-->
+<!DOCTYPE window SYSTEM "http://localhost:8080/aspectfaces-xul/dtd/locale.dtd">
+<window title="&navigation.people;"
         xmlns:html="http://www.w3.org/1999/xhtml"
-        id="template"
-        title="&window.title;"
-        >
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        width="800px"
+        height="500px">
+    <script type="application/javascript" src="chrome://aui/content/javascript/debug.js"/>
     <toolbox id="header">
         <menubar id="menu" />
     </toolbox>
@@ -18,5 +19,11 @@
     <vbox id="footer" >
         <html:p>#{session.lastAccessedTime}</html:p>
     </vbox>
+
+    <!--<caption label="Hello World"/>-->
+    <!--<separator/>-->
+    <!--<button label="Click for more!" oncommand="showMore();"/>-->
+    <!--<separator/>-->
+    <!--<description id="more-text" hidden="true">This is a simple XULRunner application. XUL is simple to use and quite powerful and can even be used on mobile devices.</description>-->
 
 </window>

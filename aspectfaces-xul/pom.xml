@@ -23,6 +23,12 @@
 
         <dependency>
             <groupId>cz.cvut.fel.aui</groupId>
+            <artifactId>bundle</artifactId>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>cz.cvut.fel.aui</groupId>
             <artifactId>aui-rules</artifactId>
             <type>jar</type>
         </dependency>
@@ -111,6 +117,24 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${version.maven.surefire}</version>
+            </plugin>
+
+            <plugin>
+                <artifactId>exec-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>cz.cvut.fel.aui.utils.LocaleGenerator</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

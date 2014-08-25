@@ -31,7 +31,7 @@
         <message-bundle>bundle.validation</message-bundle>
 
         <system-event-listener>
-            <source-class>javax.faces.component.html.HtmlForm</source-class>
+            <source-class>org.xulfaces.component.XULInput</source-class>
             <system-event-class>javax.faces.event.PostValidateEvent</system-event-class>
             <system-event-listener-class>cz.cvut.fel.aui.view.xul.listener.ValidationEventListener</system-event-listener-class>
         </system-event-listener>
@@ -41,15 +41,11 @@
     <navigation-rule>
         <navigation-case>
             <from-outcome>index</from-outcome>
-            <to-view-id>/index.html</to-view-id>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>context</from-outcome>
             <to-view-id>/context.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>people</from-outcome>
-            <to-view-id>/people.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>person</from-outcome>

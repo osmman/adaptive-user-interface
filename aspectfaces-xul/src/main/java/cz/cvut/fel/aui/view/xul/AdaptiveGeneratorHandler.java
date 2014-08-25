@@ -29,8 +29,6 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
 
     private Boolean _debug = false;
 
-    private Integer _af_cache = -1;
-
     public AdaptiveGeneratorHandler(ComponentConfig config) {
         super(config);
 
