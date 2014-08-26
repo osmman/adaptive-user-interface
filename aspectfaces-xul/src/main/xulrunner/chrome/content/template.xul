@@ -3,8 +3,8 @@
 <!--<?xml-stylesheet href="chrome://aui/skin/" type="text/css"?>-->
 <!--<?xul-overlay href="chrome://aui/content/part/menu.xul" ?>-->
 <!--<?xul-overlay href="chrome://aui/content/device" ?>-->
-<!DOCTYPE window SYSTEM "http://localhost:8080/aspectfaces-xul/dtd/locale.dtd">
-<window title="&navigation.people;"
+<!DOCTYPE window SYSTEM "chrome://aui/locale/locale.dtd">
+<window title="title"
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         width="800px"
@@ -17,13 +17,6 @@
     <vbox id="content" />
 
     <vbox id="footer" >
-        <html:p>#{session.lastAccessedTime}</html:p>
+        <html:p>&navigation.context;</html:p>
     </vbox>
-
-    <!--<caption label="Hello World"/>-->
-    <!--<separator/>-->
-    <!--<button label="Click for more!" oncommand="showMore();"/>-->
-    <!--<separator/>-->
-    <!--<description id="more-text" hidden="true">This is a simple XULRunner application. XUL is simple to use and quite powerful and can even be used on mobile devices.</description>-->
-
 </window>

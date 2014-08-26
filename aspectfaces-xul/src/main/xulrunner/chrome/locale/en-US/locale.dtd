@@ -1,0 +1,64 @@
+<!ENTITY data.screen.size.wide "Wide" >
+<!ENTITY person.password.help "Fill in your password" >
+<!ENTITY navigation.people "People" >
+<!ENTITY address.street.help "Fill in your address" >
+<!ENTITY degree.expectedGraduation.help "Fill in date of expected graduation" >
+<!ENTITY person.email.help "Fill in your email" >
+<!ENTITY context.device "Device" >
+<!ENTITY address.country "Country" >
+<!ENTITY address.postCode.help "Fill in your address Zip code" >
+<!ENTITY address.street "Street" >
+<!ENTITY personInfo.firstName.help "Fill in your first name" >
+<!ENTITY cancel "Cancel" >
+<!ENTITY data.device.phone "Phone" >
+<!ENTITY context.screenSize "Screen size" >
+<!ENTITY personInfo.lastName.help "Fill in your last name" >
+<!ENTITY navigation.context "Context" >
+<!ENTITY data.age.adult "Adult" >
+<!ENTITY data.screen.size.small "Small" >
+<!ENTITY address.state "State" >
+<!ENTITY degree.beganDegree.help "Fill in date of the start of study" >
+<!ENTITY person.email "Email" >
+<!ENTITY data.device.desktop "Desktop" >
+<!ENTITY address.legend "Address" >
+<!ENTITY personInfo.title.help "Fill in your academic degree" >
+<!ENTITY person.legend "Login" >
+<!ENTITY gender.male "Muž" >
+<!ENTITY action.registration "Registration" >
+<!ENTITY person.id "#" >
+<!ENTITY personInfo.firstName "First name" >
+<!ENTITY degree.beganDegree "Began study" >
+<!ENTITY action.save "Save" >
+<!ENTITY personInfo.lastName "Last name" >
+<!ENTITY context.language "Language" >
+<!ENTITY action.delete "Delete" >
+<!ENTITY address.city.help "Fill in your address City" >
+<!ENTITY data.device.tablet "Tablet" >
+<!ENTITY data.age.student "Student" >
+<!ENTITY address.city "City" >
+<!ENTITY personInfo.fullName "Name" >
+<!ENTITY person.password "Password" >
+<!ENTITY context.age "Age" >
+<!ENTITY personInfo.title "Degree" >
+<!ENTITY gender.female "Žena" >
+<!ENTITY data.age.elder "Elder" >
+<!ENTITY delete "Delete" >
+<!ENTITY personinfo.legend "Name" >
+<!ENTITY actions "Actions" >
+<!ENTITY data.screen.size.normal "Normal" >
+<!ENTITY address.state.help "Fill in your address State" >
+<!ENTITY action.detail "Detail" >
+<!ENTITY select "--- Select ---" >
+<!ENTITY degree.expectedGraduation "Expected graduation" >
+<!ENTITY data.screen.none "None" >
+<!ENTITY address.country.help "Fill in your address Country" >
+<!ENTITY data.age.child "Child" >
+<!ENTITY navigation.thing "Thing" >
+<!ENTITY person.registration "Registration" >
+<!ENTITY context.country "Country" >
+<!ENTITY address.postCode "ZIP code" >
+<!ENTITY personInfo.gender "Gender" >
+<!ENTITY detail "Detail" >
+<!ENTITY degree.legend "Study" >
+<!ENTITY context.legend "Context" >
+<!ENTITY personInfo.gender.help "Select your gender" >

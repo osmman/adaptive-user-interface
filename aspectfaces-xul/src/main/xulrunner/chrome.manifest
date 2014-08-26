@@ -1,1 +1,1 @@
-content aui file:chrome/content/#resource server http://localhost:8080/aspectfaces-xul/#locale aui en-US resource://server/rdf/locale/en/#locale aui cs-CZ resource://server/rdf/locale/cs/overlay chrome://aui/content/template.xul chrome://aui/content/part/menu.xul#Warning: cannot register non-local URI 'http://localhost:8080/aspectfaces-xul/' as a resource.
+content aui chrome/content/locale aui en-US locale/en-USlocale aui cs-CZ locale/cs-CZoverlay chrome://aui/content/template.xul chrome://aui/content/part/menu.xul
