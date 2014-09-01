@@ -1,1 +1,1 @@
-content aui chrome/content/locale aui en-US locale/en-USlocale aui cs-CZ locale/cs-CZoverlay chrome://aui/content/template.xul chrome://aui/content/part/menu.xul
+content aui chrome/content/locale aui cs-CZ chrome/locale/cs-CZ/locale aui en-US chrome/locale/en-US/locale branding en-US chrome/locale/branding/

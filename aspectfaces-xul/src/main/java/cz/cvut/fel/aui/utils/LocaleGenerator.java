@@ -22,7 +22,7 @@ public class LocaleGenerator {
         properties.load(input);
 
 
-        OutputStreamWriter output = new OutputStreamWriter(new FileOutputStream(String.format("aspectfaces-xul/src/main/xulrunner/chrome/locale/%s-%s/locale.dtd", locale.getLanguage(), locale.getCountry())));
+        OutputStreamWriter output = new OutputStreamWriter(new FileOutputStream(String.format("aspectfaces-xul/src/main/xulrunner/chrome/locale/%s-%s/core.dtd", locale.getLanguage(), locale.getCountry())));
         for (Map.Entry<Object, Object> entry : properties.entrySet()) {
             output.append(String.format("<!ENTITY %s \"%s\" >", entry.getKey(), entry.getValue()));
             output.append("\r\n");

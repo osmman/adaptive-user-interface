@@ -2,6 +2,7 @@ package cz.cvut.fel.aui.rules;
 
 import cz.cvut.fel.aui.model.context.Age;
 import cz.cvut.fel.aui.model.context.Device;
+import cz.cvut.fel.aui.model.context.ScreenSize;
 import java.util.List
 import java.util.Locale
 import java.awt.ComponentOrientation;
@@ -44,12 +45,16 @@ end
 
 
 rule "Mobile interface" when
-    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
+    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP || screenSize == ScreenSize.small)
 then
     env.put("layout","mobile");
 end
 
-
+rule "One column layout" when
+	cz.cvut.fel.aui.model.Context(screenSize == ScreenSize.normal)
+then
+	env.put("layout", "oneColumn");
+end
 
 
 rule "Graphic ui" when

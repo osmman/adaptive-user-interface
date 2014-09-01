@@ -15,14 +15,6 @@ import javax.inject.Named;
 import java.util.Date;
 import java.util.logging.Logger;
 
-/**
- * Created with IntelliJ IDEA.
- * Person: Tomáš
- * Date: 30.11.13
- * Time: 13:42
- * To change this template use File | Settings | File Templates.
- */
-
 @Model
 public class ContextController extends BaseController
 {
