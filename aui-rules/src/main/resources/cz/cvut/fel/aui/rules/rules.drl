@@ -10,7 +10,7 @@ import java.awt.ComponentOrientation;
 global java.util.Map env;
 
 
-rule "Country" when
+rule "RULE 5: Country" when
     cz.cvut.fel.aui.model.Context($country:country)
 then
     env.put("country",$country);
@@ -18,7 +18,7 @@ end
 
 
 
-rule "Show data as list" when
+rule "RULE 7: Show data as list" when
     cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
 then
     env.put("table","list");
@@ -26,7 +26,7 @@ end
 
 
 
-rule "Locale" when
+rule "RULE 8a: Locale" when
     cz.cvut.fel.aui.model.Context($language:language, $country:country)
 then
     Locale locale = new Locale($language, $country);
@@ -36,7 +36,7 @@ end
 
 
 
-rule "Right to left" when
+rule "RULE 8b: Right to left" when
     $locale: Locale()
 then
     env.put("RTL",!ComponentOrientation.getOrientation($locale).isLeftToRight());
@@ -44,7 +44,7 @@ end
 
 
 
-rule "Mobile interface" when
+rule "RULE 6a: Mobile interface" when
     cz.cvut.fel.aui.model.Context(device != Device.DESKTOP || screenSize == ScreenSize.small)
 then
     env.put("layout","mobile");
@@ -57,7 +57,7 @@ then
 end
 
 
-rule "Graphic ui" when
+rule "RULE 1: Graphic ui" when
     cz.cvut.fel.aui.model.Context(age == Age.CHILD)
 then
     env.put("applyImage",true);
@@ -65,7 +65,7 @@ end
 
 
 
-rule "Enable help" when
+rule "RULE 2: Help" when
     cz.cvut.fel.aui.model.Context(age == Age.ELDER || invalid > 2)
 then
     env.put("applyHelp",true);
@@ -73,7 +73,7 @@ end
 
 
 
-rule "AspectFaces roles" when
+rule "RULE 3: AspectFaces roles" when
     cz.cvut.fel.aui.model.Context($age:age)
     ctx: com.codingcrayons.aspectfaces.configuration.Context()
 then
@@ -82,7 +82,7 @@ end
 
 
 
-rule "AspectFaces profile COUNTRY_%" when
+rule "RULE 4: AspectFaces profile COUNTRY_%" when
     cz.cvut.fel.aui.model.Context($country:country)
     ctx: com.codingcrayons.aspectfaces.configuration.Context()
 then
@@ -91,7 +91,7 @@ end
 
 
 
-rule "AspectFaces mobile layout" when
+rule "RULE 6b: AspectFaces mobile layout" when
     cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
     ctx: com.codingcrayons.aspectfaces.configuration.Context()
 then
