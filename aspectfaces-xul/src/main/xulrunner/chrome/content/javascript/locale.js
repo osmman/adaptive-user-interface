@@ -1,7 +1,7 @@
 function changeLocale() {
 
     try {
-        var newLocale = "cs-CZ"
+        var newLocale = "en-US"
 
         // Write preferred locale to local user config
         var prefs = Components.classes["@mozilla.org/preferences-service;1"].
