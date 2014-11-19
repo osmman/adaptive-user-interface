@@ -1,5 +1,5 @@
 <interface>
-<af:iteration-part maxOccurs="100">
-    $af:next$
-</af:iteration-part>
+	<af:iteration-part maxOccurs="100">
+		$af:next$
+	</af:iteration-part>
 </interface>

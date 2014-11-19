@@ -1,19 +1,14 @@
-<property part-name="$field$Label" name="text">text</property>
-        <!--<property part-name="$field$Entry" name="required">$required$</property>-->
-
-<property part-name="$field$Help" name="text">help</property>
-<property part-name="$field$Help" name="visible">false</property>
-
-<property part-name="$field$Image" name="visible">false</property>
-
-<property part-name="$field$Entry" name="content">
-    <constant model="list">
-        <constant value="dEUS"/>
-        <constant value="Nemo"/>
-        <constant value="The Evil Superstars"/>
-        <constant value="Channel Zero"/>
-        <constant value="Star Industry"/>
-    </constant>
+<property part-name="$field$Label" name="g:text">
+	<reference constant-name="text.$field$"/>
 </property>
-        <!--<property part-name="$field$Entry" name="selectedIndex">1</property>-->
-        <!--<property part-name="$field$Image" name="file">$basePath$/$field$.png</property>-->
+<property part-name="$field$Entry" name="g:editable">$editable$</property>
+<property part-name="$field$Entry" name="v:required">$required$</property>
+<property part-name="$field$Help" name="g:text">
+	<reference constant-name="help.$field$"/>
+</property>
+<property part-name="$field$Help" name="g:enabled">false</property>
+<property part-name="$field$Image" name="g:image-src">$basePath$/$field$.png</property>
+<property part-name="$field$Image" name="g:enabled">false</property>
+<property part-name="$field$Entry" name="g:content">
+	<call component-id="EnumList" method-id="$field$"/>
+</property>

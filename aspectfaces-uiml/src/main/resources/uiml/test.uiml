@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE uiml PUBLIC "-//Harmonia//DTD UIML 2.0 Draft//EN"
-        "UIML3_0a.dtd">
+		"UIML3_0a.dtd">
 <uiml>
-    <head>
-        <meta name="title" content="Context"/>
-    </head>
-    <interface>
-        <style source="uiml://af-output/style_context.uiml#style_context" how="replace">
-        </style>
-        <structure source="uiml://af-output/structure_context.uiml#structure_context" how="replace">
-        </structure>
+	<head>
+		<meta name="title" content="Context"/>
+	</head>
+	<interface>
+		<style source="uiml://af-output/style_context.uiml#style_context" how="replace">
+		</style>
+		<structure source="uiml://af-output/structure_context.uiml#structure_context" how="replace">
+		</structure>
 
-    </interface>
-    <peers>
-        <presentation base="swf-1.1.uiml"/>
-    </peers>
+	</interface>
+	<peers>
+		<presentation base="swf-1.1.uiml"/>
+	</peers>
 </uiml>

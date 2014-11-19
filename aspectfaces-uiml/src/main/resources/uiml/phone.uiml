@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <uiml>
-    <template id="model_508">
-        <style>
-            <property name="text" part-name="label">bold</property>
-        </style>
-    </template>
+	<template id="model_508">
+		<style>
+			<property name="text" part-name="label">bold</property>
+		</style>
+	</template>
 </uiml>

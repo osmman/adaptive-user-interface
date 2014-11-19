@@ -1,78 +1,52 @@
 <?xml version="1.0"?>
-<uiml>
-    <template id="structure_person">
-        <structure>
-            <part id="formContent" class="Container">
-                
-                        <part class="Container" id="emailContainer">
-    <part class="Label" id="emailLabel"/>
-    <part class="Image" id="emailImage"/>
-    <part class="Entry" id="emailEntry"/>
-    <part class="Label" id="emailHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml xmlns="http://docs.oasis-open.org/uiml/ns/uiml4.0">
+	<template id="structure_person">
+<part>
+	<part id="formFrame" class="Frame">
+		
+			<part class="Frame" id="emailFrame">
+	<part class="Label" id="emailLabel"/>
+	<part class="Image" id="emailImage"/>
+	<part class="Entry" id="emailEntry"/>
+	<part class="Label" id="emailHelp"/>
 </part>
 
-
-
-                
-                        <part class="Container" id="passwordContainer">
-    <part class="Label" id="passwordLabel"/>
-    <part class="Image" id="passwordImage"/>
-    <part class="Entry" id="passwordEntry"/>
-    <part class="Label" id="passwordHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="passwordFrame">
+	<part class="Label" id="passwordLabel"/>
+	<part class="Image" id="passwordImage"/>
+	<part class="Entry" id="passwordEntry"/>
+	<part class="Label" id="passwordHelp"/>
 </part>
 
-
-
-                
-                        <part class="Container" id="firstNameContainer">
-    <part class="Label" id="firstNameLabel"/>
-    <part class="Image" id="firstNameImage"/>
-    <part class="Entry" id="firstNameEntry"/>
-    <part class="Label" id="firstNameHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="firstNameFrame">
+	<part class="Label" id="firstNameLabel"/>
+	<part class="Image" id="firstNameImage"/>
+	<part class="Entry" id="firstNameEntry"/>
+	<part class="Label" id="firstNameHelp"/>
 </part>
 
-
-
-                
-                        <part class="Container" id="lastNameContainer">
-    <part class="Label" id="lastNameLabel"/>
-    <part class="Image" id="lastNameImage"/>
-    <part class="Entry" id="lastNameEntry"/>
-    <part class="Label" id="lastNameHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="lastNameFrame">
+	<part class="Label" id="lastNameLabel"/>
+	<part class="Image" id="lastNameImage"/>
+	<part class="Entry" id="lastNameEntry"/>
+	<part class="Label" id="lastNameHelp"/>
 </part>
 
-
-
-                
-                        <part class="Container" id="genderContainer">
-    <part class="Label" id="genderLabel"/>
-    <part class="Image" id="genderImage"/>
-    <part class="Combo" id="genderEntry"/>
-    <part class="Label" id="genderHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="genderFrame">
+	<part class="Label" id="genderLabel"/>
+	<part class="Image" id="genderImage"/>
+	<part class="Combo" id="genderEntry"/>
+	<part class="Label" id="genderHelp"/>
 </part>
 
-
-                
-                <!--<layout>-->
-                    <!--<vbox/>-->
-                <!--</layout>-->
-            </part>
-
-        </structure>
-    </template>
+		
+	</part>
+</part>
+	</template>
 </uiml>

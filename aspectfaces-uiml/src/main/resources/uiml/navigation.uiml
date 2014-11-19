@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+	<template id="navigation">
+		<behavior id="navigation">
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="contextMenu"/>
+				</condition>
+				<action>
+					<restructure source="#context"/>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="Cancel"/>
+				</condition>
+				<action>
+					<restructure source="#people"/>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="peopleMenu"/>
+				</condition>
+				<action>
+					<restructure source="#people"/>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="NewPerson"/>
+				</condition>
+				<action>
+					<restructure source="#personForm"/>
+				</action>
+			</rule>
+		</behavior>
+	</template>
+	<template id="context">
+		<restructure at-part="container" how="replace">
+			<template>
+				<part>
+					<part id="ContextPage" class="G:Area"
+						  source="af-output/structure_context.uiml" how="union">
+						<part id="SaveContextButton" class="G:Button"/>
+					</part>
+				</part>
+			</template>
+		</restructure>
+	</template>
+	<template id="people">
+		<restructure at-part="container" how="replace">
+			<template>
+				<part>
+					<part id="PeoplePage" class="G:Area"
+						  source="af-output/structure_person_list.uiml" how="union">
+						<part id="NewPerson" class="G:Button"/>
+					</part>
+				</part>
+			</template>
+		</restructure>
+	</template>
+	<template id="personInfo">
+		<restructure at-part="container" how="replace">
+			<template>
+				<part>
+					<part id="PersonPage" class="G:Area"
+						  source="af-output/structure_person_info.uiml" how="union">
+						<part id="Cancel" class="G:Button"/>
+					</part>
+				</part>
+			</template>
+		</restructure>
+	</template>
+	<template id="personForm">
+		<restructure at-part="container" how="replace">
+			<template>
+				<part>
+					<part id="PersonPage" class="G:Area"
+						  source="af-output/structure_person.uiml" how="union">
+						<part id="SavePersonButton" class="G:Button"/>
+						<part id="Cancel" class="G:Button"/>
+					</part>
+				</part>
+			</template>
+		</restructure>
+	</template>
+</uiml>

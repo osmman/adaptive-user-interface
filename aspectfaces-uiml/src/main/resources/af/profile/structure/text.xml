@@ -1,11 +1,6 @@
-<part class="Container" id="$field$Container">
-    <part class="Label" id="$field$Label"/>
-    <part class="Image" id="$field$Image"/>
-    <part class="Entry" id="$field$Entry"/>
-    <part class="Label" id="$field$Help"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+<part class="G:Area" id="$field$Frame">
+	<part class="G:Text" id="$field$Label"/>
+	<part class="G:Image" id="$field$Image"/>
+	<part class="G:TextField" id="$field$Entry"/>
+	<part class="G:Text" id="$field$Help"/>
 </part>
-
-

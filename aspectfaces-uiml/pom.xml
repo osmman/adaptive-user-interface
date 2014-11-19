@@ -82,32 +82,35 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <groupId>org.codehaus.mojo</groupId>
                 <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <id>generate</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>cz.cvut.fel.aui.uiml.AFGenerator</mainClass>
-                        </configuration>
-                    </execution>
-                    <execution><!-- Run our version calculation script -->
-                        <id>Run uiml.net</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>${project.build.outputDirectory}/scripts/run.bat</executable>
-                            <workingDirectory>${project.build.outputDirectory}/uiml</workingDirectory>
-                            <arguments>
-                                <argument>${project.build.outputDirectory}/uiml</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
+				<configuration>
+					<mainClass>cz.cvut.fel.aui.uiml.AFGenerator</mainClass>
+				</configuration>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--&lt;!&ndash;<id>generate</id>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<phase>generate-resources</phase>&ndash;&gt;-->
+                        <!--<goals>-->
+                            <!--<goal>java</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<mainClass>cz.cvut.fel.aui.uiml.AFGenerator</mainClass>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                    <!--<execution>&lt;!&ndash; Run our version calculation script &ndash;&gt;-->
+                        <!--<id>Run uiml.net</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>exec</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<executable>${project.build.outputDirectory}/scripts/run.bat</executable>-->
+                            <!--<workingDirectory>${project.build.outputDirectory}/uiml</workingDirectory>-->
+                            <!--<arguments>-->
+                                <!--<argument>${project.build.outputDirectory}/uiml</argument>-->
+                            <!--</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
             </plugin>
         </plugins>
     </build>

@@ -3,25 +3,25 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/aspectfaces"
 		xsi:schemaLocation="http://aspectfaces.com/schema/aspectfaces http://www.aspectfaces.com/schema/af-configuration-1.4.0-SNAPSHOT.xsd">
 
-    <mapping>
-        <type>Insert</type>
-        <default tag="emptyTag.xhtml" />
-    </mapping>
+	<mapping>
+		<type>Insert</type>
+		<default tag="emptyTag.xhtml"/>
+	</mapping>
 
 	<mapping>
 		<type>String</type>
-        <type>Integer</type>
+		<type>Integer</type>
 		<default tag="style/entry.xml" basePath="..."/>
 	</mapping>
 
-    <mapping>
-        <type>Enum</type>
-        <default tag="style/enum.xml" />
-    </mapping>
+	<mapping>
+		<type>Enum</type>
+		<default tag="style/enum.xml"/>
+	</mapping>
 
 	<!-- Globally ignored fields -->
 	<ignore-fields>
-        <name>fullName</name>
+		<name>fullName</name>
 	</ignore-fields>
 
 </configuration>

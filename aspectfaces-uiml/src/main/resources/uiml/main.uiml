@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+	<head>
+		<meta name="title" content="Adaptive user interface - UIML"/>
+	</head>
+	<interface>
+		<structure id="main">
+			<part id="topcontainer" class="G:TopContainer">
+				<part id="menubar" class="G:MenuBar">
+					<part id="menu" class="G:Menu">
+						<part id="contextMenu" class="G:MenuItem"/>
+						<part id="peopleMenu" class="G:MenuItem"/>
+					</part>
+				</part>
+				<part id="container" class="G:Area"/>
+			</part>
+		</structure>
+
+		<style id="style_base">
+			<property part-name="container" name="g:title">
+				<reference constant-name="title"/>
+			</property>
+		</style>
+		<style id="style_content"/>
+
+		<behavior id="navigation" source="navigation.uiml#navigation" />
+		<behavior id="logic">
+			<variable name="Var:context" type="" reference="false"/>
+			<rule>
+				<condition>
+					<event class="Event:Context"/>
+				</condition>
+				<action>
+					<property name="Var:context">
+						<call component-id="ContextService" method-id="getContext"/>
+					</property>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="SaveContextButton"/>
+				</condition>
+				<action>
+					<call component-id="ContextService" method-id="save">
+						<param name="context">
+							<variable name="Var:context"/>
+						</param>
+					</call>
+				</action>
+			</rule>
+		</behavior>
+
+		<content id="lang_EN" source="../lang/en.uiml#en"/>
+		<content id="lang_CS" source="../lang/cs.uiml#cs"/>
+	</interface>
+	<peers>
+		<presentation base="Generic_1.2_Harmonia_1.0"/>
+		<logic source="logic.uiml#ejb"/>
+	</peers>
+</uiml>

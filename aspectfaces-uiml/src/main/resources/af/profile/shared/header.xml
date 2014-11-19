@@ -1,3 +1,5 @@
 <?xml version="1.0"?>
-<uiml>
-    <template id="$profile$_$fragment$">
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml xmlns="http://docs.oasis-open.org/uiml/ns/uiml4.0">
+	<template id="$profile$_$fragment$">

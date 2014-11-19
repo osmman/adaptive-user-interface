@@ -1,33 +1,80 @@
 <?xml version="1.0"?>
-<uiml>
-    <template id="layout_person">
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml xmlns="http://docs.oasis-open.org/uiml/ns/uiml4.0">
+	<template id="layout_person">
 <interface>
-
-    <layout part-name="emailContainer">
-    <hbox/>
+	
+		<layout part-name="emailFrame">
+	<constraint>
+		<alias name="left-of">emailLabel,emailEntry</alias>
+	</constraint>
+	<constraint>
+		<alias name="right-of">emailImage,emailLabel</alias>
+	</constraint>
+	<constraint>
+		<alias name="below">emailHelp,emailEntry</alias>
+	</constraint>
 </layout>
 
 
-    <layout part-name="passwordContainer">
-    <hbox/>
+	
+		<layout part-name="passwordFrame">
+	<constraint>
+		<alias name="left-of">passwordLabel,passwordEntry</alias>
+	</constraint>
+	<constraint>
+		<alias name="right-of">passwordImage,passwordLabel</alias>
+	</constraint>
+	<constraint>
+		<alias name="below">passwordHelp,passwordEntry</alias>
+	</constraint>
 </layout>
 
 
-    <layout part-name="firstNameContainer">
-    <hbox/>
+	
+		<layout part-name="firstNameFrame">
+	<constraint>
+		<alias name="left-of">firstNameLabel,firstNameEntry</alias>
+	</constraint>
+	<constraint>
+		<alias name="right-of">firstNameImage,firstNameLabel</alias>
+	</constraint>
+	<constraint>
+		<alias name="below">firstNameHelp,firstNameEntry</alias>
+	</constraint>
 </layout>
 
 
-    <layout part-name="lastNameContainer">
-    <hbox/>
+	
+		<layout part-name="lastNameFrame">
+	<constraint>
+		<alias name="left-of">lastNameLabel,lastNameEntry</alias>
+	</constraint>
+	<constraint>
+		<alias name="right-of">lastNameImage,lastNameLabel</alias>
+	</constraint>
+	<constraint>
+		<alias name="below">lastNameHelp,lastNameEntry</alias>
+	</constraint>
 </layout>
 
 
-    <layout part-name="genderContainer">
-    <hbox/>
+	
+		<layout part-name="genderFrame">
+	<constraint>
+		<alias name="left-of">genderLabel,genderEntry</alias>
+	</constraint>
+	<constraint>
+		<alias name="right-of">genderImage,genderLabel</alias>
+	</constraint>
+	<constraint>
+		<alias name="below">genderHelp,genderEntry</alias>
+	</constraint>
 </layout>
 
 
+	
 </interface>
-    </template>
+	</template>
 </uiml>

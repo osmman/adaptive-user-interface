@@ -1,76 +1,52 @@
 <?xml version="1.0"?>
-<uiml>
-    <template id="structure_context">
-        <structure>
-            <part id="formContent" class="Container">
-                
-                        <part class="Container" id="ageContainer">
-    <part class="Label" id="ageLabel"/>
-    <part class="Image" id="ageImage"/>
-    <part class="Combo" id="ageEntry"/>
-    <part class="Label" id="ageHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml xmlns="http://docs.oasis-open.org/uiml/ns/uiml4.0">
+	<template id="structure_context">
+<part>
+	<part id="formFrame" class="Frame">
+		
+			<part class="Frame" id="ageFrame">
+	<part class="Label" id="ageLabel"/>
+	<part class="Image" id="ageImage"/>
+	<part class="Combo" id="ageEntry"/>
+	<part class="Label" id="ageHelp"/>
 </part>
 
-
-                
-                        <part class="Container" id="deviceContainer">
-    <part class="Label" id="deviceLabel"/>
-    <part class="Image" id="deviceImage"/>
-    <part class="Combo" id="deviceEntry"/>
-    <part class="Label" id="deviceHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="deviceFrame">
+	<part class="Label" id="deviceLabel"/>
+	<part class="Image" id="deviceImage"/>
+	<part class="Combo" id="deviceEntry"/>
+	<part class="Label" id="deviceHelp"/>
 </part>
 
-
-                
-                        <part class="Container" id="screenSizeContainer">
-    <part class="Label" id="screenSizeLabel"/>
-    <part class="Image" id="screenSizeImage"/>
-    <part class="Combo" id="screenSizeEntry"/>
-    <part class="Label" id="screenSizeHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="screenSizeFrame">
+	<part class="Label" id="screenSizeLabel"/>
+	<part class="Image" id="screenSizeImage"/>
+	<part class="Combo" id="screenSizeEntry"/>
+	<part class="Label" id="screenSizeHelp"/>
 </part>
 
-
-                
-                        <part class="Container" id="countryContainer">
-    <part class="Label" id="countryLabel"/>
-    <part class="Image" id="countryImage"/>
-    <part class="Entry" id="countryEntry"/>
-    <part class="Label" id="countryHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="countryFrame">
+	<part class="Label" id="countryLabel"/>
+	<part class="Image" id="countryImage"/>
+	<part class="Entry" id="countryEntry"/>
+	<part class="Label" id="countryHelp"/>
 </part>
 
-
-
-                
-                        <part class="Container" id="languageContainer">
-    <part class="Label" id="languageLabel"/>
-    <part class="Image" id="languageImage"/>
-    <part class="Entry" id="languageEntry"/>
-    <part class="Label" id="languageHelp"/>
-    <!--<layout>-->
-        <!--<hbox/>-->
-    <!--</layout>-->
+		
+			<part class="Frame" id="languageFrame">
+	<part class="Label" id="languageLabel"/>
+	<part class="Image" id="languageImage"/>
+	<part class="Entry" id="languageEntry"/>
+	<part class="Label" id="languageHelp"/>
 </part>
 
-
-
-                
-                <!--<layout>-->
-                    <!--<vbox/>-->
-                <!--</layout>-->
-            </part>
-
-        </structure>
-    </template>
+		
+	</part>
+</part>
+	</template>
 </uiml>

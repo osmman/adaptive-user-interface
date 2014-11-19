@@ -60,7 +60,7 @@ public class AFGenerator {
         AFWeaver.addConfiguration(new StaticConfiguration("style"), new File(PATH + "style.config.xml"), false, true);
         AFWeaver.addConfiguration(new StaticConfiguration("layout"), new File(PATH + "layout.config.xml"), false, true);
 
-        Context context = new Context(null);
+        Context context = new Context();
         context.setUseCover(true);
         context.getVariables().put("af", "rocks!");
         context.getVariables().put("dummyObject", new Object());

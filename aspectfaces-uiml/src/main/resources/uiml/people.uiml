@@ -1,0 +1,40 @@
+<part id="table" class="G:Table">
+	<style>
+		<property name="g:header">
+			<constant model="list">
+				<constant value="Header 1"/>
+				<constant value="Header 2"/>
+			</constant>
+		</property>
+		<property name="g:content">
+			<constant model="table.rowMajor">
+				<constant>
+					<constant value="Row 1, Item 1"/>
+					<constant value="Row 1, Item 2"/>
+				</constant>
+				<constant>
+					<constant value="Row 2, Item 1"/>
+					<constant value="Row 2, Item 2"/>
+				</constant>
+			</constant>
+		</property>
+	</style>
+</part>
+<part id="hTable" class="G:HeteroTable">
+	<part class="G:TableRow">
+		<part class="G:TableCell">
+			<part id="r1c1" class="G:Text"/>
+		</part>
+		<part class="G:TableCell">
+			<part id="r1c2" class="G:Text"/>
+		</part>
+	</part>
+	<part class="G:TableRow">
+		<part class="G:TableCell">
+			<part id="r2c1" class="G:List"/>
+		</part>
+		<part class="G:TableCell">
+			<part id="r2c2" class="G:Image"/>
+		</part>
+	</part>
+</part>
