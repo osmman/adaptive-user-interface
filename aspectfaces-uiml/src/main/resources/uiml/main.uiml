@@ -26,8 +26,14 @@
 		<style id="style_content"/>
 
 		<behavior id="navigation" source="navigation.uiml#navigation" />
-		<behavior id="logic">
-			<variable name="Var:context" type="" reference="false"/>
+		<behavior id="aui">
+			<variable name="AUI:table" type="g:String" reference="false"/>
+			<variable name="AUI:locale" type="g:String" reference="false"/>
+			<variable name="AUI:layout" type="g:String" reference="false"/>
+			<variable name="AUI:applyImage" type="g:Boolean" reference="false"/>
+			<variable name="AUI:applyHelp" type="g:Boolean" reference="false"/>
+			<variable name="AUI:role" type="g:String" reference="false"/>
+			<variable name="AUI:layout" type="g:String" reference="false"/>
 			<rule>
 				<condition>
 					<event class="Event:Context"/>
@@ -36,8 +42,26 @@
 					<property name="Var:context">
 						<call component-id="ContextService" method-id="getContext"/>
 					</property>
+					<call component-id="AuiRuleEngine" method-id="resolve">
+						<param name="env">
+							<variable name="AUI:table"/>
+							<variable name="AUI:locale"/>
+							<variable name="AUI:layout"/>
+							<variable name="AUI:applyImage"/>
+							<variable name="AUI:applyHelp"/>
+							<variable name="AUI:role"/>
+							<variable name="AUI:layout"/>
+						</param>
+						<param name="context">
+							<variable name="Var:context"/>
+						</param>
+					</call>
 				</action>
 			</rule>
+		</behavior>
+		<behavior id="bussiness">
+			<variable name="Var:context" reference="false"/>
+			<variable name="Var:Person" reference="false"/>
 			<rule>
 				<condition>
 					<event class="g:actionperformed" part-name="SaveContextButton"/>
@@ -46,6 +70,42 @@
 					<call component-id="ContextService" method-id="save">
 						<param name="context">
 							<variable name="Var:context"/>
+						</param>
+					</call>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="AddPerson"/>
+				</condition>
+				<action>
+					<call component-id="PersonService" method-id="create">
+						<param name="person">
+							<variable name="Var:Person"/>
+						</param>
+					</call>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="EditPerson"/>
+				</condition>
+				<action>
+					<call component-id="PersonService" method-id="edit">
+						<param name="person">
+							<variable name="Var:Person"/>
+						</param>
+					</call>
+				</action>
+			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="DeletePerson"/>
+				</condition>
+				<action>
+					<call component-id="PersonService" method-id="delete">
+						<param name="person">
+							<variable name="Var:Person"/>
 						</param>
 					</call>
 				</action>

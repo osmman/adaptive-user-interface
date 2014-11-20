@@ -6,6 +6,13 @@
 <property part-name="$field$Help" name="g:text">
 	<reference constant-name="help.$field$"/>
 </property>
-<property part-name="$field$Help" name="g:enabled">false</property>
-<property part-name="$field$Image" name="g:image-src">$basePath$/$field$.png</property>
-<property part-name="$field$Image" name="g:enabled">false</property>
+<property part-name="$field$Help" name="g:enabled">
+	<variable name="AUI:applyHelp"/>
+</property>
+<property part-name="$field$Image" name="g:image-src">$field$.png</property>
+<property part-name="$field$Image" name="g:enabled">
+	<variable name="AUI:applyImage"/>
+</property>
+<property part-name="$field$Entry" name="g:value">
+	<call component-id="$field$" method-id="$field$"/>
+</property>

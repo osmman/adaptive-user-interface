@@ -1,0 +1,5 @@
+<behavior>
+	<af:iteration-part maxOccurs="100">
+			$af:next$
+	</af:iteration-part>
+</behavior>

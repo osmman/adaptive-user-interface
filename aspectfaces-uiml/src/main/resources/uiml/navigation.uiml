@@ -36,6 +36,18 @@
 					<restructure source="#personForm"/>
 				</action>
 			</rule>
+			<rule>
+				<condition>
+					<event class="g:actionperformed" part-name="DetailPerson"/>
+				</condition>
+				<action>
+					<variable name="personEditable">false</variable>
+					<variable name="personInfoEditable">false</variable>
+					<variable name="addressEditable">false</variable>
+					<variable name="degreeEditable">false</variable>
+					<restructure source="#personForm"/>
+				</action>
+			</rule>
 		</behavior>
 	</template>
 	<template id="context">

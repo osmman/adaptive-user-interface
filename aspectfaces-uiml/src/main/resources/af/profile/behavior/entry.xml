@@ -1,0 +1,10 @@
+	<rule>
+		<condition>
+			<event class="g:keytyped" part-name="$field$Entry"/>
+		</condition>
+		<action>
+			<variable name="$className$.$field$">
+				<property part-name="$field$Entry" name="g:value"/>
+			</variable>
+		</action>
+	</rule>

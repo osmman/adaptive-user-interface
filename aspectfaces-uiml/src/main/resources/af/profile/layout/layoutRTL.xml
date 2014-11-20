@@ -1,0 +1,12 @@
+<layout part-name="$field$Frame">
+	<constraint>
+		<alias name="right-of">$field$Label,$field$Entry</alias>
+	</constraint>
+	<constraint>
+		<alias name="left-of">$field$Image,$field$Label</alias>
+	</constraint>
+	<constraint>
+		<alias name="below">$field$Help,$field$Entry</alias>
+	</constraint>
+</layout>
+

@@ -1,9 +1,7 @@
 <property part-name="$field$Label" name="g:text">
 	<reference constant-name="text.$field$"/>
 </property>
-<property part-name="$field$Entry" name="g:editable">
-	<variable name="$className$Editable" reference="false">true</variable>
-</property>
+<property part-name="$field$Entry" name="g:editable">$editable$</property>
 <property part-name="$field$Entry" name="v:required">$required$</property>
 <property part-name="$field$Help" name="g:text">
 	<reference constant-name="help.$field$"/>
@@ -15,9 +13,6 @@
 <property part-name="$field$Image" name="g:enabled">
 	<variable name="AUI:applyImage"/>
 </property>
-<property part-name="$field$Entry" name="g:content">
-	<call component-id="EnumList" method-id="$field$"/>
-</property>
 <property part-name="$field$Entry" name="g:value">
-	<call component-id="$field$" method-id="$field$"/>
+	<variable name="AUI:state"/>
 </property>
