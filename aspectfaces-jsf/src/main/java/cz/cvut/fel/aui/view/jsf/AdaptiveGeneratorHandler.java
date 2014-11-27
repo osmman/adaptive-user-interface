@@ -12,9 +12,12 @@ import cz.cvut.fel.aui.utils.FacUtil;
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.ComponentConfig;
 import javax.inject.Inject;
+import javax.rules.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.rmi.RemoteException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,6 +33,8 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     private Boolean _debug = false;
 
     private Integer _af_cache = -1;
+
+    private Logger logger = Logger.getLogger(this.getClass().getName());
 
     public AdaptiveGeneratorHandler(ComponentConfig config) {
         super(config);
@@ -86,38 +91,35 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     @Override
     protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
         Context config = getContext();
+        context.setLayout("desktop");
 
         try {
             getRuleEngine().process(context.getVariables(),config,context);
         } catch (Exception e) {
-            Logger logger = Logger.getLogger(this.getClass().getName());
             logger.log(Level.SEVERE,e.getMessage(),e);
         }
 
-        if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
-            context.setLayout(applySettings("mobile", null));
-        } else {
-            context.setLayout(applySettings("desktop", null));
-        }
-
+        context.setLayout(applySettings(context.getLayout(), null));
     }
 
     @Override
     protected String getConfig() {
         if (configName == null || configName.getValue().isEmpty()) {
-            Context config = getContext();
-            if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
-                return "mobile";
-            } else {
-                return DEFAULT_CONFIG;
+            Map<String,Object> env = new HashMap<String, Object>(){{
+                put("layout",DEFAULT_CONFIG);
+            }};
+            try {
+                Context config = getContext();
+                getRuleEngine().process(env,config);
+            } catch (Exception e) {
+                logger.log(Level.SEVERE,e.getMessage(),e);
             }
+            return (String) env.get("layout");
         }
         return configName.getValue();
     }
 
     private Context getContext() {
-//        AnnotationLiteral<Current> current = new AnnotationLiteral<Current>() {
-//        };
         return ((ContextService) FacUtil.getBeanByClass(ContextService.class)).getContext();
     }
 

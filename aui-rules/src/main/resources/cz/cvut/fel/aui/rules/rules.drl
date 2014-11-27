@@ -42,19 +42,12 @@ then
     env.put("RTL",!ComponentOrientation.getOrientation($locale).isLeftToRight());
 end
 
-
-
-rule "RULE 6a: Mobile interface" when
-    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP || screenSize == ScreenSize.small)
-then
-    env.put("layout","mobile");
-end
-
 rule "One column layout" when
 	cz.cvut.fel.aui.model.Context(screenSize == ScreenSize.normal)
 then
 	env.put("layout", "oneColumn");
 end
+
 
 
 rule "RULE 1: Graphic ui" when
@@ -91,8 +84,16 @@ end
 
 
 
+rule "RULE 6a: Mobile interface" when
+    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP || screenSize == ScreenSize.small)
+then
+    env.put("layout","mobile");
+end
+
+
+
 rule "RULE 6b: AspectFaces mobile layout" when
-    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP)
+    cz.cvut.fel.aui.model.Context(device != Device.DESKTOP || screenSize == ScreenSize.small)
     ctx: com.codingcrayons.aspectfaces.configuration.Context()
 then
     ctx.setLayout("mobile");
