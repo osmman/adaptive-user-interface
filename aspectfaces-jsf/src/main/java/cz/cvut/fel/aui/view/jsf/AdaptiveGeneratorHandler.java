@@ -92,7 +92,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
     protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
         Context config = getContext();
         context.setLayout("desktop");
-
+        
         try {
             getRuleEngine().process(context.getVariables(),config,context);
         } catch (Exception e) {
@@ -118,6 +118,8 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
         }
         return configName.getValue();
     }
+
+
 
     private Context getContext() {
         return ((ContextService) FacUtil.getBeanByClass(ContextService.class)).getContext();

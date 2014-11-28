@@ -5,6 +5,7 @@ import cz.cvut.fel.aui.model.Context;
 import cz.cvut.fel.aui.rules.AuiRuleEngine;
 
 import javax.enterprise.event.Observes;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.rules.*;
@@ -23,11 +24,7 @@ public class ViewHelper {
 
     private final String DEFAULT_LAYOUT = "default";
 
-    private String layout = DEFAULT_LAYOUT;
-
-    private Locale locale = Locale.US;
-
-    private Boolean rightToLeft = false;
+    private Map<String, Object> setting = new HashMap<String, Object>();
 
     @Inject
     private AuiRuleEngine ruleEngine;
@@ -37,33 +34,31 @@ public class ViewHelper {
 
     @Inject
     public void ViewHelper(@Current final Context context) throws RemoteException, RuleSessionTypeUnsupportedException, InvalidRuleSessionException, RuleExecutionSetNotFoundException, RuleSessionCreateException, ConfigurationException {
-            onContextChanged(context);
+        setting.put("layout",DEFAULT_LAYOUT);
+        setting.put("locale",Locale.US);
+        setting.put("RTL",false);
+        onContextChanged(context);
     }
 
     public String getLayout() {
-        return layout;
+        return (String) setting.get("layout");
     }
 
     public Locale getLocale() {
-        return locale;
+        return (Locale) setting.get("locale");
     }
 
     public Boolean isRightToLeft() {
-        return rightToLeft;
+        return (Boolean) setting.get("RTL");
     }
 
     public void setRightToLeft(Boolean rightToLeft) {
-        this.rightToLeft = rightToLeft;
+        setting.put("RTL",rightToLeft);
     }
 
     public void onContextChanged(@Observes final Context context) {
-
-        Map<String, Object> env = new HashMap<String, Object>();
         try {
-            ruleEngine.process(env,context);
-            locale = (Locale) env.get("locale");
-            rightToLeft = (Boolean) env.get("RTL");
-            layout = (String) (env.get("layout") != null ? env.get("layout") : DEFAULT_LAYOUT);
+            ruleEngine.process(setting,context);
         } catch (Exception e) {
             logger.log(Level.SEVERE,e.getMessage(),e);
         }
