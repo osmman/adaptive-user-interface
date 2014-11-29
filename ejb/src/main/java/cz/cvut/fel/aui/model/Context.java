@@ -12,6 +12,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * Person: Tomáš
@@ -20,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * To change this template use File | Settings | File Templates.
  */
 @XmlRootElement
-public class Context implements Cloneable {
+public class Context implements Cloneable, Serializable {
     private Age age;
 
     private String language;

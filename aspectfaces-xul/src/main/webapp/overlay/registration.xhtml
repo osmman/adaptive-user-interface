@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="/aspectfaces-xul/css/#{context.age.toString().toLowerCase()}.css" type="text/css"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <overlay id="layout"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            >
+        <xf:wizard
+                id="registration-wizard"
+                title="#{text['action.registration']}"
+                onwizardfinish="return save()">
+
+            <script type="application/javascript">
+                function save() {
+                    try {
+                        triggerAction('cmd-save');
+                        var theOpener = window.opener;
+                        theOpener.location.reload()
+
+                        return true;
+                    }
+                    catch (e) {
+                        alert(e);
+                        return false;
+                    }
+                }
+
+                function isValid() {
+                    try {
+                        triggerAction('cmd-valid-person');
+                        XUL_FACES_BRIDGE.updateDOM(XUL_FACES_BRIDGE.responseXml);
+                        return !XUL_FACES_BRIDGE.hasErrors(XUL_FACES_BRIDGE.responseXml);
+                    }
+                    catch (e) {
+                        alert(e);
+                        return false;
+                    }
+                }
+            </script>
+
+            <xf:commandset id="commandset">
+                <xf:command id="cmd-save" action="#{personController.create()}"/>
+                <xf:command id="cmd-valid-person" action="#{personController.validate()}"/>
+            </xf:commandset>
+
+            <xf:messages/>
+
+            <af:ui instance="#{newPerson}" edit="true" ignore="fullName" layout="wizard.xhtml"/>
+
+            <box>
+            	<xf:bridge id="bridge"/>
+            </box>
+        </xf:wizard>
+    </overlay>
+</f:view>

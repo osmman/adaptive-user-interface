@@ -1,0 +1,12 @@
+
+.field[image] {
+    -moz-binding: url('chrome://aui/skin/images.xml#field');
+}
+
+.required {
+    -moz-binding: url('chrome://aui/skin/images.xml#required');
+}
+
+button.save {
+    list-style-image: url('chrome://aui/skin/images/glyphicons_446_floppy_save.png')
+}

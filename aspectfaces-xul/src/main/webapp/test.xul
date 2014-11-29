@@ -117,6 +117,6 @@
             </tabpanels>
         </tabbox>
         <script type="application/javascript" src="/aspectfaces-xul/js/main.js"/>
-        <script type="application/javascript" src="/aspectfaces-xul/js/xul-logger.js"/>
+        <script type="application/javascript" src="/aspectfaces-xul/js/logger.js"/>
     </vbox>
 </window>

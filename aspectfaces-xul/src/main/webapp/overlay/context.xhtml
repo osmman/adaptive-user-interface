@@ -11,9 +11,10 @@
         </xf:commandset>
 
         <vbox id="content" >
+            <dialogheader title="Context of use"/>
             <groupbox orient="vertical">
                 <af:ui instance="#{context}" edit="true"/>
-                <xf:button label="#{text['action.save']}" command="cmd-context-save" />
+                <xf:button label="#{text['action.save']}" xf:styleClass="save" command="cmd-context-save" />
             </groupbox>
             <box class="helpRequired" />
         </vbox>

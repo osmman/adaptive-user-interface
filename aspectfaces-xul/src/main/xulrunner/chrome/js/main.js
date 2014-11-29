@@ -1,53 +1,51 @@
 
-function openDialog(url,width,height){
-    window.open(url,'properties','menubar=no,centerscreen,location=yes,resizable=yes,scrollbars=yes,status=no,width=' + width +  ',height=' + height + ',modal=yes');
+
+function openRegistrationWizard() {
+    window.openDialog('chrome://aui/content/registration.xul',"registration-wizard","chrome, dialog, modal");
 }
 
-function openRegistrationWizard(){
-    openDialog('http://localhost:8080/aspectfaces-xul/registration.xul',400,350);
+function openContextWizard() {
+    openDialogFn('context.xul', 400, 400);
 }
 
-function openContextWizard(){
-    openDialog('context.xul',400,400);
-}
-
-function saveContext(){
-    try{
-        XUL_FACES_BRIDGE.serverUrl = document.location.origin+"/aspectfaces-xul/layouts/context.xul"
+function saveContext() {
+    try {
+        XUL_FACES_BRIDGE.serverUrl = _server + "/overlay/context.xul"
         triggerAction('cmd-context-save');
-        document.location.reload()
-
-    }catch(e){
+        Aui.onContextChange();
+        Navigation.overlay(document,_server +  "/overlay/context.xul",null)
+    } catch (e) {
         alert(e);
     } finally {
-        XUL_FACES_BRIDGE.serverUrl = document.location.href;
+        XUL_FACES_BRIDGE.serverUrl = _server;
     }
 }
 
-function deletePerson(){
-    try{
-        if(dialogDelete()){
-            XUL_FACES_BRIDGE.serverUrl = document.location.origin+"/aspectfaces-xul/layouts/people.xul"
+function deletePerson() {
+    try {
+        if (dialogDelete()) {
+            XUL_FACES_BRIDGE.serverUrl =  _server + "/overlay/people.xul"
             triggerAction('cmd-delete-person');
             document.location.reload()
         }
-    }catch(e){
+    } catch (e) {
         alert(e);
     } finally {
-        XUL_FACES_BRIDGE.serverUrl = document.location.href;
+        XUL_FACES_BRIDGE.serverUrl = _server;
     }
 }
 
-function detailPerson(){
+function detailPerson() {
     var selected = document.querySelector("listbox listitem[selected]");
-    if(selected){
+    if (selected) {
         var id = selected.getAttribute("value");
-        if(id){
-            openDialog('person.xul?person='+id,400,400);
+        if (id) {
+            window.location.replace(_server+'/person.xul?person=' + id);
+            //window.openDialog(server+'/person.xul?person=' + id,"detail","chrome, dialog");
         }
     }
 }
 
-function dialogDelete(){
+function dialogDelete() {
     return confirm("Delete?");
 }

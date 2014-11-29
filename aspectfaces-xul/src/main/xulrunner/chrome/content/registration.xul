@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xul-overlay href="http://localhost:8080/aspectfaces-xul/overlay/registration.xul"?>
+<wizard id="registration-wizard" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul"
+		title="Registration">
+</wizard>

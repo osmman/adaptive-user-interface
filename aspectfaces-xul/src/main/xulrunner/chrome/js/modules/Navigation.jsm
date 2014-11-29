@@ -9,6 +9,7 @@ Cu.import('resource://modules/MyServices.jsm');
 this.Navigation = {
     overlay: function(document, uri, callback){
         document.getElementById("content").innerHTML = "";
+        document.getElementById("bridge").innerHTML = "";
         document.loadOverlay(uri, callback);
     }
 }

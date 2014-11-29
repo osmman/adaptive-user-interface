@@ -1,1 +1,1 @@
-content aui chrome/content/content js chrome/js/skin aui child chrome/skin/child/skin aui elder chrome/skin/child/locale aui cs-CZ chrome/locale/cs-CZ/locale aui en-US chrome/locale/en-US/locale branding en-US chrome/locale/branding/resource modules chrome/js/modules/
+content aui chrome/content/content js chrome/js/skin aui base chrome/skin/base/locale aui cs-CZ chrome/locale/cs-CZ/locale aui en-US chrome/locale/en-US/locale branding en-US chrome/locale/branding/resource modules chrome/js/modules/resource aspectfaces-xul chrome/js/

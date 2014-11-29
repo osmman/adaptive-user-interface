@@ -4,7 +4,7 @@
         >
 
     <ui:fragment rendered="#{empty edit ? false : edit}">
-        <hbox class="field" image="#{not empty imageResources.getImage(id) ? request.contextPath.concat(imageResources.getImage(id)): ''}">
+        <hbox flex="1" class="field" required="#{required or forceRequired}" image="#{imageResources.getImage(id)}">
             <xf:label value="#{label}" control="#{id}" style="min-width:5em"/>
 
             <ui:insert name="input"/>
@@ -17,7 +17,7 @@
     </ui:fragment>
 
     <ui:fragment rendered="#{empty edit ? true : not edit}">
-        <hbox class="field">
+        <hbox flex="1" class="field">
             <xf:label value="#{label}" control="#{id}" style="min-width:5em"/>
             <ui:insert name="output"/>
         </hbox>

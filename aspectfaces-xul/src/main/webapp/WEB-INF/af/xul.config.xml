@@ -28,18 +28,21 @@
         <default tag="xul/enum.xhtml" />
     </mapping>
 
-    <!--<mapping>-->
-        <!--<type>PersonInfo</type>-->
-        <!--<default tag="xul/entity.xhtml" />-->
-    <!--</mapping>-->
+	<mapping>
+		<type>Date</type>
+		<default tag="xul/date.xhtml" />
+	</mapping>
 
-    <!--<mapping>-->
-        <!--<type>Address</type>-->
-        <!--<default tag="xul/entity.xhtml" />-->
-    <!--</mapping>-->
+	<mapping>
+		<type>PersonInfo</type>
+		<type>Address</type>
+		<type>Degree</type>
+		<default tag="xul/entity.xhtml" />
+		<!--<condition expression="#{not empty layout and 'wizard.xhtml' eq layout}" tag="xul/entity.xhtml"/>-->
+	</mapping>
 
 
-    <mapping>
+	<mapping>
 		<type>Boolean</type>
 		<type>boolean</type>
 		<default tag="xul/boolean.xhtml" />

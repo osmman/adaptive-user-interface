@@ -8,7 +8,7 @@
         <command id="open-context" oncommand="Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/context.xul',null)"/>
     </commandset>
 
-    <menubar id="menu" html:data-role="header">
+    <menubar id="menu">
         <menuitem id="people-menu" label="&navigation.people;" command="open-people"/>
         <menuitem id="context-menu" label="&navigation.context;" command="open-context"/>
     </menubar>
