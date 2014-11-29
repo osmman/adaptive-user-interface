@@ -19,8 +19,10 @@ Cu.import('resource://gre/modules/Services.jsm');
 Cu.import('resource://modules/MyServices.jsm');
 Cu.import('resource://modules/Locale.jsm');
 Cu.import('resource://modules/Binding.jsm');
+Cu.import('resource://modules/Navigation.jsm');
 
 function startup(){
-    var cssUri = Services.io.newURI("chrome://aui/skin/binding.css",null,null);
-    Binding.regist(cssUri)
+//    Overlays.load("url",null);
+//    var cssUri = Services.io.newURI("chrome://aui/skin/binding.css",null,null);
+//    Binding.regist(cssUri)
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        xmlns:af="http://codingcrayons.com/aspectfaces" xmlns:xh="http://xulfaces.sourceforge.net/xulfaces/jsf/xul"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <overlay id="layout"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+             xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul">
+        <xf:commandset id="commandset">
+            <xf:command id="cmd-context-save" action="#{contextController.save}" oncommand="saveContext()"/>
+        </xf:commandset>
+
+        <vbox id="content" >
+            <groupbox orient="vertical">
+                <af:ui instance="#{context}" edit="true"/>
+                <xf:button label="#{text['action.save']}" command="cmd-context-save" />
+            </groupbox>
+            <box class="helpRequired" />
+        </vbox>
+
+        <vbox id="bridge">
+            <xf:bridge />
+        </vbox>
+    </overlay>
+</f:view>

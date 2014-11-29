@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xul-overlay href="chrome://aui/content/part/menu.xul"?>
+<!--<?xul-overlay href="http://localhost:8080/aspectfaces-xul/layouts/context.xul"?>-->
+<?xul-overlay href="http://localhost:8080/aspectfaces-xul/overlay/people.xul"?>
+<!DOCTYPE window SYSTEM "chrome://aui/locale/core.dtd">
+
+<window
+        title="title"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        width="800px"
+        height="500px"
+        onload="startup()"
+        xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul">
+    <script type="application/javascript" src="chrome://js/content/bootstrap.js" />
+    <script type="application/javascript" src="chrome://js/content/main.js" />
+    <commandset id="commandset">
+    </commandset>
+    <toolbox id="header">
+        <menubar id="menu"/>
+    </toolbox>
+
+    <vbox id="content"/>
+
+    <vbox id="bridge"/>
+
+    <script type="application/javascript" src="chrome://js/content/xul-logger.js" />
+    <script type="application/javascript" src="chrome://js/content/xulfaces-bridge.js" />
+</window>
