@@ -12,18 +12,13 @@
 	<ui:param name="maxlength" value="$maxLength$"/>
 	<ui:param name="size" value="$size$"/>
     <ui:param name="help" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$.help']}" />
-    <ui:param name="applyHelp" value="$applyHelp$" />
-    <ui:param name="imageUrl" value="$after.value.value$" />
-    <ui:param name="imageAlt" value="$after.value.title$" />
-    <ui:param name="applyImage" value="$applyImage$" />
-
 
 	<ui:define name="input">
-        <xf:textbox id="#{id}" value="#{value}" flex="1"/>
+        <xf:textbox id="#{id}" value="#{value}" flex="1" style="min-width:10em"/>
 	</ui:define>
 
 	<ui:define name="output">
-		<xf:label value="#{value}"/>
+		<xf:label value="#{value}" flex="1"  style="min-width:10em"/>
 	</ui:define>
 
 </ui:decorate>

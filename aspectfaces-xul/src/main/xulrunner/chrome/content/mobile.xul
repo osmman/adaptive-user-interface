@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
-<!--<?xml-stylesheet href="chrome://aui/skin/help.css" type="text/css"?>-->
-<!--<?xml-stylesheet href="chrome://aui/skin/images.css" type="text/css"?>-->
-<?xul-overlay href="http://localhost:8080/aspectfaces-xul/overlay/people.xul"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://aui/skin/mobile.css" type="text/css"?>
+<!--<?xul-overlay href="http://localhost:8080/aspectfaces-xul/overlay/people.xul"?>-->
 <!DOCTYPE window SYSTEM "chrome://aui/locale/core.dtd">
-
 <window
 		title="title"
 		id="root"
 		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-		width="600px"
+		width="300px"
+		height="600px"
 		onload="startup()"
 		>
 	<script type="application/javascript" src="chrome://js/content/bootstrap.js"/>
@@ -19,16 +18,21 @@
 				 oncommand="Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/people.xul',null)"/>
 		<command id="open-context"
 				 oncommand="Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/context.xul',null)"/>
+		<command id="open-registration"
+				 oncommand="Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/registration.xul',null)"/>
 	</commandset>
 
-	<menubar id="menu">
-		<menu label="Menu">
-			<menupopup>
-				<menuitem id="people-menu" label="&navigation.people;" command="open-people"/>
-				<menuitem id="context-menu" label="&navigation.context;" command="open-context"/>
-			</menupopup>
-		</menu>
-	</menubar>
+	<toolbox id="navigator-toolbox" mode="icons" iconsize="small">
+		<toolbar id="toolbar-nav">
+			<toolbarbutton image="chrome://aui/skin/images/glyphicons_158_show_lines.png" type="menu-button">
+				<menupopup>
+					<menuitem id="people-menu" label="&navigation.people;" command="open-people"/>
+					<menuitem id="context-menu" label="&navigation.context;" command="open-context"/>
+					<menuitem label="&action.registration;" command="open-registration" />
+				</menupopup>
+			</toolbarbutton>
+		</toolbar>
+	</toolbox>
 
 	<vbox id="content"/>
 
@@ -42,7 +46,7 @@
 			if (selected) {
 				var id = selected.getAttribute("value");
 				if (id) {
-					window.openDialog('chrome://aui/content/detail.xul',"detail","dialog,chrome",id);
+					Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/person.xul?person='+id,null)
 				}
 			}
 		}

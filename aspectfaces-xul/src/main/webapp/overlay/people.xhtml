@@ -29,24 +29,18 @@
                         >
 
                     <xf:listhead>
-                        <xf:listheader label="Email" flex="1"/>
-                        <xf:listheader label="Jmeno" flex="1"/>
-                        <xf:listheader label="Prijmeni" flex="1"/>
-                        <xf:listheader label="Gender" flex="1"/>
+                        <af:ui instance="#{newPerson},#{newPerson.personInfo}" config="tableHeader"
+                               entity="cz.cvut.fel.aui.model.Person,cz.cvut.fel.aui.model.PersonInfo"
+                               ignore="password,firstName,lastName"/>
                     </xf:listhead>
 
-                    <xf:listcols>
-                        <xf:listcol flex="1"/>
-                        <xf:listcol flex="1"/>
-                        <xf:listcol flex="1"/>
-                        <xf:listcol flex="1"/>
-                    </xf:listcols>
-
                     <xf:listitem context="actions"  value="#{bean.id}">
-                        <xf:listcell value="#{bean.email}" />
-                        <xf:listcell value="#{bean.personInfo.firstName}" />
-                        <xf:listcell value="#{bean.personInfo.lastName}" />
-                        <xf:listcell value="#{text[bean.personInfo.gender.label]}" />
+                        <af:ui instance="#{bean}" config="table"
+                               entity="cz.cvut.fel.aui.model.Person"
+                               ignore="password"/>
+                        <af:ui instance="#{bean.personInfo}" config="table"
+                               entity="cz.cvut.fel.aui.model.PersonInfo"
+                               ignore="firstName,lastName"/>
                     </xf:listitem>
 
                 </xf:dataListbox>

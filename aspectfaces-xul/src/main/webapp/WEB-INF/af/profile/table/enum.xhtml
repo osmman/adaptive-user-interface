@@ -1,0 +1,6 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet">
+    <ui:param name="value" value="#{instance.$field$}"/>
+    <xf:listcell value="#{not empty value ? text[value.label] : ''}" />
+</ui:fragment>

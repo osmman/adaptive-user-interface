@@ -4,10 +4,6 @@ function openRegistrationWizard() {
     window.openDialog('chrome://aui/content/registration.xul',"registration-wizard","chrome, dialog, modal");
 }
 
-function openContextWizard() {
-    openDialogFn('context.xul', 400, 400);
-}
-
 function saveContext() {
     try {
         XUL_FACES_BRIDGE.serverUrl = _server + "/overlay/context.xul"
@@ -26,7 +22,7 @@ function deletePerson() {
         if (dialogDelete()) {
             XUL_FACES_BRIDGE.serverUrl =  _server + "/overlay/people.xul"
             triggerAction('cmd-delete-person');
-            document.location.reload()
+            window.location.reload()
         }
     } catch (e) {
         alert(e);
@@ -36,12 +32,12 @@ function deletePerson() {
 }
 
 function detailPerson() {
+    XUL_FACES_BRIDGE.serverUrl =  _server + "/overlay/people.xul"
     var selected = document.querySelector("listbox listitem[selected]");
     if (selected) {
         var id = selected.getAttribute("value");
         if (id) {
-            window.location.replace(_server+'/person.xul?person=' + id);
-            //window.openDialog(server+'/person.xul?person=' + id,"detail","chrome, dialog");
+            window.openDialog('chrome://aui/content/detail.xul',"detail","dialog,chrome",id);
         }
     }
 }

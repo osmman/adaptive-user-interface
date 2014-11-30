@@ -1,7 +1,9 @@
 <xf:wizardpage xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet" label="#{text[instance.getClass().getSimpleName().toLowerCase().concat('.legend')]}">
-    <af:iteration-part maxOccurs="100">
-        $af:next$
-    </af:iteration-part>
+    <groupbox orient="vertical">
+		<af:iteration-part maxOccurs="100">
+			$af:next$
+		</af:iteration-part>
+    </groupbox>
 </xf:wizardpage>
 <af:cover-personInfo>
 $af:personInfo$

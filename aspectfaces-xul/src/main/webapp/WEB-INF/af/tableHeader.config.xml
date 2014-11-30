@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://aspectfaces.com/schema/aspectfaces"
+		xsi:schemaLocation="http://aspectfaces.com/schema/aspectfaces http://www.aspectfaces.com/schema/af-configuration-1.4.0-SNAPSHOT.xsd">
+
+	<!-- generic mapping -->
+	<mapping>
+		<type>Enum</type>
+		<type>Boolean</type>
+		<type>boolean</type>
+		<type>Integer</type>
+		<type>int</type>
+		<type>String</type>
+		<default tag="table/header.xhtml"/>
+        <condition expression="${table == 'list'}" tag="xul/emptyTag.xhtml" />
+	</mapping>
+
+	<!-- Globally ignored fields -->
+	<ignore-fields>
+        <name>password</name>
+	</ignore-fields>
+
+</configuration>

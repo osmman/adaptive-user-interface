@@ -1,25 +1,31 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="/aspectfaces-xul/css/#{context.age.toString().toLowerCase()}.css" type="text/css"?>
 <f:view xmlns:f="http://java.sun.com/jsf/core"
         xmlns:af="http://codingcrayons.com/aspectfaces"
         xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
         locale="#{context.language.concat('_').concat(context.country)}">
     <overlay id="layout"
              xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+             xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul"
             >
         <xf:wizard
-                id="registration-wizard"
+                id="content"
                 title="#{text['action.registration']}"
+                onwizardcancel="cancel()"
                 onwizardfinish="return save()">
-
             <script type="application/javascript">
+                _server = "http://localhost:8080/aspectfaces-xul";
+
+                function cancel() {
+                    var theOpener = window.opener
+                    theOpener.location.reload()
+                }
+
                 function save() {
                     try {
+                        XUL_FACES_BRIDGE.serverUrl = _server + "/overlay/registration.xul"
                         triggerAction('cmd-save');
                         var theOpener = window.opener;
                         theOpener.location.reload()
-
                         return true;
                     }
                     catch (e) {
@@ -30,6 +36,7 @@
 
                 function isValid() {
                     try {
+                        XUL_FACES_BRIDGE.serverUrl = _server + "/overlay/registration.xul"
                         triggerAction('cmd-valid-person');
                         XUL_FACES_BRIDGE.updateDOM(XUL_FACES_BRIDGE.responseXml);
                         return !XUL_FACES_BRIDGE.hasErrors(XUL_FACES_BRIDGE.responseXml);
@@ -48,10 +55,12 @@
 
             <xf:messages/>
 
-            <af:ui instance="#{newPerson}" edit="true" ignore="fullName" layout="wizard.xhtml"/>
+            <af:ui instance="#{newPerson}" edit="true" ignore="fullName" recursive="true" layout="wizard.xhtml"/>
 
             <box>
-            	<xf:bridge id="bridge"/>
+                <xf:bridge id="bridge"/>
+                <script type="application/javascript" src="chrome://js/content/xul-logger.js"/>
+                <script type="application/javascript" src="chrome://js/content/xulfaces-bridge.js"/>
             </box>
         </xf:wizard>
     </overlay>

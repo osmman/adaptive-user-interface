@@ -14,10 +14,6 @@
     <ui:param name="collection" value="#{enum.$field$}"/>
     <ui:param name="entityType" value="$dataType$"/>
     <ui:param name="help" value="#{text['$entityBean.shortClassName().firstToLower()$.$field$.help']}" />
-    <ui:param name="applyHelp" value="$applyHelp$" />
-    <ui:param name="imageUrl" value="$after.value.value$" />
-    <ui:param name="imageAlt" value="$after.value.title$" />
-    <ui:param name="applyImage" value="$applyImage$" />
 
     <ui:define name="input">
         <xf:menulist id="#{id}" value="#{value}" flex="1">

@@ -5,6 +5,7 @@ import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;
 
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.ComponentConfig;
+import javax.faces.view.facelets.TagAttribute;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -65,6 +66,12 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
 		return (calcLayout == null) ? null : (calcLayout);
 	}
 
+	private Boolean getRecursiveValue(){
+		TagAttribute atr = getAttribute("recursive");
+		if(atr == null) return false;
+		return Boolean.parseBoolean(atr.getValue());
+	}
+
 	@Override
 	protected InputStream createInputStream(String s) {
 		try {
@@ -87,6 +94,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
 	protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
 		Context config = getContext();
 		context.setLayout("desktop");
+		context.getVariables().put("recursive",getRecursiveValue());
 
 		try {
 			getRuleEngine().process(context.getVariables(), config, context);
@@ -95,6 +103,7 @@ public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
 		}
 
 		context.setLayout(applySettings(null));
+		logger.info(context.getVariables().toString());
 	}
 
 	@Override

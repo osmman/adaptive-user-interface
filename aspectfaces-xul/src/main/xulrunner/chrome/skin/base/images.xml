@@ -4,7 +4,9 @@
 		  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<binding id="field">
 		<content>
-			<xul:image xbl:inherits="src=image"/>
+			<xul:box>
+				<xul:image xbl:inherits="src=image"/>
+			</xul:box>
 			<children/>
 		</content>
 	</binding>

@@ -33,7 +33,7 @@ public class AdaptiveConfigurationResource implements Serializable {
 	@Inject
 	private Logger logger;
 
-	private Map<String, Object> configuration = new HashMap<String, Object>();
+	private Map<String, Object> configuration;
 
 	@PostConstruct
 	public void init() {
@@ -48,6 +48,7 @@ public class AdaptiveConfigurationResource implements Serializable {
 	}
 
 	public void onContextChanged(@Observes(notifyObserver = Reception.ALWAYS) Context context) {
+		configuration = new HashMap<String, Object>();
 		try {
 			engine.process(configuration, context);
 		} catch (Exception e) {
