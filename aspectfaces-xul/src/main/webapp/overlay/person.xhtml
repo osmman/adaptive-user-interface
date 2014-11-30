@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <overlay id="layout"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+        <dialog
+                id="content"
+                title="#{text['person']}"
+                button="cancel"
+                xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+                >
+            <f:metadata>
+                <f:viewParam name="person" value="#{personController.id}" required="true"/>
+                <f:event type="preRenderView" listener="#{personController.loadPerson}"/>
+            </f:metadata>
+            <dialogheader title="Detail"/>
+            <xf:groupbox>
+                <af:ui instance="#{person}" edit="false" ignore="password"/>
+                <af:ui instance="#{person.personInfo}" edit="false" ignore="fullName"/>
+                <af:ui instance="#{person.personInfo.address}" edit="false"/>
+                <af:ui instance="#{person.personInfo.degree}" edit="false"/>
+            </xf:groupbox>
+        </dialog>
+    </overlay>
+
+</f:view>

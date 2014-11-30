@@ -1,12 +1,15 @@
 <?xml version="1.0"?>
-<!DOCTYPE overlay SYSTEM "core.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://aui/locale/core.dtd">
 <overlay id="phone"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <commandset id="commandset">
+        <command id="open-people" oncommand="Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/people.xul',null)"/>
+        <command id="open-context" oncommand="Navigation.overlay(document,'http://localhost:8080/aspectfaces-xul/overlay/context.xul',null)"/>
+    </commandset>
 
-    <menubar id="menu" html:data-role="header">
-        <menuitem id="people-menu" label="&navigation.people;"/>
-        <menuitem id="thing-menu" label="&navigation.thing;"/>
-        <menuitem id="context-menu" label="&navigation.context;"/>
+    <menubar id="menu">
+        <menuitem id="people-menu" label="&navigation.people;" command="open-people"/>
+        <menuitem id="context-menu" label="&navigation.context;" command="open-context"/>
     </menubar>
 </overlay>

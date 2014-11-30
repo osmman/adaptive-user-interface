@@ -2,123 +2,123 @@ package cz.cvut.fel.aui.view.xul;
 
 import com.codingcrayons.aspectfaces.cache.ResourceCache;
 import com.codingcrayons.aspectfaces.ondemand.DefaultAFGeneratorHandler;
-import cz.cvut.fel.aui.model.Context;
-import cz.cvut.fel.aui.model.context.Age;
-import cz.cvut.fel.aui.model.context.Device;
-import cz.cvut.fel.aui.rules.AuiRuleEngine;
-import cz.cvut.fel.aui.utils.FacUtil;
 
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.ComponentConfig;
+import javax.faces.view.facelets.TagAttribute;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import cz.cvut.fel.aui.model.Context;
+import cz.cvut.fel.aui.model.context.Device;
+import cz.cvut.fel.aui.rules.AuiRuleEngine;
+import cz.cvut.fel.aui.utils.FacUtil;
+
 /**
  * Created by Tomáš on 28.12.13.
  */
-public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler
-{
-    private static final String DEFAULT_LAYOUT = "form.xhtml";
+public class AdaptiveGeneratorHandler extends DefaultAFGeneratorHandler {
+	private static final String DEFAULT_LAYOUT = "form.xhtml";
 
-    private static final String DEFAULT_CONFIG = "default";
+	private static final String DEFAULT_CONFIG = "default";
 
-    private Boolean _development = true;
+	private Boolean _development = true;
 
-    private Boolean _debug = false;
+	private Boolean _debug = false;
 
-    public AdaptiveGeneratorHandler(ComponentConfig config) {
-        super(config);
+	private Logger logger = Logger.getLogger(this.getClass().getName());
 
-        FacesContext ctx = FacesContext.getCurrentInstance();
+	public AdaptiveGeneratorHandler(ComponentConfig config) {
+		super(config);
 
-        Integer _af_cache = Integer.parseInt(ctx.getExternalContext().getInitParameter("AF.CACHE"));
-        if (_af_cache == null) {
-            _af_cache = -1;
-        }
-        this.afCacheTime = _af_cache;
+		FacesContext ctx = FacesContext.getCurrentInstance();
 
-        _development = Boolean.parseBoolean(ctx.getExternalContext().getInitParameter("AF.DEVELOPMENT"));
-        if (_development == null) {
-            _development = false;
-        }
-        _debug = Boolean.parseBoolean(ctx.getExternalContext().getInitParameter("AF.DEBUG"));
-        if (_debug == null) {
-            _debug = false;
-        }
-    }
+		Integer _af_cache = Integer.parseInt(ctx.getExternalContext().getInitParameter("AF.CACHE"));
+		if (_af_cache == null) {
+			_af_cache = -1;
+		}
+		this.afCacheTime = _af_cache;
 
-    /*
-     * Applies Adaptive settings
-     */
-    private String applySettings(String base, String calcLayout)
-    {
-        if (layout != null) {
-            calcLayout = layout.getValue();
-            calcLayout = (String) executeExpressionInElContext(FacesContext.getCurrentInstance()
-                    .getApplication().getExpressionFactory(), FacesContext.getCurrentInstance()
-                    .getELContext(), calcLayout);
-        }
-        return (calcLayout == null) ? null : ("layouts/" + base + '/' + calcLayout);
-    }
+		_development = Boolean.parseBoolean(ctx.getExternalContext().getInitParameter("AF.DEVELOPMENT"));
+		if (_development == null) {
+			_development = false;
+		}
+		_debug = Boolean.parseBoolean(ctx.getExternalContext().getInitParameter("AF.DEBUG"));
+		if (_debug == null) {
+			_debug = false;
+		}
+	}
 
-    @Override
-    protected InputStream createInputStream(String s)
-    {
-        try {
+	/*
+	 * Applies Adaptive settings
+	 */
+	private String applySettings(String calcLayout) {
+		if (layout != null) {
+			calcLayout = layout.getValue();
+			calcLayout = (String) executeExpressionInElContext(FacesContext.getCurrentInstance()
+					.getApplication().getExpressionFactory(), FacesContext.getCurrentInstance()
+					.getELContext(), calcLayout);
+		}
+		return (calcLayout == null) ? null : (calcLayout);
+	}
 
-            if (_development) {
-                ResourceCache.getInstance().clear();
-            }
-            if (_debug) {
-                Logger logger = Logger.getLogger("AF.DEBUG");
-                logger.info(s);
-            }
+	private Boolean getRecursiveValue(){
+		TagAttribute atr = getAttribute("recursive");
+		if(atr == null) return false;
+		return Boolean.parseBoolean(atr.getValue());
+	}
 
-            return new ByteArrayInputStream(s.getBytes("UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            return viewFragmentExceptionIS(e);
-        }
-    }
+	@Override
+	protected InputStream createInputStream(String s) {
+		try {
 
-    @Override
-    protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context)
-    {
-        Context config = getContext();
+			if (_development) {
+				ResourceCache.getInstance().clear();
+			}
+			if (_debug) {
+				Logger logger = Logger.getLogger("AF.DEBUG");
+				logger.info(s);
+			}
 
-        try {
-            getRuleEngine().process(context.getVariables(),config,context);
-        } catch (Exception e) {
-            Logger logger = Logger.getLogger(this.getClass().getName());
-            logger.log(Level.SEVERE,e.getMessage(),e);
-        }
+			return new ByteArrayInputStream(s.getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			return viewFragmentExceptionIS(e);
+		}
+	}
 
-        if (config.getDevice() == Device.PHONE || config.getDevice() == Device.TABLET) {
-            context.setLayout(applySettings("mobile", null));
-        } else {
-            context.setLayout(applySettings("desktop", null));
-        }
-    }
+	@Override
+	protected void hookAddToAFContext(com.codingcrayons.aspectfaces.configuration.Context context) {
+		Context config = getContext();
+		context.setLayout("desktop");
+		context.getVariables().put("recursive",getRecursiveValue());
 
-    @Override
-    protected String getConfig()
-    {
-        if(configName == null || configName.getValue().isEmpty()){
-            return "default";
-        }
-        return configName.getValue();
-    }
+		try {
+			getRuleEngine().process(context.getVariables(), config, context);
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, e.getMessage(), e);
+		}
 
-    private Context getContext()
-    {
-        return (Context) FacUtil.getBeanByName("context");
-    }
+		context.setLayout(applySettings(null));
+		logger.info(context.getVariables().toString());
+	}
 
-    private AuiRuleEngine getRuleEngine() {
-        return (AuiRuleEngine) FacUtil.getBeanByClass(AuiRuleEngine.class);
-    }
+	@Override
+	protected String getConfig() {
+		if (configName == null || configName.getValue().isEmpty()) {
+			return "default";
+		}
+		return configName.getValue();
+	}
 
+	private Context getContext() {
+		return (Context) FacUtil.getBeanByName("context");
+	}
 
+	private AuiRuleEngine getRuleEngine() {
+		return (AuiRuleEngine) FacUtil.getBeanByClass(AuiRuleEngine.class);
+	}
 }

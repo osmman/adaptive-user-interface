@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl"
+		  xmlns:xbl="http://www.mozilla.org/xbl"
+		  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<binding id="field">
+		<content>
+			<xul:box>
+				<xul:image xbl:inherits="src=image"/>
+			</xul:box>
+			<children/>
+		</content>
+	</binding>
+
+	<binding id="required" display="xul:box">
+		<content>
+			<xul:image src="chrome://aui/skin/images/glyphicons_049_star.png"/>
+		</content>
+	</binding>
+
+	<binding id="menu">
+		<content>
+			<xul:menuitem class="elder"/>
+		</content>
+	</binding>
+</bindings>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet"
+        xmlns:af="http://codingcrayons.com/aspectfaces"
+        locale="#{context.language.concat('_').concat(context.country)}">
+    <overlay id="layout"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+             xmlns:xfc="http://xulfaces.sourceforge.net/xulfaces/xul/client.xul">
+        <xf:commandset id="commandset">
+            <xf:command id="cmd-show-person" oncommand="detailPerson()"/>
+            <xf:command id="cmd-delete-person"  action="#{listboxPersonController.removeSelected()}" oncommand="deletePerson()"/>
+        </xf:commandset>
+
+        <vbox id="content" >
+                <xf:popupset>
+                    <xf:menupopup id="actions">
+                        <menuitem label="Open" command="cmd-show-person" />
+                        <menuitem label="Delete" command="cmd-delete-person" />
+                    </xf:menupopup>
+                </xf:popupset>
+
+                <xf:dataListbox
+                        id="my-listbox"
+                        value="#{listboxPersonController.model}"
+                        binding="#{listboxPersonController.listBoxComponent}"
+                        var="bean"
+                        updateSmoothly="true"
+                        context="actions"
+                        >
+
+                    <xf:listhead>
+                        <af:ui instance="#{newPerson},#{newPerson.personInfo}" config="tableHeader"
+                               entity="cz.cvut.fel.aui.model.Person,cz.cvut.fel.aui.model.PersonInfo"
+                               ignore="password,firstName,lastName"/>
+                    </xf:listhead>
+
+                    <xf:listitem context="actions"  value="#{bean.id}">
+                        <af:ui instance="#{bean}" config="table"
+                               entity="cz.cvut.fel.aui.model.Person"
+                               ignore="password"/>
+                        <af:ui instance="#{bean.personInfo}" config="table"
+                               entity="cz.cvut.fel.aui.model.PersonInfo"
+                               ignore="firstName,lastName"/>
+                    </xf:listitem>
+
+                </xf:dataListbox>
+                <xf:button label="#{text['action.registration']}" onclick="openRegistrationWizard()" />
+        </vbox>
+        <vbox id="bridge">
+            <xf:bridge />
+        </vbox>
+    </overlay>
+</f:view>

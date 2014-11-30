@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -24,7 +25,7 @@ import java.util.logging.Logger;
  * Created by Tomáš on 2. 6. 2014.
  */
 @Singleton
-public class AuiRuleEngine {
+public class AuiRuleEngine implements Serializable{
 
     private RuleServiceProvider ruleServiceProvider;
 

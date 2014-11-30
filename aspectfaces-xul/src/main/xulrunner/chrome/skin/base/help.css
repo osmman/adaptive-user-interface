@@ -1,0 +1,11 @@
+.help {
+    -moz-binding: url('chrome://aui/skin/help.xml#help');
+}
+
+.required {
+    -moz-binding: url('chrome://aui/skin/help.xml#required');
+}
+
+.helpRequired {
+    -moz-binding: url('chrome://aui/skin/help.xml#helpRequired');
+}

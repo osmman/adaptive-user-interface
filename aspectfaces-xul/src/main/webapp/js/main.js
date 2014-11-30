@@ -15,8 +15,7 @@ function saveContext(){
     try{
         XUL_FACES_BRIDGE.serverUrl = document.location.origin+"/aspectfaces-xul/layouts/context.xul"
         triggerAction('cmd-context-save');
-        document.location.reload()
-
+        //document.location.reload()
     }catch(e){
         alert(e);
     } finally {

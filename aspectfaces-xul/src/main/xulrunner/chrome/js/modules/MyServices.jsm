@@ -19,3 +19,7 @@ XPCOMUtils.defineLazyGetter(MyServices, 'References', function(){
 XPCOMUtils.defineLazyGetter(MyServices, 'AppStartup', function(){
     return Cc['@mozilla.org/toolkit/app-startup;1'].getService(Ci.nsIAppStartup)
 });
+
+XPCOMUtils.defineLazyGetter(MyServices, 'WindowWatcher', function(){
+    return Cc["@mozilla.org/embedcomp/window-watcher;1"].getService(Ci.nsIWindowWatcher)
+});
