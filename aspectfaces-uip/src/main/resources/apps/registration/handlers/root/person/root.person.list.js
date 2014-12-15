@@ -25,30 +25,18 @@ for(i = 0; i < modelsCount; i++) {
     interfaceBuilder.introduceContainer(null, null);
 
     interfaceBuilder.introduceLabel();
-    interfaceBuilder.createProperty("User " + i, "title", null, null);
+    interfaceBuilder.createProperty("User " + i, "title", "cz.cvut.fel.aui.model.Person.person.list." + i + ":id", null);
     interfaceBuilder.finalizeLabel();
 
     interfaceBuilder.introduceElement(null, "public.display", null);
     interfaceBuilder.introduceLabel();
-    interfaceBuilder.createProperty("Name", "title", null, null);
-    interfaceBuilder.finalizeLabel();
-    interfaceBuilder.finalizeElement();
-
-    interfaceBuilder.introduceElement(null, "public.display", null);
-    interfaceBuilder.introduceLabel();
-    interfaceBuilder.createProperty("Name", "title", "cz.cvut.fel.aui.model.Person.person.list." + i + ":id", null);
+    interfaceBuilder.createProperty("Email", "title", "locale.bundle:person.email", null);
     interfaceBuilder.finalizeLabel();
     interfaceBuilder.finalizeElement();
 
     interfaceBuilder.introduceElement(null, "public.display", null);
     interfaceBuilder.introduceLabel();
-    interfaceBuilder.createProperty("Surename", "title", null, null);
-    interfaceBuilder.finalizeLabel();
-    interfaceBuilder.finalizeElement();
-
-    interfaceBuilder.introduceElement(null, "public.display", null);
-    interfaceBuilder.introduceLabel();
-    interfaceBuilder.createProperty("Surename", "title", "cz.cvut.fel.aui.model.Person.person.list." + i + ":email", null);
+    interfaceBuilder.createProperty("Email", "title", "cz.cvut.fel.aui.model.Person.person.list." + i + ":email", null);
     interfaceBuilder.finalizeLabel();
     interfaceBuilder.finalizeElement();
 

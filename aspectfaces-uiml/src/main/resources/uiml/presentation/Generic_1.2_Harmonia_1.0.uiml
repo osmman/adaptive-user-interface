@@ -1,0 +1,1190 @@
+<?xml version="1.0"?>
+<!DOCTYPE uiml PUBLIC "-//OASIS//DTD UIML 4.0 Draft//EN"
+		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
+<uiml>
+	<template id="vocab">
+		<presentation base="Generic_1.2_Harmonia_1.0">
+			<!-- Events -->
+			<d-class id="MouseEvent" used-in-tag="event" maps-type="class" maps-to="MouseEvent">
+				<d-method id="button" maps-to="getButton" return-type="g:Integer"/>
+				<d-method id="x" maps-to="getX" return-type="g:Integer"/>
+				<d-method id="y" maps-to="getY" return-type="g:Integer"/>
+				<d-method id="point" maps-to="getPoint" return-type="g:Point"/>
+			</d-class>
+			<d-class id="KeyboardEvent" used-in-tag="event" maps-type="class" maps-to="KeyboardEvent">
+				<d-method id="keyChar" maps-to="getKeyChar" return-type="g:Character"/>
+				<d-method id="keyCode" maps-to="getKeyCode" return-type="g:Integer"/>
+			</d-class>
+			<d-class id="ItemEvent" used-in-tag="event" maps-type="class" maps-to="ItemEvent">
+				<d-method id="stateChange" maps-to="getStateChange" return-type="g:Integer"/>
+			</d-class>
+			<d-class id="ListSelectionEvent" used-in-tag="event" maps-type="class" maps-to="ListSelectionEvent">
+				<d-method id="firstIndex" maps-to="getFirstIndex" return-type="g:Integer"/>
+				<d-method id="lastIndex" maps-to="getLastIndex" return-type="g:Integer"/>
+			</d-class>
+			<d-class id="TableEvent" used-in-tag="event" maps-type="class" maps-to="TableEvent">
+				<d-method id="column" maps-to="g:Integer"/>
+				<d-method id="firstRow" maps-to="g:Integer"/>
+				<d-method id="lastRow" maps-to="g:Integer"/>
+				<d-method id="type" maps-to="g:Integer"/>
+			</d-class>
+			<!-- Listeners -->
+			<d-class id="MouseListener" used-in-tag="listener" maps-type="class" maps-to="MouseListener">
+				<d-method id="g:locatortapped" maps-to="g:locatorTapped">
+					<d-param id="event" type="MouseEvent"/>
+				</d-method>
+				<d-method id="g:locatordown" maps-to="g:locatorDown">
+					<d-param id="event" type="MouseEvent"/>
+				</d-method>
+				<d-method id="g:locatorup" maps-to="g:locatorUp">
+					<d-param id="event" type="MouseEvent"/>
+				</d-method>
+				<d-method id="g:locatorentered" maps-to="g:locatorEntered">
+					<d-param id="event" type="MouseEvent"/>
+				</d-method>
+				<d-method id="g:locatorexited" maps-to="g:locatorExited">
+					<d-param id="event" type="MouseEvent"/>
+				</d-method>
+				<d-method id="g:locatormoved" maps-to="g:locatorMoved">
+					<d-param id="event" type="MouseEvent"/>
+				</d-method>
+			</d-class>
+			<d-class id="KeyListener" used-in-tag="listener" maps-type="class" maps-to="KeyListener">
+				<d-method id="g:keypressed" maps-to="g:keyPressed">
+					<d-param id="event" type="KeyboardEvent"/>
+				</d-method>
+				<d-method id="g:keyreleased" maps-to="g:keyReleased">
+					<d-param id="event" type="KeyboardEvent"/>
+				</d-method>
+				<d-method id="g:keytyped" maps-to="g:keyTyped">
+					<d-param id="event" type="KeyboardEvent"/>
+				</d-method>
+			</d-class>
+			<d-class id="WindowListener" used-in-tag="listener" maps-type="class" maps-to="WindowListener">
+				<d-method id="g:closing" maps-to="g:closing"/>
+				<d-method id="g:closed" maps-to="g:closed"/>
+				<d-method id="g:opened" maps-to="g:opened"/>
+			</d-class>
+			<d-class id="ActionListener" used-in-tag="listener" maps-type="class" maps-to="ActionListener">
+				<d-method id="g:actionperformed" maps-to="g:actionPerformed"/>
+			</d-class>
+			<d-class id="ListSelectionListener" used-in-tag="listener" maps-type="class" maps-to="SelectionListener">
+				<d-method id="g:listSelectionChanged" maps-to="g:listSelectionChanged">
+					<d-param id="event" type="ListSelectionEvent"/>
+				</d-method>
+			</d-class>
+			<d-class id="ItemStateListener" used-in-tag="listener" maps-type="class" maps-to="ItemStateListener">
+				<d-method id="g:itemStateChanged" maps-to="g:itemStateChanged">
+					<d-param id="event" type="ItemEvent"/>
+				</d-method>
+			</d-class>
+			<d-class id="FocusListener" used-in-tag="listener" maps-type="class" maps-to="FocusListener">
+				<d-method id="g:focusgained" maps-to="g:focusGained"/>
+				<d-method id="g:focuslost" maps-to="g:focusLost"/>
+			</d-class>
+			<d-class id="TableListener" used-in-tag="listener" maps-type="class" maps-to="TableListener">
+				<d-method id="g:tableChanged" maps-to="g:tableChanged">
+					<d-param id="event" type="TableEvent"/>
+				</d-method>
+			</d-class>
+			<!-- Define parts -->
+			<!-- Containers -->
+			<d-class id="G:TopContainer" used-in-tag="part" maps-type="class" maps-to="G:TopContainer">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:layout" maps-type="setMethod" maps-to="g:layout">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layout" maps-type="getMethod" maps-to="g:layout" return-type="g:String"/>
+				<d-property export="basic" id="g:topcontainertype" maps-type="setMethod" maps-to="g:type">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:topcontainertype" maps-type="getMethod" maps-to="g:type" return-type="g:String"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:layoutcols" maps-type="setMethod" maps-to="g:layoutcols">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutcols" maps-type="getMethod" maps-to="" return-type="g:Integer"/>
+				<d-property export="basic" id="g:layoutrows" maps-type="setMethod" maps-to="g:layoutrows">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutrows" maps-type="getMethod" maps-to="" return-type="g:Integer"/>
+				<d-property export="basic" id="g:layoutalign" maps-type="setMethod" maps-to="g:layoutalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutalign" maps-type="getMethod" maps-to="" return-type="g:String"/>
+				<d-property export="basic" id="g:modal" maps-type="setMethod" maps-to="g:modal">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:modal" maps-type="getMethod" maps-to="g:modal" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:resizable" maps-type="setMethod" maps-to="g:resizable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:resizable" maps-type="getMethod" maps-to="g:resizable" return-type="g:Boolean"/>
+				<listener class="WindowListener" attacher="addWindowListener"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:Area" used-in-tag="part" maps-type="class" maps-to="G:Area">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:layout" maps-type="setMethod" maps-to="g:layout">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layout" maps-type="getMethod" maps-to="g:layout" return-type="g:String"/>
+				<d-property export="basic" id="g:areatype" maps-type="setMethod" maps-to="g:areatype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:areatype" maps-type="getMethod" maps-to="g:areatype" return-type="g:String"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:layoutcols" maps-type="setMethod" maps-to="g:layoutcols">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutcols" maps-type="getMethod" maps-to="" return-type="g:Integer"/>
+				<d-property export="basic" id="g:layoutrows" maps-type="setMethod" maps-to="g:layoutrows">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutrows" maps-type="getMethod" maps-to="" return-type="g:Integer"/>
+				<d-property export="basic" id="g:layoutalign" maps-type="setMethod" maps-to="g:layoutalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutalign" maps-type="getMethod" maps-to="" return-type="g:String"/>
+				<d-property export="basic" id="g:scrollable" maps-type="setMethod" maps-to="g:scrollable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:scrollable" maps-type="getMethod" maps-to="g:scrollable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:border" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:border" maps-type="getMethod" maps-to="g:border" return-type="g:String"/>
+				<d-property export="basic" id="g:bordercolor" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bordercolor" maps-type="getMethod" maps-to="g:bordercolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:borderwidth" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:borderwidth" maps-type="getMethod" maps-to="g:border" return-type="g:Integer"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="optional" id="j:name" maps-type="setMethod" maps-to="j:name">
+					<d-param type="java.uiml.lang.String"/>
+				</d-property>
+				<d-property export="optional" id="j:name" maps-type="getMethod" maps-to="j:name" return-type="java.uiml.lang.String"/>
+				<d-property export="optional" id="j:tabBackground" maps-type="setMethod" maps-to="j:tabBackground">
+					<d-param type="java.awt.Color"/>
+				</d-property>
+				<d-property export="optional" id="j:tabBackground" maps-type="getMethod" maps-to="j:tabBackground" return-type="java.awt.Color"/>
+				<d-property export="optional" id="j:tabForeground" maps-type="setMethod" maps-to="j:tabForeground">
+					<d-param type="java.awt.Color"/>
+				</d-property>
+				<d-property export="optional" id="j:tabForeground" maps-type="getMethod" maps-to="j:tabForeground" return-type="java.awt.Color"/>
+				<d-property export="optional" id="j:tabIcon" maps-type="setMethod" maps-to="j:tabIcon">
+					<d-param type="javax.swing.Icon"/>
+				</d-property>
+				<d-property export="optional" id="j:tabIcon" maps-type="getMethod" maps-to="j:tabIcon" return-type="javax.swing.Icon"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:TabbedArea" used-in-tag="part" maps-type="class" maps-to="G:TabbedArea">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:layoutalign" maps-type="setMethod" maps-to="g:layoutalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutalign" maps-type="getMethod" maps-to="" return-type="g:String"/>
+				<d-property export="basic" id="g:border" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:border" maps-type="getMethod" maps-to="g:border" return-type="g:String"/>
+				<d-property export="basic" id="g:bordercolor" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bordercolor" maps-type="getMethod" maps-to="g:bordercolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:borderwidth" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:borderwidth" maps-type="getMethod" maps-to="g:border" return-type="g:Integer"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="optional" id="g:tabLayout" maps-type="setMethod" maps-to="g:tabLayout">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="optional" id="g:tabLayout" maps-type="getMethod" maps-to="g:tabLayout" return-type="g:Integer"/>
+				<d-property export="optional" id="g:tabPlacement" maps-type="setMethod" maps-to="g:tabPlacement">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="optional" id="g:tabPlacement" maps-type="getMethod" maps-to="g:tabPlacement" return-type="g:Integer"/>
+				<d-property export="optional" id="g:selectedIndex" maps-type="setMethod" maps-to="g:selectedIndex">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="optional" id="g:selectedIndex" maps-type="getMethod" maps-to="g:selectedIndex" return-type="g:Integer"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:SplitArea" used-in-tag="part" maps-type="class" maps-to="G:SplitArea">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:layoutalign" maps-type="setMethod" maps-to="g:layoutalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutalign" maps-type="getMethod" maps-to="" return-type="g:String"/>
+				<d-property export="basic" id="g:border" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:border" maps-type="getMethod" maps-to="g:border" return-type="g:String"/>
+				<d-property export="basic" id="g:bordercolor" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bordercolor" maps-type="getMethod" maps-to="g:bordercolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:borderwidth" maps-type="setMethod" maps-to="g:border">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:borderwidth" maps-type="getMethod" maps-to="g:border" return-type="g:Integer"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="optional" id="g:splitOrientation" maps-type="setMethod" maps-to="g:splitOrientation">
+					<d-param type="g:Integer" />
+				</d-property>
+				<d-property export="optional" id="g:splitOrientation" maps-type="getMethod" maps-to="g:splitOrientation" return-type="g:Integer"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:ChildFrame" used-in-tag="part" maps-type="class" maps-to="G:ChildFrame">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:layout" maps-type="setMethod" maps-to="g:layout">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layout" maps-type="getMethod" maps-to="g:layout" return-type="g:String"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:layoutcols" maps-type="setMethod" maps-to="g:layoutcols">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutcols" maps-type="getMethod" maps-to="" return-type="g:Integer"/>
+				<d-property export="basic" id="g:layoutrows" maps-type="setMethod" maps-to="g:layoutrows">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutrows" maps-type="getMethod" maps-to="" return-type="g:Integer"/>
+				<d-property export="basic" id="g:layoutalign" maps-type="setMethod" maps-to="g:layoutalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:layoutalign" maps-type="getMethod" maps-to="" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:resizable" maps-type="setMethod" maps-to="g:resizable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:resizable" maps-type="getMethod" maps-to="g:resizable" return-type="g:Boolean"/>
+				<listener class="WindowListener" attacher="addWindowListener"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:MenuBar" used-in-tag="part" maps-type="class" maps-to="G:MenuBar">
+				<d-property id="g:menubartype" maps-type="setMethod" maps-to="g:menutype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property id="g:menubartype" maps-type="getMethod" maps-to="g:menubartype" return-type="g:String"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:Menu" used-in-tag="part" maps-type="class" maps-to="G:Menu">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:accelerator" maps-type="setMethod" maps-to="g:accelerator">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:accelerator" maps-type="getMethod" maps-to="g:accelerator" return-type="g:String"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:PopupMenu" used-in-tag="part" maps-type="class" maps-to="G:PopupMenu">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:List" used-in-tag="part" maps-type="class" maps-to="G:List">
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:scrollable" maps-type="setMethod" maps-to="g:scrollable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:scrollable" maps-type="getMethod" maps-to="g:scrollable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:listtype" maps-type="setMethod" maps-to="g:listtype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:listtype" maps-type="getMethod" maps-to="g:listtype" return-type="g:String"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="ListSelectionListener" attacher="addSelectionListener"/>
+			</d-class>
+			<d-class id="G:Table" used-in-tag="part" maps-type="class" maps-to="G:Table">
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enableheader" maps-type="setMethod" maps-to="g:enableheader">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enableheader" maps-type="getMethod" maps-to="g:enableheader" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:heading" maps-type="setMethod" maps-to="g:heading">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:scrollable" maps-type="setMethod" maps-to="g:scrollable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:scrollable" maps-type="getMethod" maps-to="g:scrollable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="TableListener" attacher="addSelectionListener"/>
+			</d-class>
+			<d-class id="G:HeteroTable" used-in-tag="part" maps-type="class" maps-to="G:HeteroTable">
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Padding"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Padding"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:TableRow" used-in-tag="part" maps-type="class" maps-to="G:TableRow"/>
+			<d-class id="G:Tree" used-in-tag="part" maps-type="class" maps-to="G:Tree">
+			<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+			</d-class>
+			<d-class id="G:ToolBar" used-in-tag="part" maps-type="class" maps-to="G:ToolBar">
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<!-- Controls -->
+			<d-class id="G:Button" used-in-tag="part" maps-type="class" maps-to="G:Button">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:buttontype" maps-type="setMethod" maps-to="g:buttontype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:font" maps-type="setMethod" maps-to="g:font">
+					<d-param type="g:Font"/>
+				</d-property>
+				<d-property export="basic" id="g:font" maps-type="getMethod" maps-to="g:font" return-type="g:Font"/>
+				<d-property export="basic" id="g:horizontalalign" maps-type="setMethod" maps-to="g:horizontalalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:horizontalalign" maps-type="getMethod" maps-to="g:horizontalalign" return-type="g:String"/>
+				<d-property export="basic" id="g:horizontaltextalign" maps-type="setMethod" maps-to="g:horizontaltextalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:horizontaltextalign" maps-type="getMethod" maps-to="g:horizontaltextalign" return-type="g:String"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Padding"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Padding"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:verticalalign" maps-type="setMethod" maps-to="g:verticalalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:verticalalign" maps-type="getMethod" maps-to="g:verticalalign" return-type="g:String"/>
+				<d-property export="basic" id="g:veritcaltextalign" maps-type="setMethod" maps-to="g:verticaltextalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:verticaltextalign" maps-type="getMethod" maps-to="g:verticaltextalign" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:selected" maps-type="setMethod" maps-to="g:selected">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:selected" maps-type="getMethod" maps-to="g:selected" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="ItemStateListener" attacher="addSelectionListener"/>
+				<listener class="FocusListener" attacher="addFocusListener"/>
+			</d-class>
+			<d-class id="G:Image" used-in-tag="part" maps-type="class" maps-to="G:Image">
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:MultiMedia" used-in-tag="part" maps-type="class" maps-to="G:MultiMedia">
+				<d-property export="basic" id="g:mimetype" maps-type="setMethod" maps-to="g:mimetype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:mimetype" maps-type="getMethod" maps-to="g:mimetype" return-type="g:String"/>
+				<d-property export="basic" id="g:mimetype" maps-type="getMethod" maps-to="g:mimetype" return-type="g:String"/>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Padding"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Padding"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:Text" used-in-tag="part" maps-type="class" maps-to="G:Text">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:font" maps-type="setMethod" maps-to="g:font">
+					<d-param type="g:Font"/>
+				</d-property>
+				<d-property export="basic" id="g:font" maps-type="getMethod" maps-to="g:font" return-type="g:Font"/>
+				<d-property export="basic" id="g:horizontalalign" maps-type="setMethod" maps-to="g:horizontalalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:horizontalalign" maps-type="getMethod" maps-to="g:horizontalalign" return-type="g:String"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:mimetype" maps-type="setMethod" maps-to="g:mimetype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:mimetype" maps-type="getMethod" maps-to="g:mimetype" return-type="g:String"/>
+ 				<d-property export="basic" id="g:wordwrap" maps-type="setMethod" maps-to="g:wordwrap">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:wordwrap" maps-type="getMethod" maps-to="g:wordwrap" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:verticalalign" maps-type="setMethod" maps-to="g:verticalalign">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:verticalalign" maps-type="getMethod" maps-to="g:verticalalign" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+			</d-class>
+			<d-class id="G:TextBox" used-in-tag="part" maps-type="class" maps-to="G:TextBox">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:textboxtype" maps-type="setMethod" maps-to="g:textboxtype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:textboxtype" maps-type="getMethod" maps-to="g:textboxtype" return-type="g:String"/>
+				<d-property export="basic" id="g:mimetype" maps-type="setMethod" maps-to="g:mimetype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:mimetype" maps-type="getMethod" maps-to="g:mimetype" return-type="g:String"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:source" maps-type="setMethod" maps-to="g:source">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:source" maps-type="getMethod" maps-to="g:source" return-type="g:String"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Padding"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Padding"/>
+				<d-property export="basic" id="g:scrollable" maps-type="setMethod" maps-to="g:scrollable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:scrollable" maps-type="getMethod" maps-to="g:scrollable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:font" maps-type="setMethod" maps-to="g:font">
+					<d-param type="g:Font"/>
+				</d-property>
+				<d-property export="basic" id="g:font" maps-type="getMethod" maps-to="g:font" return-type="g:Font"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="FocusListener" attacher="addFocusListener"/>
+			</d-class>
+			<d-class id="G:TextField" used-in-tag="part" maps-type="class" maps-to="G:TextField">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:textfieldtype" maps-type="setMethod" maps-to="g:textfieldtype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:textfieldtype" maps-type="getMethod" maps-to="g:textfieldtype" return-type="g:String"/>
+				<d-property export="basic" id="g:alternate-text" maps-type="setMethod" maps-to="g:alternate-text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:alternate-text" maps-type="getMethod" maps-to="g:alternate-text" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:columns" maps-type="setMethod" maps-to="g:columns">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:columns" maps-type="getMethod" maps-to="g:columns" return-type="g:Integer"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Padding"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Padding"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="FocusListener" attacher="addFocusListener"/>
+			</d-class>
+			<d-class id="G:ColumnDef" used-in-tag="part" maps-type="class" maps-to="G:ColumnDef">
+				<d-property export="basic" id="g:columntype" maps-type="setMethod" maps-to="g:columntype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:columntype" maps-type="getMethod" maps-to="g:columntype" return-type="g:String"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:padding" maps-type="setMethod" maps-to="g:padding">
+					<d-param type="g:Padding"/>
+				</d-property>
+				<d-property export="basic" id="g:padding" maps-type="getMethod" maps-to="g:padding" return-type="g:Padding"/>
+				<d-property export="basic" id="g:width" maps-type="setMethod" maps-to="g:width">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:width" maps-type="getMethod" maps-to="g:width" return-type="g:Integer"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:align" maps-type="setMethod" maps-to="g:align">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:align" maps-type="getMethod" maps-to="g:align" return-type="g:String"/>
+			</d-class>
+			<d-class id="G:RowDef" used-in-tag="part" maps-type="class" maps-to="G:RowDef"/>
+			<d-class id="G:TableItem" used-in-tag="part" maps-type="class" maps-to="G:TableItem">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:datatype" maps-type="setMethod" maps-to="g:datatype">
+					<d-param type="g:DataType"/>
+				</d-property>
+				<d-property export="basic" id="g:datatype" maps-type="getMethod" maps-to="g:datatype" return-type="g:DataType"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+			</d-class>
+			<d-class id="G:TreeItem" used-in-tag="part" maps-type="class" maps-to="G:TreeItem">
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:datatype" maps-type="setMethod" maps-to="g:datatype">
+					<d-param type="g:DataType"/>
+				</d-property>
+				<d-property export="basic" id="g:datatype" maps-type="getMethod" maps-to="g:datatype" return-type="g:DataType"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:editable" maps-type="setMethod" maps-to="g:editable">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:editable" maps-type="getMethod" maps-to="g:editable" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+			</d-class>
+			<d-class id="G:MenuItem" used-in-tag="part" maps-type="class" maps-to="G:MenuItem">
+				<d-property export="basic" id="g:bgcolor" maps-type="setMethod" maps-to="g:bgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:bgcolor" maps-type="getMethod" maps-to="g:bgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:fgcolor" maps-type="setMethod" maps-to="g:fgcolor">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:fgcolor" maps-type="getMethod" maps-to="g:fgcolor" return-type="g:Color"/>
+				<d-property export="basic" id="g:text" maps-type="setMethod" maps-to="g:text">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:text" maps-type="getMethod" maps-to="g:text" return-type="g:String"/>
+				<d-property export="basic" id="g:menutype" maps-type="setMethod" maps-to="g:menutype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:menuitemtype" maps-type="getMethod" maps-to="g:menutype" return-type="g:String"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Object"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Object"/>
+				<d-property export="basic" id="g:image-src" maps-type="setMethod" maps-to="g:image-src">
+					<d-param type="g:Resource"/>
+				</d-property>
+				<d-property export="basic" id="g:image-src" maps-type="getMethod" maps-to="g:image-src" return-type="g:Resource"/>
+				<d-property export="basic" id="g:selected" maps-type="setMethod" maps-to="g:selected">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:selected" maps-type="getMethod" maps-to="g:selected" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:enabled" maps-type="setMethod" maps-to="g:enabled">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:enabled" maps-type="getMethod" maps-to="g:enabled" return-type="g:Boolean"/>
+				<d-property export="basic" id="g:group" maps-type="setMethod" maps-to="g:group">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:group" maps-type="getMethod" maps-to="g:group" return-type="g:String"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="ItemStateListener" attacher="addItemStateListener"/>
+				<listener class="FocusListener" attacher="addFocusListener"/>
+			</d-class>
+			<d-class id="G:RangeSelector" used-in-tag="part" maps-type="class" maps-to="G:RangeSelector">
+				<d-property export="basic" id="g:minimum" maps-type="getMethod" maps-to="g:minimum" return-type="g:Integer"/>
+				<d-property export="basic" id="g:maximum" maps-type="setMethod" maps-to="g:maximum">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:maximum" maps-type="getMethod" maps-to="g:maximum" return-type="g:Integer"/>
+				<d-property export="basic" id="g:extent" maps-type="setMethod" maps-to="g:extent">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:extent" maps-type="getMethod" maps-to="g:extent" return-type="g:Integer"/>
+				<d-property export="basic" id="g:rangetype" maps-type="setMethod" maps-to="g:rangetype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:rangetype" maps-type="getMethod" maps-to="g:rangetype" return-type="g:String"/>
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:content" maps-type="setMethod" maps-to="g:content">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:content" maps-type="getMethod" maps-to="g:content" return-type="g:Integer"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="KeyListener" attacher="addKeyListener"/>
+				<listener class="MouseListener" attacher="addMouseListener"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+				<listener class="FocusListener" attacher="addFocusListener"/>
+			</d-class>
+			<d-class id="G:PromptInput" used-in-tag="part" maps-type="class" maps-to="G:PromptInput">
+				<d-property export="basic" id="g:prompttype" maps-type="setMethod" maps-to="g:prompttype">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:prompttype" maps-type="getMethod" maps-to="g:prompttype" return-type="g:String"/>
+				<d-property export="basic" id="g:title" maps-type="setMethod" maps-to="g:title">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:title" maps-type="getMethod" maps-to="g:title" return-type="g:String"/>
+				<d-property export="basic" id="g:visible" maps-type="setMethod" maps-to="g:visible">
+					<d-param type="g:Boolean"/>
+				</d-property>
+				<d-property export="basic" id="g:visible" maps-type="getMethod" maps-to="g:visible" return-type="g:Boolean"/>
+				<listener class="ActionListener" attacher="addActionListener"/>
+			</d-class>
+			<d-class id="G:ButtonGroup" used-in-tag="part" maps-type="class" maps-to="G:ButtonGroup">
+				<d-property export="basic" id="g:group" maps-type="setMethod" maps-to="g:group">
+					<d-param type="g:String"/>
+				</d-property>
+				<d-property export="basic" id="g:group" maps-type="getMethod" maps-to="g:group" return-type="g:String"/>
+			</d-class>
+			<d-class id="G:Line" used-in-tag="part" maps-type="class" maps-to="G:Line">
+				<d-property export="basic" id="g:size" maps-type="setMethod" maps-to="g:size">
+					<d-param type="g:Dimension"/>
+				</d-property>
+				<d-property export="basic" id="g:size" maps-type="getMethod" maps-to="g:size" return-type="g:Dimension"/>
+				<d-property export="basic" id="g:location" maps-type="setMethod" maps-to="g:location">
+					<d-param type="g:Point"/>
+				</d-property>
+				<d-property export="basic" id="g:location" maps-type="getMethod" maps-to="g:location" return-type="g:Point"/>
+				<d-property export="basic" id="g:orientation" maps-type="setMethod" maps-to="g:orientation">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:orientation" maps-type="getMethod" maps-to="g:orientation" return-type="g:Integer"/>
+				<d-property export="basic" id="g:linestyle" maps-type="setMethod" maps-to="g:linestyle">
+					<d-param type="g:Integer"/>
+				</d-property>
+				<d-property export="basic" id="g:linestyle" maps-type="getMethod" maps-to="g:linestyle" return-type="g:Integer"/>
+				<d-property export="basic" id="g:color" maps-type="setMethod" maps-to="g:color">
+					<d-param type="g:Color"/>
+				</d-property>
+				<d-property export="basic" id="g:color" maps-type="getMethod" maps-to="g:color" return-type="g:Color"/>
+			</d-class>
+		</presentation>
+	</template>
+</uiml>

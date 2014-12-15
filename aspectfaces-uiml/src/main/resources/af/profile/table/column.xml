@@ -1,0 +1,10 @@
+<part class="G:ColumnDef" id="$field$Column">
+	<style>
+		<property name="g:header">
+			<reference constant-name="text.$field$"/>
+		</property>
+		<property name="g:content">
+			<variable name="Var:$className$:$field$"/>
+		</property>
+	</style>
+</part>

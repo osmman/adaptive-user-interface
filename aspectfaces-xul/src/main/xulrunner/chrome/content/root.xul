@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
-<!--<?xml-stylesheet href="chrome://aui/skin/help.css" type="text/css"?>-->
-<!--<?xml-stylesheet href="chrome://aui/skin/images.css" type="text/css"?>-->
+<?xml-stylesheet href="chrome://aui/skin/mobile.css" type="text/css"?>
 <?xul-overlay href="http://localhost:8080/aspectfaces-xul/overlay/people.xul"?>
 <!DOCTYPE window SYSTEM "chrome://aui/locale/core.dtd">
 

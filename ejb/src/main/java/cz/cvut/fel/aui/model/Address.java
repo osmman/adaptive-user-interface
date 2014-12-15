@@ -3,6 +3,7 @@ package cz.cvut.fel.aui.model;
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
 import com.codingcrayons.aspectfaces.annotations.UiProfiles;
 import com.codingcrayons.aspectfaces.annotations.UiType;
+import com.codingcrayons.aspectfaces.annotations.UiUserRoles;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Embeddable;
@@ -27,6 +28,7 @@ public class Address implements Cloneable, Serializable
     private String state = "";
 
     @UiOrder(1)
+    @UiUserRoles({"student","adult","elder"})
     public String getStreet()
     {
         return street;
@@ -38,6 +40,7 @@ public class Address implements Cloneable, Serializable
     }
 
     @UiOrder(2)
+    @UiUserRoles({"student","adult","elder"})
     public String getCity()
     {
         return city;
@@ -50,6 +53,7 @@ public class Address implements Cloneable, Serializable
 
     @UiOrder(3)
     @UiType(value = "state")
+    @UiUserRoles({"student","adult","elder"})
     public String getCountry()
     {
         return country;
@@ -61,6 +65,7 @@ public class Address implements Cloneable, Serializable
     }
 
     @UiOrder(5)
+    @UiUserRoles({"student","adult","elder"})
     public String getPostCode()
     {
         return postCode;
@@ -73,6 +78,7 @@ public class Address implements Cloneable, Serializable
 
     @UiProfiles({"COUNTRY_US"})
     @UiOrder(4)
+    @UiUserRoles({"student","adult","elder"})
     public String getState()
     {
         return state;

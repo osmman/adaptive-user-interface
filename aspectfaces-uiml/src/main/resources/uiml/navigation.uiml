@@ -23,9 +23,13 @@
 			<rule>
 				<condition>
 					<event class="g:actionperformed" part-name="peopleMenu"/>
+					<op name="equal">
+						<variable name="AUI:table"/>
+						<constant value="list"/>
+					</op>
 				</condition>
 				<action>
-					<restructure source="#people"/>
+					<restructure source="#peopleList"/>
 				</action>
 			</rule>
 			<rule>
@@ -67,7 +71,19 @@
 			<template>
 				<part>
 					<part id="PeoplePage" class="G:Area"
-						  source="af-output/structure_person_list.uiml" how="union">
+						  source="people.uiml#table" how="union">
+						<part id="NewPerson" class="G:Button"/>
+					</part>
+				</part>
+			</template>
+		</restructure>
+	</template>
+	<template id="peopleList">
+		<restructure at-part="container" how="replace">
+			<template>
+				<part>
+					<part id="PeoplePage" class="G:Area"
+						  source="af-output/people.uiml#list" how="union">
 						<part id="NewPerson" class="G:Button"/>
 					</part>
 				</part>

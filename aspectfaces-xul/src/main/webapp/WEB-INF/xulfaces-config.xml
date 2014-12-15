@@ -46,56 +46,56 @@
 		<attribute>
 			<description>If true, keyboard navigation between menu items in the popup is disabled.</description>
 			<attribute-name>ignorekeys</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Overrides the horizontal position of the popup specified by the showPopup function.</description>
 			<attribute-name>left</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup after it has been hidden.</description>
 			<attribute-name>onpopuphidden</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup when it is about to be hidden.</description>
 			<attribute-name>onpopuphiding</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a menupopup just before it is popped open.</description>
 			<attribute-name>onpopupshowing</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This is event is sent to a popup after it has been opened, much like the onload event is sent to a window when it is opened.</description>
 			<attribute-name>onpopupshown</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The position attribute determines where the popup appears relative to the element the user clicked to invoke the popup.</description>
 			<attribute-name>position</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Overrides the vertical position of the popup specified by the showPopup function.</description>
 			<attribute-name>top</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -111,56 +111,56 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Gets and sets the value of the command attribute.</description>
 			<attribute-name>command</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the description is disabled or not.</description>
 			<attribute-name>disabled</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> The URL of the image to appear on the checkbox.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear beside the checkbox. </description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the checkbox to a corresponding preference. </description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element. </description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -185,28 +185,28 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the button. If this is attribute is left out, no image appears. The position of the image is determined by the dir and orient attributes.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -231,56 +231,56 @@
 		<attribute>
 			<description>Set this attribute to a description to appear in the wizard header while the page is being displayed.</description>
 			<attribute-name>description</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The title that appears on the top of the wizard while the page is displayed.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set to the page ID of the next page after this one.</description>
 			<attribute-name>next</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to code which is called when the user presses the Next button while on the current page. </description>
 			<attribute-name>onpageadvanced</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The code in this attribute is called when the page is hidden, such as when moving to another page.</description>
 			<attribute-name>onpagehide</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to code which is called when the user presses the Back button while on the current page. </description>
 			<attribute-name>onpagerewound</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The code in this attribute is called when the page is shown.</description>
 			<attribute-name>onpageshow</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute should be set to a string that identifies the page's identifer in the wizard.</description>
 			<attribute-name>pageid</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -296,56 +296,56 @@
 		<attribute>
 			<description>True if the wizard is on the first page.</description>
 			<attribute-name>firstpage</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>True if the wizard is on the last page.</description>
 			<attribute-name>lastpage</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to code which is called when the user presses the Back button.</description>
 			<attribute-name>onwizardback</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to code which is called when the user presses the Cancel button.</description>
 			<attribute-name>onwizardcancel</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to code which is called when the user presses the Finish button</description>
 			<attribute-name>onwizardfinish</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to code which is called when the user presses the Next button.</description>
 			<attribute-name>onwizardnext</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The index of the current page.</description>
 			<attribute-name>pagestep</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The title that appears at the top of the wizard. </description>
 			<attribute-name>title</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -370,28 +370,28 @@
 		<attribute>
 			<description>This event is sent to an image element when an error occurs loading the image.</description>
 			<attribute-name>onerror</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event handler will be called on the image element when the image has finished loading.</description>
 			<attribute-name>onload</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the image.</description>
 			<attribute-name>src</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> This attribute indicates whether to load the image from the cache or not. (never or always)</description>
 			<attribute-name>validate</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -407,7 +407,7 @@
 		<attribute>
 			<description>The label that will appear on the button. If this is left out, no text appears.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -423,49 +423,49 @@
 		<attribute>
 			<description>Returns the accessibility object for the toolbox.</description>
 			<attribute-name>accessible</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Adds a custom toolbar to the toolbox with the given name. You can supply a comma-separated list of toolbar item ids as the second argument to add some items by default.(Firefox only)</description>
 			<attribute-name>appendCustomToolbar</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Collapse the given toolbar which should be contained in the toolbox.(Not in Firefox)</description>
 			<attribute-name>collapseToolbar</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of custom toolbars currently within the toolbox. (Firefox only)</description>
 			<attribute-name>customToolbarCount</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Expand the given toolbar which should be contained in the toolbox. (Not in Firefox)</description>
 			<attribute-name>expandToolbar</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The toolbarpalette within the toolbox.</description>
 			<attribute-name>palette</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The toolbarset within the toolbox.</description>
 			<attribute-name>toolbarset</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -490,63 +490,63 @@
 		<attribute>
 			<description>If true, events are passed to children of the element. Otherwise, events are passed to the element only.</description>
 			<attribute-name>closebutton</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, events are passed to children of the element. Otherwise, events are passed to the element only.</description>
 			<attribute-name>disableclose</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, events are passed to children of the element. Otherwise, events are passed to the element only.</description>
 			<attribute-name>firsttab</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, events are passed to children of the element. Otherwise, events are passed to the element only.</description>
 			<attribute-name>lasttab</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This script will be called when the close tab button is clicked.</description>
 			<attribute-name>onclosetab</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This script will be called when the new tab button is clicked.</description>
 			<attribute-name>onnewtab</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> This event is sent to the tabs element when the tab is changed.</description>
 			<attribute-name>onselect</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, events are passed to children of the element. Otherwise, events are passed to the element only.</description>
 			<attribute-name>setfocus</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Not in Firefox : Valid on any element that has a datasources attribute. Because RDF holds a graph of resources, it is possible for there to be several pointers to the same node. If this attribute is true, which is the default, duplicate references are skipped. If false, duplicate references will appear.</description>
 			<attribute-name>tooltiptextnew</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -562,21 +562,21 @@
 		<attribute>
 			<description>Returns the accessibility object for the menubar.</description>
 			<attribute-name>accessible</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>When set to true, the grippy will be hidden. When set to false, the default, the grippy will be shown.</description>
 			<attribute-name>grippyhidden</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If you set this attribute to the id of a statusbar element, the label on the statusbar will update to the statustext of the items on the menu as the user moves the mouse over them.</description>
 			<attribute-name>statusbar</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -610,14 +610,14 @@
 		<attribute>
 			<description>Display debug informations</description>
 			<attribute-name>debug</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The Javascript file for the bridge</description>
 			<attribute-name>js</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -642,56 +642,56 @@
 		<attribute>
 			<description>If true, keyboard navigation between menu items in the popup is disabled.</description>
 			<attribute-name>ignorekeys</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Overrides the horizontal position of the popup specified by the showPopup function.</description>
 			<attribute-name>left</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup after it has been hidden.</description>
 			<attribute-name>onpopuphidden</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup when it is about to be hidden.</description>
 			<attribute-name>onpopuphiding</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup just before it is popped open.</description>
 			<attribute-name>onpopupshowing</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This is event is sent to a popup after it has been opened, much like the onload event is sent to a window when it is opened.</description>
 			<attribute-name>onpopupshown</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The position attribute determines where the popup appears relative to the element the user clicked to invoke the popup.</description>
 			<attribute-name>position</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Overrides the vertical position of the popup specified by the showPopup function.</description>
 			<attribute-name>top</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -707,28 +707,28 @@
 		<attribute>
 			<description>If true, the commandset is used for updating commands.</description>
 			<attribute-name>commandupdater</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> A comma separated list of event names that the command updater will update upon.</description>
 			<attribute-name>events</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> This event occurs when a command update occurs.</description>
 			<attribute-name>oncommandupdate</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> A comma separated list of element ids that the command updater will update upon.</description>
 			<attribute-name>targets</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -744,63 +744,63 @@
 		<attribute>
 			<description>If the label of the tooltip is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, the tooltip is used as the default popup for displaying tooltips in the window.</description>
 			<attribute-name>_default</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the tooltip. If this is left out, no text appears.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribute is set to false or omitted, the tooltip will automatically disappear after a few seconds.</description>
 			<attribute-name>noautohide</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup after it has been hidden.</description>
 			<attribute-name>onpopuphidden</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup when it is about to be hidden.</description>
 			<attribute-name>onpopuphiding</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to a popup just before it is popped open.</description>
 			<attribute-name>onpopupshowing</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This is event is sent to a popup after it has been opened, much like the onload event is sent to a window when it is opened.</description>
 			<attribute-name>onpopupshown</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The position attribute determines where the popup appears relative to the element the user clicked to invoke the popup.</description>
 			<attribute-name>position</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -816,105 +816,105 @@
 		<attribute>
 			<description> This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribute is true, or left out, the checked state of the button will be switched each time the button is pressed. If this attribute is false, the checked state must be adjusted manually.</description>
 			<attribute-name>autoCheck</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute may be used to create three state buttons, numbered 0, 1 and 2. When in state 0 or 1, pressing the button will switch to the opposite state. When in state 2, pressing the button will switch to state 0. This means that the button acts like a checkbox except that there is a third state which must be set manually by adjusting the check state.</description>
 			<attribute-name>checked</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Indicates whether the button is checked or not.</description>
 			<attribute-name>checkState</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Set to the id of a command element that is being observed by the element.</description>
 			<attribute-name>command</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the button is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Specifies which side of the button's label that its image is placed.</description>
 			<attribute-name>dir</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The dialog type of the button, used only when the button is in a dialog box. You can use this feature to replace the standard dialog box buttons with custom buttons, yet the dialog event methods will still function.</description>
 			<attribute-name>dlgType</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Buttons with the same value for their group attribute are put into the same group. Only one button from each group can be checked at a time. If the user selects one the radio buttons, the others in the group are unchecked.</description>
 			<attribute-name>group</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute should be used to set the usage for common buttons. Some platforms display these buttons with a small icon indicating their usage. This should be used in place of the image attribute.</description>
 			<attribute-name>icon</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the button. If this is attribute is left out, no image appears. The position of the image is determined by the dir and orient attributes.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the button. If this is left out, no text appears.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>For the menu type buttons, the open attribute is set to true when the menu is open. The open attribute is not present if the menu is closed.</description>
 			<attribute-name>open</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> The tab order of the element. </description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The type of button. If this attribute is not present, a normal button is created. Leave the attribute out for a normal button.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -930,21 +930,21 @@
 		<attribute>
 			<description>This attribute is set to true if the radiogroup element is focused.</description>
 			<attribute-name>focused</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the textbox to a corresponding preference.</description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -960,91 +960,91 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribute is true or omitted, the selected item on the menu will update to match what the user entered in the textbox.</description>
 			<attribute-name>disableautoselect</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Indicates that the value of the menulist can be modified by typing directly into the value field. </description>
 			<attribute-name>editable</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> This attribute is set to true if the menulist element is focused.</description>
 			<attribute-name>focused</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> The URL of the image to appear on the menulist.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> The label that will appear on the menulist.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> If true, the menu popup is showing.</description>
 			<attribute-name>open</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Connects the menulist to a corresponding preference. </description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> If set to true, then the user cannot type into the field of an editable menulist. </description>
 			<attribute-name>readonly</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Indicates how the menu width and the popup width are determined. </description>
 			<attribute-name>sizetopopup</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> The URL of the image to appear on the menulist.</description>
 			<attribute-name>src</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -1060,42 +1060,42 @@
 		<attribute>
 			<description>If this attribute is not used, the user can navigate to specific items in the list by pressing the first the first letter of the item's label.</description>
 			<attribute-name>disableKeyNavigation</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the checkbox to a corresponding preference. </description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of rows to display in the list box.</description>
 			<attribute-name>rows</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description></description>
 			<attribute-name>seltype</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribue is not specified, a select event is fired whenever an item is selected, either by the user or by calling one of the select methods. If set to true, the select event is never fired.</description>
 			<attribute-name>suppressonselect</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element. </description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -1120,84 +1120,84 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the listitem is checked or not.</description>
 			<attribute-name>checked</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set to the id of a command element that is being observed by the element.</description>
 			<attribute-name>command</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute will be set to true if the listitem is the current item.</description>
 			<attribute-name>current</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the button. If this is attribute is left out, no image appears. The position of the image is determined by the dir and orient attributes.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the button. If this is left out, no text appears.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the listitem to a corresponding preference.</description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the listitem is selected or not.</description>
 			<attribute-name>selected</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>You can make a cell in a listbox a checkbox by setting this attribute to the value 'checkbox'.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>A value associated with the listitem. You may use it in a script for your own purposes.</description>
 			<attribute-name>value</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1213,28 +1213,28 @@
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the description is disabled or not.</description>
 			<attribute-name>disabled</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the button. If this is attribute is left out, no image appears. The position of the image is determined by the dir and orient attributes.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>You can make a cell in a listbox a checkbox by setting this attribute to the value 'checkbox'.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1250,105 +1250,105 @@
 		<attribute>
 			<description>If the label of the treecol is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, then the column is a cycler column. In the case, clicking on a cell in the column will alternate its state between on and off.</description>
 			<attribute-name>cycler</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute will be set to true if the column is being dragged.</description>
 			<attribute-name>dragging</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the tree is editable or not. (Firefox 1.5)</description>
 			<attribute-name>editable</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, the size of the column in the tree cannot be adjusted by the user.</description>
 			<attribute-name>fixed</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute, when set to true, hides the column.</description>
 			<attribute-name>hidden</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set this to true to indicate that the tree column header should be displayed without any column header styling.</description>
 			<attribute-name>hideheader</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, the column does not appear in the column picker.</description>
 			<attribute-name>ignoreincolumnpicker</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the treecol. If this is left out, no text appears.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If set to true, the column will have indentation and twisties drawn to the left of it to indicate the hierarchy level of the rows.</description>
 			<attribute-name>primary</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Apply style</description>
 			<attribute-name>properties</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set this to a RDF property to have the data in the column sorted based on that property. </description>
 			<attribute-name>sort</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to true for the column which should be sorted by default.</description>
 			<attribute-name>sortActive</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set this attribute to have the tree column use an image for the header instead of a label. </description>
 			<attribute-name>src</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The type of tree column. The default is a text column that displays the content as text.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1373,7 +1373,7 @@
 		<attribute>
 			<description>The text for the tooltip on the column picker.</description>
 			<attribute-name>pickertooltiptext</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1398,28 +1398,28 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute should be set to the id of an element that the label is associated with.</description>
 			<attribute-name>control</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the description is disabled or not.</description>
 			<attribute-name>disabled</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
@@ -1435,7 +1435,7 @@
 		<attribute>
 			<description>Gets and sets the index of the currently selected panel in the deck. The first item is at index 0.</description>
 			<attribute-name>selectedIndex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -1451,28 +1451,28 @@
 		<attribute>
 			<description>If true the AJAX request is asynchronous, false otherwise.</description>
 			<attribute-name>asynchronous</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label inherited by the menu items and keys that are attached to the command.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If you set the disabled attribute to true, any menu items and keys attached to the command become disabled.</description>
 			<attribute-name>disabled</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event handler is called when the command is activated.</description>
 			<attribute-name>oncommand</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1488,49 +1488,49 @@
 		<attribute>
 			<description>Indicates whether the tree is editable or not. (Firefox 1.5)</description>
 			<attribute-name>editable</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label to appear on the cell.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>For columns that are progress meters, this determines the type of progress meter to use.</description>
 			<attribute-name>mode</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Sets the properties of the treecell, which can be used to style the cell.</description>
 			<attribute-name>properties</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Points to the treecol the cell is in.</description>
 			<attribute-name>ref</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> The URL of the image to appear on the treecell. If this attribute is left out, no image appears.</description>
 			<attribute-name>src</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>A percentage value that specifies the amount of the progress meter that is filled in or value of a checkbox.</description>
 			<attribute-name>value</attribute-name>
-			<attribute-class>java.lang.Object</attribute-class>
+			<attribute-class>java.uiml.lang.Object</attribute-class>
 		</attribute>
 
 		
@@ -1555,7 +1555,7 @@
 		<attribute>
 			<description>Sets the properties of the treerow, which can be used to style the row.</description>
 			<attribute-name>properties</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1571,14 +1571,14 @@
 		<attribute>
 			<description>Qualified the type of progressMeter Determined or Undetermined.</description>
 			<attribute-name>mode</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The percentage of the progressmeter.</description>
 			<attribute-name>value</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -1603,70 +1603,70 @@
 		<attribute>
 			<description>Text that appears beside beside the menu label to indicate the shortcut key (accelerator key) to use to invoke the command.</description>
 			<attribute-name>acceltext</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, events are passed to children of the menu. Otherwise, events are passed to the menu only.</description>
 			<attribute-name>allowevents</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the menu is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The id of a key element that is used as the menu command's shortcut key.</description>
 			<attribute-name>key</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the menu.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute is set on an item in a menu when it is being hovered over.</description>
 			<attribute-name>menuactive</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute is set on the menu when it is open.</description>
 			<attribute-name>open</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates how the menu width and the popup width are determined.</description>
 			<attribute-name>sizetopopup</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>A value associated with the menu.</description>
 			<attribute-name>value</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1682,21 +1682,21 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute should be set to the id of an element that the label is associated with.</description>
 			<attribute-name>control</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the description is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1721,56 +1721,56 @@
 		<attribute>
 			<description>The current set of displayed items on the toolbar. This should be set to a comma-separated list of item IDs from the toolbarpalette.</description>
 			<attribute-name>currentset</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This value is the index of the toolbar in the list of the custom toolbars. The value is updated automatically by the toolbar customization dialog.</description>
 			<attribute-name>customindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set this attribute to true on toolbars that can be customized. This causes the set of buttons to be persisted across sessions.</description>
 			<attribute-name>customizable</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of custom toolbars currently within the toolbox. (Firefox only)</description>
 			<attribute-name>defaultset</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>When set to true, the grippy will be hidden. When set to false, the default, the grippy will be shown. (Not in Firefox)</description>
 			<attribute-name>grippyhidden</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The text to appear on the tooltip for the toolbar's grippy when the toolbar is collapsed. This would be used to label the grippy so that the user knows which toolbar it represents. (Not in Firefox)</description>
 			<attribute-name>grippytooltiptext</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The toolbarset within the toolbox.</description>
 			<attribute-name>toolbarset</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The name of the toolbar, which is listed on the Show/Hide toolbars menu. (Firefox only)</description>
 			<attribute-name>toolbarname</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1786,77 +1786,77 @@
 		<attribute>
 			<description>If this attribute is not used, the user can navigate to specific items in the tree by pressing the first the first letter of the item's label.</description>
 			<attribute-name>disableKeyNavigation</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the tree is editable or not. (Firefox 1.5)</description>
 			<attribute-name>editable</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>When set to 'true', the user may drag the column headers around to change the order that they are displayed in.</description>
 			<attribute-name>enableColumnDrag</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set this attribute to 'dont-build-content' for a template generated tree.</description>
 			<attribute-name>flags</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>When set to false, a drop-down will appear in the upper right corner of the tree, which the user may use to show and hide columns.</description>
 			<attribute-name>hidecolumnpicker</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent to an tree when a row is selected, or whenever the selection changes.</description>
 			<attribute-name>onselect</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of rows to display in the tree.</description>
 			<attribute-name>rows</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Used to indicate whether multiple selection is allowed.</description>
 			<attribute-name>seltype</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Chrome XUL may specify an RDF datasource to use to store tree state information.</description>
 			<attribute-name>statedatasource</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Variable name used for building the tree content.</description>
 			<attribute-name>var</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -1879,119 +1879,119 @@
 		<attribute>
 			<description>Returns the accessibility object for the toolbox.</description>
 			<attribute-name>accessible</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribute is true, or left out, the checked state of the button will be switched each time the button is pressed.</description>
 			<attribute-name>autoCheck</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute may be used to create three state buttons, numbered 0, 1 and 2.</description>
 			<attribute-name>checkState</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the button is checked or not.</description>
 			<attribute-name>checked</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set to the id of a command element that is being observed by the element.</description>
 			<attribute-name>command</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the toolbarbutton is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the toolbarbutton is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>dir</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The dialog type of the button, used only when the button is in a dialog box.</description>
 			<attribute-name>dlgType</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Buttons with the same value for their group attribute are put into the same group. Only one button from each group can be checked at a time.</description>
 			<attribute-name>group</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the toolbarbutton.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the toolbarbutton. If this is left out, no text appears.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>For the menu type buttons, the open attribute is set to true when the menu is open.</description>
 			<attribute-name>open</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Used to specify whether the children of the toolbarbutton are oriented horizontally or vertically.</description>
 			<attribute-name>orient</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The type of button. If this attribute is not present, a normal button is created.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute indicates whether to load the image from the cache or not.</description>
 			<attribute-name>validate</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2007,21 +2007,21 @@
 		<attribute>
 			<description>Indicates from where keyboard navigation events are listened from.</description>
 			<attribute-name>eventnode</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If set to true or omitted, the tabbox will switch to the next tab when the Control and Page Up or Page Down keys are pressed. If this attribute is set to false, these keys do not navigate between tabs.</description>
 			<attribute-name>handleCtrlPageUpDown</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If set to true or omitted, the tabbox will switch to the next tab when the Control and Tab keys are pressed.</description>
 			<attribute-name>handleCtrlTab</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
@@ -2037,63 +2037,63 @@
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This is set to true if the tab is immediately after the currently selected tab.</description>
 			<attribute-name>afterselected</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This is set to true if the tab is immediately before the currently selected tab.</description>
 			<attribute-name>beforeselected</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the tab is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the tab.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the tab.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The id of the linked tabpanel element that will be displayed when the tab is selected.</description>
 			<attribute-name>linkedpanel</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute is set to true if the tab is selected by default.</description>
 			<attribute-name>selected</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute indicates whether to load the image from the cache or not.</description>
 			<attribute-name>validate</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2118,91 +2118,91 @@
 		<attribute>
 			<description>The number of columns in the textarea.</description>
 			<attribute-name>cols</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The maximum number of characters that the textbox allows to be entered.</description>
 			<attribute-name>maxlength</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If true, the textbox displays multiple lines.</description>
 			<attribute-name>multiline</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent when the value of the textbox is changed. </description>
 			<attribute-name>onchange</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This event is sent when a user enters text in a textbox. </description>
 			<attribute-name>oninput</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the textbox to a corresponding preference.</description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If set to true, then the user cannot modify the value of the textbox. However, the value may still be modified by a script.</description>
 			<attribute-name>readonly</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of rows in the textarea.</description>
 			<attribute-name>rows</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of characters that can be displayed in the textbox.</description>
 			<attribute-name>size</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>For timed textboxes, the number of milliseconds before the timer fires a command event.</description>
 			<attribute-name>timeout</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>You can set the type attribute to one of the values below for a more specialized type of textbox.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set this attribute to the value 'off' to disable word wrapping in the textbox.</description>
 			<attribute-name>wrap</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2218,7 +2218,7 @@
 		<attribute>
 			<description> If true, the treeitem is open, allowing child elements to be displayed.</description>
 			<attribute-name>open</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
@@ -2234,119 +2234,119 @@
 		<attribute>
 			<description>Text that appears beside beside the menu label to indicate the shortcut key (accelerator key) to use to invoke the command.</description>
 			<attribute-name>acceltext</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Returns the accessibility object for the menuitem.</description>
 			<attribute-name>accessible</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This should be set to a letter that is used as a shortcut key.</description>
 			<attribute-name>accesskey</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribute is true, or left out, the menuitem check mark will update each time the menu item is selected. If this attribute is false, the check mark must be adjusted manually.</description>
 			<attribute-name>autocheck</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the menuitem is checked or not.</description>
 			<attribute-name>checked</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Set to the id of a command element that is being observed by the menuitem.</description>
 			<attribute-name>command</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If the label of the menuitem is too small to fit in its given space, the text will be cropped on the side specified by the crop attribute.</description>
 			<attribute-name>crop</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>An optional description to appear alongside the label.</description>
 			<attribute-name>description</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The URL of the image to appear on the menuitem.</description>
 			<attribute-name>image</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The id of a key element that is used as the menu command's shortcut key.</description>
 			<attribute-name>key</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The label that will appear on the menuitem.</description>
 			<attribute-name>label</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Radio menuitems with the same name as put into a group.</description>
 			<attribute-name>name</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates that the menuitem is selected in a menulist.</description>
 			<attribute-name>selected</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> Can be used to create checkable menuitems or for radio button menuitems.(checkbox or radio)</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute indicates whether to load the image from the cache or not.(always or never)</description>
 			<attribute-name>validate</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description> You can associate a data value with each menu and menuitem.It is not used for any specific purpose but you can access it with a script for your own use.</description>
 			<attribute-name>value</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2362,42 +2362,42 @@
 		<attribute>
 			<description>If this attribute is not used, the user can navigate to specific items in the list by pressing the first the first letter of the item's label.</description>
 			<attribute-name>disableKeyNavigation</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the checkbox to a corresponding preference. </description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The number of rows to display in the list box.</description>
 			<attribute-name>rows</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description></description>
 			<attribute-name>seltype</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribue is not specified, a select event is fired whenever an item is selected, either by the user or by calling one of the select methods. If set to true, the select event is never fired.</description>
 			<attribute-name>suppressonselect</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element. </description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -2413,14 +2413,14 @@
 		<attribute>
 			<description>Language type.</description>
 			<attribute-name>type</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If set, where to find the script file.</description>
 			<attribute-name>src</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2436,35 +2436,35 @@
 		<attribute>
 			<description>If this attribute is not used, the user can navigate to specific items in the list by pressing the first the first letter of the item's label.</description>
 			<attribute-name>disableKeyNavigation</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Connects the listbox to a corresponding preference.</description>
 			<attribute-name>preference</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Used to indicate whether multiple selection is allowed.</description>
 			<attribute-name>seltype</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>If this attribue is not specified, a select event is fired whenever an item is selected, either by the user or by calling one of the select methods.</description>
 			<attribute-name>suppressonselect</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>The tab order of the element.</description>
 			<attribute-name>tabindex</attribute-name>
-			<attribute-class>java.lang.Integer</attribute-class>
+			<attribute-class>java.uiml.lang.Integer</attribute-class>
 		</attribute>
 
 		
@@ -2507,28 +2507,28 @@
 		<attribute>
 			<description>Determines which side of the splitter is collapsed when its grippy is clicked.</description>
 			<attribute-name>collapse</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute indicates which element to the right or below the splitter should be resized when the splitter is repositioned.</description>
 			<attribute-name>resizeafter</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>This attribute indicates which element to the left or above the splitter should be resized when the splitter is repositioned.</description>
 			<attribute-name>resizebefore</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
 		<attribute>
 			<description>Indicates whether the splitter has collapsed content or not.</description>
 			<attribute-name>state</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2544,7 +2544,7 @@
 		<attribute>
 			<description>The URL of the page to appear in the iframe.</description>
 			<attribute-name>src</attribute-name>
-			<attribute-class>java.lang.String</attribute-class>
+			<attribute-class>java.uiml.lang.String</attribute-class>
 		</attribute>
 
 		
@@ -2560,7 +2560,7 @@
 		<attribute>
 			<description>If true, the background of the tree's rows will alternate between two colors.</description>
 			<attribute-name>alternatingbackground</attribute-name>
-			<attribute-class>java.lang.Boolean</attribute-class>
+			<attribute-class>java.uiml.lang.Boolean</attribute-class>
 		</attribute>
 
 		

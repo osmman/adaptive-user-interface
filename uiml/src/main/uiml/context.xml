@@ -77,8 +77,8 @@
             <constant id="renderImage" value="NO"/>
         </content>
 
-        <content id="EN" source="lang/en.uiml#en" />
-        <content id="CS" source="lang/cs.uiml#cs" />
+        <content id="EN" source="uiml.lang/en.uiml#en" />
+        <content id="CS" source="uiml.lang/cs.uiml#cs" />
 
         <content id="Age.Elder">
             <constant id="renderHelp" value="YES"/>

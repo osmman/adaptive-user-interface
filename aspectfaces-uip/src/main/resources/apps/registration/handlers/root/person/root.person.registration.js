@@ -17,6 +17,7 @@ params["form.readonly"] = "false";
 params["form.layout"] = "layouts/form.xml";
 params["fields.ignore"] = "personInfo,id,fullName,address,degree";
 params["security.roles"] = context["age"].toLowerCase();
+// missing AF profile
 params["client.notify.uiUpdate"] = "false";
 
 event.callHandler("integration.aui.generate", params);

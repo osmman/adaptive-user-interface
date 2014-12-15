@@ -10,15 +10,15 @@
 
 	<mapping>
 		<type>String</type>
-		<type>Integer</type>
-		<default tag="behavior/entry.xml"/>
+		<default tag="table/column.xml"/>
 	</mapping>
 
 	<mapping>
 		<type>Enum</type>
-		<default tag="behavior/entry.xml"/>
+		<default tag="table/column.xml"/>
 	</mapping>
 
+	<!-- Globally ignored fields -->
 	<ignore-fields>
 		<name>fullName</name>
 	</ignore-fields>

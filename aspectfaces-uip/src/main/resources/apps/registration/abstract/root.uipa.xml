@@ -9,13 +9,13 @@
             <container>
                 <container>
                     <label>
-                        <property name="title" value="Electronic Forms Catalog"/>
+                        <property name="title" value="AUI"/>
                         <property name="description" value=""/>
                     </label>
 
                     <container>
                         <label>
-                            <property name="title" value="User registration"/>
+                            <property name="title" key="locale.bundle:navigation.people"/>
                             <property name="description" value=""/>
                         </label>
 
@@ -41,8 +41,8 @@
                     <container>
 
                         <label>
-                            <property name="title" key="locale.bundle:person.password" />
-                            <property name="description" value=""/>
+                            <property name="title" key="locale.bundle:navigation.context" />
+                            <property name="description" key="locale.bundle:navigation.context"/>
                         </label>
                         <element class="public.trigger" id="context.form">
                             <label>
@@ -51,37 +51,6 @@
                             </label>
 
                             <behavior implicit="true" action="root.context.form" trigger="action"/>
-                        </element>
-
-                        <element class="public.trigger" id="en.lang">
-                            <label>
-                                <property name="title" value="EN"/>
-                                <property name="description" value="Change application context"/>
-                            </label>
-
-                            <behavior implicit="true" action="locale.language" trigger="action"/>
-                        </element>
-
-                        <element class="public.trigger" id="cs.lang">
-                            <label>
-                                <property name="title" value="CS"/>
-                                <property name="description" value="Change application context"/>
-                            </label>
-
-                            <behavior implicit="true" action="locale.language" trigger="action">
-                                <property name="language" value="cs" />
-                            </behavior>
-                        </element>
-
-                        <element class="public.trigger">
-                            <label>
-                                <property name="title" value="CS"/>
-                                <property name="description" value="Change application context"/>
-                            </label>
-
-                            <behavior implicit="true" action="integration.java.cdi" trigger="action">
-                                <property name="model" value="aaaaa" />
-                            </behavior>
                         </element>
                     </container>
 

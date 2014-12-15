@@ -19,7 +19,7 @@
                         <property name="y" value="15" />
                     </position>
                 </element>
-                <element class="nested">
+                <element class="nesteda">
                     <property name="aaa" value="First" />
                 </element>
             </container>

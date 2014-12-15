@@ -2,5 +2,5 @@
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:xf="http://xulfaces.sourceforge.net/xulfaces/jsf/facelet">
     <ui:param name="value" value="#{instance.$field$}"/>
-    <xf:listcell value="#{not empty value ? text[value.label] : ''}" />
+    <xf:listcell xf:styleClass="$type$" value="#{not empty value ? text[value.label] : ''}" />
 </ui:fragment>

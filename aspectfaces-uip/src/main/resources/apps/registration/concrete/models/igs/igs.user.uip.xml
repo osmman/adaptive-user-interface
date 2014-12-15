@@ -19,15 +19,14 @@
 			<property name="no_hand" value="false" />
 			<property name="body_height" value="168" />
 			<property name="in_wheelchair" value="false" />
-			<property name="info_text" value="0.9" />
-			<property name="info_picture" value="0.7" />
+			<property name="info_text" value="0.0" />
+			<property name="info_picture" value="0.9" />
 			<property name="info_colors" value="0.7" />
 			<property name="info_sound" value="0.5" />
 			<property name="info_speech" value="0.5" />
 			<property name="info_simple_haptic" value="0.5" />
 			<property name="info_braile_code" value="0.0" />
 			<property name="ic_quocient" value="0.7" />
-			<property name="language.dd" value="0.95" />			
 			<property name="language.cs" value="0.55" />
 			<property name="language.en" value="0.40" />
 			<property name="language.de" value="0.25" />

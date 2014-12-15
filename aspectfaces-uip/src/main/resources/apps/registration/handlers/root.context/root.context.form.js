@@ -24,11 +24,15 @@ params["client.notify.uiUpdate"] = "false";
 
 event.callHandler("integration.aui.generate", params);
 
-client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "age", context["age"]);
+var age = client.getModelValue("cz.cvut.fel.aui.model.Context.age.enum.conversion.reverse", null, context["age"]);
+var screenSize = client.getModelValue("cz.cvut.fel.aui.model.Context.screenSize.enum.conversion.reverse", null, context["screenSize"]);
+var device = client.getModelValue("cz.cvut.fel.aui.model.Context.device.enum.conversion.reverse", null, context["device"]);
+
+client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "age", age);
 client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "language", context["language"]);
 client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "country", context["country"]);
-client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "screenSize", context["screenSize"]);
-client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "device", context["device"]);
+client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "screenSize", screenSize);
+client.updateModel("cz.cvut.fel.aui.model.Context.context.form", null, "device", device);
 
 client.updateModel("public.interfaces", null, "context.form", null, null);
 client.updateModel("public.interfaces", null, "root", "public.interfaces:context.form", null);

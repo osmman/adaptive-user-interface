@@ -1,6 +1,7 @@
 package cz.cvut.fel.aui.model;
 
 import com.codingcrayons.aspectfaces.annotations.UiOrder;
+import com.codingcrayons.aspectfaces.annotations.UiUserRoles;
 
 import javax.persistence.Embeddable;
 import javax.validation.constraints.Future;
@@ -20,6 +21,7 @@ public class Degree implements Cloneable, Serializable {
 
     @Future
     @UiOrder(1)
+    @UiUserRoles({"student"})
     public Date getExpectedGraduation() {
         return expectedGraduation;
     }
@@ -30,6 +32,7 @@ public class Degree implements Cloneable, Serializable {
 
     @Past
     @UiOrder(2)
+    @UiUserRoles({"student"})
     public Date getBeganDegree() {
         return beganDegree;
     }

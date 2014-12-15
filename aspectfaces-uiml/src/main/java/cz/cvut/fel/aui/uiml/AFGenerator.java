@@ -44,6 +44,7 @@ public class AFGenerator {
 		new AFGenerator().make("style");
 		new AFGenerator().make("layout");
 		new AFGenerator().make("behavior");
+		new AFGenerator().make("table");
 	}
 
 	/**
@@ -80,6 +81,7 @@ public class AFGenerator {
 		AFWeaver.addConfiguration(new StaticConfiguration("style"), new File(PATH + "style.config.xml"), false, true);
 		AFWeaver.addConfiguration(new StaticConfiguration("layout"), new File(PATH + "layout.config.xml"), false, true);
 		AFWeaver.addConfiguration(new StaticConfiguration("behavior"), new File(PATH + "behavior.config.xml"), false, true);
+		AFWeaver.addConfiguration(new StaticConfiguration("table"), new File(PATH + "table.config.xml"), false, true);
 
 		Context context = new Context();
 		context.setUseCover(true);

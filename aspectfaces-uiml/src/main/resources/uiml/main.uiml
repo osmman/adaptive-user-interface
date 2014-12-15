@@ -19,8 +19,26 @@
 		</structure>
 
 		<style id="style_base">
+			<property part-name="contextMenu" name="g:title">
+				<reference constant-name="navigation.context"/>
+			</property>
+			<property part-name="peopleMenu" name="g:title">
+				<reference constant-name="navigation.people"/>
+			</property>
 			<property part-name="container" name="g:title">
 				<reference constant-name="title"/>
+			</property>
+			<property part-name="SaveContextButton" name="g:title">
+				<reference constant-name="save"/>
+			</property>
+			<property part-name="NewPerson" name="g:title">
+				<reference constant-name="registration"/>
+			</property>
+			<property part-name="SavePersonButton" name="g:title">
+				<reference constant-name="save"/>
+			</property>
+			<property part-name="Cancel" name="g:title">
+				<reference constant-name="cancel"/>
 			</property>
 		</style>
 		<style id="style_content"/>
@@ -43,7 +61,7 @@
 						<call component-id="ContextService" method-id="getContext"/>
 					</property>
 					<call component-id="AuiRuleEngine" method-id="resolve">
-						<param name="env">
+						<param name="env" type="Map">
 							<variable name="AUI:table"/>
 							<variable name="AUI:locale"/>
 							<variable name="AUI:layout"/>
@@ -59,7 +77,7 @@
 				</action>
 			</rule>
 		</behavior>
-		<behavior id="bussiness">
+		<behavior id="business">
 			<variable name="Var:context" reference="false"/>
 			<variable name="Var:Person" reference="false"/>
 			<rule>
@@ -112,11 +130,11 @@
 			</rule>
 		</behavior>
 
-		<content id="lang_EN" source="../lang/en.uiml#en"/>
-		<content id="lang_CS" source="../lang/cs.uiml#cs"/>
+		<content id="EN" source="/uiml/lang/en.uiml#en"/>
+		<content id="CS" source="/uiml/lang/cs.uiml#cs"/>
 	</interface>
 	<peers>
-		<presentation base="Generic_1.2_Harmonia_1.0"/>
-		<logic source="logic.uiml#ejb"/>
+		<presentation base="/presentation/Generic_1.2_Harmonia_1.0"/>
+		<logic source="/logic/logic.uiml#ejb"/>
 	</peers>
 </uiml>

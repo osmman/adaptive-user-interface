@@ -3,18 +3,15 @@
 		"http://docs.oasis-open.org/uiml/v4.0/cd02/uiml-4.0.dtd">
 <uiml>
 	<template id="people">
-		<part id="tablePeople" class="G:Table">
-			<style>
-				<property name="g:header">
-					<constant model="list">
-						<constant value="Header 1"/>
-						<constant value="Header 2"/>
-					</constant>
-				</property>
-				<property name="g:content">
-					<call component-id="PersonService" method-id="findAll"/>
-				</property>
-			</style>
-		</part>
+		<part id="tablePeople" class="G:Table" source="af-output/person_table.uiml" how="union" />
 	</template>
+    <template id="list">
+        <part id="tablePeople" class="G:List">
+            <style>
+                <property name="g:content">
+                    <call component-id="PersonService" method-id="findAll"/>
+                </property>
+            </style>
+        </part>
+    </template>
 </uiml>

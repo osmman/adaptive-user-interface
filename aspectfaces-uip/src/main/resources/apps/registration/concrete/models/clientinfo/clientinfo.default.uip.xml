@@ -9,7 +9,7 @@
             <property value="" name="TrayMenuInterfaceClass"/>
             <property value="cs" name="Language"/>
             <property value="" name="TrayIcon"/>
-            <property value="glyphicons_000_glass.png" name="ApplicationIcon"/>
+            <property value="" name="ApplicationIcon"/>
             <property value="false" name="Attention"/>
             <property value="" name="GlobalInterfaceClass"/>
             <property value="" name="AboutInterfaceClass"/>

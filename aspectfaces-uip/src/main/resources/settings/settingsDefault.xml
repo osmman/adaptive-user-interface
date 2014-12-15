@@ -48,8 +48,8 @@
         <properties>
             <entry key="user.0.passwordserver">i2home</entry>
             <entry key="user.0.instanceid">registration</entry>
-            <entry key="user.Blanka.passwordserver">b123</entry>
-            <entry key="user.Blanka.instanceid">uitv1</entry>
+            <entry key="user.Blanka.passwordserver">i2home</entry>
+            <entry key="user.Blanka.instanceid">registration</entry>
             <entry key="app.default.name">Default App</entry>
             <entry key="app.error.name">Error App</entry>
             <entry key="app.form.name">Test form</entry>

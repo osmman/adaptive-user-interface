@@ -3,6 +3,8 @@
 </property>
 <property part-name="$field$Entry" name="g:editable">$editable$</property>
 <property part-name="$field$Entry" name="v:required">$required$</property>
+<property part-name="$field$Entry" name="v:minLenght">$min$</property>
+<property part-name="$field$Entry" name="v:maxLenght">$max$</property>
 <property part-name="$field$Help" name="g:text">
 	<reference constant-name="help.$field$"/>
 </property>
